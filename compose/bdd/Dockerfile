@@ -1,4 +1,4 @@
-FROM nectr_django:latest
+FROM nectr:test
 
 ENV PYTHONUNBUFFERED 1
 

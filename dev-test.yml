@@ -17,6 +17,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile-dev
+    image: nectr:test
 #    command: /start-dev.sh
     depends_on:
       - postgres
