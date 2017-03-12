@@ -1,5 +1,5 @@
 # Test dependencies go here.
--r base.txt
+# -r base.txt
 
 
 
@@ -14,3 +14,4 @@ pytest-sugar==0.8.0
 
 #behavior driven dev
 behave==1.2.5
+PyHamcrest==1.9.0

@@ -1,6 +1,8 @@
 from behave import *
+from features.factories import VisitorFactory
+from hamcrest import *
 
-use_step_matcher("re")
+use_step_matcher("parse")
 
 
 @given("I am a visitor")
@@ -8,6 +10,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
+    # context.visitor = VisitorFactory()
     pass
 
 
