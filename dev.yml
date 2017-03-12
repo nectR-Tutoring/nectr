@@ -32,8 +32,6 @@ services:
 
       - mailhog
 
-
-
   pycharm:
     build:
       context: .
@@ -47,10 +45,14 @@ services:
     links:
       - postgres
 
-
-
   mailhog:
     image: mailhog/mailhog
     ports:
       - "8025:8025"
 
+  bdd:
+    build:
+      context: .
+      dockerfile: ./compose/bdd/Dockerfile
+    depends_on:
+      - django
