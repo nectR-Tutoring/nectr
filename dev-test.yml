@@ -17,7 +17,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile-dev
-    command: /start-dev.sh
+#    command: /start-dev.sh
     depends_on:
       - postgres
     environment:
@@ -25,8 +25,8 @@ services:
       - USE_DOCKER=yes
     volumes:
       - .:/app
-    ports:
-      - "8000:8000"
+#    ports:
+#      - "8000:8000"
     links:
       - postgres
 
@@ -56,3 +56,5 @@ services:
       dockerfile: ./compose/bdd/Dockerfile
     depends_on:
       - django
+#    volumes:
+#     - ./features:/testing/features
