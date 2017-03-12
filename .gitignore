@@ -20,7 +20,6 @@
 sftp-config.json
 
 # Basics
-*.py[cod]
 __pycache__
 
 # Logs
@@ -75,3 +74,4 @@ nectr/media/
 staticfiles/
 /.travis.yml.example
 /.virtualenv/
+/env.example
