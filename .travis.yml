@@ -11,5 +11,5 @@ before_install:
  - sudo mv docker-compose /usr/local/bin
 
 script:
-  - docker-compose -f dev.yml build
-  - docker-compose -f dev.yml up bdd
+  - docker-compose -f dev-test.yml build
+  - docker-compose -f dev-test.yml up bdd

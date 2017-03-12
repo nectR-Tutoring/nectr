@@ -13,8 +13,11 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Remote Python 3.5.3 Docker Compose (pycharm at [/home/bfox/nectR-server/nectR/nectr/dev.yml])" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.5.2+ virtualenv at ~/nectR-test-clone-remote/nectr-docker/.virtualenv/nectr_local" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="PyBDDFrameworkConfig">
+    <option name="preferedFrameworkName" value="behave" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />

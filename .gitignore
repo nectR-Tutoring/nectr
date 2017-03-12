@@ -74,3 +74,4 @@ nectr/media/
 
 staticfiles/
 /.travis.yml.example
+/.virtualenv/
