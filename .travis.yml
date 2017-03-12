@@ -12,4 +12,4 @@ before_install:
 
 script:
   - docker-compose -f dev.yml build
-  - docker-compose -f dev.yml run
+  - docker-compose -f dev.yml up
