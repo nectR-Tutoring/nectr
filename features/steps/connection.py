@@ -6,7 +6,7 @@ use_step_matcher("parse")
 
 
 @given("I am a visitor")
-def step_impl(context):
+def create_visitor(context):
     """
     :type context: behave.runner.Context
     """
@@ -14,12 +14,13 @@ def step_impl(context):
     pass
 
 
-@when('I go to "/"')
-def step_impl(context):
+@when('I go to "{url}"')
+def step_impl(context, url):
     """
+    :param url: "/" homepage
     :type context: behave.runner.Context
     """
-    pass
+    context.response = context.browser.chrome.get(context.get_url(url))
 
 
 @then('I should see the "Home Page"')
