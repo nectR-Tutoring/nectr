@@ -15,5 +15,24 @@ django-debug-toolbar==1.6
 # improved REPL
 ipdb==0.10.2
 
+
+# Test dependencies go here.
+
 pytest-django==3.1.2
 pytest-sugar==0.8.0
+
+
+coverage==4.3.4
+flake8==3.3.0 # pyup: != 2.6.0
+django-test-plus==1.0.17
+factory-boy==2.8.1
+
+# pytest
+pytest-django==3.1.2
+pytest-sugar==0.8.0
+
+#behavior driven dev
+behave==1.2.5
+PyHamcrest==1.9.0
+behave-django==0.4.1
+selenium==3.3.0

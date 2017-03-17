@@ -1,4 +1,6 @@
 from behave import *
+from django.test import Client
+
 from features.factories import VisitorFactory
 from hamcrest import *
 
@@ -20,7 +22,10 @@ def step_impl(context, url):
     :param url: "/" homepage
     :type context: behave.runner.Context
     """
-    context.response = context.browser.chrome.get(context.get_url(url))
+    client = Client()
+    response = client.get('/')
+
+    assert_that(response.content, contains_string("Home"))
 
 
 @then('I should see the "Home Page"')

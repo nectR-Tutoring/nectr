@@ -32,7 +32,6 @@ EMAIL_PORT = 1025
 
 EMAIL_HOST = env('EMAIL_HOST', default='mailhog')
 
-
 # CACHING
 # ------------------------------------------------------------------------------
 CACHES = {
@@ -45,7 +44,7 @@ CACHES = {
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
 MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
-INSTALLED_APPS += ['debug_toolbar', 'behave_django', ]
+INSTALLED_APPS += ['debug_toolbar', ]
 
 INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
 # tricks to have debug toolbar when developing with docker
@@ -73,5 +72,8 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 CELERY_ALWAYS_EAGER = True
 ########## END CELERY
 
-# Your local stuff: Below this line define 3rd party library settings
+# Local stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+# BDD Behave - Django Integratation
+# Removed in favor of a manual integration
+#INSTALLED_APPS += ['behave_django', ]
