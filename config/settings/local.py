@@ -12,6 +12,9 @@ Local settings
 
 import socket
 import os
+
+from django.conf.global_settings import ALLOWED_HOSTS
+
 from .base import *  # noqa
 
 # DEBUG
@@ -77,3 +80,8 @@ CELERY_ALWAYS_EAGER = True
 # BDD Behave - Django Integratation
 # Removed in favor of a manual integration
 #INSTALLED_APPS += ['behave_django', ]
+
+
+# Allow Local Hosts - ALL.
+# SECURITY FLAW / HOLE
+ALLOWED_HOSTS+=['*',]
