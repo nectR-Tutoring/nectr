@@ -10,6 +10,34 @@
             </list>
           </settings>
         </remote-mappings>
+        <remote-mappings server-id="python@docker://nectr_django:latest/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/app" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@docker://nectr_pycharm:latest/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/app" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@docker-compose://[/Users/BrandonFox/PycharmProjects/nectr/dev.yml]:pycharm/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/app" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@docker-compose://[/Users/BrandonFox/PycharmProjects/nectr/dev.yml]:django/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/app" />
+            </list>
+          </settings>
+        </remote-mappings>
       </list>
     </list>
   </component>
