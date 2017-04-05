@@ -7,16 +7,7 @@ from hamcrest import *
 use_step_matcher("parse")
 
 
-@given("I am a visitor")
-def create_visitor(context):
-    """
-    :type context: behave.runner.Context
-    """
-    # context.visitor = VisitorFactory()
-    pass
-
-
-@when('I go to "{url}"')
+@given('I go to "{url}"')
 def step_impl(context, url):
     """
     :param url: "/" homepage
