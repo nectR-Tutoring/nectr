@@ -1,6 +1,6 @@
 from behave import *
 from django.test import Client
-
+from django.conf import settings
 from features.factories import VisitorFactory
 from hamcrest import *
 

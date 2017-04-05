@@ -68,7 +68,7 @@ INSTALLED_APPS += ['django_extensions', ]
 
 # TESTING
 # ------------------------------------------------------------------------------
-TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+TEST_RUNNER = 'django_behave.runner.DjangoBehaveTestSuiteRunner'
 
 ########## CELERY
 # In development, all tasks will be executed locally by blocking until the task returns
@@ -78,10 +78,9 @@ CELERY_ALWAYS_EAGER = True
 # Local stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
 # BDD Behave - Django Integratation
-# Removed in favor of a manual integration
-#INSTALLED_APPS += ['behave_django', ]
 
+INSTALLED_APPS += ['behave_django', ]
 
 # Allow Local Hosts - ALL.
 # SECURITY FLAW / HOLE
-ALLOWED_HOSTS+=['*',]
+ALLOWED_HOSTS += ['*', ]
