@@ -76,3 +76,6 @@ staticfiles/
 /.virtualenv/
 /env.example
 .idea/workspace.xml
+
+#Vagrant files
+.vagrant/
