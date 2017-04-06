@@ -12,4 +12,5 @@ before_install:
 
 script:
   - docker-compose -f dev-test.yml build
-  - docker-compose -f dev-test.yml up bdd
+  - docker-compose -f dev-test.yml up
+  - docker exec -it python -u /app/manage.py behave

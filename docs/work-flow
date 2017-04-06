@@ -1,0 +1,10 @@
+Work Flow
+1)	open git hub
+2)	find a issue to work on
+3)	create new branch
+4)	branch name should be number description <#763_description>
+5)	edit code
+6)	<git add .>
+7)	<git commit> - along the way
+8)	<git push> back to the remote
+9)	than file a pull request on the github webpage.

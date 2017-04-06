@@ -4,6 +4,7 @@ Feature: Connection to nectR
   I want to be able to access the web app
   So I can use nectR
 
+
   Scenario: Visitor goes to "/"
     Given I go to "/"
     Then I should see the "Home Page"

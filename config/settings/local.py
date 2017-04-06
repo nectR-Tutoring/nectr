@@ -78,8 +78,7 @@ CELERY_ALWAYS_EAGER = True
 # Local stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
 # BDD Behave - Django Integratation
-
-INSTALLED_APPS += ['behave_django', ]
+INSTALLED_APPS += ('behave_django',)
 
 # Allow Local Hosts - ALL.
 # SECURITY FLAW / HOLE
