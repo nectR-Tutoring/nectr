@@ -44,7 +44,7 @@ def step_impl(context):
     pass
 
 
-@step('There should be a "Sign Up" link')
+@step('There should be a "signUp.feature" link')
 def step_impl(context):
     """
     :type context: behave.runner.Context
