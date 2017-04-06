@@ -5,10 +5,10 @@ So I can find a tutor
 
 
 Background:
-  Given charlie is not yet registered
-  Given mike is not yet registered
-  Given enoc is not yet registered
-  Given brandon is not yet registered
+  Given Charlie is not yet registered
+  Given Mike is not yet registered
+  Given Enoc is not yet registered
+  Given Brandon is not yet registered
   Given Juan is not yet registered
 
 Scenario: Charlie is not a student at farmingdale

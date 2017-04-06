@@ -79,7 +79,9 @@ CELERY_ALWAYS_EAGER = True
 # ------------------------------------------------------------------------------
 # BDD Behave - Django Integratation
 # Removed in favor of a manual integration
-#INSTALLED_APPS += ['behave_django', ]
+INSTALLED_APPS += ('behave_django',)
+
+# BDD Django Behave
 
 
 # Allow Local Hosts - ALL.
