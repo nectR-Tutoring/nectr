@@ -5,3 +5,8 @@ Feature: Connection to nectR
   So I can use nectR
 
 
+  Scenario: Visitor goes to "/"
+    Given I go to "/"
+    Then I should see the "Home Page"
+    And There should be a "Sign In" link
+    And There should be a "Sign Up" link
