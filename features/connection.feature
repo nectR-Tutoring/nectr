@@ -4,9 +4,4 @@ Feature: Connection to nectR
   I want to be able to access the web app
   So I can use nectR
 
-  Scenario: Visitor goes to "/"
-    Given I am a visitor
-    When I go to "/"
-    Then I should see the "Home Page"
-    And There should be a "Sign In" link
-    And There should be a "Sign Up" link
+

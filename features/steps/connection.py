@@ -22,10 +22,7 @@ def step_impl(context, url):
     :param url: "/" homepage
     :type context: behave.runner.Context
     """
-    client = Client()
-    response = client.get('/')
-
-    assert_that(response.content, contains_string("Home"))
+    pass
 
 
 @then('I should see the "Home Page"')

@@ -1,4 +1,5 @@
 from behave import *
+from wheel.signatures import assertTrue
 
 use_step_matcher("re")
 
@@ -8,8 +9,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert (false)
-    context.charlie = VistoryFactory("Charlie")
+    pass
 
 
 @given("Mike is not yet registered")
