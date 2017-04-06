@@ -10,9 +10,6 @@
 #
 #
 # def before_all(context):
-#     # context.base_url = "nectr.us"
-#
-#     # context.localhost = "127.0.0.1"
 #
 #     django.setup()
 #
@@ -23,7 +20,7 @@
 #     context.test_runner.setup_test_environment()
 #     context.old_db_config = context.test_runner.setup_databases()
 #
-#
+
 # def before_step(context, step):
 #     context.step_name = step
 #
@@ -48,3 +45,17 @@
 # def after_all(context):
 #     context.test_runner.teardown_databases(context.old_db_config)
 #     context.test_runner.teardown_test_environment()
+
+# from selenium import webdriver
+#
+#
+# def before_all(context):
+#     context.browser = webdriver.Firefox()
+#
+#
+# def after_all(context):
+#     context.browser.quit()
+#
+#
+# def before_feature(context, feature):
+#     pass
