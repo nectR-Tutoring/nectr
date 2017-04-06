@@ -13,4 +13,4 @@ before_install:
 script:
   - docker-compose -f dev-test.yml build
   - docker-compose -f dev-test.yml up
-  - nectr_django:python -u /app/manage.py behave
+  - python -u /app/manage.py behave
