@@ -3402,13 +3402,14 @@
 		}
 
 /* Banner */
+/* Removed because of bad load */
+/* background-image: url("../../images/nectrgif.gif"); */
 
 	#banner {
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		background-image: url("../../images/nectrgif.gif");
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;

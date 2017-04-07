@@ -16,6 +16,7 @@
     <orderEntry type="jdk" jdkName="Remote Python 3.5.3 Docker Compose (django at /Users/BrandonFox/PycharmProjects/nectr/dev.yml)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
   <component name="PyBDDFrameworkConfig">
     <option name="preferedFrameworkName" value="behave" />
