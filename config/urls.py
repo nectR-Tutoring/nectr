@@ -23,7 +23,7 @@ urlpatterns = [
 
                   # Home Page links / Nav Bar Links
                   url(r'^search_the_hive',
-                      TemplateView.as_view(template_name='pages/search_the_hive.html', name='search'))
+                      TemplateView.as_view(template_name='pages/search_the_hive.html'), name='search')
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
