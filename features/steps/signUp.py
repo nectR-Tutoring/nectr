@@ -60,8 +60,8 @@ def step_impl(context):
     pass
 
 
-@step('is asked "are you a farmingdale student"')
-def step_impl(context):
+@step('is asked "{text}"')
+def step_impl(context, text):
     """
     :type context: behave.runner.Context
     """
