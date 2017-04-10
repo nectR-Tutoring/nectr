@@ -38,3 +38,11 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     pass
+
+
+@step('There should be a "Sign Up" link')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass

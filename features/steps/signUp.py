@@ -1,6 +1,7 @@
 from behave import *
 from hamcrest import *
 
+
 from nectr.users.models import User
 from nectr.users.tests.factories import UserFactory
 
@@ -57,8 +58,8 @@ def step_impl(context):
     pass
 
 
-@step('is asked "are you a farmingdale student"')
-def step_impl(context):
+@step('is asked "{text}"')
+def step_impl(context, text):
     """
     :type context: behave.runner.Context
     """
