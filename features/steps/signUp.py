@@ -1,7 +1,7 @@
 from behave import *
 from wheel.signatures import assertTrue
 
-use_step_matcher("re")
+use_step_matcher("parse")
 
 
 @given("Charlie is not yet registered")
