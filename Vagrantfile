@@ -21,3 +21,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.dev.yml", rebuild: true, run: "always"
   # config.vm.provision "shell", path: "/vagrant/utility/docker_external_setup.sh"
 end
+
+
+
