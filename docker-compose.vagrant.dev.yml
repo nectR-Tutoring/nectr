@@ -1,4 +1,4 @@
-version: '2'
+docversion: '2'
 
 volumes:
   postgres_data_dev: {}
