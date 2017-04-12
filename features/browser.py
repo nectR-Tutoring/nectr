@@ -3,7 +3,6 @@ from selenium.webdriver import DesiredCapabilities
 
 
 class Browser(object):
-
     base_url = 'http://localhost:8000'
     driver = webdriver.Remote(
         command_executor='http://phantomjs:8901',
@@ -28,3 +27,6 @@ class Browser(object):
         find a page element in the DOM
         """
         return self.driver.find_element_by_id(selector)
+
+    def find_element_by_name(self, name):
+        return self.driver.find_element_by_name(name)
