@@ -1,0 +1,14 @@
+version: '2'
+
+hub:
+ image: selenium/hub
+ ports:
+   - "4444:4444"
+ container_name: hub
+node:
+ image: selenium/node-firefox
+ links:
+   - hub
+ environment:
+   - HUB_PORT_4444_TCP_ADDR=hub
+   - HUB_PORT_4444_TCP_PORT=4444

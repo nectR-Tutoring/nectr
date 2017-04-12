@@ -29,8 +29,8 @@ def step_impl(context, name):
     :param name: str ID of User using Name
     :type context: behave.runner.Context
     """
-    br = context.browser
-    br.visit(context.server_url)
+    br = context.driver
+    br.get(context.server_url)
 
 
 @when("{name} clicks on login button")
