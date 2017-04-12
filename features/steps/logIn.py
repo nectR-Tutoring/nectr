@@ -11,7 +11,7 @@ def step_impl(context, name):
     :type name: str
     :type context: behave.runner.Context
     """
-    context.visitor = VisitorFactory(first_name=name)
+    VisitorFactory(first_name=name)
 
 
 @given("{name} is registered to nectr")
@@ -30,7 +30,11 @@ def step_impl(context, name):
     :param name: str ID of User using Name
     :type context: behave.runner.Context
     """
-    pass
+    br = context.browser
+    br.visit(context.server_url + '/login/')
+
+    # Checks for Cross-Site Request Forgery protection input
+    assert br.find_element_by_name('csrfmiddlewaretoken').is_enabled()
 
 
 @when("mike clicks on login button")
