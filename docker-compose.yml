@@ -4,6 +4,10 @@ volumes:
   postgres_data_dev: {}
   postgres_backup_dev: {}
 
+networks:
+  private:
+    driver: bridge
+
 services:
   postgres:
     build: ./compose/postgres
@@ -13,27 +17,70 @@ services:
     environment:
       - POSTGRES_USER=nectr
 
+  #selenium-hub: equivalent to manually running the command docker run -d -p 4444:4444 --name selenium-hub  -P selenium/hub
+  selenium-hub:
+    restart: always
+    image: selenium/hub:latest
+    ports:
+      - "4444:4444"
+  #selenium-chrome equivalent to manually running the command docker run -d --link selenium-hub:hub -P --name chrome selenium/node-chrome-debug
+  selenium-chrome:
+    restart: always
+    image: selenium/node-chrome-debug
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+      - HUB_PORT_4444_TCP_PORT=4444
+    stdin_open: true
+#    links:
+#      - selenium-hub:hub
+  #selenium-firefox equivalent to manually running the command docker run -d --link selenium-hub:hub -P --name firefox selenium/node-firefox-debug
+  selenium-firefox:
+    restart: always
+    image: selenium/node-firefox-debug
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+      - HUB_PORT_4444_TCP_PORT=4444
+#    links:
+#      - selenium-hub:hub
+
+
+
+
+#
+#  firefoxnode:
+#    image: selenium/node-firefox
+#    ports:
+#      - "5901:5900"
+#
 #  selenium-hub:
 #    image: selenium/hub
 #    ports:
 #      - "4444:4444"
+#    links:
+#      - firefoxnode
+#      - chromenode
 #
-#  chrome:
-#    image: selenium/node-chrome-debug
+#  chromenode:
+#    image: selenium/node-chrome
 #    ports:
 #      - "5900:5900"
-##    links:
-##      - selenium-hub
 ##
-##  chromedriver:
-##    image: selenium/standalone-chrome
-
-
-  phantomjs:
-    image: shufo/phantomjs
-    command: --webdriver 8901
-    ports:
-      - "8901:8901"
+##  chrome:
+##    image: selenium/node-chrome-debug
+##    ports:
+##      - "5900:5900"
+###    links:
+###      - selenium-hub
+###
+###  chromedriver:
+###    image: selenium/standalone-chrome
+#
+##
+##  phantomjs:
+##    image: shufo/phantomjs
+##    command: --webdriver 8901
+##    ports:
+##      - "8901:8901"
 
   django:
     build:
@@ -51,7 +98,7 @@ services:
       - "8000:8000"
     links:
       - postgres
-      - phantomjs
+#      - phantomjs
       - mailhog
 
 #  pycharm:

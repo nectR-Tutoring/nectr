@@ -13,6 +13,12 @@ django.setup()
 def before_all(context):
     context.server_url = "http://localhost:8000/"
     context.browser = Browser()
+    context.driver = webdriver.Remote(
+        command_executor='http://selenium-hub:4444/wd/hub',
+        desired_capabilities={
+            "browserName": "firefox",
+            "version": "35",
+            "platform": "VISTA", })
 
 
 def before_scenario(context, scenario):
@@ -29,6 +35,7 @@ def before_scenario(context, scenario):
 
 def after_all(context):
     context.browser.close()
+
 
 def before_feature(context, feature):
     # Code to be executed each time a feature is going to be tested
