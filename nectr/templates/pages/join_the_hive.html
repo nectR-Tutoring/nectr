@@ -11,6 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="{% static "css/main.css" %}" />
+		<link rel="stylesheet" href="{% static "css/homepage.css" %}" />
+		<link rel="stylesheet" href="{% static "css/join_the_hive.css" %}" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -51,10 +53,10 @@
 								<img src="images/pic07.jpg" alt="" />
 							</span>
 							<header class="major">
-								<h1>Search the Hive</h1>
+								<h1>Join the Hive</h1>
 							</header>
 							<div class="content">
-								<p>Our database is filled with the most professional tutor's accross the world, guaranteed to find the right tutor for you.</p>
+								<p>Buz away towards a path of success.</p>
 								<ul class="actions">
 									<li><a href="#one" class="button next scrolly">Get Started</a></li>
 								</ul>
@@ -70,10 +72,27 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h2>TODO</h2>
+										<h2>SIGN UP</h2>
 									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
+									<form action="/action_page.php">
+  <div class="container">
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
 
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <input type="checkbox" checked="checked"> Remember me
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button"  class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    		</div>
+  				</div>
+						</form>
 								</div>
 							</section>
 
