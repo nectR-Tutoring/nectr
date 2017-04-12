@@ -11,7 +11,7 @@ def step_impl(context, name):
     :type name: str
     :type context: behave.runner.Context
     """
-    VisitorFactory(name=name)
+    context.visitor = VisitorFactory(first_name=name)
 
 
 @given("{name} is registered to nectr")

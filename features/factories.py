@@ -3,10 +3,17 @@ from django.template.defaultfilters import slugify
 from factory import lazy_attribute, PostGenerationMethodCall
 import faker
 
+from nectr import users
+
 faker_data = faker.Factory.create()  # separate to a factory boy Factory
 
-class VisitorFactory(factory.django.DjangoModelFactory):
-    name = ""
+class VisitorFactory(factory.Factory):
+    class Meta:
+        model = 'users.User'
+
+    first_name = lazy_attribute(lambda o: faker_data.first_name())
+    last_name = lazy_attribute(lambda o: faker_data.last_name())
+    lang = 'en'
 
 
 class RegisteredUserFactory(factory.django.DjangoModelFactory):

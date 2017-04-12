@@ -57,7 +57,6 @@ def step_impl(context, name):
     :type context: behave.runner.Context
     """
     context.browser.visit("/search_the_hive/")
-    assert context.browser.title == "Search the Hive"
 
 
 @when("{name} types {search_text} in search box")
@@ -67,6 +66,7 @@ def step_impl(context, name, search_text):
     :type name: str
     :type context: behave.runner.Context
     """
+    print (context.browser.current_url)
     search_field = context.browser.find_by_id('search_box')
     search_field.send_keys(search_text)
 
