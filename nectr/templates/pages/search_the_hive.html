@@ -9,9 +9,21 @@
 		<title>Search The Hive - nectR by bee team</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="{% static "css/main.css" %}" />
 		<link rel="stylesheet" href="{% static "css/search_the_hive.css" %}" />
+		<link rel="stylesheet" href="{% static "css/project.css" %}" />
+
+
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -73,11 +85,26 @@
 									</div>
 								</div>
 							</section>
-
 					</div>
 
+
+					<nav class="navbar navbar-default">
+
+						<div class="container-fluid" style="columns: 1; margin-left: 30%; padding-bottom: 2%; ">
+
+							<ul class="nav navbar-nav" >
+								<li><a href="#"> Language </a>  <i class="fa fa-language" style="margin-left: 45%; color: black;"></i> </li>
+								 <li><a href="#"> Math </a> <i class="fa fa-calculator" style="margin-left: 45%; color: black;"></i> </li>
+								 <li><a href="#"> English </a><i class="fa fa-book" style="margin-left: 45%; color: black;"></i> </li>
+								 <li><a href="#"> Test Prep </a><i class="fa fa-pencil" style="margin-left: 45%; color: black;"></i> </li>
+								 <li><a href="#"> More </a> <i class="fa fa-bars" style="margin-left: 45%; color: black;"></i> </li>
+							</ul>
+
+						</div>
+					</nav>
+
 				<!-- Contact -->
-					<section id="contact">
+					<!-- <section id="contact">
 						<div class="inner">
 							<section>
 								<form method="post" action="#">
@@ -125,7 +152,7 @@
 								</section>
 							</section>
 						</div>
-					</section>
+					</section> -->
 
 				<!-- Footer -->
 					<footer id="footer">
