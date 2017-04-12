@@ -31,13 +31,6 @@
             </list>
           </settings>
         </remote-mappings>
-        <remote-mappings server-id="python@docker://nectr_django:latest/python">
-          <settings>
-            <list>
-              <mapping local-root="$PROJECT_DIR$" remote-root="/app" />
-            </list>
-          </settings>
-        </remote-mappings>
         <remote-mappings server-id="python@docker://vagrant_django:latest/python">
           <settings>
             <list>
@@ -46,6 +39,7 @@
             </list>
           </settings>
         </remote-mappings>
+        <remote-mappings server-id="python@docker://nectr_django:latest/python" />
       </list>
     </list>
   </component>

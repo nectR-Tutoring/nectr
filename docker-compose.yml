@@ -32,18 +32,18 @@ services:
 
       - mailhog
 
-  pycharm:
-    build:
-      context: .
-      dockerfile: ./compose/django/Dockerfile-dev
-    depends_on:
-      - postgres
-    environment:
-      - POSTGRES_USER=nectr
-    volumes:
-      - .:/app
-    links:
-      - postgres
+#  pycharm:
+#    build:
+#      context: .
+#      dockerfile: ./compose/django/Dockerfile-dev
+#    depends_on:
+#      - postgres
+#    environment:
+#      - POSTGRES_USER=nectr
+#    volumes:
+#      - .:/app
+#    links:
+#      - postgres
 
   mailhog:
     image: mailhog/mailhog

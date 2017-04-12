@@ -23,13 +23,6 @@ def step_impl(context, name):
     pass
 
 
-@given("Enoc is registered to nectr")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
 
 @given("{name} is on nectr site")
 def step_impl(context, name):
@@ -98,14 +91,6 @@ def step_impl(context):
 
 
 @then("charlie is redirected to dashboard")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@given("enoc is on nectr site")
 def step_impl(context):
     """
     :type context: behave.runner.Context
