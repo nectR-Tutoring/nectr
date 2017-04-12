@@ -23,7 +23,6 @@ def step_impl(context, name):
     pass
 
 
-
 @given("{name} is on nectr site")
 def step_impl(context, name):
     """
@@ -31,19 +30,18 @@ def step_impl(context, name):
     :type context: behave.runner.Context
     """
     br = context.browser
-    br.visit(context.server_url + '/login/')
-
-    # Checks for Cross-Site Request Forgery protection input
-    assert br.find_element_by_name('csrfmiddlewaretoken').is_enabled()
+    br.visit(context.server_url)
 
 
-@when("mike clicks on login button")
-def step_impl(context):
+@when("{name} clicks on login button")
+def step_impl(context, name):
     """
+    :type name: str
     :type context: behave.runner.Context
     """
     # Mike will click on the button with id matching login
-
+    br = context.browser
+    br.find_element_by_name("Login_Button").click()
 
 
 @step("is redirected to login page")
@@ -70,14 +68,6 @@ def step_impl(context):
     pass
 
 
-@when("charlie clicks on login button")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
 @step("charlie enters correct username and password")
 def step_impl(context):
     """
@@ -95,14 +85,6 @@ def step_impl(context):
 
 
 @then("charlie is redirected to dashboard")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@when("enoc clicks on login button")
 def step_impl(context):
     """
     :type context: behave.runner.Context
