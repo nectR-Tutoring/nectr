@@ -1,23 +1,21 @@
 from behave import *
-from wheel.signatures import assertTrue
-
-use_step_matcher("re")
+from hamcrest import *
 
 
-@given("Charlie is not yet registered")
-def step_impl(context):
+from nectr.users.models import User
+from nectr.users.tests.factories import UserFactory
+
+use_step_matcher("parse")
+
+
+@given("{name} is not yet registered")
+def step_impl(context, name):
     """
+    :param name: name of user
     :type context: behave.runner.Context
     """
-    pass
-
-
-@given("Mike is not yet registered")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
+    UserFactory(username=name)
+    assert_that(User.objects.all(), )
 
 
 @given("Enoc is not yet registered")
@@ -60,8 +58,8 @@ def step_impl(context):
     pass
 
 
-@step('is asked "are you a farmingdale student"')
-def step_impl(context):
+@step('is asked "{text}"')
+def step_impl(context, text):
     """
     :type context: behave.runner.Context
     """
