@@ -13,6 +13,17 @@ services:
     environment:
       - POSTGRES_USER=nectr
 
+  chromedriver:
+    image: selenium/standalone-chrome
+    ports:
+      - "4444:4444"
+
+  phantomjs:
+    image: shufo/phantomjs
+    command: --webdriver 8901
+    ports:
+      - "8901:8901"
+
   django:
     build:
       context: .
@@ -29,7 +40,8 @@ services:
       - "8000:8000"
     links:
       - postgres
-
+      - chromedriver
+      - phantomjs
       - mailhog
 
 #  pycharm:

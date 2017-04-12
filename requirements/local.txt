@@ -36,3 +36,4 @@ behave==1.2.5
 PyHamcrest==1.9.0
 behave-django==0.4.1
 selenium==3.3.0
+django-behave==0.1.5

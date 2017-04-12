@@ -1,61 +1,31 @@
-# """
-# behave environment module for testing behave-django
-# """
-# import os
-# import django
-# from django.test.runner import DiscoverRunner
-# from django.test.testcases import LiveServerTestCase
-#
-# os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.test"
-#
-#
-# def before_all(context):
-#
-#     django.setup()
-#
-#     from django.core.management import call_command
-#     call_command('flush', '--noinput')
-#
-#     context.test_runner = DiscoverRunner()
-#     context.test_runner.setup_test_environment()
-#     context.old_db_config = context.test_runner.setup_databases()
-#
+import os
+import django
+from django.core import management
+from selenium import webdriver
+from selenium.webdriver import DesiredCapabilities
 
-# def before_step(context, step):
-#     context.step_name = step
-#
-#
-# def before_feature(context, feature):
-#     if feature.name == 'Fixture loading':
-#         context.fixtures = ['behave-fixtures.json']
-#
-#
-# def before_scenario(context, scenario):
-#     context.test_case = LiveServerTestCase
-#     context.test_case.setUpClass()
-#     if scenario.name == 'Load fixtures for this scenario and feature':
-#         context.fixtures.append('behave-second-fixture.json')
-#
-#
-# def after_scenario(context):
-#     context.test_case.tearDownClass()
-#     del context.test_case
-#
-#
-# def after_all(context):
-#     context.test_runner.teardown_databases(context.old_db_config)
-#     context.test_runner.teardown_test_environment()
+from features.browser import Browser
 
-# from selenium import webdriver
-#
-#
-# def before_all(context):
-#     context.browser = webdriver.Firefox()
-#
-#
-# def after_all(context):
-#     context.browser.quit()
-#
-#
-# def before_feature(context, feature):
-#     pass
+os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.test"
+django.setup()
+
+
+def before_all(context):
+    context.server_url = "http://localhost:8000/"
+    context.browser = Browser()
+
+
+def before_scenario(context, scenario):
+    # Reset the database before each scenario
+    # This means we can create, delete and edit objects within an
+    # individual scenerio without these changes affecting our
+    # other scenarios
+    management.call_command('flush', verbosity=0, interactive=False)
+
+    # At this stage we can (optionally) mock additional data to setup in the database.
+    # For example, if we know that all of our tests require a 'SiteConfig' object,
+    # we could create it here.
+
+
+def after_all(context):
+    context.browser.close()
