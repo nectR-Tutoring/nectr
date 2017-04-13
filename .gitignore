@@ -83,3 +83,4 @@ staticfiles/
 
 # Jenkins folder
 .jenkins
+/docker-compose.beta.testing.yml
