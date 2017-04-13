@@ -6,7 +6,13 @@ Feature: Connection to nectR
   So I can use nectR
 
   Scenario: Connect to "/" using browser
-    Given I go to "/"
-    Then I should see the "Home Page"
-    And There should be a "Sign In" link
-    And There should be a "Sign Up" link
+    When I go to "/"
+    Then I should see a page with title "Home"
+
+  Scenario: Connect to "/" using browser to view menu
+    When I go to "/"
+    Then I should see a page with title "Home"
+    When I press the "menu"
+    Then There should be a "SIGN UP" link with name "nav_SignUp"
+    Then There should be a "LOG IN" link with name "nav_Login"
+

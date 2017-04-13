@@ -7,7 +7,7 @@ from hamcrest import *
 use_step_matcher("parse")
 
 
-@given('I go to "{url}"')
+@when('I go to "{url}"')
 def step_impl(context, url):
     """
     :param url: "/" homepage
@@ -17,26 +17,32 @@ def step_impl(context, url):
     assert_that(context.driver.current_url, is_(context.server_url+url))
 
 
-@then('I should see the "Home Page"')
-def step_impl(context):
+@then('I should see a page with title "{title}"')
+def step_impl(context, title):
     """
+    :param title: 
     :type context: behave.runner.Context
     """
-    assert_that(context.driver.title, contains_string("Home"), "Page title contains the word home")
+    assert_that(context.driver.title, contains_string(title),
+                "Page title contains the word home")
 
 
-@step('There should be a "Sign In" link')
-def step_impl(context):
+@then('There should be a "{text}" link with name "{name}"')
+def step_impl(context, text, name):
     """
+    :type text: str
+    :type name: str
     :type context: behave.runner.Context
     """
-    nav_signIn_element = context.driver.find_element_by_name("Login_Button")
+    html_element = context.driver.find_element_by_name(name)
+    assert_that(html_element.text, contains_string(text),
+                "Element has correct text")
 
 
-
-@step('There should be a "Sign Up" link')
-def step_impl(context):
+@when('I press the "{name}"')
+def step_impl(context, name):
     """
+    :type name: str
     :type context: behave.runner.Context
     """
-    raise NotImplementedError(u'STEP: Sign Up Link')
+    context.driver.find_element_by_name(name).click()
