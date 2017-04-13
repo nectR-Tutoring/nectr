@@ -9,23 +9,23 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='pages/index.html'), name='home'),
-    url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
+                  url(r'^$', TemplateView.as_view(template_name='pages/index.html'), name='home'),
+                  url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
-    # Django Admin, use {% url 'admin:index' %}
-    url(settings.ADMIN_URL, admin.site.urls),
+                  # Django Admin, use {% url 'admin:index' %}
+                  url(settings.ADMIN_URL, admin.site.urls),
 
-    # User management
-    url(r'^users/', include('nectr.users.urls', namespace='users')),
-    url(r'^accounts/', include('allauth.urls')),
+                  # User management
+                  url(r'^users/', include('nectr.users.urls', namespace='users')),
+                  url(r'^accounts/', include('allauth.urls')),
 
-    # Your stuff: custom urls includes go here
+                  # Your stuff: custom urls includes go here
+
 
     # Search the Hive
     url(r'^search_the_hive/$', TemplateView.as_view(template_name='pages/search_the_hive.html'), name='search')
 
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit

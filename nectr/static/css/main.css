@@ -3427,6 +3427,7 @@
 		min-height: 22em;
 		position: relative;
 		top: -3.25em;
+		background-image: url(/static/images/nectrgif.gif);
 	}
 
 		#banner:after {
@@ -3520,6 +3521,7 @@
 			height: 75vh;
 			min-height: 30em;
 			max-height: 50em;
+
 		}
 
 			#banner.major.alt {
