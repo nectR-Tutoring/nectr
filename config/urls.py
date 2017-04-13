@@ -21,8 +21,7 @@ urlpatterns = [
 
                   # Your stuff: custom urls includes go here
 
-    # HOME PAGE
-    url(r'^index', TemplateView.as_view(template_name='pages/index.html'), name='index'),
+
     # Search the Hive
     url(r'^search_the_hive', TemplateView.as_view(template_name='pages/search_the_hive.html'), name='search'),
     # Join the Hive
