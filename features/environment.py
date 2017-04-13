@@ -32,12 +32,6 @@ def before_all(context):
     context.test_runner.setup_test_environment()
     context.old_db_config = context.test_runner.setup_databases()
 
-    context.server_url = "http://localhost:8000"
-    context.driver = webdriver.Remote(
-        command_executor='http://hub:4444/wd/hub',
-        desired_capabilities={"browserName": "firefox", })
-    context.driver.implicitly_wait(5)
-
     # ### Take a TestRunner hostage.
     # # from django.test.simple import DjangoTestSuiteRunner
     # # from django.test.runner import DiscoverRunner
@@ -86,6 +80,15 @@ def before_all(context):
     # context.parse_soup = parse_soup
 
 
+def before_feature(context, feature):
+    if "browser-grid" in feature.tags:
+        context.server_url = "http://django:8000"
+        context.driver = webdriver.Remote(
+            command_executor='http://hub:4444/wd/hub',
+            desired_capabilities={"browserName": "firefox", })
+        context.driver.implicitly_wait(5)
+
+
 def before_scenario(context, scenario):
     context.test_case = LiveServerTestCase
     context.test_case.setUpClass()
@@ -99,6 +102,12 @@ def before_scenario(context, scenario):
     # At this stage we can (optionally) mock additional data to setup in the database.
     # For example, if we know that all of our tests require a 'SiteConfig' object,
     # we could create it here.
+
+
+def after_feature(context, feature):
+    if 'browser-grid' in feature.tags:
+        context.driver.quit()
+        context.driver = None
 
 
 def after_scenario(context, scenario):
@@ -117,4 +126,3 @@ def after_step(context, step):
 def after_all(context):
     context.test_runner.teardown_databases(context.old_db_config)
     context.test_runner.teardown_test_environment()
-    context.driver.quit()
