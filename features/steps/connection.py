@@ -30,7 +30,8 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    raise NotImplementedError(u'STEP: Get sign in element')
+    nav_signIn_element = context.driver.find_element_by_name("Login_Button")
+
 
 
 @step('There should be a "Sign Up" link')

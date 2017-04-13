@@ -41,10 +41,12 @@ services:
       - postgres
     environment:
       POSTGRES_USER: "nectr"
+      USE_DOCKER: "yes"
     volumes:
       - .:/app
     links:
       - postgres
+      - mailhog
 
   mailhog:
     image: mailhog/mailhog
