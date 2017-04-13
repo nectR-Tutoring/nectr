@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 volumes:
   postgres_data_dev: {}
@@ -10,174 +10,61 @@ services:
     volumes:
       - postgres_data_dev:/var/lib/postgresql/data
       - postgres_backup_dev:/backups
-    network_mode: "service:hub"
     environment:
       - POSTGRES_USER=nectr
+
   django:
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile-dev
     command: /start-dev.sh
-    network_mode: "service:hub"
-    tty: true
     depends_on:
       - postgres
-      - hub
     environment:
-      - MOCK_SERVER_PORT=8080
-      - POSTGRES_USER=nectr
-      - USE_DOCKER=yes
+      POSTGRES_USER: "nectr"
+      USE_DOCKER: "yes"
     volumes:
       - .:/app
-#    ports:
-#      - "8000:8000"
-#    links:
-#      - postgres
-##      - phantomjs
-#      - mailhog
+    ports:
+      - "8000:8000"
+    links:
+      - postgres
+      - mailhog
+
   mailhog:
     image: mailhog/mailhog
-    network_mode: "service:hub"
-#    ports:
-#      - "8025:8025"
-  hub:
-    image: elgalu/selenium
     ports:
-      # Note 24444 is the default SELENIUM_HUB_PORT inside the container
-      #  and  4444 will be mapped into your host for easy access.
+      - "8025:8025"
+
+  jenkins:
+    image: jenkins:2.0
+    restart: always
+    ports:
+      - "8889:8080"
+    volumes:
+      - ./.jenkins:/var/jenkins_home
+
+  hub:
+    image: selenium/hub:2.52.0
+    expose:
+      - 4444
+    ports:
       - 4444:4444
-      # We need a fixed port range to expose VNC
-      # due to a bug in Docker for Mac beta (1.12)
-      # https://forums.docker.com/t/docker-for-mac-beta-not-forwarding-ports/8658/6
-      - ${VNC_FROM_PORT-40650}-${VNC_TO_PORT-40700}:${VNC_FROM_PORT-40650}-${VNC_TO_PORT-40700}
-      # e.g. (hard-coded)
-      # - 40650-40700:40650-40700
-    environment:
-      - PICK_ALL_RANDOM_PORTS=true
-      - SELENIUM_HUB_PORT=4444
-      - GRID=true
-      - CHROME=false
-      - FIREFOX=false
 
-  chrome:
-    image: elgalu/selenium
-    network_mode: "service:hub"
+  node-firefox:
+    image: selenium/node-firefox-debug:2.52.0
     depends_on:
       - hub
-    shm_size: 1g
+    ports:
+      - 5900:5900
     environment:
-      - PICK_ALL_RANDOM_PORTS=true
-      - SELENIUM_HUB_PORT=4444
-      - VNC_FROM_PORT=${VNC_FROM_PORT-40650}
-      - VNC_TO_PORT=${VNC_TO_PORT-40700}
-      - SCREEN_WIDTH=1300
-      - SCREEN_HEIGHT=999
-      - VIDEO=${VIDEO-false}
-      - GRID=false
-      - CHROME=true
-      - FIREFOX=false
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
 
-  firefox:
-    image: elgalu/selenium
-    network_mode: "service:hub"
+  node-chrome:
+    image: selenium/node-chrome-debug:2.52.0
     depends_on:
       - hub
     environment:
-      - PICK_ALL_RANDOM_PORTS=true
-      - SELENIUM_HUB_PORT=4444
-      - VNC_FROM_PORT=${VNC_FROM_PORT-40650}
-      - VNC_TO_PORT=${VNC_TO_PORT-40700}
-      - SCREEN_WIDTH=1300
-      - SCREEN_HEIGHT=999
-      - VIDEO=${VIDEO-false}
-      - GRID=false
-      - CHROME=false
-      - FIREFOX=true
-
-#  #selenium-hub: equivalent to manually running the command docker run -d -p 4444:4444 --name selenium-hub  -P selenium/hub
-#  selenium-hub:
-#    restart: always
-#    image: selenium/hub:3.2.0
-#    links:
-#     - django
-#    expose:
-#      - '4444'
-#    ports:
-#      - "4444:4444"
-
-  #selenium-chrome equivalent to manually running the command docker run -d --link selenium-hub:hub -P --name chrome selenium/node-chrome-debug
-#  selenium-chrome:
-#    image: selenium/node-chrome-debug:3.2.0
-#    environment:
-#      - HUB_PORT_4444_TCP_ADDR=selenium-hub
-#      - HUB_PORT_4444_TCP_PORT=4444
-#    stdin_open: true
-#    ports:
-#      - '5900:5900' # VNC
-#
-#  #selenium-firefox equivalent to manually running the command docker run -d --link selenium-hub:hub -P --name firefox selenium/node-firefox-debug
-#  selenium-firefox:
-#    restart: 'always'
-#    image: selenium/node-firefox-debug:3.2.0
-#    environment:
-#      - HUB_PORT_4444_TCP_ADDR=selenium-hub
-#      - HUB_PORT_4444_TCP_PORT=4444
-#    ports:
-#      - '5900:5900' # VNC
-#    links:
-#      - selenium-hub
-#    depends_on:
-#      - django
-
-
-
-#
-#  firefoxnode:
-#    image: selenium/node-firefox
-#    ports:
-#      - "5901:5900"
-#
-#  selenium-hub:
-#    image: selenium/hub
-#    ports:
-#      - "4444:4444"
-#    links:
-#      - firefoxnode
-#      - chromenode
-#
-#  chromenode:
-#    image: selenium/node-chrome
-#    ports:
-#      - "5900:5900"
-##
-##  chrome:
-##    image: selenium/node-chrome-debug
-##    ports:
-##      - "5900:5900"
-###    links:
-###      - selenium-hub
-###
-###  chromedriver:
-###    image: selenium/standalone-chrome
-#
-##
-##  phantomjs:
-##    image: shufo/phantomjs
-##    command: --webdriver 8901
-##    ports:
-##      - "8901:8901"
-
-#  pycharm:
-#    build:
-#      context: .
-#      dockerfile: ./compose/django/Dockerfile-dev
-#    depends_on:
-#      - postgres
-#    environment:
-#      - POSTGRES_USER=nectr
-#    volumes:
-#      - .:/app
-#    links:
-#      - postgres
-
-
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
