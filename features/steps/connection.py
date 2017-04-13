@@ -13,7 +13,8 @@ def step_impl(context, url):
     :param url: "/" homepage
     :type context: behave.runner.Context
     """
-    pass
+    context.driver.get(context.server_url+url)
+    assert_that(context.driver.current_url, is_(context.server_url+url))
 
 
 @then('I should see the "Home Page"')
@@ -21,7 +22,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert_that(context.driver.title, contains_string("Home"), "Page title contains the word home")
 
 
 @step('There should be a "Sign In" link')
@@ -29,15 +30,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
-
-
-@step('There should be a "signUp.feature" link')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
+    raise NotImplementedError(u'STEP: Get sign in element')
 
 
 @step('There should be a "Sign Up" link')
@@ -45,4 +38,4 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    raise NotImplementedError(u'STEP: Sign Up Link')

@@ -1,4 +1,4 @@
-docversion: '2'
+version: '2'
 
 volumes:
   postgres_data_dev: {}
@@ -21,15 +21,16 @@ services:
     depends_on:
       - postgres
     environment:
-      - POSTGRES_USER=nectr
-      - USE_DOCKER=yes
+      POSTGRES_USER: "nectr"
+      USE_DOCKER: "yes"
     volumes:
       - .:/app
+    expose:
+      - 8000
     ports:
       - "8000:8000"
     links:
       - postgres
-
       - mailhog
 
   pycharm:
@@ -39,7 +40,7 @@ services:
     depends_on:
       - postgres
     environment:
-      - POSTGRES_USER=nectr
+      POSTGRES_USER: "nectr"
     volumes:
       - .:/app
     links:
@@ -50,3 +51,35 @@ services:
     ports:
       - "8025:8025"
 
+  jenkins:
+    image: jenkins:2.0
+    restart: always
+    ports:
+      - "8889:8080"
+    volumes:
+      - ./.jenkins:/var/jenkins_home
+
+  hub:
+    image: selenium/hub:2.52.0
+    expose:
+      - 4444
+    ports:
+      - 4444:4444
+
+  node-firefox:
+    image: selenium/node-firefox-debug:2.52.0
+    depends_on:
+      - hub
+    ports:
+      - "5900:5900"
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+
+  node-chrome:
+    image: selenium/node-chrome-debug:2.52.0
+    depends_on:
+      - hub
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444

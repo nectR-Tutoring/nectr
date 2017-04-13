@@ -18,29 +18,6 @@ def step_impl(context, name):
     assert_that(User.objects.all(), )
 
 
-@given("Enoc is not yet registered")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@given("Brandon is not yet registered")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@given("Juan is not yet registered")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
 
 @given("Charlie is on the homepage")
 def step_impl(context):

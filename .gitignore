@@ -78,4 +78,8 @@ staticfiles/
 .idea/workspace.xml
 
 #Vagrant files
-.vagrant/
+.vagrant
+
+
+# Jenkins folder
+.jenkins

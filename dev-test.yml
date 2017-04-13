@@ -31,7 +31,7 @@ services:
     links:
       - postgres
 
-      - mailhog
+#      - mailhog
 
 #  pycharm:
 #    build:
@@ -46,10 +46,10 @@ services:
 #    links:
 #      - postgres
 
-  mailhog:
-    image: mailhog/mailhog
-    ports:
-      - "8025:8025"
+#  mailhog:
+#    image: mailhog/mailhog
+#    ports:
+#      - "8025:8025"
 
   bdd:
     build:

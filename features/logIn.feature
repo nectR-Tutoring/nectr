@@ -3,13 +3,9 @@ Feature: Login
   I want to sign into my account
   So I can find a tutor
 
-Background:
-  Given Mike is not registered to nectr
-  Given Charlie is registered to nectr
-  Given Enoc is registered to nectr
-
 
 Scenario: Mike clicks login before creating account
+  Given Mike is not registered to nectr
   Given mike is on nectr site
   When mike clicks on login button
   And is redirected to login page
@@ -17,6 +13,7 @@ Scenario: Mike clicks login before creating account
   Then mike is redirected to signup form
 
 Scenario: Charlie enters correct credentials
+  Given Charlie is registered to nectr
   Given charlie is on nectr site
   When charlie clicks on login button
   And is redirected to login page
@@ -25,6 +22,7 @@ Scenario: Charlie enters correct credentials
   Then charlie is redirected to dashboard
 
 Scenario: Enoc enters incorrect credentials
+  Given Enoc is registered to nectr
   Given enoc is on nectr site
   When enoc clicks on login button
   And is redirected to login page

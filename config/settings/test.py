@@ -6,6 +6,7 @@ Test settings
 '''
 
 from .base import *  # noqa
+from django.conf.global_settings import ALLOWED_HOSTS
 
 
 # DEBUG
@@ -60,3 +61,7 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [
         'django.template.loaders.app_directories.Loader',
     ], ],
 ]
+
+# Allow Local Hosts - ALL.
+# SECURITY FLAW / HOLE
+ALLOWED_HOSTS += ['*', ]
