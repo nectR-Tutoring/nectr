@@ -27,8 +27,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    url = "http://" + context.host + ":" + context.port
-    context.response = requests.get(url)
+    context.response = requests.get(context.server_url)
 
 
 @then("I should get a 200 response")
@@ -36,5 +35,4 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    r = context.response
-    assert_that(r.status_code, is_(200))
+    assert_that(context.response.status_code, is_(200))
