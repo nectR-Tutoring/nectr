@@ -32,12 +32,10 @@ def before_all(context):
     context.test_runner.setup_test_environment()
     context.old_db_config = context.test_runner.setup_databases()
 
-    context.server_url = "http://localhost:8000/"
+    context.server_url = "http://localhost:8000"
     context.driver = webdriver.Remote(
         command_executor='http://hub:4444/wd/hub',
-        desired_capabilities={
-            "browserName": "firefox",
-            "javascriptEnabled": True, })
+        desired_capabilities={"browserName": "firefox", })
     context.driver.implicitly_wait(5)
 
     # ### Take a TestRunner hostage.

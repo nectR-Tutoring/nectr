@@ -25,6 +25,8 @@ services:
       USE_DOCKER: "yes"
     volumes:
       - .:/app
+    expose:
+      - 8000
     ports:
       - "8000:8000"
     links:
@@ -69,7 +71,7 @@ services:
     depends_on:
       - hub
     ports:
-      - 5900:5900
+      - "5900:5900"
     environment:
       HUB_PORT_4444_TCP_ADDR: hub
       HUB_PORT_4444_TCP_PORT: 4444
