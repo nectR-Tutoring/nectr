@@ -11,7 +11,7 @@ def step_impl(context, name):
     :type name: str
     :type context: behave.runner.Context
     """
-    VisitorFactory(name=name)
+    VisitorFactory(first_name=name)
 
 
 @given("{name} is registered to nectr")
@@ -23,30 +23,25 @@ def step_impl(context, name):
     pass
 
 
-@given("Enoc is registered to nectr")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
 @given("{name} is on nectr site")
 def step_impl(context, name):
     """
     :param name: str ID of User using Name
     :type context: behave.runner.Context
     """
-    pass
+    br = context.driver
+    br.get(context.server_url)
 
 
-@when("mike clicks on login button")
-def step_impl(context):
+@when("{name} clicks on login button")
+def step_impl(context, name):
     """
+    :type name: str
     :type context: behave.runner.Context
     """
     # Mike will click on the button with id matching login
-
+    br = context.browser
+    br.find_element_by_name("Login_Button").click()
 
 
 @step("is redirected to login page")
@@ -73,14 +68,6 @@ def step_impl(context):
     pass
 
 
-@when("charlie clicks on login button")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
 @step("charlie enters correct username and password")
 def step_impl(context):
     """
@@ -98,22 +85,6 @@ def step_impl(context):
 
 
 @then("charlie is redirected to dashboard")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@given("enoc is on nectr site")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@when("enoc clicks on login button")
 def step_impl(context):
     """
     :type context: behave.runner.Context

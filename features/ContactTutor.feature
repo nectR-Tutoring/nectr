@@ -4,8 +4,8 @@ Feature: Contact tutor
   So I can set up a meeting
 
 Background:
-  Given mike is signed into nectr
-  Given brandon is not signed into nectr
+  Given Mike is signed into nectr
+  Given Brandon is not signed into nectr
 
 Scenario: Mike wants to contact tutor
   Given mike is on tutors profile
