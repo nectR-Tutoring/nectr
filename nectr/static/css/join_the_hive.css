@@ -1,3 +1,4 @@
+
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
@@ -10,7 +11,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: rgba(255, 231, 97, 0.63);
+    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -26,10 +27,7 @@ button {
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.signupbtn {
-    float: left;
-    width: 50%;
-}
+.cancelbtn,.signupbtn {float:left;width:50%}
 
 /* Add padding to container elements */
 .container {
@@ -59,6 +57,11 @@ button {
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
+.black-text {
+  color: black;
+}
+
+
 /* The Close Button (x) */
 .close {
     position: absolute;
@@ -85,6 +88,6 @@ button {
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
     .cancelbtn, .signupbtn {
-        width: 100%;
+       width: 100%;
     }
 }
