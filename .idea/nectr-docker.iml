@@ -7,12 +7,13 @@
         <option name="settingsModule" value="config/settings/local.py" />
         <option name="manageScript" value="manage.py" />
         <option name="environment" value="&lt;map&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;PYTHONUNBUFFERED&lt;/string&gt;&#10;    &lt;string&gt;1&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;&lt;/map&gt;" />
+        <option name="commandsToSkip" value="" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Remote Python 3.5.3 Docker Compose (pycharm at [/home/bfox/PycharmProjects/nectr/docker-compose.yml])" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Remote Python 3.5.3 Docker Compose (pycharm at /Users/BrandonFox/PycharmProjects/nectr)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
