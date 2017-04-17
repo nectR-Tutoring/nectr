@@ -51,14 +51,6 @@ def step_impl(context):
     pass
 
 
-@then('he is redirected to the "not a farmingdale student" page')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
 @given("Mike is on the homepage")
 def step_impl(context):
     """
