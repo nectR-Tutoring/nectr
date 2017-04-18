@@ -75,7 +75,7 @@ staticfiles/
 /.travis.yml.example
 /.virtualenv/
 /env.example
-.idea
+.idea/
 
 #Vagrant files
 .vagrant
