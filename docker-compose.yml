@@ -38,6 +38,7 @@ services:
       context: .
       dockerfile: ./compose/django/Dockerfile-dev
     depends_on:
+      - django
       - postgres
     environment:
       POSTGRES_USER: "nectr"
@@ -47,6 +48,7 @@ services:
     links:
       - postgres
       - mailhog
+    restart: always
 
   mailhog:
     image: mailhog/mailhog
@@ -54,14 +56,14 @@ services:
       - "8025:8025"
 
   hub:
-    image: selenium/hub:2.53.1
+    image: selenium/hub
     expose:
       - 4444
     ports:
       - 4444:4444
 
   node-firefox:
-    image: selenium/node-firefox-debug:2.53.1
+    image: selenium/node-firefox-debug
     depends_on:
       - hub
     ports:
@@ -71,7 +73,7 @@ services:
       HUB_PORT_4444_TCP_PORT: 4444
 
   node-chrome:
-    image: selenium/node-chrome-debug:2.53.1
+    image: selenium/node-chrome-debug
     depends_on:
       - hub
     ports:
@@ -79,3 +81,12 @@ services:
     environment:
       HUB_PORT_4444_TCP_ADDR: hub
       HUB_PORT_4444_TCP_PORT: 4444
+
+
+  jenkins:
+    image: jenkins
+    restart: always
+    ports:
+      - "8889:8080"
+    volumes:
+      - .jenkins:/var/jenkins_home

@@ -16,3 +16,13 @@ Feature: Test Functionality of Nectr
     Given I am on '/' with 'Home'
     When I request each 'href'
     Then I should get a good response
+
+  Scenario: Get and Test '200' response on all 'hrefs' for Given Page
+    Given I am on '/about' with 'about'
+    When I request each 'href'
+    Then I should get a good response
+
+  Scenario: Get and Test '200' response on all 'hrefs' for Given Page
+    Given I am on '/users' with 'Sign'
+    When I request each 'href'
+    Then I should get a good response

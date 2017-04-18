@@ -36,6 +36,8 @@ services:
 
   hub:
     image: selenium/hub:2.53.1
+    environment:
+      throwOnCapabilityNotPresent: false
     expose:
       - 4444
     ports:
