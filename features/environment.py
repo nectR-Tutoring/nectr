@@ -125,4 +125,3 @@ def after_step(context, step):
 
 def after_all(context):
     context.test_runner.teardown_databases(context.old_db_config)
-    context.test_runner.teardown_test_environment()
