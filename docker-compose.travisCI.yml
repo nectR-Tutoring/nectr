@@ -20,6 +20,7 @@ services:
     command: /start-dev.sh
     depends_on:
       - postgres
+      - hub
     environment:
       POSTGRES_USER: "nectr"
       USE_DOCKER: "yes"
@@ -31,6 +32,7 @@ services:
       - "8000:8000"
     links:
       - postgres
+      - hub
 
   hub:
     image: selenium/hub:2.53.1
