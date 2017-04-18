@@ -74,6 +74,8 @@ services:
     image: selenium/node-chrome-debug:2.52.0
     depends_on:
       - hub
+    ports:
+      - "5901:5900"
     environment:
       HUB_PORT_4444_TCP_ADDR: hub
       HUB_PORT_4444_TCP_PORT: 4444
