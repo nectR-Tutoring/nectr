@@ -33,11 +33,11 @@ services:
       - postgres
 
   hub:
-  image: selenium/hub:2.52.0
-  expose:
-    - 4444
-  ports:
-    - 4444:4444
+    image: selenium/hub:2.52.0
+    expose:
+      - 4444
+    ports:
+      - 4444:4444
 
   node-firefox:
     image: selenium/node-firefox-debug:2.52.0
