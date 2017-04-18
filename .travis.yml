@@ -11,5 +11,5 @@ before_install:
  - sudo mv docker-compose /usr/local/bin
 
 script:
-  - docker-compose -f docker-compose-travisCI.yml build
-  - docker-compose -f docker-compose-travisCI.yml run --service-ports django python manage.py test
+  - docker-compose -f docker-compose.travisCI.yml build
+  - docker-compose -f docker-compose.travisCI.yml run --service-ports django python manage.py test
