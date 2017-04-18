@@ -86,7 +86,7 @@ def before_feature(context, feature):
         context.driver = webdriver.Remote(
             command_executor='http://hub:4444/wd/hub',
             desired_capabilities={"browserName": "firefox", })
-        context.driver.implicitly_wait(5)
+        context.driver.implicitly_wait(90)
 
 
 def before_scenario(context, scenario):
