@@ -50,12 +50,38 @@ services:
 #    image: mailhog/mailhog
 #    ports:
 #      - "8025:8025"
+#
+#  bdd:
+#    build:
+#      context: .
+#      dockerfile: ./compose/bdd/Dockerfile
+#    depends_on:
+#      - django
+##    volumes:
+##     - ./features:/testing/features
 
-  bdd:
-    build:
-      context: .
-      dockerfile: ./compose/bdd/Dockerfile
+
+ hub:
+    image: selenium/hub:2.52.0
+    expose:
+      - 4444
+    ports:
+      - 4444:4444
+
+  node-firefox:
+    image: selenium/node-firefox-debug:2.52.0
     depends_on:
-      - django
-#    volumes:
-#     - ./features:/testing/features
+      - hub
+    ports:
+      - "5900:5900"
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+
+  node-chrome:
+    image: selenium/node-chrome-debug:2.52.0
+    depends_on:
+      - hub
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
