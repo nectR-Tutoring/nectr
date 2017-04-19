@@ -36,3 +36,8 @@
 [hidden][style="display: block;"] {
   display: block !important;
 }
+
+.navbar-size {
+  margin-bottom: 40px;
+  margin-top: 40px
+}
