@@ -44,8 +44,8 @@
 								<li><a href="search_the_hive.html">Search the Hive</a></li>
 							</ul>
 							<ul class="actions vertical">
-								<li><a href="#" class="button special fit" name="nav_SignUp">Sign Up</a></li>
-								<li><a href="#" class="button fit" name="nav_Login">Log In</a></li>
+							<li><a id="sign-up-link" class="button special fit" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a></li>
+							<li><a href="#" class="button fit" name="nav_Login">Log In</a></li>
 							</ul>
 						</nav>
 
@@ -126,7 +126,7 @@
 
 								<article>
 									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
+											<img src="{% static "images/giphy.gif" %}" alt="" />
 									</span>
 									<header class="major noline">
 
