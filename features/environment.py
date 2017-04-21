@@ -7,6 +7,8 @@ from selenium import webdriver
 
 # Even though DJANGO_SETTINGS_MODULE is set, this may still be
 # necessary. Or it may be simple CYA insurance.
+from splinter import Browser
+
 os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.test"
 django.setup()
 
@@ -86,7 +88,8 @@ def before_feature(context, feature):
         context.driver = webdriver.Remote(
             command_executor='http://hub:4444/wd/hub',
             desired_capabilities={"browserName": "firefox", })
-        context.driver.implicitly_wait(90)
+    if "browser" in feature.tags:
+        context.browser = Browser()
 
 
 def before_scenario(context, scenario):
@@ -108,6 +111,9 @@ def after_feature(context, feature):
     if 'browser-grid' in feature.tags:
         context.driver.quit()
         context.driver = None
+    if 'browser' in feature.tags:
+        context.browser.quit()
+        context.browser = None
 
 
 def after_scenario(context, scenario):
