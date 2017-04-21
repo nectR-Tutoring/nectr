@@ -78,7 +78,7 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     search_button = context.driver.find_element_by_id('search_button')
-    search_button.click()
+    search_button.submit()
     context.driver.save_screenshot('ClickSearchTheHive.png')
 
 
