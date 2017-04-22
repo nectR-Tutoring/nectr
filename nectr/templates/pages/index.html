@@ -1,180 +1,181 @@
-{% load staticfiles i18n compress%}<!DOCTYPE HTML>
+{% load staticfiles i18n compress %}<!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>nectR - Home</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<head>
+    <title>nectR - Home</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-		<!--[if lte IE 8]><script src="{% static "js/ie/html5shiv.js" %}"></script><![endif]-->
-		<link rel="stylesheet" href="{% static "css/main.css" %}" />
-		<link rel="stylesheet" href="{% static "css/main2.css" %}" />
-		<link rel="stylesheet" href="{% static "css/homepage.css" %}" />
-		<link rel="stylesheet" href="{% static "css/main_index.css" %}" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="{% static "css/ie9.css" %}" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="{% static "css/ie8.css" %}" /><![endif]-->
-	</head>
-	<body>
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!--[if lte IE 8]><script src="{% static "js/ie/html5shiv.js" %}"></script><![endif]-->
+    <link rel="stylesheet" href="{% static "css/main.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/main2.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/homepage.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/main_index.css" %}"/>
+    <!--[if lte IE 9]><link rel="stylesheet" href="{% static "css/ie9.css" %}" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="{% static "css/ie8.css" %}" /><![endif]-->
+</head>
+<body>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<a href="{% url 'home' %}"  class="logo"><strong>nectR</strong> <span>by The Bee Team</span></a>
-						<nav>
-							<a href="#menu" name="menu">Menu</a>
-						</nav>
-					</header>
+<!-- Wrapper -->
+<div id="wrapper">
 
-
-
-					<!-- Menu -->
-						<nav id="menu">
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="how_it_works.html">How it works</a></li>
-								<li><a href="search_the_hive.html">Search the Hive</a></li>
-							</ul>
-							<ul class="actions vertical">
-							<li><a id="sign-up-link" class="button special fit" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a></li>
-							<li><a id="log-in-link" class="button fit" href="{% url 'account_login' %}">{% trans "Log In" %}</a></li>
-							</ul>
-						</nav>
+    <!-- Header -->
+    <header id="header" class="alt">
+        <a href="{% url 'home' %}" class="logo"><strong>nectR</strong> <span>by The Bee Team</span></a>
+        <nav>
+            <a href="#menu" name="menu">Menu</a>
+        </nav>
+    </header>
 
 
-				<!-- Banner -->
-					<section id="banner" class="major">
-
-						<div class="inner">
-
-
-
-								<div class="padding-6">
-
-										<img src="{% static "images/nectr-white.png" %}" alt="" width="1060" height="400"/>
-										<div class="padding-search">
-										<input id="searchbar" type="text" name="search" placeholder="Search for our courses.." >
-									</div>
-									</div>
-
-									<header class="major noline">
-
-							</header>
-							<div class="content">
-									<ul class="actions">
-											<li><a href="#one" class="button next scrolly"> Learn more </a></li>
-									</ul>
-							</div>
-						</div>
-					</section>
-
-				<!-- Main -->
-					<div id="main">
+    <!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="how_it_works.html">How it works</a></li>
+            <li><a href="search_the_hive.html">Search the Hive</a></li>
+        </ul>
+        <ul class="actions vertical">
+            <li><a id="sign-up-link" class="button special fit"
+                   href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a></li>
+            <li><a id="log-in-link" class="button fit" href="{% url 'account_login' %}">{% trans "Log In" %}</a></li>
+        </ul>
+    </nav>
 
 
-						<!-- <section id="searchbar_section">
-						<div>
-						<input id="searchbar" type="text" name="search" placeholder="Search for our courses..">
-						</div>
-						</section> -->
+    <!-- Banner -->
+    <section id="banner" class="major">
+
+        <div class="inner">
+
+{#            <header class="major noline">#}
+                <div>
+                    <form method="POST" action="{% url 'search_page' %}">
+                        <input id="searchbar" type="text" name="search_text" placeholder="Search for our courses..">
+                        <input type="submit" style="display: none" />
+                    {% csrf_token %}
+                    </form>
+                </div>
+
+{#                <header class="major noline">CONTENT </header>#}
+                <div class="content">
+                    <!-- <p>A platform for students and tutors to share knowledge<br />
+                      and further enhance their future towards success.</p> -->
+                    <ul class="actions">
+                        <li><a href="#one" class="button next scrolly"> Learn more </a></li>
+                    </ul>
+                </div>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main">
 
 
+        <nav class="navbar navbar-default" style="  margin-bottom: 3%; margin-top: 3%; ">
 
+            <div class="container-fluid" style="columns: 1; margin-left: 30%; padding-bottom: 2%; ">
 
-					<nav class="navbar navbar-default" style="  margin-bottom: 3%; margin-top: 3%; ">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" name="language_quick_search_button"> Language </a> <i class="fa fa-language"
+                                                                                          style="margin-left: 45%; color: black;"></i>
+                    </li>
+                    <li><a href="#" name="math_quick_search_button"> Math </a> <i class="fa fa-calculator"
+                                                                                  style="margin-left: 45%; color: black;"></i>
+                    </li>
+                    <li><a href="#"> English </a><i class="fa fa-book" style="margin-left: 45%; color: black;"></i></li>
+                    <li><a href="#"> Test Prep </a><i class="fa fa-pencil" style="margin-left: 45%; color: black;"></i>
+                    </li>
+                    <li><a href="#"> More </a> <i class="fa fa-bars" style="margin-left: 45%; color: black;"></i></li>
+                </ul>
 
-					  <div class="container-fluid" style="columns: 1; margin-left: 30%; padding-bottom: 2%; ">
+            </div>
+        </nav>
 
-					    <ul class="nav navbar-nav" >
-					      <li><a href="#"> Language </a>  <i class="fa fa-language" style="margin-left: 45%; color: black;"></i> </li>
-					       <li><a href="#"> Math </a> <i class="fa fa-calculator" style="margin-left: 45%; color: black;"></i> </li>
-					       <li><a href="#"> English </a><i class="fa fa-book" style="margin-left: 45%; color: black;"></i> </li>
-					       <li><a href="#"> Test Prep </a><i class="fa fa-pencil" style="margin-left: 45%; color: black;"></i> </li>
-					       <li><a href="#"> More </a> <i class="fa fa-bars" style="margin-left: 45%; color: black;"></i> </li>
-					    </ul>
-
-					  </div>
-					</nav>
-
-						<!-- One -->
-							<section id="one" class="tiles">
-								<article>
+        <!-- One -->
+        <section id="one" class="tiles">
+            <article>
 									<span class="image">
-										<img src="{% static "images/joinhive.gif" %}" alt="" />
+										<img src="{% static "images/joinhive.gif" %}" alt=""/>
 									</span>
-									<header class="major noline">
+                <header class="major noline">
 
-										<h3><a href="join_the_hive" class="link">Join the Hive</a></h3>
-									</header>
-								</article>
+                    <h3><a href="{%  url 'join' %}" class="link">Join the Hive</a></h3>
+                </header>
+            </article>
 
-								<article>
+            <article>
 									<span class="image">
-										<img src="{% static "images/honeydrip.gif" %}" alt="" />
+										<img src="{% static "images/honeydrip.gif" %}" alt=""/>
 									</span>
-									<header class="major noline">
-										<h3><a href="search_the_hive" class="link">Search the Hive</a></h3>
-									</header>
-								</article>
+                <header class="major noline">
+                    <h3><a href="{% url 'search' %}" class="link">Search the Hive</a></h3>
+                </header>
+            </article>
 
 
-								<article>
+            <article>
 									<span class="image">
-											<img src="{% static "images/giphy.gif" %}" alt="" />
+											<img src="{% static "images/giphy.gif" %}" alt=""/>
 									</span>
-									<header class="major noline">
+                <header class="major noline">
 
-										<h3><a href="how_it_works.html" class="link">How it Works</a></h3>
+                    <h3><a href="how_it_works.html" class="link">How it Works</a></h3>
 
 
-									</header>
-								</article>
+                </header>
+            </article>
 
-								<article>
+            <article>
 									<span class="image">
-										<img src="{% static "images/aboutgif.gif" %}" alt="" />
+										<img src="{% static "images/aboutgif.gif" %}" alt=""/>
 									</span>
-									<header class="major noline">
+                <header class="major noline">
 
-										<h3><a href="about.html" class="link">About</a></h3>
-
-
-									</header>
-								</article>
-
-							</section>
+                    <h3><a href="about.html" class="link">About</a></h3>
 
 
+                </header>
+            </article>
 
-<br></br>
-
-
-							<!-- two -->
-										<section id="two">
-
-												<div class="row 100% padding-5">
-													<article class="6u 12u$(medium)">
-														<div class="padding-5">
-														<header>
-															<h2>Join The Hive</h2>
-														</header>
-														<p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
-													</div>
-													</article>
+        </section>
 
 
-													<article class="6u$ 12u$(medium) important(medium)">
+        <br>
+
+
+        <!-- two -->
+        <section id="two">
+
+            <div class="row 100% padding-5">
+                <article class="6u 12u$(medium)">
+                    <div class="padding-5">
+                        <header>
+                            <h2>Join The Hive</h2>
+                        </header>
+                        <p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non
+                            nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed
+                            tempus adipiscing id accumsan.</p>
+                    </div>
+                </article>
+
+
+                <article class="6u$ 12u$(medium) important(medium)">
 														<span class="image fit">
-															<img src="{% static "images/bee-moving.gif" %}" alt="" />
+															<img src="{% static "images/bee-moving.gif" %}" alt=""/>
 														</span>
 														</article>
 												</div>
@@ -347,43 +348,46 @@
 										<h3>Address</h3>
 										<span>1234 Somewhere Road #5432<br />
 										Nashville, TN 00000<br />
+
 										United States of America</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
-				</div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </section>
+    </div>
 
-					<!-- Footer -->
-						<footer id="footer">
-							<div class="inner">
-								<ul class="icons">
-									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-								</ul>
-								<ul class="copyright">
-									<li>&copy; nectR </li><li>Design: The Bee Team</li>
-								</ul>
-							</div>
-						</footer>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; nectR</li>
+                <li>Design: The Bee Team</li>
+            </ul>
+        </div>
+    </footer>
 
 
+    <!-- Scripts -->
 
-		<!-- Scripts -->
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/jquery.scrolly.min.js" %}"></script>
+    <script src="{% static "js/jquery.scrollex.min.js" %}"></script>
+    <script src="{% static "js/skel.min.js" %}"></script>
+    <script src="{% static "js/util.js" %}"></script>
+    <!--[if lte IE 8]><script src="{% static "js/ie/respond.min.js" %}"></script><![endif]-->
+    <script src="{% static "js/main.js" %}"></script>
+{#    <script src="{% static "js/custom.js" %}"></script>#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
-			<script src="{% static "js/jquery.min.js" %}"></script>
-			<script src="{% static "js/jquery.scrolly.min.js" %}"></script>
-			<script src="{% static "js/jquery.scrollex.min.js" %}"></script>
-			<script src="{% static "js/skel.min.js" %}"></script>
-			<script src="{% static "js/util.js" %}"></script>
-			<!--[if lte IE 8]><script src="{% static "js/ie/respond.min.js" %}"></script><![endif]-->
-			<script src="{% static "js/main.js" %}"></script>
-			<script src="{% static "js/custom.js" %}"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-	</body>
+</body>
 </html>
