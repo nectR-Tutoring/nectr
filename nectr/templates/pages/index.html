@@ -59,15 +59,16 @@
 
         <div class="inner">
 
-            <header class="major noline">
+{#            <header class="major noline">#}
                 <div>
-                    <input id="searchbar" type="text" name="search" placeholder="Search for our courses..">
+                    <form method="POST" action="{% url 'search_page' %}">
+                        <input id="searchbar" type="text" name="search_text" placeholder="Search for our courses..">
+                        <input type="submit" style="display: none" />
+                    {% csrf_token %}
+                    </form>
                 </div>
 
-                <header class="major noline">
-
-
-                </header>
+{#                <header class="major noline">CONTENT </header>#}
                 <div class="content">
                     <!-- <p>A platform for students and tutors to share knowledge<br />
                       and further enhance their future towards success.</p> -->
@@ -87,7 +88,8 @@
             <div class="container-fluid" style="columns: 1; margin-left: 30%; padding-bottom: 2%; ">
 
                 <ul class="nav navbar-nav">
-                    <li><a href="#" name="language_quick_search_button"> Language </a> <i class="fa fa-language"
+                    <li>
+                        <a href="#" name="language_quick_search_button"> Language </a> <i class="fa fa-language"
                                                                                           style="margin-left: 45%; color: black;"></i>
                     </li>
                     <li><a href="#" name="math_quick_search_button"> Math </a> <i class="fa fa-calculator"
@@ -110,7 +112,7 @@
 									</span>
                 <header class="major noline">
 
-                    <h3><a href="join_the_hive" class="link">Join the Hive</a></h3>
+                    <h3><a href="{%  url 'join' %}" class="link">Join the Hive</a></h3>
                 </header>
             </article>
 
@@ -119,7 +121,7 @@
 										<img src="{% static "images/honeydrip.gif" %}" alt=""/>
 									</span>
                 <header class="major noline">
-                    <h3><a href="search_the_hive" class="link">Search the Hive</a></h3>
+                    <h3><a href="{% url 'search' %}" class="link">Search the Hive</a></h3>
                 </header>
             </article>
 
@@ -179,51 +181,6 @@
 
         </section>
 
-
-        <!-- <article>
-            <span class="image">
-                <img src="images/pic05.jpg" alt="" />
-            </span>
-            <header class="major">
-                <h3><a href="landing.html" class="link">Consequat</a></h3>
-                <p>Ipsum dolor sit amet</p>
-            </header>
-        </article>
-        <article>
-            <span class="image">
-                <img src="images/pic06.jpg" alt="" />
-            </span>
-            <header class="major">
-                <h3><a href="landing.html" class="link">Etiam</a></h3>
-                <p>Feugiat amet tempus</p>
-            </header>
-        </article>
-    </section> >
-< Two -->
-        <!-- <section id="two">
-            <div class="inner">
-                <header class="major">
-                    <h2>How it Works</h2>
-                </header>
-                <p>The way the payments per sessions are going to be made is by
-                    having credit, which are honey-combs. After a certain amount of
-                    honey-combs the credit will them become Jars of honey. The
-                    tutors have the option to charge how ever many jars of honey
-                    or honey-combs per session.  The students account will option
-                    to search for tutors, a list of suggestions, have a bank of
-                    credits(Honey-combs) and a refer another students. Every student
-                    that they suggest and sign up, the user will receive a free
-                    honey-combs. Also after the first session the student will
-                    receive a reward of honey-combs. The students can also gain
-                    more honey-combs by purchasing a package or by sessions and
-                    completing test/quizzes/assignments given by the tutor.</p>
-                <ul class="actions">
-                    <li><a href="landing.html" class="button next">Get Started</a></li>
-                </ul>
-            </div>
-        </section>
-
-</div>-->
 
         <!-- Contact -->
         <section id="contact">
@@ -304,7 +261,7 @@
     <script src="{% static "js/util.js" %}"></script>
     <!--[if lte IE 8]><script src="{% static "js/ie/respond.min.js" %}"></script><![endif]-->
     <script src="{% static "js/main.js" %}"></script>
-    <script src="{% static "js/custom.js" %}"></script>
+{#    <script src="{% static "js/custom.js" %}"></script>#}
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>

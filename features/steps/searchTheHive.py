@@ -4,6 +4,10 @@ from django.urls import reverse
 from hamcrest import is_, contains_string, starts_with, not_none, contains_inanyorder
 from hamcrest.core import assert_that
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+
 
 from features.factories import VisitorFactory
 from nectr.users.tests.factories import UserFactory
@@ -69,6 +73,7 @@ def step_impl(context, name, search_text):
     :type name: str
     :type context: behave.runner.Context
     """
+    context.search_text = search_text
     search_field = context.driver.find_element_by_id('searchbar')
     search_field.send_keys(search_text)
 
@@ -100,11 +105,13 @@ def step_impl(context, name):
     :type name: str
     :type context: behave.runner.Context
     """
-    context.driver.implicitly_wait(3)
-    assert_that(context.driver.title, contains_string("Search"),
-                "The current url is {0}.".format(
-                    context.driver.current_url))
-    assert_that(context.driver.title, contains_string("Tutors"))
+    WebDriverWait(context.driver, 10).until(
+        EC.title_contains("Search"))
+    # assert_that(context.driver.title, contains_string("Search"),
+    #             "The current url is {0}.".format(
+    #                 context.driver.current_url))
+    WebDriverWait(context.driver, 10).until(
+        EC.title_contains("Tutor"))
 
 
 @step("he can view preview of tutor profile")
@@ -116,8 +123,8 @@ def step_impl(context):
     table = context.driver.find_element_by_id('list_of_tutors')
     rows = table.find_elements_by_tag_name('tr')
     assert_that(
-        any(row.text == 'View Profile' for row in rows),
-        "New to-do item did not appear in table. "
+        any(row.text == context.search_text for row in rows),
+        "Search Text did not Appear in Row. "
         "Contents were:\n{0}".format(table.text)
     )
 
@@ -127,7 +134,13 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    table = context.driver.find_element_by_id('list_of_tutors')
+    buttons = table.find_elements_by_tag_name('button')
+    assert_that(
+        any(button.text == 'View Profile' for button in buttons),
+        "View Profile button did not appear in row "
+        "Contents were:\n{0}".format(table.text)
+    )
 
 
 @step('the search text "{search_text}" is in title')
