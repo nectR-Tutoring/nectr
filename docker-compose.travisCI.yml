@@ -34,6 +34,23 @@ services:
       - postgres
       - hub
 
+  bdd:
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile-dev
+    depends_on:
+      - django
+      - postgres
+    environment:
+      POSTGRES_USER: "nectr"
+      USE_DOCKER: "yes"
+    volumes:
+      - .:/app
+    links:
+      - postgres
+      - mailhog
+
+
   hub:
     image: selenium/hub
     expose:
