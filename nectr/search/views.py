@@ -3,8 +3,8 @@ from django.shortcuts import render
 
 
 # Create your views here.
-def search_page():
-    pass
+def search_page(request):
+    return HttpResponse('<html><title>Search Tutors</title></html>')
 
 
 def search(request):
