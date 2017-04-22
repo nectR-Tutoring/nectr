@@ -1,9 +1,9 @@
 import factory
 
+from nectr.users.tests.factories import UserFactory
 
-class TutorFactory(factory.django.DjangoModelFactory):
-    username = factory.Sequence(lambda n: 'user-{0}'.format(n))
 
+class TutorFactory(factory.Factory):
+    user = factory.SubFactory(UserFactory)
     class Meta:
-        model = 'users.User'
-        django_get_or_create = ('username',)
+        model = 'tutor.Tutor'

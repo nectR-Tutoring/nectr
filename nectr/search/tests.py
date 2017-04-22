@@ -30,3 +30,8 @@ class SearchTests(TestCase):
                                     data={'search_text': 'Computer Science'})
         self.assertIn('Computer Science', response.content.decode())
         self.assertTemplateUsed(response, 'search.html')
+
+    def test_can_save_a_POST(self):
+        response = self.client.post('/search/',
+                                    data={'search_text': 'Computer Science'})
+        self.assertEqual(Search.objects.count(), 1)
