@@ -8,7 +8,7 @@ from nectr.search.views import search_page
 
 class SearchTests(TestCase):
     def test_root_url_resolves_to_search_page_view(self):
-        found = resolve('search/')
+        found = resolve('/search/')
         self.assertEqual(found.func, search_page)
 
     # def test_uses_search_template(self):
