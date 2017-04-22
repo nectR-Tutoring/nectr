@@ -1,14 +1,14 @@
 import os
+
 import django
-from django.core import management
 from django.test import LiveServerTestCase
 from django.test.runner import DiscoverRunner
 from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from splinter import Browser
 
 # Even though DJANGO_SETTINGS_MODULE is set, this may still be
 # necessary. Or it may be simple CYA insurance.
-from splinter import Browser
-
 os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.test"
 django.setup()
 
@@ -41,6 +41,7 @@ def before_feature(context, feature):
         context.driver = webdriver.Remote(
             command_executor='http://hub:4444/wd/hub',
             desired_capabilities={"browserName": "firefox", })
+        context.wait = WebDriverWait(context.driver, 10)
     if "browser" in feature.tags:
         context.browser = Browser()
 

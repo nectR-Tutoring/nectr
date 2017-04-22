@@ -1,3 +1,4 @@
+@browser-grid
 Feature: Login
   As a student
   I want to sign into my account
@@ -17,7 +18,7 @@ Scenario: Charlie enters correct credentials
   Given charlie is on nectr site
   When charlie clicks on login button
   And is redirected to login page
-  And charlie enters correct username and password
+  And Charlie enters correct username and password
   And clicks on the sign in button
   Then charlie is redirected to dashboard
 

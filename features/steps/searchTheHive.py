@@ -8,7 +8,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-
 from features.factories import VisitorFactory
 from nectr.users.tests.factories import UserFactory
 
@@ -42,7 +41,8 @@ def step_impl(context, name):
     :type name: str
     :type context: behave.runner.Context
     """
-    assert False
+    user = UserFactory(first_name=name, username=name + "_username", password="password")
+    assert_that(user.first_name, contains_string(name), "User should match step name")
 
 
 @given("{name} is signed into nectr")
@@ -53,6 +53,7 @@ def step_impl(context, name):
     """
 
     c = Client()
+    context.current_user = UserFactory(first_name=name, username=name + "_username", password="password")
     assert_that(context.current_user.first_name, contains_string(name), "User should match step name")
     assert c.login(username=context.current_user.username, password="password")
 
@@ -119,13 +120,13 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    print("The driver is currently on {0}".format(context.driver.current_url))
     table = context.driver.find_element_by_id('list_of_tutors')
     rows = table.find_elements_by_tag_name('tr')
     assert_that(
         any(row.text == context.search_text for row in rows),
         "Search Text did not Appear in Row. "
-        "Contents were:\n{0}".format(table.text)
+        "The driver is currently on {0}"
+        "Contents were:\n{1}".format(context.driver.current_url, table.text)
     )
 
 

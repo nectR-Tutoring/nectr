@@ -5,6 +5,7 @@ from django.test import TestCase
 from django.urls import resolve
 from hamcrest import assert_that, contains_string
 
+from nectr.search.models import Search
 from nectr.search.views import search_page
 
 
@@ -30,3 +31,29 @@ class SearchTests(TestCase):
                                     data={'search_text': 'Computer Science'})
         self.assertIn('Computer Science', response.content.decode())
         self.assertTemplateUsed(response, 'search.html')
+
+    def test_saving_and_retrieving_items(self):
+        first_item = Search()
+        first_item.search_text = 'The first (ever) search'
+        first_item.save()
+
+        second_item = Search()
+        second_item.search_text = 'search the second'
+        second_item.save()
+
+        saved_items = Search.objects.all()
+        self.assertEqual(saved_items.count(), 2)
+
+        first_saved_item = saved_items[0]
+        second_saved_item = saved_items[1]
+        self.assertEqual(first_saved_item.search_text, 'The first (ever) search')
+        self.assertEqual(second_saved_item.search_text, 'search the second')
+
+    def test_can_save_a_POST(self):
+        response = self.client.post('/search/',
+                                    data={'search_text': 'Computer Science'})
+        self.assertEqual(Search.objects.count(), 1)
+
+    def test_only_saves_items_when_necessary(self):
+        self.client.get('/search/')
+        self.assertEqual(Search.objects.count(), 0)
