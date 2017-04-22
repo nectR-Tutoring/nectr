@@ -52,7 +52,11 @@
             </ul>
 
             <ul class="nav navbar-nav pull-xs-right">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "Search" %}</a>
+              </li>
               {% if request.user.is_authenticated %}
+
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
                 </li>
