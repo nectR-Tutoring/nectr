@@ -6,12 +6,13 @@
 -->
 <html>
 	<head>
-		<title>find a tutor - nectR by bee team</title>
+		<title>How it works - nectR by bee team</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="{%static "/css/main.css" %}" />
 		<link rel="stylesheet" href="{% static "css/homepage.css" %}" />
+		<link rel="stylesheet" href="{% static "css/how_it_works.css" %}" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -74,7 +75,7 @@
 									<header class="major">
 										<h2>List</h2>
 									</header>
-								
+
 									<p> &#8226 The way the payments per sessions are going
                           to be made is by having credit, which are honey-combs. After
                           a certain amount of honey-combs the credit will them become
@@ -106,6 +107,66 @@
                           the tutor...
                         </p>
 								</div>
+							</section>
+
+							<section>
+								<div class="container">
+												  <div class="row">
+												    <div class="col-sm-6" style="float: left; margin-left: 60px;">
+												    <h1>Answer A Few Questions</h1>
+												    <p >To get going, we need to know a few things about you: what you want to learn, when you’re available, and where you want to meet.</p>
+
+												    </div>
+												    <div class="col-sm-3" style="float: right; margin-right: 60px;"  >
+												    <img src="{% static "images/match-flow.png" %}"  style="width: 280px; border: 10px solid #2C3E50;" />
+												    </div>
+												  </div>
+												</div>
+
+												<div class="container" >
+																  <div class="row">
+																    <div class="col-sm-6" style="float: right; margin-left: 60px;">
+																       <h1>Chat With Your Student</h1>
+																    <p>We can provide you with the necessary information for student and tutor to contact each other. </p>
+
+
+																    </div>
+																    <div class="col-sm-3" style="float: left; margin-left: 60px;" >
+
+																    <img src="{% static "images/messaging.jpg" %}"  style="width: 310px; border: 10px solid #2C3E50;" />
+																    </div>
+
+																  </div>
+																</div>
+
+
+																<div class="container" >
+																  <div class="row">
+																    <div class="col-sm-7" style="float: left; margin-left: 60px;">
+																       <h1>Learn from qualified tutors</h1>
+																    <p>We have multiple tutors available that can help your growth. </p>
+
+
+																    </div>
+																    <div class="col-sm-3-study" style="float: right; margin-right: 80px;" >
+
+																    <img src="{% static "images/study_bee.jpg" %}"  style="width: 310px; border: 10px solid #2C3E50;" />
+																    </div>
+
+																  </div>
+																</div>
+
+
+																<center>
+																<div class="img-wrapper">
+																    <img class="img-responsive" src="{% static "images/bee_team.png" %}" style="border: 10px solid #2C3E50;">
+																    <div class="img-overlay">
+																     <p><a class="btn btn-warning btn-lg" href="{% url 'account_signup' %}" role="button">Join the team</a></p>
+																    </div>
+																</div>
+																</center>
+
+
 							</section>
 
 					</div>
