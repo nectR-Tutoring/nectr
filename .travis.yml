@@ -13,3 +13,5 @@ before_install:
 script:
   - docker-compose -f docker-compose.travisCI.yml build
   - docker-compose -f docker-compose.travisCI.yml run --service-ports bdd python manage.py test
+  - docker-compose -f docker-compose.travisCI.yml run --service-ports bdd behave --tags ~@wip --tags ~@future
+
