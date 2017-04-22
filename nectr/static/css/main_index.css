@@ -2,6 +2,10 @@
 .padding-5 {
   padding: 2% 2% 2% 2%;
 }
+/* padding */
+.padding-6 {
+  padding: 0% 0% 0% 0%;
+}
 /* two- ID */
 #two {
   background-color: #fff;
@@ -10,6 +14,8 @@
 #two h2 {
     color: #000;
 }
+
+
 /* Containers */
 
 
