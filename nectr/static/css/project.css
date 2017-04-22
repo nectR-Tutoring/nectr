@@ -41,3 +41,49 @@
   margin-bottom: 40px;
   margin-top: 40px
 }
+
+
+/*
+  Button Templates - http://jqueryrain.com/tutorial/button/demo53/
+ */
+
+.btn{
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    transition: all .3s cubic-bezier(1, 0.15, 0.34, 1.03);
+}
+.btn:before{
+    content: "";
+    background: #fff;
+    border-radius: 50%;
+    padding: 18%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(0);
+    transition: transform .3s cubic-bezier(1, 0.15, 0.34, 1.03);
+}
+.btn:hover:before{
+    transform: translate3d(-50%, -50%, 0) scale(2.5);
+}
+.btn span{
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+.btn.red{ background: #fe6d6d; }
+.btn.red:hover{ color: #fe6d6d; }
+.btn.blue{ background: #3bb4e5; }
+.btn.blue:hover{ color: #3bb4e5; }
+.btn.orange{ background: #ee955b; }
+.btn.orange:hover{ color: #ee955b; }
+.btn.green{ background: #79d799; }
+.btn.green:hover{ color: #79d799; }
+@media only screen and (max-width: 767px){
+    .btn{ margin-bottom: 20px; }
+}

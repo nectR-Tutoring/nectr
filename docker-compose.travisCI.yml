@@ -17,45 +17,70 @@ services:
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile-dev
-    image: nectr:test
-#    command: /start-dev.sh
+    command: /start-dev.sh
     depends_on:
       - postgres
+      - hub
     environment:
-      - POSTGRES_USER=nectr
-      - USE_DOCKER=yes
+      POSTGRES_USER: "nectr"
+      USE_DOCKER: "yes"
     volumes:
       - .:/app
-#    ports:
-#      - "8000:8000"
+    expose:
+      - 8000
+    ports:
+      - "8000:8000"
     links:
       - postgres
-
-#      - mailhog
-
-#  pycharm:
-#    build:
-#      context: .
-#      dockerfile: ./compose/django/Dockerfile-dev
-#    depends_on:
-#      - postgres
-#    environment:
-#      - POSTGRES_USER=nectr
-#    volumes:
-#      - .:/app
-#    links:
-#      - postgres
-
-#  mailhog:
-#    image: mailhog/mailhog
-#    ports:
-#      - "8025:8025"
+      - hub
 
   bdd:
     build:
       context: .
-      dockerfile: ./compose/bdd/Dockerfile
+      dockerfile: ./compose/django/Dockerfile-dev
     depends_on:
       - django
-#    volumes:
-#     - ./features:/testing/features
+      - postgres
+    environment:
+      POSTGRES_USER: "nectr"
+      USE_DOCKER: "yes"
+    volumes:
+      - .:/app
+    links:
+      - postgres
+      - mailhog
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+
+
+  hub:
+    image: selenium/hub
+    expose:
+      - 4444
+    ports:
+      - 4444:4444
+
+  node-firefox:
+    image: selenium/node-firefox-debug
+    depends_on:
+      - hub
+    ports:
+      - "5900:5900"
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+
+  node-chrome:
+    image: selenium/node-chrome-debug
+    depends_on:
+      - hub
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+
+
+
+
