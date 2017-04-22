@@ -1,8 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from nectr.search.models import Search
 
-# Create your views here.
+
 def search_page(request):
-    return render(request, 'search.html',
-                  {'search_text': request.POST.get('search_text', '')})
+    if request.method == 'POST':
+        new_search_text = request.POST['search_text']
+        Search.objects.create(search_text=new_search_text)
+    else:
+        new_search_text = ''
+
+    return render(request, 'search.html', {
+        'search_text': new_search_text,
+    })

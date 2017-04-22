@@ -53,3 +53,7 @@ class SearchTests(TestCase):
         response = self.client.post('/search/',
                                     data={'search_text': 'Computer Science'})
         self.assertEqual(Search.objects.count(), 1)
+
+    def test_only_saves_items_when_necessary(self):
+        self.client.get('/search/')
+        self.assertEqual(Search.objects.count(), 0)
