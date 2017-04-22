@@ -47,6 +47,8 @@ services:
     volumes:
       - .:/app
     links:
+      - django
+      - hub
       - postgres
       - mailhog
 
