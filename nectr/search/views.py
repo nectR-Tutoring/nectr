@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def search_page(request):
-    return HttpResponse('<html><title>Search Tutors</title></html>')
+    return render(request, 'search.html')
 
 
 def search(request):

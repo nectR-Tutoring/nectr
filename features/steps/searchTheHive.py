@@ -72,9 +72,10 @@ def step_impl(context, name, search_text):
     search_field.send_keys(search_text)
 
 
-@step("clicks search the hive button")
-def step_impl(context):
+@step("{name} clicks search the hive button")
+def step_impl(context, name):
     """
+    :type name: str
     :type context: behave.runner.Context
     """
     search_button = context.driver.find_element_by_id('search_button')

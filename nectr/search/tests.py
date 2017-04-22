@@ -16,9 +16,15 @@ class SearchTests(TestCase):
         request = HttpRequest()
         response = search_page(request)
         html = response.content.decode('utf8')
-        self.assertTrue(html.startswith('<html>'))
+        self.assertTrue(html.startswith('<!DOCTYPE html>'))
         self.assertIn('<title>Search Tutors</title>', html)
-        self.assertTrue(html.endswith('</html>'))
+        self.assertTrue(html.strip().endswith('</html>'))
+
+    def test_search_page_returns_correct_template(self):
+        response = self.client.get('/search/')
+        self.assertTemplateUsed(response, 'search.html')
+
+
     # def test_uses_search_template(self):
     #     response = self.client.get('/search/')
     #     self.assertTemplateUsed(response, 'search.html')

@@ -23,7 +23,7 @@ Feature: Search the hive
 Scenario: Brandon searches nectr
   Given Brandon is on search the hive page
   When Brandon types "Computer Science" in search box
-  And clicks search the hive button
+  And Brandon clicks search the hive button
   Then he is directed to list of tutors page
   And he can view preview of tutor profile
   And he will see a view profile button
@@ -31,7 +31,7 @@ Scenario: Brandon searches nectr
 Scenario: Mike searches nectr
   Given mike is on search the hive page
   When mike types in what he is looking for in search box
-  And clicks search the hive button
+  And Mike clicks search the hive button
   Then he is directed to list of tutors page
   And he can view preview of tutor profile
   And he will see a view profile button
