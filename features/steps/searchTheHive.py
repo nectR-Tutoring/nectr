@@ -1,9 +1,11 @@
+import time
 from IPython.core import page
 from behave import *
 from django.test import Client
 from django.urls import reverse
 from hamcrest import is_, contains_string, starts_with, not_none
 from hamcrest.core import assert_that
+from wheel.signatures import assertTrue
 
 from nectr.users.tests.factories import UserFactory
 
@@ -79,16 +81,18 @@ def step_impl(context, name):
     :type context: behave.runner.Context
     """
     search_button = context.driver.find_element_by_id('search_button')
-    search_button.submit()
-    context.driver.save_screenshot('ClickSearchTheHive.png')
+    search_button.click()
+    context.driver.implicitly_wait(3)
 
 
-@then("he is directed to list of tutors page")
-def step_impl(context):
+@then("{name} is directed to list of tutors page")
+def step_impl(context, name):
     """
+    :type name: str
     :type context: behave.runner.Context
     """
-    assert_that(context.driver.title, contains_string("tutors"))
+    assert_that(context.driver.title, contains_string("Search"))
+    assert_that(context.driver.title, contains_string("Tutors"))
 
 
 @step("he can view preview of tutor profile")
@@ -96,7 +100,11 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    print(context.driver.current_url)
+    search_result_tutor_profiles = context.driver.find_element_by_id(
+        'list_of_tutors')
+    assert_that([row.text for row in search_result_tutor_profiles]
+                )
 
 
 @step("he will see a view profile button")
@@ -105,3 +113,12 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     assert False
+
+
+@step('the search text "{search_text}" is in title')
+def step_impl(context, search_text):
+    """
+    :type search_text: str
+    :type context: behave.runner.Context
+    """
+    assert_that(context.driver.title, contains_string(search_text))

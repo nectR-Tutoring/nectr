@@ -24,7 +24,8 @@ Scenario: Brandon searches nectr
   Given Brandon is on search the hive page
   When Brandon types "Computer Science" in search box
   And Brandon clicks search the hive button
-  Then he is directed to list of tutors page
+  Then Brandon is directed to list of tutors page
+  And the search text "Computer Science" is in title
   And he can view preview of tutor profile
   And he will see a view profile button
 

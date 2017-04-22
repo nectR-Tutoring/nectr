@@ -4,9 +4,5 @@ from django.shortcuts import render
 
 # Create your views here.
 def search_page(request):
-    return render(request, 'search.html')
-
-
-def search(request):
-    if request.method == 'POST':
-        return HttpResponse(request.POST['Computer Science'])
+    return render(request, 'search.html',
+                  {'search_text': request.POST.get('search_text', '')})

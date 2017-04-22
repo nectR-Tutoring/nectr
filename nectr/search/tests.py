@@ -24,11 +24,8 @@ class SearchTests(TestCase):
         response = self.client.get('/search/')
         self.assertTemplateUsed(response, 'search.html')
 
-
-    # def test_uses_search_template(self):
-    #     response = self.client.get('/search/')
-    #     self.assertTemplateUsed(response, 'search.html')
-
-    # def test_can_receive_a_POST(self):
-    #     response = self.client.post('search/', data={'search_text': 'Computer Science'})
-    #     self.assertIn('Computer Science', response.content.decode())
+    def test_can_receive_a_POST(self):
+        response = self.client.post('/search/',
+                                    data={'search_text': 'Computer Science'})
+        self.assertIn('Computer Science', response.content.decode())
+        self.assertTemplateUsed(response, 'search.html')

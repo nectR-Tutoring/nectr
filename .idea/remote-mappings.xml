@@ -40,6 +40,13 @@
           </settings>
         </remote-mappings>
         <remote-mappings server-id="python@docker://nectr_django:latest/python" />
+        <remote-mappings server-id="python@docker-compose://[/home/bfox/PycharmProjects/nectr/docker-compose.yml]:django/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/app" />
+            </list>
+          </settings>
+        </remote-mappings>
       </list>
     </list>
   </component>
