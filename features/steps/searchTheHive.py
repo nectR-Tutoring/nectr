@@ -82,7 +82,6 @@ def step_impl(context, name):
     """
     search_button = context.driver.find_element_by_id('search_button')
     search_button.click()
-    context.driver.implicitly_wait(3)
 
 
 @then("{name} is directed to list of tutors page")
@@ -100,7 +99,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    print(context.driver.current_url)
+    print("The driver is currently on {0}".format(context.driver.current_url))
     search_result_tutor_profiles = context.driver.find_element_by_id(
         'list_of_tutors')
     assert_that([row.text for row in search_result_tutor_profiles]

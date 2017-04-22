@@ -27,7 +27,7 @@ def setup_debug_on_error(userdata):
 
 
 def before_all(context):
-    setup_debug_on_error(context.config.userdata)
+    # setup_debug_on_error(context.config.userdata)
 
     # Boilerplay Manual Django Integration
     context.test_runner = DiscoverRunner()
