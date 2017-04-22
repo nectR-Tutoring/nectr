@@ -1,12 +1,11 @@
-import time
-from IPython.core import page
 from behave import *
 from django.test import Client
 from django.urls import reverse
-from hamcrest import is_, contains_string, starts_with, not_none
+from hamcrest import is_, contains_string, starts_with, not_none, contains_inanyorder
 from hamcrest.core import assert_that
-from wheel.signatures import assertTrue
+from selenium.webdriver.common.keys import Keys
 
+from features.factories import VisitorFactory
 from nectr.users.tests.factories import UserFactory
 
 use_step_matcher("parse")
@@ -74,6 +73,17 @@ def step_impl(context, name, search_text):
     search_field.send_keys(search_text)
 
 
+@when("{name} types {search_text} in search box and presses ENTER")
+def step_impl(context, name, search_text):
+    """
+    :type search_text: str
+    :type name: str
+    :type context: behave.runner.Context
+    """
+    search_field = context.driver.find_element_by_id('searchbar')
+    search_field.send_keys(search_text, Keys.ENTER)
+
+
 @step("{name} clicks search the hive button")
 def step_impl(context, name):
     """
@@ -90,7 +100,10 @@ def step_impl(context, name):
     :type name: str
     :type context: behave.runner.Context
     """
-    assert_that(context.driver.title, contains_string("Search"))
+    context.driver.implicitly_wait(3)
+    assert_that(context.driver.title, contains_string("Search"),
+                "The current url is {0}.".format(
+                    context.driver.current_url))
     assert_that(context.driver.title, contains_string("Tutors"))
 
 
@@ -100,10 +113,13 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     print("The driver is currently on {0}".format(context.driver.current_url))
-    search_result_tutor_profiles = context.driver.find_element_by_id(
-        'list_of_tutors')
-    assert_that([row.text for row in search_result_tutor_profiles]
-                )
+    table = context.driver.find_element_by_id('list_of_tutors')
+    rows = table.find_elements_by_tag_name('tr')
+    assert_that(
+        any(row.text == 'View Profile' for row in rows),
+        "New to-do item did not appear in table. "
+        "Contents were:\n{0}".format(table.text)
+    )
 
 
 @step("he will see a view profile button")
@@ -121,3 +137,35 @@ def step_impl(context, search_text):
     :type context: behave.runner.Context
     """
     assert_that(context.driver.title, contains_string(search_text))
+
+
+@given("{name} is on the home page")
+def step_impl(context, name):
+    """
+    :param name: str
+    :type context: behave.runner.Context
+    """
+    context.visitor = VisitorFactory(first_name=name)
+    context.driver.get(context.server_url + reverse('home'))
+    assert_that(context.driver.title, contains_string("Home"))
+
+
+@step('{name}\'s search "{search_text}" is in the title')
+def step_impl(context, name, search_text):
+    """
+    :type name: str
+    :type search_text: str
+    :type context: behave.runner.Context
+    """
+    assert_that(context.driver.title, contains_string(search_text))
+
+
+@when('{name} clicks "{button_name}"')
+def step_impl(context, name, button_name):
+    """
+    :param name: str
+    :type button_name: str
+    :type context: behave.runner.Context
+    """
+    button = context.driver.find_element_by_name(button_name)
+    button.click()

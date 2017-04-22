@@ -3,6 +3,7 @@ from django.test import TestCase
 
 # Create your tests here.
 from django.urls import resolve
+from hamcrest import assert_that, contains_string
 
 from nectr.search.views import search_page
 
@@ -17,7 +18,7 @@ class SearchTests(TestCase):
         response = search_page(request)
         html = response.content.decode('utf8')
         self.assertTrue(html.startswith('<!DOCTYPE html>'))
-        self.assertIn('<title>Search Tutors</title>', html)
+        assert_that(html, contains_string('<title>Search Tutors'))
         self.assertTrue(html.strip().endswith('</html>'))
 
     def test_search_page_returns_correct_template(self):

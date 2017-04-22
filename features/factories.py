@@ -11,9 +11,12 @@ faker_data = faker.Factory.create()  # separate to a factory boy Factory
 class VisitorFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = 'users.User'
+        django_get_or_create = ('username',)
 
     first_name = lazy_attribute(lambda o: faker_data.first_name())
     last_name = lazy_attribute(lambda o: faker_data.last_name())
+    email = lazy_attribute(lambda o: faker_data.email())
+    username = factory.Sequence(lambda n: "user_{0}".format(n))
 
 
 class RegisteredUserFactory(factory.django.DjangoModelFactory):
