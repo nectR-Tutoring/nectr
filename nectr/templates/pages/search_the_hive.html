@@ -36,7 +36,7 @@
     <header id="header" class="alt style2">
         <a href="{% url 'home' %}" class="logo"><strong>nectR</strong> <span>by The Bee Team</span></a>
         <nav>
-            <a href="#menu">Menu</a>
+            <a href="#menu" name="menu">Menu</a>
         </nav>
     </header>
 
@@ -59,9 +59,9 @@
     <!-- Note: The "styleN" class below should match that of the header element. -->
     <section id="banner" class="style2">
         <div class="inner">
-							<span class="image">
+							<!-- <span class="image">
 								<img src="images/pic07.jpg" alt=""/>
-							</span>
+							</span> -->
             <header class="major noline">
                 <h1>Search the Hive</h1>
             </header>
@@ -182,13 +182,17 @@
 </div>
 
 <!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="assets/js/main.js"></script>
+<script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/jquery.scrolly.min.js" %}"></script>
+    <script src="{% static "js/jquery.scrollex.min.js" %}"></script>
+    <script src="{% static "js/skel.min.js" %}"></script>
+    <script src="{% static "js/util.js" %}"></script>
+    <!--[if lte IE 8]><script src="{% static "js/ie/respond.min.js" %}"></script><![endif]-->
+    <script src="{% static "js/main.js" %}"></script>
+{#    <script src="{% static "js/custom.js" %}"></script>#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
 </body>
 </html>
