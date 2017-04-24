@@ -22,8 +22,15 @@ urlpatterns = [
                   # Your stuff: custom urls includes go here
 
 
+    
     # Search the Hive
-    url(r'^search_the_hive/$', TemplateView.as_view(template_name='pages/search_the_hive.html'), name='search')
+    url(r'^search_the_hive', TemplateView.as_view(template_name='pages/search_the_hive.html'), name='search'),
+    # Join the Hive
+    url(r'^join_the_hive', TemplateView.as_view(template_name='pages/join_the_hive.html'), name='join'),
+    # About the Hive
+    url(r'^about', TemplateView.as_view(template_name='pages/about.html'), name='about'),
+    # How it Works
+    url(r'^how_it_works', TemplateView.as_view(template_name='pages/how_it_works.html'), name='how_it_works'),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
