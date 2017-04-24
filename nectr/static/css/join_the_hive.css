@@ -32,7 +32,15 @@ button {
 /* Add padding to container elements */
 .container {
     padding: 16px;
+
 }
+
+
+.test{
+    height:200px;
+    width:200px;
+}
+
 
 /* The Modal (background) */
 .modal {

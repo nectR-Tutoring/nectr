@@ -6,13 +6,26 @@
 -->
 <html>
 	<head>
-		<title>Join The Hive - nectR by bee team</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<title>nectR - Home</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="{% static "css/main.css" %}" />
+		<link rel="stylesheet" href="{% static "css/main2.css" %}"/>
 		<link rel="stylesheet" href="{% static "css/homepage.css" %}" />
 		<link rel="stylesheet" href="{% static "css/join_the_hive.css" %}" />
+		<link rel="stylesheet" href="{% static "css/main_index.css" %}"/>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -26,7 +39,7 @@
 					<header id="header" class="alt style2">
 						<a href="{% url 'home' %}"  class="logo"><strong>nectR</strong> <span>by The Bee Team</span></a>
 						<nav>
-							<a href="#menu">Menu</a>
+							<a href="#menu" name="menu">Menu</a>
 						</nav>
 					</header>
 
@@ -49,9 +62,9 @@
 				<!-- Note: The "styleN" class below should match that of the header element. -->
 					<section id="banner" class="style2">
 						<div class="inner">
-							<span class="image">
+							<!-- <span class="image">
 								<img src="images/pic07.jpg" alt="" />
-							</span>
+							</span> -->
 							<header class="major">
 								<h1>Join the Hive</h1>
 							</header>
@@ -71,12 +84,15 @@
 
 						<!-- Three -->
 						<!-- Button to open the modal -->
+						<div class="container">
+							
 <button onclick="document.getElementById('id01').style.display='block'">Student - Sign Up</button>
 
 <!-- The Modal (contains the Sign Up form) -->
 <div id="id01" class="modal">
 <form class="modal-content animate black-text" action="/action_page.php">
 	<div class="container">
+
 		<label><b>Email</b></label>
 		<input type="text" placeholder="Enter Email" name="email" required>
 
@@ -93,14 +109,130 @@
 			<button type="submit" class="signupbtn">Sign Up</button>
 		</div>
 	</div>
+
 </form>
+</div>
 </div>
 
 
+
+
+
+
+<section>
+	<div class="container">
+						<div class="row">
+							<div class="col-sm-6" style="float: left; margin-left: 60px;">
+								<header class="major">
+									<h2>What a Tutor entails?</h2>
+								</header>
+									<P>&#8226 Provide individual and small group tutoring to students
+									at Farmingdale State College.</p>
+
+									<P>&#8226 Assist students in improving academic achievement
+									by meeting with them on a regular basis to clarify learning problems
+									and work on study skills.</p>
+
+									<P>&#8226 Other assistance might include: reviewing
+									class material, discussing the text, helping with test questions,
+									formulating ideas for papers, or working on solutions to problems.</p>
+
+									<P>&#8226Tutors are not expected to know everything about the subject for which they tutor.</p>
+
+
+							</div>
+							<div class="col-sm-3" style="float: right; margin-right: 80px;"  >
+							<img src="http://www.cqwen.com/wp-content/uploads/2016/04/tutor.jpg"  style="width: 280px; border: 10px solid #2C3E50;" />
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+					<div class="container">
+										<div class="row">
+											<div class="col-sm-6" style="float: right; margin-right: 60px;">
+												<header class="major">
+													<h2>Qualifications to become a tutor:</h2>
+												</header>
+												<P>&#8226 An A or B grade in the course(s) to be tutored and instructor recommendation.</p>
+
+												<P>&#8226 Be enroll at Farmingdale State College</p>
+
+												<P>&#8226 Friendly, patient, and sensitive to a diversity of students.</p>
+
+											</div>
+											<div class="col-sm-3" style="float: left; margin-left: 60px;"  >
+											<img src="http://northcoastlabs.net/wp-content/uploads/2014/07/Qualifications-page-image.jpg"  style="width: 280px; border: 10px solid #2C3E50;" />
+											</div>
+										</div>
+									</div>
+
+
+
+									<div class="container">
+														<div class="row">
+															<div class="col-sm-6" style="float: left; margin-left: 60px;">
+																<header class="major">
+																	<h2>Skills requirements:</h2>
+																</header>
+																<P>&#8226 Knowledge of subject matter.</p>
+
+																<P>&#8226 Ability to efficiently communicate subject matter.</p>
+
+																<P>&#8226 Respect toward others.</p>
+
+																<P>&#8226 Good time management and organization skills.</p>
+
+																<P>&#8226	Ability to listen and answer questions during tutoring sessions.</p>
+
+
+															</div>
+															<div class="col-sm-3" style="float: right; margin-right: 60px;"  >
+															<img src="http://paullangdon.com/wp-content/uploads/2014/01/cloud-640x426.jpg"  style="width: 280px; border: 10px solid #2C3E50;" />
+															</div>
+														</div>
+													</div>
+
+
+
+									<div class="container" >
+														<div class="row">
+															<div class="col-sm-6" style="float: right; margin-left: 60px;">
+																<header class="major">
+																<h2>Payment information:</h2>
+																</header>
+																<P>&#8226 Tutors can work for either volunteer or pay.</p>
+
+														 	 <P>&#8226 Paid tutors earn $11 an hour for both individual and group tutoring.</p>
+
+														 	 <P>&#8226 Tutoring will be assigned according to student demand, tutor availability, and seniority.</p>
+
+														 		<P>&#8226 Employment as a tutor does not guarantee a minimum number of work hours.</p>
+
+
+															</div>
+															<div class="col-sm-3" style="float: left; margin-left: 60px;" >
+
+															<img src="http://www.qphoto.co.za/portals/0/Support/OnlineOrder.jpg"  style="width: 310px; border: 10px solid #2C3E50;" />
+															</div>
+
+														</div>
+													</div>
+
+
+
+
+
+
+<div class="container" >
 <!-- Button to open the modal -->
-<button onclick="document.getElementById('id01').style.display='block'">Tutor - Sign Up</button>
+<button class="test" onclick="document.getElementById('id01').style.display='block'">Tutor - Sign Up</button>
 
 <!-- The Modal (contains the Sign Up form) -->
+
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
   <form class="modal-content animate black-text" action="/action_page.php">
@@ -117,12 +249,15 @@
       <input type="checkbox" checked="checked"> Remember me
       <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
+
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
         <button type="submit" class="signupbtn">Sign Up</button>
+
       </div>
     </div>
   </form>
+</div>
 </div>
 
 
@@ -211,21 +346,28 @@ window.onclick = function(event) {
 									<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
 								</ul>
 								<ul class="copyright">
-									<li>&copy; nectR </li><li>Design: The Bee Team</li>
+									<li>&copy; nectR </li>
+									<li>Design: The Bee Team</li>
 								</ul>
 							</div>
 						</footer>
 
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<!-- Scripts -->
+
+
+			<script src="{% static "js/jquery.min.js" %}"></script>
+	    <script src="{% static "js/jquery.scrolly.min.js" %}"></script>
+	    <script src="{% static "js/jquery.scrollex.min.js" %}"></script>
+	    <script src="{% static "js/skel.min.js" %}"></script>
+	    <script src="{% static "js/util.js" %}"></script>
+	    <!--[if lte IE 8]><script src="{% static "js/ie/respond.min.js" %}"></script><![endif]-->
+	    <script src="{% static "js/main.js" %}"></script>
+	{#    <script src="{% static "js/custom.js" %}"></script>#}
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+					integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+					crossorigin="anonymous"></script>
 
 	</body>
 </html>
