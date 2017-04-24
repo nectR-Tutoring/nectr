@@ -59,9 +59,11 @@
 							<span class="image">
 								<img src="images/pic07.jpg" alt="" />
 							</span>
+
 							<header class="major noline">
-								<h1>Search the Hive</h1>
+								 <center> <h2>What do you need help with?</h2> </center>
 							</header>
+
 
 						</div>
 					</section>
@@ -70,41 +72,24 @@
 					<div id="main">
 
 						<!-- Three -->
-		        <section id="one">
-		            <form method="POST">
-		                <div class="inner">
-		                    <header class="major">
-		                        <h2>What do you need help with?</h2>
-		                    </header>
-		                    <div class="row">
-		                        <div class = "col-md-8">
-		                            <input id="searchbar" type="text" name="search_text" placeholder="Search for our courses..">
-		                        </div>
-		                        <div class="col-md-4">
-		                            <input type="submit" id="search_button" class="btn red" name="search_button">
-		                        </div>
-		                    </div>
-		                </div>
-		                {% csrf_token %}
-		            </form>
-		        </section>
-		    </div>
+						<section id="one" class="padding-search">
+								<form method="POST">
+										<div class="inner">
 
+												<div class="row">
+														<div class = "col-md-8">
+																<input id="searchbar" type="text" name="search_text" placeholder="Search for our courses..">
+														</div>
+														<div class="col-md-4">
+																<input type="submit" id="search_button" class="btn red" name="search_button">
+														</div>
+												</div>
+										</div>
+										{% csrf_token %}
+								</form>
+						</section>
+				</div>
 
-					<nav class="navbar navbar-default">
-
-						<div class="container-fluid" style="columns: 1; margin-left: 30%; padding-bottom: 2%; ">
-
-							<ul class="nav navbar-nav" >
-								<li><a href="#"> Language </a>  <i class="fa fa-language" style="margin-left: 45%; color: black;"></i> </li>
-								 <li><a href="#"> Math </a> <i class="fa fa-calculator" style="margin-left: 45%; color: black;"></i> </li>
-								 <li><a href="#"> English </a><i class="fa fa-book" style="margin-left: 45%; color: black;"></i> </li>
-								 <li><a href="#"> Test Prep </a><i class="fa fa-pencil" style="margin-left: 45%; color: black;"></i> </li>
-								 <li><a href="#"> More </a> <i class="fa fa-bars" style="margin-left: 45%; color: black;"></i> </li>
-							</ul>
-
-						</div>
-					</nav>
 
 					<!-- Footer -->
 						<footer id="footer">
