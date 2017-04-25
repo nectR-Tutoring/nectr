@@ -25,6 +25,7 @@
     <!-- This file stores project-specific CSS -->
 
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main2.css' %}" rel="stylesheet">
     <link href="{% static 'css/searchbar.css' %}" rel="stylesheet">
     <link href="{% static 'css/homepage.css' %}" rel="stylesheet">
     <link href="{% static 'css/ie8.css' %}" rel="stylesheet">
@@ -71,15 +72,12 @@
   							<li><a id="log-in-link" class="button fit" href="{% url 'account_login' %}">{% trans "Log In" %}</a></li>
                 {% endif %}
                 </ul>
-                {% endblock %}
+
   						</nav>
-
+          {% endblock nav_content %}
           </div>
-          {% block content %}
-          {% endblock content %}
+        
     </div>
-
-
 
 
       {% if messages %}
@@ -93,6 +91,7 @@
       {% block footer %}
 
       <!-- Footer -->
+      <br></br>
         <footer id="footer">
           <div class="inner">
             <ul class="icons">
