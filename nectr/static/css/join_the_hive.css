@@ -1,4 +1,6 @@
-
+form{
+  color:#000;
+}
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
@@ -32,7 +34,6 @@ button {
 /* Add padding to container elements */
 .container {
     padding: 16px;
-
 }
 
 

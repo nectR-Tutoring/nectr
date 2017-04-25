@@ -29,6 +29,8 @@ urlpatterns = [
                   url(r'^search/$', views.search_page, name='search_page'),
                   # Join the Hive
                   url(r'^join_the_hive', TemplateView.as_view(template_name='pages/join_the_hive.html'), name='join'),
+                  # Become a tutor
+                  url(r'^become_a_tutor', TemplateView.as_view(template_name='pages/become_a_tutor.html'), name='join'),
                   # About the Hive
                   url(r'^about', TemplateView.as_view(template_name='pages/about.html'), name='about'),
                   # How it Works
