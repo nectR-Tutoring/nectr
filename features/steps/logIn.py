@@ -1,5 +1,8 @@
 from behave import *
 from hamcrest import assert_that, contains_string
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from features.factories import VisitorFactory, RegisteredUserFactory
 from nectr.users.models import User
@@ -158,6 +161,8 @@ def step_impl(context, name, title):
     :type name: str
     :type context: behave.runner.Context
     """
+    WebDriverWait(context.driver, 10).until(
+        EC.title_contains(title))
     current_page_title = context.driver.title
     assert_that(current_page_title, contains_string(title),
                 "{0} Should be on {1} page".format(name, title))

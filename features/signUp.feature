@@ -1,3 +1,5 @@
+@browser-grid
+@future
 Feature: Signup from Website
 As a visitor
 I want to sign up for an account

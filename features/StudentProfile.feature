@@ -1,3 +1,4 @@
+@future
 Feature: Student profile
   As a student
   I want a profile
