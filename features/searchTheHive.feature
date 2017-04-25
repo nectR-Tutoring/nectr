@@ -16,7 +16,7 @@ Feature: Search the hive
    # so he opens his laptop and returns to nectr's
    # website.
    Given Mike is a registered user
-   And Mike is signed into nectr
+   And Mike is signed into nectr with username "mikesusername"
 
 Scenario: Brandon searches nectr
   Given Brandon is on search the hive page

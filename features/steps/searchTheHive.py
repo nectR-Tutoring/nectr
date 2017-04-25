@@ -106,3 +106,18 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     assert False
+
+
+@step('{name} is signed into nectr with username "{username}"')
+def step_impl(context, name, username):
+    """
+    :type name: str
+    :type username: str
+    :type context: behave.runner.Context
+    """
+    RegisteredUserFactory(first_name=name, username=username)
+    c = Client()
+    u = User.objects.get(username=username)
+    assert_that(u.first_name, contains_string(name), "User should match step name")
+    u.set_password("password")
+    assert c.login(username=u.username, password="password")

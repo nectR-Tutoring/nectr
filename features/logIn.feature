@@ -12,7 +12,7 @@ Scenario: Mike clicks login before creating account
   And mike clicks on nav_Login button
   Then mike is redirected to Login page
   When mike clicks on "sign_up_redirect"
-  Then mike is redirected to Signup page
+  Then mike is redirected to Sign Up page
 
 Scenario: Charlie enters correct credentials
   Given Charlie is registered to nectr
@@ -22,13 +22,14 @@ Scenario: Charlie enters correct credentials
   Then charlie is redirected to Login page
   When Charlie enters his correct username
   And Charlie enters his correct password
-  And Charlie clicks on the submit button
+  And Charlie clicks on sign_in button
   Then charlie is redirected to dashboard
 
 Scenario: Enoc enters incorrect credentials
-  Given Enoc is registered to nectr
+  Given enoc is registered to nectr
   Given enoc is on nectr site
-  When enoc clicks on nav_Login button
+  When enoc clicks on menu button
+  And enoc clicks on nav_Login button
 #  And enoc is redirected to Login page
 #  And enoc enters incorrect username or password
 #  And enoc clicks the sign in button

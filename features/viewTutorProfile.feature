@@ -1,4 +1,5 @@
 @browser-grid
+@future
 Feature: View tutor profile
   As a user
   I want to view tutor profiles
