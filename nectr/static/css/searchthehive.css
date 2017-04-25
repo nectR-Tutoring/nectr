@@ -26,6 +26,9 @@ font-size: 25px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
+/* SEARCH BUTTON */
+
+
 /* PADDING */
 .padding-search {
   padding-bottom: 15%;
@@ -81,7 +84,7 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #FFFFE0}
 
 .dropdown:hover .dropdown-content {
     display: block;
