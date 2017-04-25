@@ -46,6 +46,7 @@
           <nav>
             <a href="#menu" name="menu">Menu</a>
           </nav>
+
         </header>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,11 +73,12 @@
   							<li><a id="log-in-link" class="button fit" href="{% url 'account_login' %}">{% trans "Log In" %}</a></li>
                 {% endif %}
                 </ul>
-
   						</nav>
           {% endblock nav_content %}
           </div>
-        
+          
+          {% block banner_content %}
+          {% endblock banner_content %}
     </div>
 
 
