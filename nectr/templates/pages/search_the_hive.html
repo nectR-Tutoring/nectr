@@ -75,19 +75,35 @@
 						<!-- Three -->
 						<article class="padding-search" style ="padding-left:15%;padding-top: 5%;padding-bottom: 10%;padding-right: 0%;">
 						<section id="one">
-								<form method="POST">
+
+								<form method="GET">
 										<div class="inner">
 												<div class="row">
 														<div class = "col-md-8">
-																<input id="searchbar" type="text" name="search_text" placeholder="Search for our courses..">
+																<input id="searchbar" type="text" name="search_text" placeholder="Search for our courses...">
 														</div>
 														<div class="col-md-4">
-																<input type="submit" id="search_button" class="btn red" name="search_button">
+															<div class="actions">
+
+																<input onclick="location.href='#fetch'" type="submit" id="search_button" class="btn red" name="search_button">
+
+														 </div>
 														</div>
 												</div>
 										</div>
 										{% csrf_token %}
 								</form>
+
+								<script>
+										$(document).ready(function (){
+												$("#search_button").click(function (){
+														$('html, body').animate({
+																scrollTop: $("#fetch").offset().top
+														}, 2000);
+												});
+										});
+								</script>
+
 						</section>
 				</div>
 </article>
