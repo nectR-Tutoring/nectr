@@ -1,8 +1,13 @@
 from behave import *
-from hamcrest import assert_that, contains_string
+from hamcrest import assert_that, contains_string, is_not
 
 from features.factories import VisitorFactory, RegisteredUserFactory
 from nectr.users.models import User
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+from nectr.users.tests.factories import UserFactory
 
 use_step_matcher("parse")
 
@@ -22,7 +27,7 @@ def step_impl(context, name):
     :param name: str
     :type context: behave.runner.Context
     """
-    RegisteredUserFactory(first_name=name)
+    context.user = RegisteredUserFactory(first_name=name)
 
 
 @given("{name} is on nectr site")
@@ -298,3 +303,201 @@ def step_impl(context, name):
     user.set_password("password")
     e = context.driver.find_element_by_name("password")
     e.send_keys("password")
+
+
+@then("is redirected to login page")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@then("mike is redirected to signup form")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("clicks on the sign in button")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("enoc enters incorrect username or password")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("login form is reloaded with blank username and password fields")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("Brandon is on home page of nectr")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.driver.get(context.server_url + "/")
+
+
+@when('Brandon clicks "Menu"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    menu = context.driver.find_element_by_name('menu')
+    menu.click()
+
+
+@step('Brandon clicks "Log In" button')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    log_in = context.driver.find_element_by_id('log-in-link')
+    log_in.click()
+
+
+@when("Brandon clicks on username text field")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step('Brandon enters "Cashmeousside"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("Brandon clicks on password text field")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step('Brandon cicks "Sign In" button')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("Brandon is not signed in")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    # TODO : Make this user logged out if it is logged in.
+    pass
+
+
+@step("Brandon's username is Cashmeousside")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("Brandon's password is {password}")
+def step_impl(context, password):
+    """
+    :type password: str
+    :type context: behave.runner.Context
+    """
+    context.curr_user.set_password(password)
+
+
+@step('title of the page is "Login"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step('page contains an h1 whos text is "Sign In"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@then("Brandon is presented with an alert")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("username text field is cleared")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("password text field is cleared")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("is redirected to login page")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step('Brandon enters "Howboudat"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step('Brandon enters "Howboudatt"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@given('{name}\'s registered to nectR with username is "{username}"')
+def step_impl(context, name, username):
+    """
+    :type name: str
+    :type username: str
+    :type context: behave.runner.Context
+    """
+    context.curr_user = UserFactory(username=username, first_name=name)

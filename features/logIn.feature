@@ -59,7 +59,7 @@ Scenario: Brandon enters correct credentials
   And Brandon is not signed in
   When Brandon clicks "Menu"
   And Brandon clicks "Log In" button
-  Then Brandon is redirected to "Sign In" page 
+  Then Brandon is redirected to "Sign In" page
   When Brandon clicks on username text field
   And Brandon enters "Cashmeousside"
   And Brandon clicks on password text field
@@ -68,14 +68,13 @@ Scenario: Brandon enters correct credentials
   Then Brandon is redirected to "Dashboard" page
 
 Scenario: Brandon tries to sign in again but enters incorrect credentials
-  Given Brandon is registered to nectr
-  And Brandon's username is Cashmeousside
+  Given Brandon's registered to nectR with username is "Cashmeousside"
   And Brandon's password is Howboudat
   And Brandon is on home page of nectr
   And Brandon is not signed in
   When Brandon clicks "Menu"
   And Brandon clicks "Log In" button
-  Then Brandon is redirected to "Sign In" page
+  Then Brandon is redirected to "Login" page
   And title of the page is "Login"
   And page contains an h1 whos text is "Sign In"
   When Brandon clicks on username text field
@@ -87,4 +86,4 @@ Scenario: Brandon tries to sign in again but enters incorrect credentials
   And username text field is cleared
   And password text field is cleared
 
-Scenario: Mike goes to sign in page but does not have account
+#Scenario: Mike goes to sign in page but does not have account
