@@ -47,7 +47,6 @@
           </nav>
         </header>
 
-
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-1">
             {% block nav_content %}
@@ -76,9 +75,11 @@
   						</nav>
 
           </div>
-        </div>
-
+          {% block content %}
+          {% endblock content %}
     </div>
+
+
 
 
       {% if messages %}
@@ -87,8 +88,7 @@
           {% endfor %}
       {% endif %}
 
-     {% block content %}
-     {% endblock content %}
+
 
       {% block footer %}
 
