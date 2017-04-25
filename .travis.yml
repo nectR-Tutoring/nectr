@@ -12,5 +12,5 @@ before_install:
 
 script:
   - docker-compose -f docker-compose.travisCI.yml build
-  - docker-compose -f docker-compose.travisCI.yml run --service-ports django python manage.py test
-  - docker-compose -f docker-compose.yml run --service-ports pycharm behave --tags ~@wip --tags~@future
+  - docker-compose -f docker-compose.travisCI.yml run --service-ports testing python manage.py test
+  - docker-compose -f docker-compose.travisCI.yml run --service-ports testing
