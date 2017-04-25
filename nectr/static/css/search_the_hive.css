@@ -1,6 +1,0 @@
-/*header.major > :first-child:after{
-  width: 0px;
-}*/
-header.noline > :first-child:after{
-  width: 0px;
-}
