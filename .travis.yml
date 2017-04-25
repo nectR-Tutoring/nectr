@@ -13,4 +13,4 @@ before_install:
 script:
   - docker-compose -f docker-compose.travisCI.yml build
   - docker-compose -f docker-compose.travisCI.yml run --service-ports testing python manage.py test
-  - docker-compose -f docker-compose.travisCI.yml run --service-ports testing
+  - docker-compose -f docker-compose.travisCI.yml run --service-ports testing behave --tags ~@wip --tags ~@future
