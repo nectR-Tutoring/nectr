@@ -1,4 +1,4 @@
-@browser-grid
+@future
 Feature: Student profile
   As a student
   I want a profile
@@ -8,7 +8,7 @@ Background:
   Given Mike has nectr account
 
 Scenario: Mike wants to create profile
-  Given Mike is signed into nectr
+  Given Mike is signed into his nectr account
   When Mike clicks on "My Profile"
   And Mike is redirected to nectr profile
   Then "Hello <Mike's username>" is shown

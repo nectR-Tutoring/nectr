@@ -1,3 +1,4 @@
+@browser-grid
 Feature: aboutLinkFeature
 As a visitor
 I want to click on "About" link
@@ -9,6 +10,5 @@ so I can find out more information about nectr
 
 Scenario: Mike clicks on about page
   Given Mike is on nectr home page
-  And Mike scrolls down to links
-  When Mike clicks on "About"
-  Then Mike should be redirected to "About" page 
+  When Mike clicks on "home_tile_about_link"
+  Then Mike should be redirected to "About" page

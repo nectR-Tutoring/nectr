@@ -1,3 +1,4 @@
+@future
 Feature: Tutor Profile
   As a tutor
   I want a profile

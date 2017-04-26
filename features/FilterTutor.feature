@@ -1,4 +1,4 @@
-@browser-grid
+@future
 Feature: Filter Tutors
   As a student
   I want the ability to filter tutors
