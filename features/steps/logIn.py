@@ -1,5 +1,5 @@
 from behave import *
-from hamcrest import assert_that, contains_string
+from hamcrest import assert_that, contains_string, is_
 from features.factories import VisitorFactory, RegisteredUserFactory
 from nectr.users.models import User
 from selenium.webdriver.common.by import By
@@ -512,8 +512,10 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    UserFactory(
+    user = UserFactory(
         username='Cashmeousside',
         first_name='Brandon',
         last_name='Fox',
         password='Howboudat', )
+    assert_that(user.username,is_('Cashmeousside'),
+                "The username was not set correctly.")
