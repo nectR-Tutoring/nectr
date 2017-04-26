@@ -1,4 +1,4 @@
-@future
+@browser-grid
 Feature: Search the hive
   As a user
   I want to search for tutors
