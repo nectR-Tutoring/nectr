@@ -37,7 +37,7 @@ Scenario: Enoc enters incorrect credentials
 #  And login form is reloaded with blank username and password fields
 
 Scenario: Brandon enters correct credentials
-  Given Brandon is registered to nectr
+  Given Brandon is registered to nectr and wants to login
   And Brandon is on home page of nectr
   When Brandon clicks "Menu"
   And Brandon clicks "Log In" button

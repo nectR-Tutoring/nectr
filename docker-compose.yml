@@ -47,6 +47,7 @@ services:
     links:
       - postgres
       - mailhog
+      - hub
 
   mailhog:
     image: mailhog/mailhog
@@ -55,10 +56,6 @@ services:
 
   hub:
     image: selenium/hub
-    depends_on:
-     - pycharm
-    links:
-     - pycharm
     expose:
       - 4444
     ports:

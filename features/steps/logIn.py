@@ -6,6 +6,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from nectr.users.tests.factories import UserFactory
+
 use_step_matcher("parse")
 
 
@@ -62,6 +64,7 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     assert False
+
 
 #
 # @step("{name} clicks on the {element_type} button")
@@ -498,9 +501,19 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    try:
-        WebDriverWait(context.driver, 10).until(
-            EC.title_contains("cashmeousside"))
-    except TimeoutError:
-        print (context.driver.title)
+    print(context.driver.title + '\n')
+    print(context.driver.current_url + '\n')
+    WebDriverWait(context.driver, 3).until(
+        EC.title_contains("cashmeousside"))
 
+
+@given("Brandon is registered to nectr and wants to login")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    UserFactory(
+        username='Cashmeousside',
+        first_name='Brandon',
+        last_name='Fox',
+        password='Howboudat', )
