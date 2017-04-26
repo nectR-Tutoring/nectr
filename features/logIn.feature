@@ -41,13 +41,16 @@ Scenario: Brandon enters correct credentials
   And Brandon is on home page of nectr
   When Brandon clicks "Menu"
   And Brandon clicks "Log In" button
-  Then Brandon is redirected to "Sign In" page
-  When Brandon clicks on username text field
-  And Brandon enters "Cashmeousside"
-  And Brandon clicks on password text field
-  And Brandon enters "Howboudat"
-  And Brandon cicks "Sign In" button
-  Then Brandon is redirected to "Dashboard" page
+  Then Brandon is redirected to Login page
+#  When Brandon clicks on username text field
+#  And Brandon enters "Cashmeousside"
+  When Brandon enters "Cashmeousside" in username field on Login page
+#  And Brandon clicks on password text field
+#  And Brandon enters "Howboudat"
+  And Brandon enters "Howboudat" in password field on Login page
+  And Brandon clicks "Sign In" button
+#  Then Brandon is redirected to "Dashboard" page
+  Then Brandon goes to his user profile page, or his "Dashboard"
 
   #Brandon is a student at Farmingdale and currently
   #taking Math and Android Programming courses.
@@ -56,20 +59,20 @@ Scenario: Brandon enters correct credentials
   #Brandon has already created a nectr account but has never used it
   #Brandons tells his friend Mike about nectr and mike is
   #intereseted too because he is struggling in his java class
-
-Scenario: Brandon enters correct credentials
-  Given Brandon is registered to nectr
-  And Brandon is on home page of nectr
-  And Brandon is not signed in
-  When Brandon clicks "Menu"
-  And Brandon clicks "Log In" button
-  Then Brandon is redirected to "Sign In" page
-  When Brandon clicks on username text field
-  And Brandon enters "Cashmeousside"
-  And Brandon clicks on password text field
-  And Brandon enters "Howboudat"
-  And Brandon cicks "Sign In" button
-  Then Brandon is redirected to "Dashboard" page
+#
+#Scenario: Brandon enters correct credentials 2
+#  Given Brandon is registered to nectr
+#  And Brandon is on home page of nectr
+#  And Brandon is not signed in
+#  When Brandon clicks "Menu"
+#  And Brandon clicks "Log In" button
+#  Then Brandon is redirected to "Sign In" page
+#  When Brandon clicks on username text field
+#  And Brandon enters "Cashmeousside"
+#  And Brandon clicks on password text field
+#  And Brandon enters "Howboudat"
+#  And Brandon cicks "Sign In" button
+#  Then Brandon is redirected to "Dashboard" page
 
 Scenario: Brandon tries to sign in again but enters incorrect credentials
   Given Brandon's registered to nectR with username is "Cashmeousside"

@@ -328,3 +328,179 @@ def step_impl(context):
     """
     context.driver.find_element_by_name(
         'login_button_form').click()
+
+
+@step("Brandon is on home page of nectr")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.driver.get(context.server_url + "/")
+
+
+@when('Brandon clicks "Menu"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.driver.find_element_by_name('menu').click()
+
+
+@step('Brandon clicks "Log In" button')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+
+    context.driver.find_element_by_name('nav_Login').click()
+
+
+@when("Brandon clicks on username text field")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.current_element = context.driver.find_element_by_id('id_login').click()
+
+
+@step('Brandon enters "Cashmeousside"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.current_element.send_keys("Cashmeousside")
+
+
+@step("Brandon clicks on password text field")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step('Brandon cicks "Sign In" button')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("Brandon is not signed in")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@given('Brandon\'s registered to nectR with username is "Cashmeousside"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("Brandon's password is Howboudat")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step('title of the page is "Login"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step('page contains an h1 whos text is "Sign In"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@then("Brandon is presented with an alert")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("username text field is cleared")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("password text field is cleared")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step('Brandon enters "Howboudat"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step('Brandon enters "Howboudatt"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@when('Brandon enters "Cashmeousside" in username field on Login page')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    element = context.driver.find_element_by_id('id_login')
+    element.send_keys('Cashmeousside')
+
+
+@step('Brandon enters "Howboudat" in password field on Login page')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    element = context.driver.find_element_by_id('id_password')
+    element.send_keys('Howboudat')
+
+
+@step('Brandon clicks "Sign In" button')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.driver.find_element_by_name('login_button_form').click()
+
+
+@then('Brandon goes to his user profile page, or his "Dashboard"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    try:
+        WebDriverWait(context.driver, 10).until(
+            EC.title_contains("cashmeousside"))
+    except TimeoutError:
+        print (context.driver.title)
+
