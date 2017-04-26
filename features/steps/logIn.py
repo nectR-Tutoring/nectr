@@ -496,7 +496,7 @@ def step_impl(context):
     context.driver.find_element_by_name('login_button_form').click()
 
 
-@then('Brandon goes to his user profile page, or his "Dashboard"')
+@then('Brandon goes to his user dashboard page, or his "Dashboard"')
 def step_impl(context):
     """
     :type context: behave.runner.Context

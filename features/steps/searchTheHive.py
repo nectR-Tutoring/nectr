@@ -90,7 +90,7 @@ def step_impl(context):
     assert False
 
 
-@step("he can view preview of tutor profile")
+@step("he can view preview of tutor dashboard")
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -102,7 +102,7 @@ def step_impl(context):
 
 
 
-@step("he will see a view profile button")
+@step("he will see a view dashboard button")
 def step_impl(context):
     """
     :type context: behave.runner.Context

@@ -6,7 +6,7 @@ from nectr.users.tests.factories import UserFactory
 use_step_matcher("re")
 
 
-@step("Mike is redirected to nectr profile")
+@step("Mike is redirected to nectr dashboard")
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -33,7 +33,7 @@ def step_impl(context):
     assert False
 
 
-@step("Mike can add information to profile")
+@step("Mike can add information to dashboard")
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -41,7 +41,7 @@ def step_impl(context):
     assert False
 
 
-@given("Mike is on his profile page")
+@given("Mike is on his dashboard page")
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -49,7 +49,7 @@ def step_impl(context):
     assert False
 
 
-@when('Mike clicks on "Edit" button on "personal information" section of profile')
+@when('Mike clicks on "Edit" button on "personal information" section of dashboard')
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -65,7 +65,7 @@ def step_impl(context):
     assert False
 
 
-@when('Mike clicks on "Edit" button on "contact information" section of profile')
+@when('Mike clicks on "Edit" button on "contact information" section of dashboard')
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -81,7 +81,7 @@ def step_impl(context):
     assert False
 
 
-@when('Mike clicks on "Edit" button on "communication preferences" section of profile')
+@when('Mike clicks on "Edit" button on "communication preferences" section of dashboard')
 def step_impl(context):
     """
     :type context: behave.runner.Context
