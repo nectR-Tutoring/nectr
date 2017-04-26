@@ -23,7 +23,9 @@ Scenario: Brandon searches nectr
   Given Brandon is on search the hive page
   When Brandon types "Computer Science" in search box
   And clicks search the hive button
-  Then he is directed to list of tutors page
+#  OLD FEATURE: RELOAD IN PAGE
+#  Then he is directed to list of tutors page
+  @wip
   And he can view preview of tutor profile
   And he will see a view profile button
 
@@ -31,7 +33,8 @@ Scenario: Mike searches nectr
   Given mike is on search the hive page
   When mike types in what he is looking for in search box
   And clicks search the hive button
-  Then he is directed to list of tutors page
+#  OLD FEATURE: RELOAD IN PAGE
+#  Then he is directed to list of tutors page
   And he can view preview of tutor profile
   And he will see a view profile button
 

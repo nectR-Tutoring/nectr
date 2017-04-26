@@ -4,9 +4,12 @@ from django.test import Client
 from django.urls import resolve
 from hamcrest import has_entry, has_key, has_value, contains, has_property, is_, contains_string, starts_with, not_none
 from hamcrest.core import assert_that
-from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from features.factories import RegisteredUserFactory
+from nectr.tutor.tests.factories import TutorFactory
 from nectr.users.models import User
 
 use_step_matcher("parse")
@@ -78,6 +81,7 @@ def step_impl(context):
     """
     context.driver.find_element_by_id('search_button').click()
 
+
 @then("he is directed to list of tutors page")
 def step_impl(context):
     """
@@ -91,7 +95,11 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    search_result_table = WebDriverWait(context.driver, 2).until(
+        EC.presence_of_element_located((By.ID, "tutors_search_result_table"))
+    )
+    rows = search_result_table.find_elements_by_css_selector('td.tutor-result')
+
 
 
 @step("he will see a view profile button")
