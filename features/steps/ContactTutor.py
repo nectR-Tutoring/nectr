@@ -3,7 +3,7 @@ from behave import *
 use_step_matcher("re")
 
 
-@given("mike is on tutors profile")
+@given("mike is on tutors dashboard")
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -27,7 +27,7 @@ def step_impl(context):
     pass
 
 
-@given("brandon is on tutors profile")
+@given("brandon is on tutors dashboard")
 def step_impl(context):
     """
     :type context: behave.runner.Context

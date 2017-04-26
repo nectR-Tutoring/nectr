@@ -19,6 +19,9 @@ urlpatterns = [
                   url(r'^users/', include('nectr.users.urls', namespace='users')),
                   url(r'^accounts/', include('allauth.urls')),
 
+                  # Dashboard Management
+                  url(r'^dashboard/', include('nectr.dashboard.urls', namespace='dashbaord')),
+
                   # Your stuff: custom urls includes go here
                   url(r'^search/', include('nectr.search.urls')),
 

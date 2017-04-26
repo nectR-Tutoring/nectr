@@ -3,7 +3,7 @@ from behave import *
 use_step_matcher("re")
 
 
-@given("Mike is a nect tutor and has already established student profile")
+@given("Mike is a nect tutor and has already established student dashboard")
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -19,7 +19,7 @@ def step_impl(context):
     assert False
 
 
-@step("Mike can add information to his profile")
+@step("Mike can add information to his dashboard")
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -27,7 +27,7 @@ def step_impl(context):
     assert False
 
 
-@given("Mike is on his tutor profile page")
+@given("Mike is on his tutor dashboard page")
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -35,7 +35,7 @@ def step_impl(context):
     assert False
 
 
-@when('Mike clicks on "Edit" button on "About Me" section of tutor profile')
+@when('Mike clicks on "Edit" button on "About Me" section of tutor dashboard')
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -75,7 +75,7 @@ def step_impl(context):
     assert False
 
 
-@when('Mike clicks on "Edit" button on "subjects taught" section of tutor profile')
+@when('Mike clicks on "Edit" button on "subjects taught" section of tutor dashboard')
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -83,7 +83,7 @@ def step_impl(context):
     assert False
 
 
-@when('Mike clicks on "Edit" button on "availability" section of tutor profile')
+@when('Mike clicks on "Edit" button on "availability" section of tutor dashboard')
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -91,7 +91,7 @@ def step_impl(context):
     assert False
 
 
-@when('Mike clicks on "Edit" button on "Pricing" section of tutor profile')
+@when('Mike clicks on "Edit" button on "Pricing" section of tutor dashboard')
 def step_impl(context):
     """
     :type context: behave.runner.Context

@@ -11,7 +11,7 @@ def step_impl(context):
     pass
 
 
-@then("mike is redirected to tutors profile")
+@then("mike is redirected to tutors dashboard")
 def step_impl(context):
     """
     :type context: behave.runner.Context
@@ -35,7 +35,7 @@ def step_impl(context):
     pass
 
 
-@then("brandon is redirected to tutors profile")
+@then("brandon is redirected to tutors dashboard")
 def step_impl(context):
     """
     :type context: behave.runner.Context
