@@ -67,10 +67,8 @@ def step_impl(context, name, search_text):
     :type name: str
     :type context: behave.runner.Context
     """
-    print (context.browser.current_url)
-    search_field = context.driver.find_element_by_id('search_box')
+    search_field = context.driver.find_element_by_name('search_text')
     search_field.send_keys(search_text)
-
 
 
 @step("clicks search the hive button")
@@ -78,10 +76,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    search_button = context.browser.find_by_id('search')
-    search_button.click()
-    context.browser.save_screenshot('ClickSearchTheHive.png')
-
+    context.driver.find_element_by_id('search_button').click()
 
 @then("he is directed to list of tutors page")
 def step_impl(context):
