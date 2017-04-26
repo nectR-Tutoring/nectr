@@ -53,14 +53,6 @@ services:
     ports:
       - "8025:8025"
 
-  jenkins:
-    image: jenkins
-    restart: always
-    ports:
-      - "8889:8080"
-    volumes:
-      - ./.jenkins:/var/jenkins_home
-
   hub:
     image: selenium/hub
     depends_on:
