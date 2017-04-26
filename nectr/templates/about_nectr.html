@@ -1,0 +1,37 @@
+{% extends "base_nectr.html" %} {% load staticfiles i18n compress %}
+{% block banner_content %}
+<!-- Banner -->
+<!-- Note: The "styleN" class below should match that of the header element. -->
+  <section id="banner" class="style2">
+    <div class="inner">
+      <span class="image">
+        <img src="images/pic07.jpg" alt="" />
+      </span>
+      <header class="major noline">
+        <h1>About</h1>
+      </header>
+    </div>
+  </section>
+{% endblock banner_content %}
+
+
+{% block content %}
+
+<section id="one">
+  <div class="inner">
+    <header class="major">
+      <h2>Learn our story</h2>
+    </header>
+    <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
+
+  </div>
+</section>
+
+
+<div>
+{% include "partials/contact.html" %}
+</div>
+
+</div>
+
+{% endblock content %}
