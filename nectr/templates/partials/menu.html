@@ -1,0 +1,30 @@
+
+{% load staticfiles i18n compress%}
+
+<!-- Menu -->
+
+<nav id="menu">
+  <ul class="links">
+    <li><a href="index.html">Home 1</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="how_it_works.html">How it works</a></li>
+    <li><a href="search_the_hive.html">Search the Hive</a></li>
+  </ul>
+  <ul class="actions vertical">
+
+  {% if request.user.is_authenticated %}
+  <li class="nav-item">
+    <a class="button special fit" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+  </li>
+  <li class="nav-item">
+    <a class="button fit" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
+  </li>
+
+  {% else %}
+  <li><a id="sign-up-link" class="button special fit" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a></li>
+  <li><a id="log-in-link" class="button fit" href="{% url 'account_login' %}">{% trans "Log In" %}</a></li>
+  {% endif %}
+
+  </ul>
+
+</nav>
