@@ -32,11 +32,19 @@ urlpatterns = [
     # How it Works
     url(r'^how_it_works', TemplateView.as_view(template_name='pages/how_it_works.html'), name='how_it_works'),
 
+<<<<<<< HEAD
     url(r'^test_index_html', TemplateView.as_view(template_name='homepage.html'), name='test1'),
     url(r'^test_about_nectr', TemplateView.as_view(template_name='about_nectr.html'), name='test2'),
     url(r'^test_how_nectr', TemplateView.as_view(template_name='how_nectr.html'), name='test3'),
     url(r'^test_look_nectr', TemplateView.as_view(template_name='look_nectr.html'), name='test4'),
     url(r'^test_joinpage_nectr', TemplateView.as_view(template_name='joinpage_nectr.html'), name='test5'),
+=======
+    url(r'^tutor_information', TemplateView.as_view(template_name='pages/tutor_information.html'), name='tutor_information'),
+
+
+    url(r'^test_html', TemplateView.as_view(template_name='nectr_base.html'), name='test'),
+    url(r'^test_index_html', TemplateView.as_view(template_name='index.html'), name='test1'),
+>>>>>>> origin/new_development
 
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
