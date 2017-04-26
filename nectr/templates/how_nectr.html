@@ -1,0 +1,118 @@
+{% extends "base_nectr.html" %} {% load staticfiles i18n compress %}
+{% block banner_content %}
+<!-- Banner -->
+<!-- Note: The "styleN" class below should match that of the header element. -->
+  <section id="banner" class="style2">
+    <div class="inner">
+      <span class="image">
+        <img src="images/pic07.jpg" alt="" />
+      </span>
+      <header class="major noline">
+        <h1>How it works</h1>
+      </header>
+    </div>
+  </section>
+{% endblock banner_content %}
+
+
+{% block content %}
+
+<!-- Main -->
+  <div id="main">
+    <!-- Three -->
+      <section id="one">
+        <div class="inner">
+          <header class="major">
+            <h2>List</h2>
+          </header>
+
+          <p> &#8226 The way the payments per sessions are going
+                  to be made is by having credit, which are honey-combs. After
+                  a certain amount of honey-combs the credit will them become
+                  Jars of honey. The tutors have the option to charge how ever
+                  many jars of honey or honey-combs per session.
+                </p>
+
+                <p> &#8226 Every student that they suggest and sign up, the user will
+                  receive a free honey-combs. Also after the first session the
+                  student will receive a reward of honey-combs. The students can
+                  also gain more honey-combs by purchasing a package or by
+                  sessions and completing test/quizzes/assignments given by
+                  the tutor...
+                </p>
+
+
+          <p> &#8226 The way the payments per sessions are going
+                  to be made is by having credit, which are honey-combs. After
+                  a certain amount of honey-combs the credit will them become
+                  Jars of honey. The tutors have the option to charge how ever
+                  many jars of honey or honey-combs per session.
+                </p>
+
+                <p> &#8226 Every student that they suggest and sign up, the user will
+                  receive a free honey-combs. Also after the first session the
+                  student will receive a reward of honey-combs. The students can
+                  also gain more honey-combs by purchasing a package or by
+                  sessions and completing test/quizzes/assignments given by
+                  the tutor...
+                </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6" style="float: left; margin-left: 60px;">
+                    <h1>Answer A Few Questions</h1>
+                    <p >To get going, we need to know a few things about you: what you want to learn, when you’re available, and where you want to meet.</p>
+                    </div>
+                    <div class="col-sm-3" style="float: right; margin-right: 60px;"  >
+                    <img src="{% static "images/match-flow.png" %}"  style="width: 280px; border: 10px solid #2C3E50;" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container" >
+                          <div class="row">
+                            <div class="col-sm-6" style="float: right; margin-left: 60px;">
+                               <h1>Chat With Your Student</h1>
+                            <p>We can provide you with the necessary information for student and tutor to contact each other. </p>
+                            </div>
+                            <div class="col-sm-3" style="float: left; margin-left: 60px;" >
+                            <img src="{% static "images/messaging.jpg" %}"  style="width: 310px; border: 10px solid #2C3E50;" />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="container" >
+                          <div class="row">
+                            <div class="col-sm-7" style="float: left; margin-left: 60px;">
+                            <h1>Learn from qualified tutors</h1>
+                            <p>We have multiple tutors available that can help your growth. </p>
+                            </div>
+                            <div class="col-sm-3-study" style="float: right; margin-right: 80px;" >
+                            <img src="{% static "images/study_bee.jpg" %}"  style="width: 310px; border: 10px solid #2C3E50;" />
+                            </div>
+                          </div>
+                        </div>
+
+            <center>
+                <div class="img-wrapper">
+                 <img class="img-responsive" src="{% static "images/bee_team.png" %}" style="border: 10px solid #2C3E50;">
+                 <div class="img-overlay">
+                  <a id="sign-up-link"  href="{% url 'account_signup' %}">{% trans "Join The Team" %}</a>
+                  </div>
+                </div>
+            </center>
+      </section>
+  </div>
+
+
+
+<div>
+{% include "partials/contact.html" %}
+</div>
+
+</div>
+
+{% endblock content %}

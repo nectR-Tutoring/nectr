@@ -34,6 +34,7 @@ urlpatterns = [
 
     url(r'^test_index_html', TemplateView.as_view(template_name='homepage.html'), name='test1'),
     url(r'^test_about_nectr', TemplateView.as_view(template_name='about_nectr.html'), name='test2'),
+    url(r'^test_how_nectr', TemplateView.as_view(template_name='how_nectr.html'), name='test3'),
 
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
