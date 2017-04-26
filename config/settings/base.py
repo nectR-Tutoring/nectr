@@ -59,6 +59,9 @@ LOCAL_APPS = [
     # custom users app
     'nectr.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'nectr.search',
+    'nectr.student',
+    'nectr.tutor'
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

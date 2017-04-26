@@ -27,9 +27,8 @@ def step_impl(context, name):
     :type name: str
     :type context: behave.runner.Context
     """
-    RegisteredUserFactory(first_name=name)
     c = Client()
-    u = User.objects.get(first_name__exact=name)
+    u = User.objects.get(username=context.current_user.username)
     assert_that(u.first_name, contains_string(name), "User should match step name")
     u.set_password("password")
     assert c.login(username=u.username, password="password")
@@ -69,7 +68,7 @@ def step_impl(context, name, search_text):
     :type context: behave.runner.Context
     """
     print (context.browser.current_url)
-    search_field = context.browser.find_by_id('search_box')
+    search_field = context.driver.find_element_by_id('search_box')
     search_field.send_keys(search_text)
 
 
