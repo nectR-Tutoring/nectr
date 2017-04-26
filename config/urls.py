@@ -32,6 +32,9 @@ urlpatterns = [
                   # How it Works
                   url(r'^how_it_works', TemplateView.as_view(template_name='pages/how_it_works.html'),
                       name='how_it_works'),
+                  url(r'^tutor_information', TemplateView.as_view(template_name='pages/tutor_information.html'), name='tutor_information'),
+
+
 
     url(r'^test_index_html', TemplateView.as_view(template_name='homepage.html'), name='test1'),
     url(r'^test_about_nectr', TemplateView.as_view(template_name='about_nectr.html'), name='test2'),
