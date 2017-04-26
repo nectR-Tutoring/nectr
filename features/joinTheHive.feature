@@ -29,7 +29,7 @@ Scenario: Brandon submits incomplete application
   Then application is reloaded with information that has already been filled
   And is incomplete fields are highlighted
 
-Scenario: Juan submits complete applicaiton
+Scenario: Juan submits complete application
   Given juan is on join the hive page
   And juan completes application
   When juan clicks on submit button
