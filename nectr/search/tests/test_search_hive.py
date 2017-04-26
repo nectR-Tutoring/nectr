@@ -10,7 +10,7 @@ class TestSearchTheHive(TestCase):
         assert_that(request, has_property('search_text'))
         assert_that(request.search_text, is_('Math'))
 
-        response = self.client.get('/search', data={
+        response = self.client.get('/search/tutors/', data={
             'search_text': request.search_text
         })
         self.assertEqual(response.status_code, 200)
