@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 from nectr.tutor.models import Tutor
 
-
+#TODO::
 def tutor_search_result_list(request):
     if request.method == 'GET':
         tutors = Tutor.objects.all()
