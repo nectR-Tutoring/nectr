@@ -14,10 +14,10 @@
 
   {% if request.user.is_authenticated %}
   <li class="nav-item">
-    <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+    <a class="button special fit" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
+    <a class="button fit" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
   </li>
 
   {% else %}
