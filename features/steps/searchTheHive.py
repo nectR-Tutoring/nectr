@@ -100,3 +100,11 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     assert False
+
+
+@given("there are 15 Math tutors")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    TutorFactory()
