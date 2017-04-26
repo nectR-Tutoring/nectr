@@ -54,7 +54,7 @@ services:
       - "8025:8025"
 
   jenkins:
-    image: jenkins:2.0
+    image: jenkins
     restart: always
     ports:
       - "8889:8080"
@@ -62,14 +62,18 @@ services:
       - ./.jenkins:/var/jenkins_home
 
   hub:
-    image: selenium/hub:2.52.0
+    image: selenium/hub
+    depends_on:
+     - pycharm
+    links:
+     - pycharm
     expose:
       - 4444
     ports:
-      - 4444:4444
+      - "4444:4444"
 
   node-firefox:
-    image: selenium/node-firefox-debug:2.52.0
+    image: selenium/node-firefox
     depends_on:
       - hub
     ports:
@@ -79,7 +83,7 @@ services:
       HUB_PORT_4444_TCP_PORT: 4444
 
   node-chrome:
-    image: selenium/node-chrome-debug:2.52.0
+    image: selenium/node-chrome
     depends_on:
       - hub
     environment:
