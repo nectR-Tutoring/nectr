@@ -10,7 +10,13 @@ before_install:
  - chmod +x docker-compose
  - sudo mv docker-compose /usr/local/bin
 
+before_script:
+  - docker-compose build
+  - docker-compose up -d
+
 script:
-  - docker-compose -f docker-compose.travisCI.yml build
-  - docker-compose -f docker-compose.travisCI.yml run --service-ports django python manage.py test
-  - docker-compose -f docker-compose.yml run --service-ports pycharm behave --tags ~@wip --tags~@future
+  - docker-compose run --service-ports pycharm python manage.py test --no-input
+  - docker-compose run --service-ports pycharm behave -tags=-wip -tags=-future
+
+after_script:
+  - docker-compose down
