@@ -58,7 +58,7 @@ def step_impl(context, name):
     :param name: str
     :type context: behave.runner.Context
     """
-    context.browser.visit("/search_the_hive/")
+    context.driver.get(context.server_url + "/search_the_hive/")
 
 
 @when("{name} types {search_text} in search box")

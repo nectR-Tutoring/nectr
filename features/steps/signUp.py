@@ -24,7 +24,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when("Charlie clicks on sign up link")
@@ -32,7 +32,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('is asked "{text}"')
@@ -40,7 +40,7 @@ def step_impl(context, text):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("he says no")
@@ -48,7 +48,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @given("Mike is on the homepage")
@@ -56,7 +56,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when("mike clicks on sign up link")
@@ -64,7 +64,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("he says yes")
@@ -72,7 +72,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @then('he is redirected to the "sign up form"')
@@ -80,7 +80,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @given("Enoc is on the seacrch the hive page")
@@ -88,7 +88,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when("enoc clicks on sign up link")
@@ -96,7 +96,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @then('is redirected to the "sign up" form')
@@ -104,7 +104,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @given("brandon is on the about nectr page")
@@ -112,7 +112,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when("brandon clicks on sign up link")
@@ -120,7 +120,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @given("juan is on the how it works page")
@@ -128,7 +128,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when("juan clicks on sign up link")
@@ -136,4 +136,4 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False

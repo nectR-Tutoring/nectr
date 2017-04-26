@@ -1,4 +1,5 @@
 # Created by BrandonFox at 4/5/2017
+@browser-grid
 Feature: Test Functionality of Nectr
   As a developer of nectR
   I want to make sure the basic functionality I expect is working

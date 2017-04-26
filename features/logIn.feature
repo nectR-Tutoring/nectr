@@ -9,7 +9,7 @@ Scenario: Mike clicks login before creating account
   Given Mike is not registered to nectr
   Given mike is on nectr site
   When mike clicks on menu button
-  And mike clicks on nav_Login button
+  And mike clicks on login button on menu
   Then mike is redirected to Login page
   When mike clicks on "sign_up_redirect"
   Then mike is redirected to Signup page

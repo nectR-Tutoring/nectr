@@ -46,3 +46,19 @@ def step_impl(context, name):
     :type context: behave.runner.Context
     """
     context.driver.find_element_by_name(name).click()
+
+
+@then('There should be a "SIGN UP" link')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.driver.find_element_by_id('sign-up-link')
+
+
+@then('There should be a "LOG IN" link')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.driver.find_element_by_id('log-in-link')

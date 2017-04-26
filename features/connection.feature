@@ -13,6 +13,6 @@ Feature: Connection to nectR
     When I go to "/"
     Then I should see a page with title "Home"
     When I press the "menu"
-    Then There should be a "SIGN UP" link with name "nav_SignUp"
-    Then There should be a "LOG IN" link with name "nav_Login"
+    Then There should be a "SIGN UP" link
+    Then There should be a "LOG IN" link
 
