@@ -107,4 +107,4 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    TutorFactory()
+    TutorFactory.create_batch(size=15)
