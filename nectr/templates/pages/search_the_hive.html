@@ -1,6 +1,7 @@
 {% load staticfiles i18n compress %}<!DOCTYPE HTML>
 
 <html>
+<<<<<<< HEAD
 <head>
     <title>Search The Hive - nectR by bee team</title>
     <meta charset="utf-8"/>
@@ -197,4 +198,199 @@
             crossorigin="anonymous"></script>
 
 </body>
+=======
+	<head>
+		<title>Search The Hive - nectR by bee team</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+
+		<link rel="stylesheet" href="{% static "css/main.css" %}" />
+    <link rel="stylesheet" href="{% static "css/searchthehive.css" %}" />
+		<link rel="stylesheet" href="{% static "css/project.css" %}" />
+
+
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="{% url 'home' %}"  class="logo"><strong>nectR</strong> <span>by The Bee Team</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+					<!-- Menu -->
+						<nav id="menu">
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="how_it_works.html">How it works</a></li>
+								<li><a href="search_the_hive.html">Search the Hive</a></li>
+							</ul>
+							<ul class="actions vertical">
+								<li><a href="#" class="button special fit">Sign Up</a></li>
+								<li><a href="#" class="button fit">Log In</a></li>
+							</ul>
+						</nav>
+
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/pic07.jpg" alt="" />
+							</span>
+
+							<header class="major noline">
+								 <center> <h2>What do you need help with?</h2> </center>
+							</header>
+
+
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Three -->
+						<article class="padding-search" style ="padding-left:15%;padding-top: 5%;padding-bottom: 10%;padding-right: 0%;">
+						<section id="one">
+
+								<form method="GET">
+										<div class="inner">
+												<div class="row">
+														<div class = "col-md-8">
+																<input id="searchbar" type="text" name="search_text" placeholder="Search for our courses...">
+														</div>
+														<div class="col-md-4">
+															<div>
+
+																<input onclick="location.href='#fetch'" type="submit" id="search_button" class="btn red" name="search_button">
+
+														 </div>
+														</div>
+												</div>
+										</div>
+										{% csrf_token %}
+								</form>
+
+								<script>
+										$(document).ready(function (){
+												$("#search_button").click(function (){
+														$('html, body').animate({
+																scrollTop: $("#fetch").offset().top
+														}, 2000);
+												});
+										});
+								</script>
+
+						</section>
+				</div>
+</article>
+
+
+						<section id="fetch" class="padding-in-search">
+
+							<!-- nav bar -->
+
+							<ul>
+							<li class="dropdown">
+								<a href="javascript:void(0)" class="dropbtn">Filter</a>
+							<div class="dropdown-content">
+								<a href="#">Link 1</a>
+								<a href="#">Link 2</a>
+								<a href="#">Link 3</a>
+							</div>
+						  </li>
+							
+						</ul>
+
+							<table id="myTable">
+							  <tr class="header">
+							    <th style="width:10%;">Subject</th>
+							    <th style="width:30%;">Course Title</th>
+									<th style="width:20%;">Tutor</th>
+									<th style="width:30%;">Price</th>
+									<th style="width:20%;">Contact</th>
+							  </tr>
+							  <tr>
+							    <td>math</td>
+							    <td>calc 1</td>
+									 <td>Prof Lamar</td>
+									  <td>2 Jars/hour</td>
+										 <td>Link to tutor message</td>
+							  </tr>
+								<tr>
+								 <td>Java</td>
+								 <td>Array-List</td>
+									<td>Prof Juan</td>
+									 <td>1 Jars/hour</td>
+										<td>Link to tutor message</td>
+							 </tr> <tr>
+							    <td>Language</td>
+							    <td>Spanish</td>
+									 <td>Prof El chapo</td>
+									  <td>1/2 Jars/hour</td>
+										 <td>Link to tutor message</td>
+							  </tr> <tr>
+ 							    <td>History</td>
+ 							    <td>Toronto</td>
+ 									 <td>Prof Drake Graham</td>
+ 									  <td>2 Jars/hour</td>
+ 										 <td>Link to tutor message</td>
+ 							  </tr>
+							</table>
+
+						</section>
+
+
+
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="inner">
+								<ul class="icons">
+									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+								<ul class="copyright">
+									<li>&copy; nectR </li><li>Design: The Bee Team</li>
+								</ul>
+							</div>
+						</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+>>>>>>> new_development
 </html>

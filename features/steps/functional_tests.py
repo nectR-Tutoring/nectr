@@ -27,8 +27,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    url = "http://" + context.host + ":" + context.port
-    context.response = requests.get(url)
+    context.response = requests.get(context.server_url)
 
 
 @then("I should get a good response")
@@ -36,6 +35,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
+<<<<<<< HEAD
     for links in context.links:
         value = links.get_attribute("href")
         r = requests.get(value)
@@ -65,3 +65,6 @@ def step_impl(context, html_element):
     elements = context.page.find_elements_by_xpath("//a[@{0}]".format(html_element))
     assert_that(elements, is_(not_none()))
     context.links = elements
+=======
+    assert_that(context.response.status_code, is_(200))
+>>>>>>> new_development

@@ -51,11 +51,18 @@ def step_impl(context, name):
     :type name: str
     :type context: behave.runner.Context
     """
-
+    RegisteredUserFactory(first_name=name)
     c = Client()
+<<<<<<< HEAD
     context.current_user = UserFactory(first_name=name, username=name + "_username", password="password")
     assert_that(context.current_user.first_name, contains_string(name), "User should match step name")
     assert c.login(username=context.current_user.username, password="password")
+=======
+    u = User.objects.get(first_name__exact=name)
+    assert_that(u.first_name, contains_string(name), "User should match step name")
+    u.set_password("password")
+    assert c.login(username=u.username, password="password")
+>>>>>>> new_development
 
 
 @given("{name} is on search the hive page")

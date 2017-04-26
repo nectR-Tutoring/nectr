@@ -3,5 +3,9 @@
   <component name="IpnbSettings">
     <option name="workingDirectory" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.5.3 Docker Compose (django at [/home/bfox/PycharmProjects/nectr/docker-compose.yml])" project-jdk-type="Python SDK" />
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.5.3 Docker Compose (pycharm at /Users/BrandonFox/PycharmProjects/nectr)" project-jdk-type="Python SDK" />
+>>>>>>> new_development
 </project>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% load staticfiles i18n compress %}<!DOCTYPE HTML>
 
 <html>
@@ -126,6 +127,79 @@
                 </header>
             </article>
 
+=======
+{% load staticfiles i18n compress%}<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>nectR - Home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!--[if lte IE 8]><script src="{% static "js/ie/html5shiv.js" %}"></script><![endif]-->
+		<link rel="stylesheet" href="{% static "css/main.css" %}" />
+		<link rel="stylesheet" href="{% static "css/search_the_hive.css" %}" />
+		<link rel="stylesheet" href="{% static "css/homepage.css" %}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="{% static "css/ie9.css" %}" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="{% static "css/ie8.css" %}" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="{% url 'home' %}"  class="logo"><strong>nectR</strong> <span>by The Bee Team</span></a>
+						<nav>
+							<a href="#menu" name="menu">Menu</a>
+						</nav>
+					</header>
+
+					<!-- Menu -->
+						<nav id="menu">
+							<ul class="links">
+								<li><a href="{% url 'home' %}">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="how_it_works.html">How it works</a></li>
+								<li><a href="search_the_hive.html">Search the Hive</a></li>
+							</ul>
+							<ul class="actions vertical">
+							<li><a id="sign-up-link" class="button special fit" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a></li>
+							<li><a id="log-in-link" class="button fit" href="{% url 'account_login' %}">{% trans "Log In" %}</a></li>
+							</ul>
+						</nav>
+
+
+				<!-- Banner -->
+					<section id="banner" class="major" >
+
+						<div class="inner">
+								<div class="padding-33" style = "padding-top: 100px; padding-left: 135px;">
+										<img src="{% static "images/nectr-white.png" %}" alt="" width="800" height="260"/>
+								</div>
+							<header class="major noline">
+								<div class="padding-search">
+								<input id="searchbar" type="text" name="search" placeholder="Search for our courses.." >
+
+
+							<center>
+								<ul class="actions">
+										<li><a href="#one" class="button next scrolly"> Learn more </a></li>
+								</ul>
+							</center>
+							</div>
+							</header>
+						</div>
+					</section>
+>>>>>>> new_development
 
             <article>
 									<span class="image">
@@ -133,6 +207,7 @@
 									</span>
                 <header class="major noline">
 
+<<<<<<< HEAD
                     <h3><a href="how_it_works.html" class="link">How it Works</a></h3>
 
 
@@ -153,9 +228,24 @@
 
         </section>
 
+=======
+					<!-- nav bar -->
+					<nav class="navbar navbar-default" style="  margin-bottom: 3%; margin-top: 3%; ">
+					  <div class="container-fluid" style="columns: 1; margin-left: 30%; padding-bottom: 2%; ">
+					    <ul class="nav navbar-nav" >
+					      <li><a href="#"> Language </a>  <i class="fa fa-language" style="margin-left: 45%; color: black;"></i> </li>
+					       <li><a href="#"> Math </a> <i class="fa fa-calculator" style="margin-left: 45%; color: black;"></i> </li>
+					       <li><a href="#"> English </a><i class="fa fa-book" style="margin-left: 45%; color: black;"></i> </li>
+					       <li><a href="#"> Test Prep </a><i class="fa fa-pencil" style="margin-left: 45%; color: black;"></i> </li>
+					       <li><a href="#"> More </a> <i class="fa fa-bars" style="margin-left: 45%; color: black;"></i> </li>
+					    </ul>
+					  </div>
+					</nav>
+>>>>>>> new_development
 
         <br>
 
+<<<<<<< HEAD
 
         <!-- two -->
         <section id="two">
@@ -256,53 +346,146 @@
 
 
 
-
-
-
-								<!-- <article>
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Consequat</a></h3>
-										<p>Ipsum dolor sit amet</p>
+=======
+										<h3><a href="join_the_hive" class="link">Join the Hive</a></h3>
 									</header>
 								</article>
+
 								<article>
 									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
+										<img src="{% static "images/honeydrip.gif" %}" alt="" />
 									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Etiam</a></h3>
-										<p>Feugiat amet tempus</p>
+									<header class="major noline">
+										<h3><a href="search_the_hive" class="link">Search the Hive</a></h3>
 									</header>
 								</article>
-							</section> >
-            < Two -->
-							<!-- <section id="two">
-								<div class="inner">
-									<header class="major">
-										<h2>How it Works</h2>
-									</header>
-									<p>The way the payments per sessions are going to be made is by
-										having credit, which are honey-combs. After a certain amount of
-										honey-combs the credit will them become Jars of honey. The
-										tutors have the option to charge how ever many jars of honey
-										or honey-combs per session.  The students account will option
-										to search for tutors, a list of suggestions, have a bank of
-										credits(Honey-combs) and a refer another students. Every student
-										that they suggest and sign up, the user will receive a free
-										honey-combs. Also after the first session the student will
-										receive a reward of honey-combs. The students can also gain
-										more honey-combs by purchasing a package or by sessions and
-										completing test/quizzes/assignments given by the tutor.</p>
-									<ul class="actions">
-										<li><a href="landing.html" class="button next">Get Started</a></li>
-									</ul>
-								</div>
-							</section>
 
-					</div>-->
+
+								<article>
+									<span class="image">
+											<img src="{% static "images/giphy.gif" %}" alt="" />
+									</span>
+									<header class="major noline">
+										<h3><a href="how_it_works.html" class="link">How it Works</a></h3>
+									</header>
+								</article>
+
+								<article>
+									<span class="image">
+										<img src="{% static "images/aboutgif.gif" %}" alt="" />
+									</span>
+									<header class="major noline">
+										<h3><a href="about.html" class="link">About</a></h3>
+									</header>
+								</article>
+							</section>
+>>>>>>> new_development
+
+
+
+
+
+							<!-- two -->
+										<section id="two">
+												<div class="row 100% padding-5">
+													<article class="6u 12u$(medium)">
+														<div class="padding-5">
+														<header>
+															<h2>Join The Hive</h2>
+														</header>
+														<p>
+															<ul>
+																<h3>We're always looking for talented students to join the team</h3>
+																	<a href="{% url 'join' %}" class="button next scrolly"> Apply Now </a>
+															</ul>
+														</p>
+													</div>
+													</article>
+
+													<article class="6u$ 12u$(medium) important(medium)">
+														<span class="image fit">
+															<img src="{% static "images/bee-moving.gif" %}" alt="" />
+														</span>
+														</article>
+												</div>
+										</section>
+
+										<!-- two -->
+													<section id="two">
+															<div class="row 100% padding-5">
+																<article class="6u 12u$(medium)">
+																	<div class="padding-5">
+																		<span class="image fit">
+																			<img src="{% static "images/bee-moving.gif" %}" alt="" />
+																		</span>
+															</div>
+																</article>
+
+																<article class="6u$ 12u$(medium) important(medium)">
+																	<header>
+																		<h2>How it works</h2>
+																	</header>
+																	<p>
+																		<ul>
+																			<h3>Click below to learn how nectR works</h3>
+																				<a href="{% url 'how_it_works' %}" class="button next scrolly">Find out more</a>
+																		</ul>
+																	</p>
+																	</article>
+															</div>
+													</section>
+
+													<!-- two -->
+																<section id="two">
+																		<div class="row 100% padding-5">
+																			<article class="6u 12u$(medium)">
+																				<div class="padding-5">
+																				<header>
+																					<h2>About</h2>
+																				</header>
+																				<p>
+																					<ul>
+																						<h3>Find out more about nectR</h3>
+																							<a href="{% url 'about' %}" class="button next scrolly">About</a>
+																					</ul>
+																				</p>
+																			</div>
+																			</article>
+
+																			<article class="6u$ 12u$(medium) important(medium)">
+																				<span class="image fit">
+																					<img src="{% static "images/bee-moving.gif" %}" alt="" />
+																				</span>
+																				</article>
+																		</div>
+																</section>
+
+																<!-- two -->
+																			<section id="two">
+																					<div class="row 100% padding-5">
+																						<article class="6u 12u$(medium)">
+																							<div class="padding-5">
+																								<span class="image fit">
+																									<img src="{% static "images/bee-moving.gif" %}" alt="" />
+																								</span>
+																					</div>
+																						</article>
+
+																						<article class="6u$ 12u$(medium) important(medium)">
+																							<header>
+																								<h2>Search the Hive</h2>
+																							</header>
+																							<p>
+																								<ul>
+																									<h3>Search our database for the perfect tutor to meet your needs</h3>
+																										<a href="{% url 'search' %}" class="button next scrolly">Search Now</a>
+																								</ul>
+																							</p>
+																							</article>
+																					</div>
+																			</section>
+
+
 
 				<!-- Contact -->
 					<section id="contact">
@@ -348,6 +531,7 @@
 										<h3>Address</h3>
 										<span>1234 Somewhere Road #5432<br />
 										Nashville, TN 00000<br />
+<<<<<<< HEAD
 
 										United States of America</span>
                         </div>
@@ -390,4 +574,45 @@
             crossorigin="anonymous"></script>
 
 </body>
+=======
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+				</div>
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="inner">
+								<ul class="icons">
+									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+								<ul class="copyright">
+									<li>&copy; nectR </li><li>Design: The Bee Team</li>
+								</ul>
+							</div>
+						</footer>
+
+</div>
+
+		<!-- Scripts -->
+
+			<script src="{% static "js/jquery.min.js" %}"></script>
+			<script src="{% static "js/jquery.scrolly.min.js" %}"></script>
+			<script src="{% static "js/jquery.scrollex.min.js" %}"></script>
+			<script src="{% static "js/skel.min.js" %}"></script>
+			<script src="{% static "js/util.js" %}"></script>
+			<!--[if lte IE 8]><script src="{% static "js/ie/respond.min.js" %}"></script><![endif]-->
+			<script src="{% static "js/main.js" %}"></script>
+			<script src="{% static "js/custom.js" %}"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	</body>
+>>>>>>> new_development
 </html>

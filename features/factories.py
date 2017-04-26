@@ -15,8 +15,12 @@ class VisitorFactory(factory.django.DjangoModelFactory):
 
     first_name = lazy_attribute(lambda o: faker_data.first_name())
     last_name = lazy_attribute(lambda o: faker_data.last_name())
+<<<<<<< HEAD
     email = lazy_attribute(lambda o: faker_data.email())
     username = factory.Sequence(lambda n: "user_{0}".format(n))
+=======
+    is_active = False
+>>>>>>> new_development
 
 
 class RegisteredUserFactory(factory.django.DjangoModelFactory):
@@ -30,3 +34,4 @@ class RegisteredUserFactory(factory.django.DjangoModelFactory):
     email = lazy_attribute(
         lambda o: o.username + "@example.com")  # factory.lazy_attribute(lambda a: a.username + '@example.com')
     password = PostGenerationMethodCall('set_password', 'password')
+    is_active = True

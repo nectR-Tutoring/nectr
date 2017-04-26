@@ -17,5 +17,9 @@ font-size: 25px;
     transition: width 0.4s ease-in-out;
 }
 .padding-search {
+<<<<<<< HEAD:nectr/static/css/main2.css
   padding-bottom: 80px;
+=======
+  padding-bottom: 15%;
+>>>>>>> new_development:nectr/static/css/searchbar.css
 }

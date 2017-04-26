@@ -6,7 +6,11 @@
       <env name="PYTHONUNBUFFERED" value="1" />
       <env name="DJANGO_SETTINGS_MODULE" value="config.settings.test" />
     </envs>
+<<<<<<< HEAD
     <option name="SDK_HOME" value="docker-compose://[$PROJECT_DIR$/docker-compose.yml]:pycharm/python" />
+=======
+    <option name="SDK_HOME" value="docker-compose://$PROJECT_DIR$/../nectr:django/python" />
+>>>>>>> new_development
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
