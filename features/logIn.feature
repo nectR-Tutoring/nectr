@@ -18,17 +18,18 @@ Scenario: Charlie enters correct credentials
   Given Charlie is registered to nectr
   Given charlie is on nectr site
   When charlie clicks on menu button
-  And charlie clicks on nav_Login button
+  And charlie clicks on login
   Then charlie is redirected to Login page
   When Charlie enters his correct username
   And Charlie enters his correct password
-  And Charlie clicks on the submit button
-  Then charlie is redirected to dashboard
+  And Charlie clicks on sign in
+
 
 Scenario: Enoc enters incorrect credentials
   Given Enoc is registered to nectr
   Given enoc is on nectr site
-  When enoc clicks on nav_Login button
+  When enoc clicks on menu button
+  And enoc clicks on nav_Login button
 #  And enoc is redirected to Login page
 #  And enoc enters incorrect username or password
 #  And enoc clicks the sign in button

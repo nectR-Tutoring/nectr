@@ -311,3 +311,20 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     context.driver.find_element_by_id('log-in-link').click()
+
+
+@step("charlie clicks on login")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.driver.find_element_by_id('log-in-link').click()
+
+
+@step("Charlie clicks on sign in")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.driver.find_element_by_name(
+        'login_button_form').click()
