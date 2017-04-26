@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile-Page</title>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<hr>
+<div class="container">
+
+  <div class="row">
+                
+      <div class="col-sm-10"><h1>Tutor Profile</h1>
+            <form id="sendCourseData" method="post">
+                   <button type="submit" class="btn btn-warning">Switch To Student Profile</button> 
+                       </form>
+      </div>             
+
+      <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"></a></div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3"><!--left col-->
+              
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Profile</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2.13.2014</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Last tutored</strong></span> Yesterday</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> Joseph Doe</li>
+            
+          </ul> 
+        
+          
+          
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Person tutor</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 37</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Favorite</strong></span> 78</li>
+          </ul> 
+               
+          <div class="panel panel-default">
+            <div class="panel-heading">Social Media</div>
+            <div class="panel-body">
+              <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+            </div>
+          </div>
+          
+        </div><!--/col-3-->
+      <div class="col-sm-9">
+          
+          <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+            <li><a href="#messages" data-toggle="tab">Messages</a></li>
+            <li><a href="#settings" data-toggle="tab">Settings</a></li>
+            <li><a href="#addcourses" data-toggle="tab">Course</a></li>
+            <a href="#" class="btn btn-warning" id="openBtn" data-toggle="modal" data-target="#myModal"> Buy Honeycomb</a>
+            
+          </ul>
+              
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th> Date</th>
+                      <th>Description</th>
+                      <th> Honeycomb bought</th>
+                      <th>Honeycomb spent</th>
+                      <th>Balance</th> 
+                    </tr>
+                  </thead>
+                  <tbody id="items">
+                    <tr>
+                      <td>1</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                    <td>Table cell</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                       <td>Table cell</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                    <td>Table cell</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                  <td>Table cell</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                  <td>Table cell</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                <td>Table cell</td>
+                    </tr>
+                     <tr>
+                      <td>8</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                     <td>Table cell</td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+               <td>Table cell</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                      <td>Table cell</td>
+                  <td>Table cell</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <hr>
+                <div class="row">
+                  <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="pagination" id="myPager"></ul>
+                  </div>
+                </div>
+              </div><!--/table-resp-->
+              
+              <hr>
+              
+              <h4>Recent Activity</h4>
+              
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  
+                  <tbody>
+                    <tr>
+                      <td><i class="pull-right fa fa-edit"></i> Today, 1:00 - Jeff Manzi liked your post.</td>
+                    </tr>
+                    <tr>
+                      <td><i class="pull-right fa fa-edit"></i> Today, 12:23 - Mark Friendo liked and shared your post.</td>
+                    </tr>
+                    <tr>
+                      <td><i class="pull-right fa fa-edit"></i> Today, 12:20 - You posted a new blog entry title "Why social media is".</td>
+                    </tr>
+                    <tr>
+                      <td><i class="pull-right fa fa-edit"></i> Yesterday - Karen P. liked your post.</td>
+                    </tr>
+                    <tr>
+                      <td><i class="pull-right fa fa-edit"></i> 2 Days Ago - Philip W. liked your post.</td>
+                    </tr>
+                    <tr>
+                      <td><i class="pull-right fa fa-edit"></i> 2 Days Ago - Jeff Manzi liked your post.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="messages">
+               
+               <h2></h2>
+               
+               <ul class="list-group">
+                  <li class="list-group-item text-muted">Inbox</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link to the latest summary report from the..</a> 2.13.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been a request on your account since that was..</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  
+                </ul> 
+               
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="settings">
+                
+                
+                  <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>First name</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Last name</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Phone</h4></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Mobile</h4></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Location</h4></label>
+                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="password"><h4>Password</h4></label>
+                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="password2"><h4>Verify</h4></label>
+                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+                </form>
+              </div>
+
+           <!--    User Add courses they want to teach -->
+               
+ <div class="tab-pane" id="addcourses">
+
+    <div class="row clearfix">
+        <div class="col-md-12 table-responsive">
+            <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                <thead>
+                    <tr >
+                        <th class="text-center">
+                            Subject
+                        </th>
+                        <th class="text-center">
+                            Course Title
+                        </th>
+                        <th class="text-center">
+                            Hour
+                        </th>
+                        <th class="text-center">
+                            Date
+                        </th>
+                         <th class="text-center">
+                            Delete
+                        </th>
+
+                        <th class="text-center" style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id='addr0' data-id="0" > <!-- Add class="hidden" so it only shows when Add row btn is press -->
+                        <td data-name="name">
+                            <input type="text" name='name0'  placeholder='Math' class="form-control"/>
+                        </td>
+                        <td data-name="mail">
+                            <input type="text" name='mail0' placeholder='MTH 130' class="form-control"/>
+                                          </td>
+
+                                          <form id="timeform" method="post" >
+                                          <td data-name="hour">
+                        <div class="input-group registration-date-time ">
+                          <span class="input-group-addon" ><span class="glyphicon glyphicon-time" aria-hidden="true"></span></span>
+                              <select type="text" class="form-control" id="ship_date" name="ship_date">
+                                    <option value="7">7 am </option>
+                                    <option value="8">8 am </option>
+                                    <option value="9">9 am </option>
+                                    <option value="10" selected >10 am </option>
+                                    <option value="11">11 am </option>
+                                    <option value="12">12 pm </option>
+                                    <option value="13">1 pm </option>
+                                    <option value="14">2 pm </option>
+                                    <option value="15">3 pm </option>
+                                    <option value="16">4 pm </option>
+                                    <option value="17">5 pm </option>
+                                    <option value="18">6 pm </option>
+                                    <option value="19">7 pm </option>
+                                </select>
+                                <span class="input-group-addon" ><span class="glyphicon glyphicon-time" aria-hidden="true"></span></span>
+                              <select type="text" class="form-control" id="shiptime" name="ship_time">
+                                    <option value="00">00 mins </option>
+                                    <option value="15">15 mins </option>
+                                    <option value="30">30 mins</option>
+                                    <option value="45">45 mins</option>
+                                </select> 
+
+                                            </td>
+                                          </form >
+                                          <td data-name="datePicker">
+                                              <form id="eventForm" method="post">
+                                               
+                                                        <div class="input-group input-append date" id="datePicker">
+                                                            <input type="text" class="form-control" name="date"  placeholder="mm/dd/yyyy" />
+                                                            <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                        </div>
+                                                   
+                                                
+                                            </form>
+
+                                          </td>
+
+                                       
+                                             <td data-name="del">
+                                              <button  class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>
+                                          </td>
+                                          
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                     
+
+                      <form id="sendCourseData" method="post">
+                      <button type="submit" class="btn btn-primary">Submit</button> 
+                        <a id="add_row" class="btn btn-default pull-right">Add Row</a>
+
+                            </form>
+                        
+                  <div class="List-container" style="margin-top: 50px;">
+                     <ul class="list-group">
+                        <li class="list-group-item text-muted">Course List</li>
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link to the latest summary report from the..</a> 2.13.2014</li>
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been a request on your account since that was..</a> 2.11.2014</li>
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                        
+                      </ul> 
+                </div>
+
+
+
+ </div>
+              </div><!--/tab-pane-->
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+
+
+ <!-- Payment Modal Window -->
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <div class="container">
+    <div class="col-sm-6">
+        <fieldset>
+          
+            <legend>Payment</legend>
+          
+              <img class="img-responsive" src="http://i76.imgup.net/accepted_c22e0.png">
+                      
+            <div class="control-group">
+                <label label-default="" class="control-label">Card Holder's Name</label>
+                <div class="controls">
+                    <input type="text" class="form-control" pattern="\w+ \w+.*" title="First and last name" required="">
+                </div>
+            </div>
+            <div class="control-group">
+                <label label-default="" class="control-label">Card Number</label>
+                <div class="controls">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="First four digits" required="">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Second four digits" required="">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Third four digits" required="">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Fourth four digits" required="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label label-default="" class="control-label">Card Expiry Date</label>
+                <div class="controls">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <select class="form-control" name="cc_exp_mo">
+                                <option value="01">January</option>
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-control" name="cc_exp_yr">
+                                <option>2014</option>
+                                <option>2015</option>
+                                <option>2016</option>
+                                <option>2017</option>
+                                <option>2018</option>
+                                <option>2019</option>
+                                <option>2020</option>
+                                <option>2021</option>
+                                <option>2022</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label label-default="" class="control-label">Card CVV</label>
+                <div class="controls">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required="">
+                        </div>
+                        <div class="col-md-8"></div>
+                    </div>
+                </div>
+            </div>
+          
+          <div class="control-group">
+                
+              <p> $1 = 1 Honeycomb. 1 Honey jar = 10 honeycomb.</p>
+                <div class="controls">
+                    <div class="row">
+                         <div class="col-md-3">
+                         <label label-default="" class="control-label">Honeycomb</label>
+
+                            <input type="text" class="form-control" autocomplete="off"   required="" title="Honeycomb's">
+                        </div>
+
+                        <div class="col-md-3">
+                        <label label-default="" class="control-label">Honey Jar</label>
+                            <input type="text" class="form-control" autocomplete="off"  required="" title="Honey Jar's">
+                
+                    </div>
+                   
+                </div>
+
+                </div>
+            </div>
+
+            <div class="control-group">
+              <label label-default="" class="control-label"></label>
+              <div class="controls">
+                <button type="submit" class="btn btn-warning">Submit</button> 
+                <button type="button" class="btn btn-default">Cancel</button>
+              </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+<hr>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" scr="complete_profile.js"></script>
+
+</body>
+</html>
