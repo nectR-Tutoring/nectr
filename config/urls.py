@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^test_about_nectr', TemplateView.as_view(template_name='about_nectr.html'), name='test2'),
     url(r'^test_how_nectr', TemplateView.as_view(template_name='how_nectr.html'), name='test3'),
     url(r'^test_look_nectr', TemplateView.as_view(template_name='look_nectr.html'), name='test4'),
+    url(r'^test_joinpage_nectr', TemplateView.as_view(template_name='joinpage_nectr.html'), name='test5'),
 
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
