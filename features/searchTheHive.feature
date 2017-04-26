@@ -25,7 +25,6 @@ Scenario: Brandon searches nectr
   And clicks search the hive button
 #  OLD FEATURE: RELOAD IN PAGE
 #  Then he is directed to list of tutors page
-  @wip
   And he can view preview of tutor profile
   And he will see a view profile button
 

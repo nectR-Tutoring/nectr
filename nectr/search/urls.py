@@ -5,7 +5,7 @@ from nectr.search import views
 urlpatterns = [
     url(
         regex=r'^tutors/$',
-        view=views.TutorsSearchResultList.as_view(),
+        view=views.tutor_search_result_list,
         name='list'
     ),
 ]
