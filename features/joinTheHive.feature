@@ -1,3 +1,4 @@
+@future
 Feature: Join the hive
 
 As a student
@@ -7,7 +8,7 @@ So I can tutor other students
 Background:
   Given mike does not have a nectr account
   Given charlie has a nectr student account
-  Given brandon has a nectr student account 
+  Given brandon has a nectr student account
   Given Juan has a nectr student account
 
 Scenario: Mike tries to join the hive
