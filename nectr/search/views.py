@@ -8,7 +8,7 @@ from nectr.tutor.models import Tutor
 def tutor_search_result_list(request):
     if request.method == 'GET':
         tutors = Tutor.objects.all()
-        return render(request, 'search/tutor_search_result_list.html', {'tutors': tutors})
+        return render(request, 'search/tutor/tutor_search_result_list.html', {'tutors': tutors})
     return request
 
 

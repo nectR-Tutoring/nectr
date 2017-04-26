@@ -25,17 +25,14 @@ urlpatterns = [
                   # Your stuff: custom urls includes go here
                   url(r'^search/', include('nectr.search.urls')),
 
-    # Search the Hive
-    url(r'^search_the_hive', TemplateView.as_view(template_name='look_nectr.html'), name='search'),
-    # Join the Hive
-    url(r'^join_the_hive', TemplateView.as_view(template_name='joinpage_nectr.html'), name='join'),
+                  # Search the Hive
+                  url(r'^search_the_hive', TemplateView.as_view(template_name='look_nectr.html'), name='search'),
+                  # Join the Hive
+                  url(r'^join_the_hive', TemplateView.as_view(template_name='joinpage_nectr.html'), name='join'),
 
-    # How it Works
-    url(r'^how_it_works', TemplateView.as_view(template_name='how_nectr.html'), name='how_it_works'),
+                  # How it Works
+                  url(r'^how_it_works', TemplateView.as_view(template_name='how_nectr.html'), name='how_it_works'),
 
-
-    #url(r'^test_look_nectr', TemplateView.as_view(template_name='look_nectr.html'), name='test4'),
-    #url(r'^test_joinpage_nectr', TemplateView.as_view(template_name='joinpage_nectr.html'), name='test5'),
 
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

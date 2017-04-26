@@ -1,12 +1,11 @@
 from django.conf.urls import url
 
-from nectr.search import views
+from nectr.search.models import TutorList
 
 urlpatterns = [
     url(
-        #TODO:
-        regex=r'^tutors/$',
-        view=views.tutor_search_result_list,
+        regex=r'^tutors/all'
+        view=TutorList.as_view()
         name='list'
     ),
 ]
