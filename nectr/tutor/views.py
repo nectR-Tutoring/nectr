@@ -10,14 +10,14 @@ class TutorDetailView(DetailView):
     model = Tutor
 
 
-class   TutorListView(ListView):
+class TutorListView(ListView):
     model = Tutor
     template_name = 'search/tutor/tutor_search_result_list.html'
     paginate_by = 10
     context_object_name = 'tutors_list'
 
     def get_queryset(self):
-        query = self.request.GET.get('q')
+        query = self.request.GET.get('search_text')
         return Tutor.objects.filter(courses=query)
 
 
