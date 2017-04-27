@@ -5,5 +5,5 @@ from nectr.users.models import User
 
 
 class Tutor(models.Model):
-    user = models.ForeignKey(User)
-    student = models.ForeignKey(Student)
+    base_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    votes = models.IntegerField(default=0)

@@ -7,6 +7,12 @@ urlpatterns = [
     url(
         regex=r'^(?P<username>[\w.@+-]+)/$',
         view=views.TutorDetailView.as_view(),
-        name='detail'
-    )
+        name='tutor_detail'
+    ),
+    url(
+        regex=r'^list/$',
+        view=views.TutorListView.as_view(),
+        name='tutor_lists'
+    ),
+
 ]

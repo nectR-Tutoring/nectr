@@ -12,6 +12,7 @@ class TutorDetailView(DetailView):
 
 class TutorListView(ListView):
     model = Tutor
+    context_object_name = 'tutors'
 
 
 class TutorCreate(CreateView):
