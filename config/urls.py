@@ -24,6 +24,7 @@ urlpatterns = [
 
                   # Your stuff: custom urls includes go here
                   url(r'^search/', include('nectr.search.urls')),
+                  url(r'^tutor/', include('nectr.tutor.urls')),
 
     # Search the Hive
     url(r'^search_the_hive', TemplateView.as_view(template_name='look_nectr.html'), name='search'),
