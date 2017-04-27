@@ -1,4 +1,3 @@
-@future
 Feature: Student profile
   As a student
   I want a profile
@@ -8,7 +7,7 @@ Background:
   Given Mike has nectr account
 
 Scenario: Mike wants to create profile
-  Given Mike is signed into his nectr account
+  Given Mike is signed into nectr
   When Mike clicks on "My Profile"
   And Mike is redirected to nectr profile
   Then "Hello <Mike's username>" is shown
@@ -62,3 +61,18 @@ Scenario: Mike updates contact information on profile page
   And Mike enters "6318735489"
   And Mike clicks "Save" button
   Then Mike's contact information is saved to his profile
+
+Scenario: Mike adds picture to profile for the first time
+  Given Mike is signed into nectr
+  And Mike's username is MikeAyoub
+  And Mike's password is JavaSucks123
+  And Mike is on his profile page
+  And Mike does not have profile picture
+  When Mike clicks "Edit" button on "profile picture" section of his profile
+  And profile picture thumbnail says "Add a profile photo"
+  When Mike clicks on his profile picture thumbnail
+  Then Mike is presented with pop up
+  And pop up says upload photo
+  When Mike clicks upload photo
+  And Mike chooses "Mike Photo" from desktop
+  Then Mike's profile photo is set
