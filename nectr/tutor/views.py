@@ -9,6 +9,7 @@ from nectr.tutor.models import Tutor
 class TutorDetailView(DetailView):
     model = Tutor
 
+
 class TutorListView(ListView):
     model = Tutor
 
@@ -23,4 +24,3 @@ class TutorUpdate(UpdateView):
 
 class TutorDelete(DeleteView):
     model = Tutor
-
