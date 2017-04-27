@@ -62,6 +62,7 @@ LOCAL_APPS = [
     'nectr.student.apps.StudentConfig',
     'nectr.tutor.apps.TutorConfig',
     'nectr.dashboard.apps.DashboardConfig',
+    'nectr.courses.apps.CoursesConfig',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
