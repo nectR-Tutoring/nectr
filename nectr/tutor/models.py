@@ -7,5 +7,5 @@ from nectr.users.models import User
 class Tutor(models.Model):
     base_user = models.ForeignKey(User, on_delete=models.CASCADE)
     votes = models.IntegerField(default=0)
-    courses = models.ManyToManyField(Courses)
+    courses = models.ManyToManyField()
 
