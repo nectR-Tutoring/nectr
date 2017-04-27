@@ -1,4 +1,6 @@
-{% load staticfiles i18n compress%}<!DOCTYPE html>
+{% load staticfiles i18n compress%}
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -47,17 +49,28 @@
 
          {% include "partials/menu.html" %}
 
-         <section id="banner" class="major">
-           <div class="inner">
-             {% block banner_content %}{% endblock banner_content %}
-           </div>
-         </section>
+        {% block banner_content %}{% endblock banner_content %}
 
-         <div>
-         {% block content %}{% endblock content%}
 
+      <!-- Main Content -->
+      <section id="main">
+        {% block content %}{% endblock content%}
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        {% include "partials/contact.html" %}
+      </section>
+
+
+      <!-- Footer -->
+      <footer id="footer">
         {% include "partials/footer.html" %}
-      </div>
+      </footer>
+
+
+
+
     </div>
 
 

@@ -1,9 +1,8 @@
-{% extends "base_nectr.html" %} {% load staticfiles i18n compress %}
+{% extends "base_nectr.html" %}
+{% load staticfiles i18n compress %}
 {% block banner_content %}
-<!-- Banner -->
-<!-- Note: The "styleN" class below should match that of the header element. -->
-  <section id="banner" class="style2">
-    <div class="inner">
+<section id="banner" class="style2">
+  <div class="inner">
       <span class="image">
         <img src="images/pic07.jpg" alt="" />
       </span>
@@ -13,92 +12,10 @@
       <div class="content">
         <p>Buz away towards a path of success.</p>
       </div>
-    </div>
-  </section>
+  </div>
+</section>
+
 {% endblock banner_content %}
 
 
-{% block content %}
-
-<!-- Main -->
-  <div id="main">
-
-
-    <!-- Three -->
-    <!-- Button to open the modal -->
-<button onclick="document.getElementById('id01').style.display='block'">Student - Sign Up</button>
-
-<!-- The Modal (contains the Sign Up form) -->
-<div id="id01" class="modal">
-<form class="modal-content animate black-text" action="/action_page.php">
-<div class="container">
-<label><b>Email</b></label>
-<input type="text" placeholder="Enter Email" name="email" required>
-
-<label><b>Password</b></label>
-<input type="password" placeholder="Enter Password" name="psw" required>
-
-<label><b>Repeat Password</b></label>
-<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-<input type="checkbox" checked="checked"> Remember me
-<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-
-<div class="clearfix">
-<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-<button type="submit" class="signupbtn">Sign Up</button>
-</div>
-</div>
-</form>
-</div>
-
-
-<!-- Button to open the modal -->
-<button onclick="document.getElementById('id01').style.display='block'">Tutor - Sign Up</button>
-
-<!-- The Modal (contains the Sign Up form) -->
-<div id="id01" class="modal">
-<span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
-<form class="modal-content animate black-text" action="/action_page.php">
-<div class="container">
-
-<label><b>Email</b></label>
-<input type="text" placeholder="Enter Email" name="email" required>
-
-<label><b>Password</b></label>
-<input type="password" placeholder="Enter Password" name="psw" required>
-
-<label><b>Repeat Password</b></label>
-<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-<input type="checkbox" checked="checked"> Remember me
-<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-
-<div class="clearfix">
-<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-<button type="submit" class="signupbtn">Sign Up</button>
-</div>
-</div>
-</form>
-</div>
-
-
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-if (event.target == modal) {
-modal.style.display = "none";
-}
-}
-</script>
-
-
-<div>
-{% include "partials/contact.html" %}
-</div>
-
-</div>
-
-{% endblock content %}
+{% block content %}<p>unique content</p>{% endblock content %}

@@ -1,28 +1,33 @@
-{% extends "base_nectr.html" %} {% load staticfiles i18n compress %}
+{% extends "base_nectr.html" %}
+{% load staticfiles i18n compress %}
+
 <!-- {% block title %}nectR tutoring - home page{% endblock title %} -->
 
-{% block banner_content %}
-<div class="padding-33" style="padding-top: 100px; padding-left: 135px;">
-  <img src="{% static "images/nectr-white.png" %}" alt="" width="800" height="260" />
-</div>
-<header class="major noline">
-  <div class="padding-search">
-    <input id="searchbar" type="text" name="search" placeholder="Search for our courses..">
+{% block banner_content  %}
+<section id="banner" class="major">
+  <div class="inner">
+    <div class="logo">
+      <img src="{% static "images/nectr-white.png" %}" alt="" width="800" height="260" />
+    </div>
+    <header class="major noline">
+      <div class="padding-search">
+        <input id="searchbar" type="text" name="search" placeholder="Search for our courses..">
 
 
-    <center>
-      <ul class="actions">
-        <li><a href="#one" class="button next scrolly"> Learn more </a></li>
-      </ul>
-    </center>
+        <center>
+          <ul class="actions">
+            <li><a href="#one" class="button next scrolly"> Learn more </a></li>
+          </ul>
+        </center>
+      </div>
+    </header>
   </div>
-</header>
+</section>
 {% endblock banner_content %}
 
 
 {% block content %}
-<!-- Main -->
-  <div id="main">
+
 
   <!-- nav bar -->
   <nav class="navbar navbar-default" style="  margin-bottom: 3%; margin-top: 3%; ">
@@ -182,10 +187,6 @@
                                   </div>
                               </section>
 
-<div>
-{% include "partials/contact.html" %}
-</div>
 
-</div>
 
 {% endblock content %}

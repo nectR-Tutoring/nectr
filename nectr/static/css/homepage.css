@@ -2,5 +2,10 @@
   width: 0px;
 }*/
 header.noline > :first-child:after{
-  width: 0px;
+  width: 0;
+}
+
+#banner .logo {
+  text-align: center;
+  margin-top: 15%;
 }
