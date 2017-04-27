@@ -12,7 +12,13 @@ class TutorDetailView(DetailView):
 
 class TutorListView(ListView):
     model = Tutor
-    context_object_name = 'tutors'
+    template_name = 'search/tutor/tutor_search_result_list.html'
+    paginate_by = 10
+    context_object_name = 'tutors_list'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        return Tutor.objects.filter(courses=query)
 
 
 class TutorCreate(CreateView):

@@ -1,9 +1,11 @@
+{% block tutor_search_result %}
 <table>
 
-(% for tutor in tutors %)
+(% for tutor in tutors_list %)
 <tr>{{tutor.username}}</tr>
 (% empty %)
 <tr>"There is no tutor found."</tr>
 (% endfor %)
 
 </table>
+{% endblock %}
