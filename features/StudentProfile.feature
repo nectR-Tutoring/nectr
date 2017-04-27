@@ -75,4 +75,21 @@ Scenario: Mike adds picture to profile for the first time
   And pop up says upload photo
   When Mike clicks upload photo
   And Mike chooses "Mike Photo" from desktop
+  And Mike clicks "Save" button
   Then Mike's profile photo is set
+
+Scenario: Mike updates existing profile picture
+  Given Mike is signed into nectr
+  And Mike's username is MikeAyoub
+  And Mike's password is JavaSucks123
+  And Mike is on his profile page
+  And Mike has profile picture
+  When Mike clicks "Edit" button on "profile picture" section of his profile
+  And profile picture thumbnail says "Update profile photo"
+  When Mike clicks on his profile picture thumbnail
+  Then Mike is presented with pop up
+  And pop up says upload photo
+  When Mike clicks upload photo
+  And Mike chooses "Mike Photo 2" from desktop
+  And Mike clicks "Save" button
+  Then Mike's profile photo is updated
