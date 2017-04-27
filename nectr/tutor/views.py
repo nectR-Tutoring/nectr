@@ -10,7 +10,7 @@ class TutorDetailView(DetailView):
     model = Tutor
 
 
-class TutorListView(ListView):
+class   TutorListView(ListView):
     model = Tutor
     template_name = 'search/tutor/tutor_search_result_list.html'
     paginate_by = 10
