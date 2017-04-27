@@ -10,3 +10,5 @@ class Tutor(models.Model):
     votes = models.IntegerField(default=0)
     courses = models.ManyToManyField(Courses)
 
+    def __str__(self):
+        return self.base_user.username
