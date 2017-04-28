@@ -1,12 +1,13 @@
 from django.conf.urls import url
 from django.views.generic import TemplateView
 
+from nectr.search.views import Search
 from . import views
 
 urlpatterns = [
     url(
         regex=r'^$',
-        view=views.search,
+        view=Search.as_view(),
         name='search_base'
     ),
     url(

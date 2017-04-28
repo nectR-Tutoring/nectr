@@ -3,195 +3,202 @@
 
 <!-- {% block title %}nectR tutoring - home page{% endblock title %} -->
 
-{% block banner_content  %}
-<section id="banner" class="major">
-  <div class="inner">
-    <div class="logo">
-      <img src="{% static "images/nectr-white.png" %}" alt="" width="800" height="260" />
-    </div>
-    <header class="major noline">
-      <div class="padding-search">
-        <input id="searchbar" type="text" name="search" placeholder="Search for our courses..">
+{% block banner_content %}
+    <section id="banner" class="major">
+        <div class="inner">
+            <div class="logo">
+                <img src="{% static "images/nectr-white.png" %}" alt="" width="800" height="260"/>
+            </div>
+            <header class="major noline">
+                <div class="padding-search">
+                    <form action="search" method="get">
+                        <input id="searchbar" type="text" name="search" placeholder="Search for our courses..">
+                        <input type="submit" style="display: none" />
+                    </form>
 
-
-        <center>
-          <ul class="actions">
-            <li><a href="#one" class="button next scrolly"> Learn more </a></li>
-          </ul>
-        </center>
-      </div>
-    </header>
-  </div>
-</section>
+                    <center>
+                        <ul class="actions">
+                            <li><a href="#one" class="button next scrolly"> Learn more </a></li>
+                        </ul>
+                    </center>
+                </div>
+            </header>
+        </div>
+    </section>
 {% endblock banner_content %}
 
 
 {% block content %}
 
 
-  <!-- nav bar -->
-  <nav class="navbar navbar-default" style="  margin-bottom: 3%; margin-top: 3%; ">
-    <div class="container-fluid" style="columns: 1; margin-left: 30%; padding-bottom: 2%; ">
-      <ul class="nav navbar-nav" >
-        <li><a href="#"> Language </a>  <i class="fa fa-language" style="margin-left: 45%; color: black;"></i> </li>
-         <li><a href="#"> Math </a> <i class="fa fa-calculator" style="margin-left: 45%; color: black;"></i> </li>
-         <li><a href="#"> English </a><i class="fa fa-book" style="margin-left: 45%; color: black;"></i> </li>
-         <li><a href="#"> Test Prep </a><i class="fa fa-pencil" style="margin-left: 45%; color: black;"></i> </li>
-         <li><a href="#"> More </a> <i class="fa fa-bars" style="margin-left: 45%; color: black;"></i> </li>
-      </ul>
-    </div>
-  </nav>
+    <!-- nav bar -->
+    <nav class="navbar navbar-default" style="  margin-bottom: 3%; margin-top: 3%; ">
+        <div class="container-fluid" style="columns: 1; margin-left: 30%; padding-bottom: 2%; ">
+            <ul class="nav navbar-nav">
+                <li><a href="#"> Language </a> <i class="fa fa-language" style="margin-left: 45%; color: black;"></i>
+                </li>
+                <li><a href="#"> Math </a> <i class="fa fa-calculator" style="margin-left: 45%; color: black;"></i></li>
+                <li><a href="#"> English </a><i class="fa fa-book" style="margin-left: 45%; color: black;"></i></li>
+                <li><a href="#"> Test Prep </a><i class="fa fa-pencil" style="margin-left: 45%; color: black;"></i></li>
+                <li><a href="#"> More </a> <i class="fa fa-bars" style="margin-left: 45%; color: black;"></i></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- One -->
-      <section id="one" class="tiles">
+    <section id="one" class="tiles">
         <article>
           <span class="image">
-            <img src="{% static "images/joinhive.gif" %}" alt="" />
+            <img src="{% static "images/joinhive.gif" %}" alt=""/>
           </span>
-          <header class="major noline">
+            <header class="major noline">
 
-            <h3><a href="{% url 'join' %}" class="link">Join the Hive</a></h3>
-          </header>
+                <h3><a href="{% url 'join' %}" class="link">Join the Hive</a></h3>
+            </header>
         </article>
 
         <article>
           <span class="image">
-            <img src="{% static "images/honeydrip.gif" %}" alt="" />
+            <img src="{% static "images/honeydrip.gif" %}" alt=""/>
           </span>
-          <header class="major noline">
-            <h3><a href="{% url 'search' %}" class="link">Search the Hive</a></h3>
-          </header>
+            <header class="major noline">
+                <h3><a href="{% url 'search' %}" class="link">Search the Hive</a></h3>
+            </header>
         </article>
 
 
         <article>
           <span class="image">
-              <img src="{% static "images/giphy.gif" %}" alt="" />
+              <img src="{% static "images/giphy.gif" %}" alt=""/>
           </span>
-          <header class="major noline">
-            <h3><a href="{% url 'how_it_works' %}" class="link">How it Works</a></h3>
-          </header>
+            <header class="major noline">
+                <h3><a href="{% url 'how_it_works' %}" class="link">How it Works</a></h3>
+            </header>
         </article>
 
         <article>
           <span class="image">
-            <img src="{% static "images/aboutgif.gif" %}" alt="" />
+            <img src="{% static "images/aboutgif.gif" %}" alt=""/>
           </span>
-          <header class="major noline">
-            <h3><a href="{% url 'about' %}" class="link">About</a></h3>
-          </header>
+            <header class="major noline">
+                <h3><a href="{% url 'about' %}" class="link">About</a></h3>
+            </header>
         </article>
-      </section>
+    </section>
 
 
 
 
 
-      <!-- two -->
-            <section id="two">
-                <div class="row 100% padding-5">
-                  <article class="6u 12u$(medium)">
-                    <div class="padding-5">
+    <!-- two -->
+    <section id="two">
+        <div class="row 100% padding-5">
+            <article class="6u 12u$(medium)">
+                <div class="padding-5">
                     <header>
-                      <h2>Join The Hive</h2>
+                        <h2>Join The Hive</h2>
                     </header>
                     <p>
-                      <ul>
+                    <ul>
                         <h3>We're always looking for talented students to join the team</h3>
-                          <a href="{% url 'join' %}" class="button next scrolly"> Apply Now </a>
-                      </ul>
+                        <a href="{% url 'join' %}" class="button next scrolly"> Apply Now </a>
+                    </ul>
                     </p>
-                  </div>
-                  </article>
-
-<br>
-                  <article class="6u$ 12u$(medium) important(medium)">
-                    <span class="image fit">
-                      <img src="https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/05/27164518/p1264m1066840f.jpg" alt="" />
-                    </span>
-                    </article>
                 </div>
-            </section>
+            </article>
 
-            <!-- two -->
-                  <section id="two">
-                      <div class="row 100% padding-5">
-                        <article class="6u 12u$(medium)">
-                          <div class="padding-5">
+            <br>
+            <article class="6u$ 12u$(medium) important(medium)">
+                    <span class="image fit">
+                      <img src="https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/05/27164518/p1264m1066840f.jpg"
+                           alt=""/>
+                    </span>
+            </article>
+        </div>
+    </section>
+
+    <!-- two -->
+    <section id="two">
+        <div class="row 100% padding-5">
+            <article class="6u 12u$(medium)">
+                <div class="padding-5">
                             <span class="image fit">
-                              <img src="https://s-media-cache-ak0.pinimg.com/originals/9e/9a/99/9e9a998cd00ced44e91b0763bf932216.jpg" alt="" />
+                              <img src="https://s-media-cache-ak0.pinimg.com/originals/9e/9a/99/9e9a998cd00ced44e91b0763bf932216.jpg"
+                                   alt=""/>
                             </span>
-                      </div>
-                        </article>
+                </div>
+            </article>
 
-                        <article class="6u$ 12u$(medium) important(medium)">
-                          <header>
-                            <h2>How it works</h2>
-                          </header>
-                          <p>
-                            <ul>
-                              <h3>Click below to learn how nectR works</h3>
-                                <a href="{% url 'how_it_works' %}" class="button next scrolly">Find out more</a>
-                            </ul>
-                          </p>
-                          </article>
-                      </div>
-                  </section>
+            <article class="6u$ 12u$(medium) important(medium)">
+                <header>
+                    <h2>How it works</h2>
+                </header>
+                <p>
+                <ul>
+                    <h3>Click below to learn how nectR works</h3>
+                    <a href="{% url 'how_it_works' %}" class="button next scrolly">Find out more</a>
+                </ul>
+                </p>
+            </article>
+        </div>
+    </section>
 
-                  <!-- two -->
-                        <section id="two">
-                            <div class="row 100% padding-5">
-                              <article class="6u 12u$(medium)">
-                                <div class="padding-5">
-                                <header>
-                                  <h2>About</h2>
-                                </header>
-                                <p>
-                                  <ul>
-                                    <h3>Find out more about nectR</h3>
-                                      <a href="{% url 'about' %}" class="button next scrolly">About</a>
-                                  </ul>
-                                </p>
-                              </div>
-                              </article>
+    <!-- two -->
+    <section id="two">
+        <div class="row 100% padding-5">
+            <article class="6u 12u$(medium)">
+                <div class="padding-5">
+                    <header>
+                        <h2>About</h2>
+                    </header>
+                    <p>
+                    <ul>
+                        <h3>Find out more about nectR</h3>
+                        <a href="{% url 'about' %}" class="button next scrolly">About</a>
+                    </ul>
+                    </p>
+                </div>
+            </article>
 
-                              <article class="6u$ 12u$(medium) important(medium)">
+            <article class="6u$ 12u$(medium) important(medium)">
                                 <span class="image fit">
-                                  <img src="https://d2ue5m8i6umntv.cloudfront.net/tutoring/tutoring_features_team.jpg" alt="" />
+                                  <img src="https://d2ue5m8i6umntv.cloudfront.net/tutoring/tutoring_features_team.jpg"
+                                       alt=""/>
                                 </span>
-                                </article>
-                            </div>
-                        </section>
+            </article>
+        </div>
+    </section>
 
-                        <!-- two -->
-                              <section id="two">
-                                  <div class="row 100% padding-5">
-                                    <article class="6u 12u$(medium)">
-                                      <div class="padding-5">
+    <!-- two -->
+    <section id="two">
+        <div class="row 100% padding-5">
+            <article class="6u 12u$(medium)">
+                <div class="padding-5">
                                         <span class="image fit">
-                                          <img src="http://images.wisegeek.com/finger-typing-in-a-search-engine.jpg" alt="" />
+                                          <img src="http://images.wisegeek.com/finger-typing-in-a-search-engine.jpg"
+                                               alt=""/>
                                         </span>
-                                  </div>
-                                    </article>
+                </div>
+            </article>
 
-                                    <article class="6u$ 12u$(medium) important(medium)">
-                                      <header>
-                                        <h2>Search the Hive</h2>
-                                      </header>
-                                      <p>
-                                        <ul>
-                                          <h3>Search our database for the perfect tutor to meet your needs</h3>
-                                            <a href="{% url 'search' %}" class="button next scrolly">Search Now</a>
-                                        </ul>
-                                      </p>
-                                      </article>
-                                  </div>
-                              </section>
+            <article class="6u$ 12u$(medium) important(medium)">
+                <header>
+                    <h2>Search the Hive</h2>
+                </header>
+                <p>
+                <ul>
+                    <h3>Search our database for the perfect tutor to meet your needs</h3>
+                    <a href="{% url 'search' %}" class="button next scrolly">Search Now</a>
+                </ul>
+                </p>
+            </article>
+        </div>
+    </section>
 
 
-          <!-- Contact -->
-      <section id="contact">
+    <!-- Contact -->
+    <section id="contact">
         {% include "partials/contact.html" %}
-      </section>
+    </section>
 
 {% endblock content %}
