@@ -18,30 +18,30 @@
     </section>
 {% endblock banner_content %}
 {% block content %}
-{#        <div>#}
-{#            <article class="padding-search" style="padding-left:15%;padding-top: 5%;padding-bottom: 10%;padding-right: 0%;">#}
-{#                <section id="one">#}
-{#                    <form method="GET">#}
-{#                        <div class="inner">#}
-{#                            <div class="row">#}
-{#                                <div class="col-md-8">#}
-{#                                    <input id="searchbar" type="text" name="search_text"#}
-{#                                           placeholder="Search for our courses...">#}
-{#                                </div>#}
-{#                                <div class="col-md-4">#}
-{#                                    <div>#}
-{##}
-{#                                        <input type="submit" id="search_button" class="btn red" name="search_button">#}
-{##}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        {% csrf_token %}#}
-{#                    </form>#}
-{#                </section>#}
-{#            </article>#}
-{#        </div>#}
+    <div>
+        <article class="padding-search" style="padding-left:15%;padding-top: 5%;padding-bottom: 10%;padding-right: 0%;">
+            <section id="one">
+                <form method="GET">
+                    <div class="inner">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input id="searchbar" type="text" name="search_text"
+                                       placeholder="Search for our courses...">
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+
+                                    <input type="submit" id="search_button" class="btn red" name="search_button">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% csrf_token %}
+                </form>
+            </section>
+        </article>
+    </div>
     <div id="search_results">
         {% for tutor in tutors %}
             <article class="thumb">
