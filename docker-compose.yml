@@ -57,10 +57,10 @@ services:
      - "8983:8983"
     volumes:
       - .:/opt/solr/server/solr/mycores
-    entrypoint:
-      - docker-entrypoint.sh
-      - solr-precreate
-      - mycore
+#    entrypoint:
+#      - docker-entrypoint.sh
+#      - solr-precreate
+#      - mycore
 
   mailhog:
     image: mailhog/mailhog
