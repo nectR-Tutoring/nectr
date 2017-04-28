@@ -5,5 +5,5 @@ from nectr.courses.models import Courses
 
 
 @admin.register(Courses)
-class AuthorAdmin(admin.ModelAdmin):
+class CourseAdmin(admin.ModelAdmin):
     pass
