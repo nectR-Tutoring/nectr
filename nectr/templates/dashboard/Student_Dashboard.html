@@ -7,9 +7,9 @@
 
     <div class="row">
 
-        <div class="col-sm-10"><h1>Tutor Dashboard</h1>
+        <div class="col-sm-10"><h1>Student Dashboard</h1>
             <form id="sendCourseData" method="post">
-                <button type="submit" class="btn btn-warning">Switch To Student Dashboard</button>
+                <button type="submit" class="btn btn-warning">Switch To Tutor Dashboard</button>
             </form>
         </div>
 
@@ -27,9 +27,6 @@
                 <li class="list-group-item text-muted">Profile</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2.13.2014
                 </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Last tutored</strong></span>
-                    Yesterday
-                </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> Joseph
                     Doe
                 </li>
@@ -39,11 +36,9 @@
 
             <ul class="list-group">
                 <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Person tutor</strong></span> 13
-                </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 37</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Favorite</strong></span> 78</li>
-                 <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+                 <li class="list-group-item text-right"><span class="pull-left"><strong>Following</strong></span> 78</li>
             </ul>
 
             <div class="panel panel-default">
@@ -62,7 +57,6 @@
                 <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
                 <li><a href="#messages" data-toggle="tab">Messages</a></li>
                 <li><a href="#settings" data-toggle="tab">Settings</a></li>
-                <li><a href="#addcourses" data-toggle="tab">Course</a></li>
                 <a href="#" class="btn btn-warning" id="openBtn" data-toggle="modal" data-target="#myModal"> Buy
                     Honeycomb</a>
 
@@ -327,142 +321,7 @@
 
                 <!--    User Add courses they want to teach -->
 
-                <div class="tab-pane" id="addcourses">
-
-                    <div class="row clearfix">
-                        <div class="col-md-12 table-responsive">
-                            <table class="table table-bordered table-hover table-sortable" id="tab_logic">
-                                <thead>
-                                <tr>
-                                    <th class="text-center">
-                                        Subject
-                                    </th>
-                                    <th class="text-center">
-                                        Course Title
-                                    </th>
-                                    <th class="text-center">
-                                        Hour
-                                    </th>
-                                    <th class="text-center">
-                                        Date
-                                    </th>
-                                    <th class="text-center">
-                                        Delete
-                                    </th>
-
-                                    <th class="text-center"
-                                        style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr id='addr0' data-id="0">
-                                    <!-- Add class="hidden" so it only shows when Add row btn is press -->
-                                    <td data-name="name">
-                                        <input type="text" name='name0' placeholder='Math' class="form-control"/>
-                                    </td>
-                                    <td data-name="mail">
-                                        <input type="text" name='mail0' placeholder='MTH 130' class="form-control"/>
-                                    </td>
-
-                                    <form id="timeform" method="post">
-                                        <td data-name="hour">
-                                            <div class="input-group registration-date-time ">
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"
-                                                                                      aria-hidden="true"></span></span>
-                                                <select type="text" class="form-control" id="ship_date"
-                                                        name="ship_date">
-                                                    <option value="7">7 am</option>
-                                                    <option value="8">8 am</option>
-                                                    <option value="9">9 am</option>
-                                                    <option value="10" selected>10 am</option>
-                                                    <option value="11">11 am</option>
-                                                    <option value="12">12 pm</option>
-                                                    <option value="13">1 pm</option>
-                                                    <option value="14">2 pm</option>
-                                                    <option value="15">3 pm</option>
-                                                    <option value="16">4 pm</option>
-                                                    <option value="17">5 pm</option>
-                                                    <option value="18">6 pm</option>
-                                                    <option value="19">7 pm</option>
-                                                </select>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"
-                                                                                      aria-hidden="true"></span></span>
-                                                <select type="text" class="form-control" id="shiptime" name="ship_time">
-                                                    <option value="00">00 mins</option>
-                                                    <option value="15">15 mins</option>
-                                                    <option value="30">30 mins</option>
-                                                    <option value="45">45 mins</option>
-                                                </select>
-
-                                        </td>
-                                    </form>
-                                    <td data-name="datePicker">
-                                        <form id="eventForm" method="post">
-
-                                            <div class="input-group input-append date" id="datePicker">
-                                                <input type="text" class="form-control" name="date"
-                                                       placeholder="mm/dd/yyyy"/>
-                                                <span class="input-group-addon add-on"><span
-                                                        class="glyphicon glyphicon-calendar"></span></span>
-                                            </div>
-
-
-                                        </form>
-
-                                    </td>
-
-
-                                    <td data-name="del">
-                                        <button class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>
-                                    </td>
-
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-
-                    <form id="sendCourseData" method="post">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <a id="add_row" class="btn btn-default pull-right">Add Row</a>
-
-                    </form>
-
-                    <div class="List-container" style="margin-top: 50px;">
-                        <ul class="list-group">
-                            <li class="list-group-item text-muted">Course List</li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link to
-                                the latest summary report from the..</a> 2.13.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been
-                                a request on your account since that was..</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien
-                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien
-                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor.
-                                A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien
-                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien
-                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is
-                                assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-
-                        </ul>
-                    </div>
-
-
-                </div>
+               
             </div><!--/tab-pane-->
         </div><!--/tab-content-->
 
