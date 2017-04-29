@@ -20,6 +20,7 @@ services:
     command: /start-dev.sh
     depends_on:
       - postgres
+      - solr
     environment:
       POSTGRES_USER: "nectr"
       USE_DOCKER: "yes"
@@ -32,6 +33,7 @@ services:
     links:
       - postgres
       - mailhog
+      - solr
 
   pycharm:
     build:
@@ -48,6 +50,17 @@ services:
       - postgres
       - mailhog
       - hub
+
+  solr:
+    image: solr
+    ports:
+     - "8983:8983"
+    volumes:
+      - .:/opt/solr/server/solr/mycores
+#    entrypoint:
+#      - docker-entrypoint.sh
+#      - solr-precreate
+#      - mycore
 
   mailhog:
     image: mailhog/mailhog
