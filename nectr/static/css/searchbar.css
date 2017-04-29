@@ -16,6 +16,7 @@ font-size: 25px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
-.padding-search {
-  padding-bottom: 15%;
+#searchbar .padd {
+    text-align: center;
+    margin-top: 15%;
 }
