@@ -23,7 +23,7 @@ urlpatterns = [
                   url(r'^dashboard/', include('nectr.dashboard.urls', namespace='dashbaord')),
 
                   # Your stuff: custom urls includes go here
-                  url(r'^search/', include('nectr.search.urls')),
+                  # url(r'^search/', include('nectr.search.urls')),
 
                   # Search the Hive
                   url(r'^search_the_hive', TemplateView.as_view(template_name='look_nectr.html'), name='search'),
