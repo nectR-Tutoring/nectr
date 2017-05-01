@@ -31,6 +31,9 @@ urlpatterns = [
     # Join the Hive
     url(r'^join_the_hive', TemplateView.as_view(template_name='joinpage_nectr.html'), name='join'),
 
+    #message.php
+    url(r'^contact', TemplateView.as_view(template_name='../static/php/message.php')),
+
     # How it Works
     url(r'^how_it_works', TemplateView.as_view(template_name='how_nectr.html'), name='how_it_works'),
 
