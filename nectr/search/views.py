@@ -1,14 +1,21 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import render, get_list_or_404
+from django.views import View
 
-# Create your views here.
 from nectr.tutor.models import Tutor
 
-#TODO::
-def tutor_search_result_list(request):
-    if request.method == 'GET':
+
+class Search(View):
+    model = Tutor
+
+    def get(self, request):
+        search = request.GET.get('search_text', '')
+        if search is not '':
+            try:
+                tutors = Tutor.objects.get(courses__course_name__contains=search)
+                return render(request, 'search/base_search.html', {'tutors': tutors})
+            except ObjectDoesNotExist:
+                tutors = Tutor.objects.all()
+                return render(request, 'search/base_search.html', {'tutors': tutors})
         tutors = Tutor.objects.all()
-        return render(request, 'search/tutor/tutor_search_result_list.html', {'tutors': tutors})
-    return request
-
-
+        return render(request, 'search/base_search.html', {'tutors': tutors})

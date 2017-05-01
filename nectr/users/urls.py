@@ -7,7 +7,6 @@ from . import views
 
 urlpatterns = [
     url(
-        #TODO:
         regex=r'^$',
         view=views.UserListView.as_view(),
         name='list'

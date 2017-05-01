@@ -42,7 +42,7 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 
     # Useful template tags:
-    # 'django.contrib.humanize',
+    'django.contrib.humanize',
 
     # Admin
     'django.contrib.admin',
@@ -52,6 +52,7 @@ THIRD_PARTY_APPS = [
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+    'haystack',  # search
 ]
 
 # Apps specific for this project go here.
@@ -59,10 +60,10 @@ LOCAL_APPS = [
     # custom users app
     'nectr.users.apps.UsersConfig',
     # Your stuff: custom apps go here
-    'nectr.search',
-    'nectr.student',
-    'nectr.tutor',
-    'nectr.dashboard',
+    'nectr.student.apps.StudentConfig',
+    'nectr.tutor.apps.TutorConfig',
+    'nectr.dashboard.apps.DashboardConfig',
+    'nectr.courses.apps.CoursesConfig',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -119,7 +120,6 @@ DATABASES = {
     'default': env.db('DATABASE_URL', default='postgres:///nectr'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
-
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -217,7 +217,6 @@ ROOT_URLCONF = 'config.urls'
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 # PASSWORD VALIDATION
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
 # ------------------------------------------------------------------------------
@@ -282,3 +281,14 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+
+
+# Search Integration using Haystack
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr'
+        # ...or for multicore...
+        # 'URL': 'http://127.0.0.1:8983/solr/mysite',
+    },
+}

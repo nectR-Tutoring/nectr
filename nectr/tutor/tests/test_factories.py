@@ -8,7 +8,7 @@ class TestTutorFactory(TestCase):
 
     def test_default_tutor_creation(self):
         tutor = TutorFactory()
-        assert_that(tutor.user, has_property('username'))
-        assert_that(tutor.user, has_property('first_name'))
-        assert_that(tutor.user, has_property('last_name'))
-        assert_that(tutor.user, has_property('email'))
+        assert_that(tutor.base_user, has_property('username'))
+        assert_that(tutor.base_user, has_property('first_name'))
+        assert_that(tutor.base_user, has_property('last_name'))
+        assert_that(tutor.base_user, has_property('email'))
