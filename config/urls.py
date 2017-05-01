@@ -23,7 +23,7 @@ urlpatterns = [
                   # Your stuff: custom urls includes go here
 
 
-<<<<<<< HEAD
+
                   # Search the Hive
                   url(r'^search_the_hive', TemplateView.as_view(template_name='pages/search_the_hive.html'),
                       name='search'),
@@ -38,7 +38,7 @@ urlpatterns = [
                   url(r'^how_it_works', TemplateView.as_view(template_name='pages/how_it_works.html'),
                       name='how_it_works'),
 
-=======
+
 
     # Search the Hive
     url(r'^search_the_hive', TemplateView.as_view(template_name='pages/search_the_hive.html'), name='search'),
@@ -54,7 +54,7 @@ url(r'^tutor_information', TemplateView.as_view(template_name='pages/tutor_infor
     url(r'^test_html', TemplateView.as_view(template_name='nectr_base.html'), name='test'),
     url(r'^test_index_html', TemplateView.as_view(template_name='index.html'), name='test1'),
 
->>>>>>> new_development
+
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
