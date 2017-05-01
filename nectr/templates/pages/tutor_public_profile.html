@@ -39,11 +39,11 @@
                     <center>
                    <a> <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
                     <h3 class="media-heading">Joe Sixpack <small>USA</small></h3>
+
                     <span><strong>Skills: </strong></span>
-                        <span class="label label-warning">Math/130 & 390</span>
-                        <span class="label label-info">BCS/ 421, 345</span>
-                        <span class="label label-info">Language/ Spanish</span>
-                        <span class="label label-success">Windows XP, Vista, 7</span>
+                    {% for skill in tutor.skills}
+                        <span class="label label-warning">{{tutor.skill}}</span>
+                      {%endfor%}
                     </center>
                     <hr>
                     <center>
@@ -124,6 +124,7 @@
            
             </div>
 
+
             
             <div class="tab-pane" id="tab_default_3">
                   
@@ -141,12 +142,15 @@
                     </tr>
                   </thead>
                   <tbody id="items">
+                  <!-- need courses git issue -->
+
+                  {% for course in courses}
                     <tr>
                       <td>Math</td>
                       <td>Calculus 130 </td>
                       <td>10:30</td>
                       <td>Monday</td>
-                    
+                    {%endfor%}
                     </tr>
                     <tr>
                     <td>Math</td>
