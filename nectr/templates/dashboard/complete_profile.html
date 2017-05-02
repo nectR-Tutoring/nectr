@@ -3,12 +3,13 @@
 {% block title %} nectR Dashboard {% endblock %}
 {% block content %}
 <hr>
+
 <div class="container">
 
     <div class="row">
 
         <div class="col-sm-10"><h1> {{ object.username | default:"Tutor Dashboard"}}</h1>
-            <form id="sendCourseData" method="post" action="dashboard/Student">
+            <form id="sendCourseData" method="post" action="dashboard/Student"> {% csrf_token %}
                 <button type="submit" class="btn btn-warning">Switch To Student Dashboard</button>
             </form>
         </div>
@@ -25,12 +26,9 @@
 
             <ul class="list-group">
                 <li class="list-group-item text-muted">Information</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> {{object.datejoined}}
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> {{object.date_joined}}
                 </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Last tutored</strong></span>
-                    {{object.lastTutorSession}}
-                </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> {{object.fullName}}
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> {{object.full_name}}
                 </li>
 
             </ul>
@@ -38,10 +36,11 @@
 
             <ul class="list-group">
                 <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Person tutor</strong></span> {{object.numberOfStudents}}
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Person tutor</strong></span> {{object.number_of_students}}
                 </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> {{object.numberOfLikes}}</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Favorite</strong></span> {{object.numberofFavorite}}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> {{object.number_of_likes}}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Favorite</strong></span> {{object.number_of_favorite}}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> {{object.number_of_followers}}</li>
             </ul>
 
             <div class="panel panel-default">
@@ -81,86 +80,16 @@
                             </tr>
                             </thead>
                             <tbody id="items">
+                            {% for object in objects %}
                             <tr>
                                 <td>1</td>
-                                <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
+                                <td>{{object.transaction_date}}</td>
+                                <td> {{object.transaction_description}}</td>
+                                <td>{{object.transaction_deposit}}</td>
+                                <td>{{object.transaction_withdrawals}}</td>
+                                <td>{{object.transaction_balance}}</td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                               <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                              <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                              <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                          <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                               <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
-                            </tr>
+                            {% endfor %}
                             </tbody>
                         </table>
                         <hr>
@@ -179,26 +108,11 @@
                         <table class="table table-hover">
 
                             <tbody>
+                            {% for object in objects %}
                             <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}</td>
+                                <td><i class="pull-right fa fa-edit"></i> {{object.activity_date}} {{object.activity_time}} {{object.activity_message}}</td>
                             </tr>
-                            <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}</td>
-                            </tr>
-                            <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}</td>
-                            </tr>
-                            <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}</td>
-                            </tr>
+                            {% endfor %}
                             </tbody>
                         </table>
                     </div>
@@ -210,22 +124,10 @@
 
                     <ul class="list-group">
                         <li class="list-group-item text-muted">Inbox</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.13.2014
+                        {% for object in objects %}
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invox_message}}</a> {{object.invox_message_received}}
                         </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
-                        </li>
+                         {% endfor %}
 
                     </ul>
 
@@ -234,7 +136,7 @@
 
 
                     <hr>
-                    <form class="form" action="##" method="post" id="registrationForm">
+                    <form class="form" action="##" method="post" id="registrationForm"> {% csrf_token %}
                         <div class="form-group">
 
                             <div class="col-xs-6">
@@ -343,24 +245,23 @@
                                     </th>
                                 </tr>
                                 </thead>
-                                  <form class="form" action="##" method="post" id="courseRegistrationForm">
+                                  <form class="form" action="##" method="post" id="courseRegistrationForm"> {% csrf_token %}
                                 <tbody>
                                 <tr id='addr0' data-id="0">
                                     <!-- Add class="hidden" so it only shows when Add row btn is press -->
-                                    <td data-name="name">
-                                        <input type="text" name='name0' placeholder='Math' class="form-control"/>
+                                    <td data-name="subject">
+                                        <input type="text" name='subject' placeholder='Math' class="form-control"/>
                                     </td>
-                                    <td data-name="mail">
-                                        <input type="text" name='mail0' placeholder='MTH 130' class="form-control"/>
+                                    <td data-name="course">
+                                        <input type="text" name='course_title' placeholder='MTH 130' class="form-control"/>
                                     </td>
 
 
                                         <td data-name="hour">
                                             <div class="input-group registration-date-time ">
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"
-                                                                                      aria-hidden="true"></span></span>
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></span>
                                                 <select type="text" class="form-control" id="ship_date"
-                                                        name="ship_date">
+                                                        name="hour">
                                                     <option value="7">7 am</option>
                                                     <option value="8">8 am</option>
                                                     <option value="9">9 am</option>
@@ -375,9 +276,9 @@
                                                     <option value="18">6 pm</option>
                                                     <option value="19">7 pm</option>
                                                 </select>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"
-                                                                                      aria-hidden="true"></span></span>
-                                                <select type="text" class="form-control" id="shiptime" name="ship_time">
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></span>
+
+                                                <select type="text" class="form-control" id="shiptime" name="minutes">
                                                     <option value="00">00 mins</option>
                                                     <option value="15">15 mins</option>
                                                     <option value="30">30 mins</option>
@@ -389,11 +290,25 @@
                                     <td data-name="datePicker">
 
 
-                                            <div class="input-group input-append date" id="datePicker">
-                                                <input type="text" class="form-control" name="date"
-                                                       placeholder="mm/dd/yyyy"/>
-                                                <span class="input-group-addon add-on"><span
-                                                        class="glyphicon glyphicon-calendar"></span></span>
+                                   
+
+                                            <div class="input-group registration-date-time ">
+                                                <span class="input-group-addon">
+                                                <select type="text" class="form-control"
+                                                        name="date">
+                                                    <option value="Monday">Monday</option>
+                                                    <option value="Tuesday">Tuesday</option>
+                                                    <option value="Wednesday">Wednesday</option>
+                                                    <option value="Thursday" selected>Thurdsday</option>
+                                                    <option value="Friday">Friday</option>
+                                                    <option value="Saturday">Saturday</option>
+                                                    <option value="Sunday">Sunday</option>
+                                                    
+                                                </select>
+                                               
+                                            </div>
+                                            
+                                              
                                             </div>
 
 
@@ -403,6 +318,7 @@
 
 
                                     <td data-name="del">
+                                 <!--    TODO: Deletes a row if row button adds another row -->
                                         <button class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>
                                     </td>
 
@@ -414,8 +330,10 @@
                     </div>
 
 
-                    <form id="sendCourseData" method="post">
+                    <form id="sendCourseData" method="post"  > {% csrf_token %}
                         <button type="submit" class="btn btn-primary">Submit</button>
+
+                       <!--  TODO: Add Row creates an extra field to add another course -->
                         <a id="add_row" class="btn btn-default pull-right">Add Row</a>
 
                     </form>
@@ -423,23 +341,9 @@
                     <div class="List-container" style="margin-top: 50px;">
                         <ul class="list-group">
                             <li class="list-group-item text-muted">Course List</li>
-                            <li class="list-group-item text-muted">Inbox</li>
                         <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.13.2014
                         </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
+                        
 
                         </ul>
                     </div>
@@ -463,7 +367,7 @@
                 <div class="container">
                     <div class="col-sm-6">
                         <fieldset>
-                               <form class="form" action="##" method="post" id="payment">
+                               <form class="form" action="##" method="post" id="payment">  {% csrf_token %}
                             <legend>Payment</legend>
 
                             <img class="img-responsive" src="http://i76.imgup.net/accepted_c22e0.png">
@@ -472,7 +376,7 @@
                                 <label label-default="" class="control-label">Card Holder's Name</label>
                                 <div class="controls">
                                     <input type="text" class="form-control" pattern="\w+ \w+.*"
-                                           title="First and last name" required="">
+                                           title="First and last name" required="" name="first_and_last_name">
                                 </div>
                             </div>
                             <div class="control-group">
@@ -481,19 +385,19 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" autocomplete="off" maxlength="4"
-                                                   pattern="\d{4}" title="First four digits" required="">
+                                                   pattern="\d{4}" title="First four digits" required="" name="card_number1">
                                         </div>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" autocomplete="off" maxlength="4"
-                                                   pattern="\d{4}" title="Second four digits" required="">
+                                                   pattern="\d{4}" title="Second four digits" required="" name="card_number2">
                                         </div>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" autocomplete="off" maxlength="4"
-                                                   pattern="\d{4}" title="Third four digits" required="">
+                                                   pattern="\d{4}" title="Third four digits" required="" name="card_number3">
                                         </div>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" autocomplete="off" maxlength="4"
-                                                   pattern="\d{4}" title="Fourth four digits" required="">
+                                                   pattern="\d{4}" title="Fourth four digits" required="" name="card_number4">
                                         </div>
                                     </div>
                                 </div>
@@ -503,7 +407,7 @@
                                 <div class="controls">
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <select class="form-control" name="cc_exp_mo">
+                                            <select class="form-control" name="expiry_month">
                                                 <option value="01">January</option>
                                                 <option value="02">February</option>
                                                 <option value="03">March</option>
@@ -519,7 +423,7 @@
                                             </select>
                                         </div>
                                         <div class="col-md-3">
-                                            <select class="form-control" name="cc_exp_yr">
+                                            <select class="form-control" name="expiry_year">
                                                 <option>2014</option>
                                                 <option>2015</option>
                                                 <option>2016</option>
@@ -541,7 +445,7 @@
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" autocomplete="off" maxlength="3"
                                                    pattern="\d{3}" title="Three digits at back of your card"
-                                                   required="">
+                                                   required="" name="card_cw">
                                         </div>
                                         <div class="col-md-8"></div>
                                     </div>
@@ -557,13 +461,13 @@
                                             <label label-default="" class="control-label">Honeycomb</label>
 
                                             <input type="text" class="form-control" autocomplete="off" required=""
-                                                   title="Honeycomb's">
+                                                   title="Honeycomb's" name="honeycomb">
                                         </div>
 
                                         <div class="col-md-3">
                                             <label label-default="" class="control-label">Honey Jar</label>
                                             <input type="text" class="form-control" autocomplete="off" required=""
-                                                   title="Honey Jar's">
+                                                   title="Honey Jar's" name="honey_jar">
 
                                         </div>
 
@@ -575,6 +479,7 @@
                             <div class="control-group">
                                 <label label-default="" class="control-label"></label>
                                 <div class="controls">
+
                                     <button type="submit" class="btn btn-warning">Submit</button>
                                     <button type="button" class="btn btn-default">Cancel</button>
                                 </div>
