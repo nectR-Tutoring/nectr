@@ -48,11 +48,15 @@
                     
                    
                     <p class="text-left"><strong>Bio: </strong><br> </p>
-                    <form>
+                    <form method="post" action="" >
                       <div class="form-group">
                        
-                        <textarea class="form-control" style="resize: none;" rows="5" id="comment"></textarea>
+                        <textarea class="form-control" style="resize: none;" rows="5" id="comment" name="bioContent"></textarea>
                       </div>
+                      
+                    <center>
+                    <button type="submit" class="btn btn-primary" >Update</button>
+                    </center>
                     </form>
                     <br>
                     
@@ -122,19 +126,24 @@
             <div class="tab-pane active" id="tab_default_1">
               </p>
               <h4>About</h4>
-             <form>
+             <form method="post" action="">
               <div class="form-group">
                
-                <textarea class="form-control" style="resize: none;" rows="5" id="comment"></textarea>
+                <textarea class="form-control" style="resize: none;" rows="5" id="comment" name="aboutInfo"></textarea>
               </div>
-            </form>
+          
 
               <h4>Education </h4>
-                          <form>
+                         
                 <div class="form-group">
                   
-                  <textarea class="form-control" style="resize: none;" rows="5"  id="comment"></textarea>
+                  <textarea class="form-control" style="resize: none;" rows="5"  id="comment" name="educatioonInfo"></textarea>
                 </div>
+
+                    <center>
+                    <button type="submit" class="btn btn-primary" >Update</button>
+                    </center>
+
               </form>
        
            
