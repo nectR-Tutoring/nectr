@@ -116,3 +116,163 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     TutorFactory.create_batch(size=15)
+
+
+@step("he can view preview of tutor profile")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step("he will see a view profile button")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@when("Billy clicks on search bar")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Billy enters "Math"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Billy clicks "Submit" button')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@then("search results are loaded on search the hive page")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step("10 tutor search results are displayed")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('each search result contains "view tutor profile" button')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@then("remaining 5 tutors are diaplyed")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@given("there are 5 C++ Programming tutors")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Billy enters "C++ Programming"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@when('Billy clicks "more results" button')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@given("there are 5 C++ Programming tutors")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Billy enters "C++ Programming"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step("5 tutor search results are displayed")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@given("there are 5 C++ Programming tutors")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Billy enters "C++ Programming"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@given("there are 5 C++ Programming tutors")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@given("there are 5 Cpp Programming tutors")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Billy enters "Cpp Programming"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass

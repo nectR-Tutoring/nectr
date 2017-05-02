@@ -14,4 +14,5 @@ urlpatterns = [
         regex='^the_hive$',
         view=TemplateView.as_view(template_name='look_nectr.html')
     )
+
 ]

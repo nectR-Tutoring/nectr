@@ -67,11 +67,11 @@ Scenario: Mike is a student at farmingdale
       And Spongebob enters "ayouf@farmingdale.edu"
       And Spongebob clicks on password text field
       And Spongbob enters "CrabbyPatty2"
-      And Spongebob cicks on Password (again) field
+      And Spongebob cicks on repeat Password field
       And Spongbob leaves this text field blank
       And Spongebob clicks "Sign Up" button
-      Then Spongebob gets "please fill out this field" alert in Password (again) field
-      And Spongebob clicks on Password (again) field
+      Then Spongebob gets "please fill out this field" alert in Password field
+      And Spongebob clicks on Repeat Password field
       And Spongbob enters "CrabbyPatty2"
       And Spongebob clicks "Sign Up" button
       Then Spongebob is redirected to "Confirm email" page
@@ -96,7 +96,7 @@ Scenario: Mike is a student at farmingdale
       And Spongebob enters "ayouf@farmingdale.edu"
       And Spongebob clicks on password text field
       And Spongbob enters "CrabbyPatty2"
-      And Spongebob cicks on Password (again) field
+      And Spongebob cicks on Password field
       And Spongbob enters "CrabbyPatty2"
       And Spongebob clicks "Sign Up" button
       Then Spongebob is redirected to "Confirm email" page

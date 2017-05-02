@@ -103,3 +103,195 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     context.curr_user.is_authenticated
+
+
+@step("Mike is redirected to nectr profile")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step("Mike can add information to profile")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@given("Mike is on his profile page")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@when('Mike clicks on "Edit" button on "personal information" section of profile')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step("Mike's username is MikeAyoub")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step("Mike's password is JavaSucks123")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Mike is on his "Dashboard" page')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('title of page is "MikeAyoub" dashboard')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@when('Mike clicks on "My Profile" link')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@when('Mike clicks on "Edit" button on "personal information" section of his profile')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Mike clicks on "name" text field')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Mike enters "Mike Ayoub"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Mike clicks "Save" button')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@then("Mike's personal information is saved to his profile")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@then("Mike's contact information is saved to his profile")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@when('Mike clicks on "Edit" button on "contact information" section of profile')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@when('Mike clicks on "Edit" button on "communication preferences" section of profile')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Mike clicks on "Student Class Level" text field')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Mike enters "Senior"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@when('Mike clicks on "Edit" button on "contact information" section of his profile')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Mike clicks on "Email" text field')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Mike enters "ayouf@farmingdale\.edu"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Mike clicks on "Phone number" text field')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Mike enters "6318735489"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass

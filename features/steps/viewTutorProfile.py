@@ -49,3 +49,19 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     pass
+
+
+@then("mike is redirected to tutors profile")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@then("brandon is redirected to tutors profile")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass

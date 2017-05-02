@@ -61,11 +61,11 @@ Scenario: Mike searches nectr
 
 
     Scenario: Billy searches nectr for C++ programming tutors
-      Given there are 5 C++ Programming tutors
+      Given there are 5 Cpp Programming tutors
       Given Billy is signed into nectr
       And Billy is on search the hive page
       When Billy clicks on search bar
-      And Billy enters "C++ Programming"
+      And Billy enters "Cpp Programming"
       And Billy clicks "Submit" button
       Then search results are loaded on search the hive page
       And 5 tutor search results are displayed
