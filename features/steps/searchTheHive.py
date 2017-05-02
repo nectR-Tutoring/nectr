@@ -123,7 +123,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("he will see a view profile button")
@@ -131,7 +131,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when("Billy clicks on search bar")
@@ -139,7 +139,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Billy enters "Math"')
@@ -147,7 +147,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Billy clicks "Submit" button')
@@ -155,7 +155,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @then("search results are loaded on search the hive page")
@@ -163,7 +163,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("10 tutor search results are displayed")
@@ -171,7 +171,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('each search result contains "view tutor profile" button')
@@ -179,7 +179,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @then("remaining 5 tutors are diaplyed")
@@ -187,7 +187,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 
@@ -198,17 +198,11 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 
 
-@step('Billy enters "C++ Programming"')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
 
 
 @step("5 tutor search results are displayed")
@@ -216,15 +210,9 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
-@given("there are 5 C++ Programming tutors")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
 
 
 @step('Billy enters "C++ Programming"')
@@ -232,7 +220,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @given("there are 5 C++ Programming tutors")
@@ -240,7 +228,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @given("there are 5 Cpp Programming tutors")
@@ -248,7 +236,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Billy enters "Cpp Programming"')
@@ -256,4 +244,4 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False

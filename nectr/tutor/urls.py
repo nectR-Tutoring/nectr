@@ -14,5 +14,9 @@ urlpatterns = [
         view=views.TutorListView.as_view(),
         name='tutor_lists'
     ),
+    url(
+        regex=r'^update/profile$',
+        view=views.TutorProfile.as_view()
+    )
 
 ]

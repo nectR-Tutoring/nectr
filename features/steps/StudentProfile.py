@@ -110,7 +110,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("Mike can add information to profile")
@@ -118,7 +118,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @given("Mike is on his profile page")
@@ -126,7 +126,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Mike clicks on "Edit" button on "personal information" section of profile')
@@ -134,7 +134,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("Mike's username is MikeAyoub")
@@ -142,7 +142,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("Mike's password is JavaSucks123")
@@ -150,7 +150,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Mike is on his "Dashboard" page')
@@ -158,7 +158,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('title of page is "MikeAyoub" dashboard')
@@ -166,7 +166,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Mike clicks on "My Profile" link')
@@ -174,7 +174,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Mike clicks on "Edit" button on "personal information" section of his profile')
@@ -182,7 +182,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Mike clicks on "name" text field')
@@ -190,7 +190,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Mike enters "Mike Ayoub"')
@@ -198,7 +198,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Mike clicks "Save" button')
@@ -206,7 +206,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @then("Mike's personal information is saved to his profile")
@@ -214,7 +214,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @then("Mike's contact information is saved to his profile")
@@ -222,7 +222,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Mike clicks on "Edit" button on "contact information" section of profile')
@@ -230,7 +230,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Mike clicks on "Edit" button on "communication preferences" section of profile')
@@ -238,7 +238,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Mike clicks on "Student Class Level" text field')
@@ -246,7 +246,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Mike enters "Senior"')
@@ -254,7 +254,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Mike clicks on "Edit" button on "contact information" section of his profile')
@@ -262,7 +262,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Mike clicks on "Email" text field')
@@ -270,7 +270,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Mike enters "ayouf@farmingdale\.edu"')
@@ -278,7 +278,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Mike clicks on "Phone number" text field')
@@ -286,7 +286,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Mike enters "6318735489"')
@@ -294,4 +294,4 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False

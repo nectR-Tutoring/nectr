@@ -104,7 +104,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("Mike can add information to his profile")
@@ -112,7 +112,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @given("Mike is on his tutor profile page")
@@ -120,7 +120,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Mike clicks on "Edit" button on "About Me" section of tutor profile')
@@ -128,7 +128,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Mike clicks on "Edit" button on "subjects taught" section of tutor profile')
@@ -136,7 +136,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Mike clicks on "Edit" button on "availability" section of tutor profile')
@@ -144,7 +144,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Mike clicks on "Edit" button on "Pricing" section of tutor profile')
@@ -152,4 +152,4 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False

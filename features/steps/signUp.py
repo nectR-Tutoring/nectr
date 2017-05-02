@@ -227,12 +227,6 @@ def step_impl(context):
     pass
 
 
-@step("Spongebob cicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
 
 
 @step("Spongbob leaves this text field blank")
@@ -243,20 +237,8 @@ def step_impl(context):
     pass
 
 
-@then('Spongebob gets "please fill out this field" alert in Password (again) field')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
 
 
-@step("Spongebob clicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
 
 
 @step('title of the page is "Verify Your E-mail Address"')
@@ -307,148 +289,6 @@ def step_impl(context):
     pass
 
 
-@step("Spongebob cicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@then('Spongebob gets "please fill out this field" alert in Password (again) field')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@step("Spongebob clicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@step("Spongebob cicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@then('Spongebob gets "please fill out this field" alert in Password (again) field')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@step("Spongebob clicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@step("Spongebob cicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@then('Spongebob gets "please fill out this field" alert in Password (again) field')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@step("Spongebob clicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@step("Spongebob cicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@then('Spongebob gets "please fill out this field" alert in Password (again) field')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@step("Spongebob clicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@then('Spongebob gets "please fill out this field" alert in Password (again) field')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@step("Spongebob cicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@then('Spongebob gets "please fill out this field" alert in Password (again) field')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@step("Spongebob clicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@step("Spongebob cicks on repeat Password field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
-
-
-@then('Spongebob gets "please fill out this field" alert in Password (again) field')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
 
 
 @step("Spongebob clicks on Repeat Password field")
@@ -459,12 +299,6 @@ def step_impl(context):
     pass
 
 
-@step("Spongebob cicks on Password (again) field")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
 
 
 @then('Spongebob gets "please fill out this field" alert in Password field')
