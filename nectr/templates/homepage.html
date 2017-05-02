@@ -3,28 +3,58 @@
 
 <!-- {% block title %}nectR Tutoring - Home Page{% endblock title %} -->
 
-{% block banner_content %}
+
+{% block banner_content  %}
     <section id="banner" class="major">
         <div class="inner">
             <div class="logo">
                 <img src="{% static "images/nectr-white.png" %}" alt="" width="800" height="260"/>
             </div>
             <header class="major noline">
-                <div class="padding-search">
-                    <form action="search" method="get">
-                        <input id="searchbar" type="text" name="search" placeholder="Search for our courses..">
-                        <input type="submit" style="display: none" />
-                    </form>
+                <div>
+                    <!-- Three -->
+                    <article style="padding-left:15%;padding-top: 5%;padding-bottom: 10%;padding-right: 0%;">
 
-                    <center>
-                        <ul class="actions">
-                            <li><a href="#one" class="button next scrolly"> Learn more </a></li>
-                        </ul>
-                    </center>
+                        <section id="one">
+
+                            <form method="GET">
+                                <div class="inner">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input id="searchbar" type="text" name="search_text"
+                                                   placeholder="Search for our courses...">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div>
+
+                                                <input onclick="location.href='#fetch'" type="submit" id="search_button"
+                                                       class="btn red" name="search_button">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    {% csrf_token %}
+                            </form>
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#search_button").click(function () {
+                                        $('html, body').animate({
+                                            scrollTop: $("#fetch").offset().top
+                                        }, 2000);
+                                    });
+                                });
+                            </script>
+                        </section>
+
+                    </article>
+
                 </div>
             </header>
         </div>
     </section>
+
 {% endblock banner_content %}
 
 

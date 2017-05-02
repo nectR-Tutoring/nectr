@@ -1930,7 +1930,7 @@
 		}
 
 	label {
-		color: #ffffff;
+		color: #000;
 		display: block;
 		font-size: 0.8em;
 		font-weight: 600;
@@ -2226,7 +2226,6 @@
 
 		.image.fit {
 			display: block;
-			margin: 0 0 2em 0;
 			width: 100%;
 		}
 
@@ -4001,3 +4000,14 @@
 			visibility: visible;
 		}
 
+
+
+.dashboard .dashboard-sidebar,
+.dashboard .dashboard-sidebar strong,
+.dashboard .list-group > .list-group-item{
+  color:#000;
+}
+
+.dashboard .table tr:hover{
+  background-color: transparent;
+}
