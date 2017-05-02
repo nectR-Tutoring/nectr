@@ -1,4 +1,5 @@
 from behave import *
+from django.test import Client
 from hamcrest import assert_that, is_, is_not
 
 from nectr.users.tests.factories import UserFactory
@@ -135,6 +136,8 @@ def step_impl(context, edit_button):
     :type edit_button: str
     :type context: behave.runner.Context
     """
+    print(context.driver.page_source)
+    c=Client()
     context.driver.find_element_by_name(edit_button)
 
 

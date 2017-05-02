@@ -15,7 +15,8 @@ Scenario: Mike wants to create profile
   And Mike can add information to profile
 
 Scenario: Mike wants to update personal information on profile page
-  Given Mike is on his profile page
+  Given Mike is signed into his nectr account
+  And Mike is on his profile page
   When Mike clicks on "Edit" button on "personal information" section of profile
   Then Mike can edit or add information to "personal information"
 
