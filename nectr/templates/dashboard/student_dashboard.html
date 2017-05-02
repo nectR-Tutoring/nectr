@@ -1,4 +1,4 @@
-{% extends "base_nectr_menu_footer.html" %}
+{% extends "base_nectr.html" %}
 {% load staticfiles i18n compress %}
 {% block title %} nectR Dashboard {% endblock %}
 {% block content %}
@@ -7,9 +7,9 @@
 
     <div class="row">
 
-        <div class="col-sm-10"><h1> {{ object.username | default:"Student Dashboard"}}</h1>
+        <div class="col-sm-10"><h1> {{ object.username | default:"Tutor Dashboard"}}</h1>
             <form id="sendCourseData" method="post" action="dashboard/Student">
-                <button type="submit" class="btn btn-warning">Switch To Tutor Dashboard</button>
+                <button type="submit" class="btn btn-warning">Switch To Student Dashboard</button>
             </form>
         </div>
 
@@ -37,7 +37,7 @@
                 <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
                 </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> {{object.numberOfLikes}}</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Favorite</strong></span> {{object.numberOfFavorites}}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Favorite</strong></span> {{object.numberofLikes}}</li>
             </ul>
 
             <div class="panel panel-default">
@@ -79,83 +79,83 @@
                             <tbody id="items">
                             <tr>
                                 <td>1</td>
-                                <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                               <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                              <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
                             </tr>
                             <tr>
                                 <td>6</td>
-                              <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
                             </tr>
                             <tr>
                                 <td>7</td>
-                                <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
                             </tr>
                             <tr>
                                 <td>8</td>
-                          <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
                             </tr>
                             <tr>
                                 <td>9</td>
-                                <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
                             </tr>
                             <tr>
                                 <td>10</td>
-                               <td>{{object.transactionDate}}</td>
-                                <td> {{object.transactionDescription}}</td>
-                                <td>{{object.transactionDeposit}}</td>
-                                <td>{{object.transactionWithdrawals}}</td>
-                                <td>{{object.transactionBalance}}</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
+                                <td>Table cell</td>
                             </tr>
                             </tbody>
                         </table>
@@ -176,24 +176,26 @@
 
                             <tbody>
                             <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}</td>
+                                <td><i class="pull-right fa fa-edit"></i> Today, 1:00 - Jeff Manzi liked your post.</td>
                             </tr>
                             <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}
+                                <td><i class="pull-right fa fa-edit"></i> Today, 12:23 - Mark Friendo liked and shared
+                                    your post.
                                 </td>
                             </tr>
                             <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}
+                                <td><i class="pull-right fa fa-edit"></i> Today, 12:20 - You posted a new blog entry
+                                    title "Why social media is".
                                 </td>
                             </tr>
                             <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}</td>
+                                <td><i class="pull-right fa fa-edit"></i> Yesterday - Karen P. liked your post.</td>
                             </tr>
                             <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}</td>
+                                <td><i class="pull-right fa fa-edit"></i> 2 Days Ago - Philip W. liked your post.</td>
                             </tr>
                             <tr>
-                                <td><i class="pull-right fa fa-edit"></i> {{object.activityDate}} {{object.activityTime}} {{object.activityMessage}}</td>
+                                <td><i class="pull-right fa fa-edit"></i> 2 Days Ago - Jeff Manzi liked your post.</td>
                             </tr>
                             </tbody>
                         </table>
@@ -206,21 +208,29 @@
 
                     <ul class="list-group">
                         <li class="list-group-item text-muted">Inbox</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.13.2014
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link to the
+                            latest summary report from the..</a> 2.13.2014
                         </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been a
+                            request on your account since that was..</a> 2.11.2014
                         </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien massaortor. A
+                            lobortis vitae, condimentum justo...</a> 2.11.2014
                         </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien massaortor. A
+                            lobortis vitae, condimentum justo...</a> 2.11.2014
                         </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor. A
+                            lobortis vitae, condimentum justo...</a> 2.11.2014
                         </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien massaortor. A
+                            lobortis vitae, condimentum justo...</a> 2.11.2014
                         </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien
+                            massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
                         </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.invoxMessage}}</a> 2.11.2014
+                        <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is assaortor.
+                            A lobortis vitae, condimentum justo...</a> 2.11.2014
                         </li>
 
                     </ul>
@@ -309,6 +319,57 @@
                     </form>
                 </div>
 
+                <!--    User Add courses they want to teach -->
+
+                <div class="tab-pane" id="addcourses">
+
+                    <div class="row clearfix">
+                        <div class="col-md-12 table-responsive">
+                            <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">
+                                        Subject
+                                    </th>
+                                    <th class="text-center">
+                                        Course Title
+                                    </th>
+                                    <th class="text-center">
+                                        Hour
+                                    </th>
+                                    <th class="text-center">
+                                        Date
+                                    </th>
+                                    <th class="text-center">
+                                        Delete
+                                    </th>
+
+                                    <th class="text-center"
+                                        style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr id='addr0' data-id="0">
+                                    <!-- Add class="hidden" so it only shows when Add row btn is press -->
+                                    <td data-name="name">
+                                        <input type="text" name='name0' placeholder='Math' class="form-control"/>
+                                    </td>
+                                    <td data-name="mail">
+                                        <input type="text" name='mail0' placeholder='MTH 130' class="form-control"/>
+                                    </td>
+
+
+                                    <td data-name="del">
+                                        <button class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>
+                                    </td>
+
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
 
                     <form id="sendCourseData" method="post">
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -319,23 +380,30 @@
                     <div class="List-container" style="margin-top: 50px;">
                         <ul class="list-group">
                             <li class="list-group-item text-muted">Course List</li>
-                            <li class="list-group-item text-muted">Inbox</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.13.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">{{object.courseAdded}}</a> 2.11.2014
-                        </li>
+                            <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link to
+                                the latest summary report from the..</a> 2.13.2014
+                            </li>
+                            <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been
+                                a request on your account since that was..</a> 2.11.2014
+                            </li>
+                            <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien
+                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
+                            </li>
+                            <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien
+                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
+                            </li>
+                            <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor.
+                                A lobortis vitae, condimentum justo...</a> 2.11.2014
+                            </li>
+                            <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien
+                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
+                            </li>
+                            <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien
+                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
+                            </li>
+                            <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is
+                                assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
+                            </li>
 
                         </ul>
                     </div>
@@ -359,7 +427,7 @@
                 <div class="container">
                     <div class="col-sm-6">
                         <fieldset>
-                               <form class="form" action="##" method="post" id="payment">
+
                             <legend>Payment</legend>
 
                             <img class="img-responsive" src="http://i76.imgup.net/accepted_c22e0.png">
@@ -475,7 +543,6 @@
                                     <button type="button" class="btn btn-default">Cancel</button>
                                 </div>
                             </div>
-                            </form>
                         </fieldset>
                     </div>
                 </div>

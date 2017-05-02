@@ -31,3 +31,7 @@ class TutorUpdate(UpdateView):
 
 class TutorDelete(DeleteView):
     model = Tutor
+
+
+class TutorProfile(object):
+    model = Tutor
