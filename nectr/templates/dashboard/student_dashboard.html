@@ -7,9 +7,9 @@
 
     <div class="row">
 
-        <div class="col-sm-10"><h1> {{ object.username | default:"Tutor Dashboard"}}</h1>
-            <form id="sendCourseData" method="post" action="dashboard/Student">
-                <button type="submit" class="btn btn-warning">Switch To Student Dashboard</button>
+        <div class="col-sm-10"><h1>Student Dashboard</h1>
+            <form id="sendCourseData" method="post">
+                <button type="submit" class="btn btn-warning">Switch To Tutor Dashboard</button>
             </form>
         </div>
 
@@ -24,10 +24,11 @@
         <div class="col-sm-3"><!--left col-->
 
             <ul class="list-group">
-                <li class="list-group-item text-muted">Information</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> {{object.datejoined}}
+                <li class="list-group-item text-muted">Profile</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2.13.2014
                 </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> {{object.fullName}}
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> Joseph
+                    Doe
                 </li>
 
             </ul>
@@ -35,9 +36,9 @@
 
             <ul class="list-group">
                 <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> {{object.numberOfLikes}}</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Favorite</strong></span> {{object.numberofLikes}}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 37</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Favorite</strong></span> 78</li>
+                 <li class="list-group-item text-right"><span class="pull-left"><strong>Following</strong></span> 78</li>
             </ul>
 
             <div class="panel panel-default">
@@ -56,7 +57,6 @@
                 <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
                 <li><a href="#messages" data-toggle="tab">Messages</a></li>
                 <li><a href="#settings" data-toggle="tab">Settings</a></li>
-                <li><a href="#addcourses" data-toggle="tab">Course</a></li>
                 <a href="#" class="btn btn-warning" id="openBtn" data-toggle="modal" data-target="#myModal"> Buy
                     Honeycomb</a>
 
@@ -285,8 +285,8 @@
                         <div class="form-group">
 
                             <div class="col-xs-6">
-                                <label for="email"><h4>Location</h4></label>
-                                <input type="email" class="form-control" id="location" placeholder="somewhere"
+                                <label for="email"><h4>Address</h4></label>
+                                <input type="email" class="form-control" id="location" placeholder="Address"
                                        title="enter a location">
                             </div>
                         </div>
@@ -321,95 +321,7 @@
 
                 <!--    User Add courses they want to teach -->
 
-                <div class="tab-pane" id="addcourses">
 
-                    <div class="row clearfix">
-                        <div class="col-md-12 table-responsive">
-                            <table class="table table-bordered table-hover table-sortable" id="tab_logic">
-                                <thead>
-                                <tr>
-                                    <th class="text-center">
-                                        Subject
-                                    </th>
-                                    <th class="text-center">
-                                        Course Title
-                                    </th>
-                                    <th class="text-center">
-                                        Hour
-                                    </th>
-                                    <th class="text-center">
-                                        Date
-                                    </th>
-                                    <th class="text-center">
-                                        Delete
-                                    </th>
-
-                                    <th class="text-center"
-                                        style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr id='addr0' data-id="0">
-                                    <!-- Add class="hidden" so it only shows when Add row btn is press -->
-                                    <td data-name="name">
-                                        <input type="text" name='name0' placeholder='Math' class="form-control"/>
-                                    </td>
-                                    <td data-name="mail">
-                                        <input type="text" name='mail0' placeholder='MTH 130' class="form-control"/>
-                                    </td>
-
-
-                                    <td data-name="del">
-                                        <button class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>
-                                    </td>
-
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-
-                    <form id="sendCourseData" method="post">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <a id="add_row" class="btn btn-default pull-right">Add Row</a>
-
-                    </form>
-
-                    <div class="List-container" style="margin-top: 50px;">
-                        <ul class="list-group">
-                            <li class="list-group-item text-muted">Course List</li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link to
-                                the latest summary report from the..</a> 2.13.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been
-                                a request on your account since that was..</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien
-                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien
-                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor.
-                                A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien
-                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien
-                                massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-                            <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is
-                                assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014
-                            </li>
-
-                        </ul>
-                    </div>
-
-
-                </div>
             </div><!--/tab-pane-->
         </div><!--/tab-content-->
 
