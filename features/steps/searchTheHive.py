@@ -190,20 +190,7 @@ def step_impl(context):
     pass
 
 
-@given("there are 5 C++ Programming tutors")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
 
-
-@step('Billy enters "C++ Programming"')
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
 
 
 @when('Billy clicks "more results" button')
@@ -214,12 +201,6 @@ def step_impl(context):
     pass
 
 
-@given("there are 5 C++ Programming tutors")
-def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    pass
 
 
 @step('Billy enters "C++ Programming"')
