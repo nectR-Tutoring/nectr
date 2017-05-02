@@ -19,7 +19,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @then('Mike should be redirected to "About" page')
