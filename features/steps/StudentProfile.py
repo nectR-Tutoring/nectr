@@ -3,7 +3,7 @@ from hamcrest import assert_that, is_, is_not
 
 from nectr.users.tests.factories import UserFactory
 
-use_step_matcher("re")
+use_step_matcher("parse")
 
 
 @step("Mike is redirected to nectr dashboard")
@@ -126,15 +126,16 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    context.driver.get(context.server_url + "/users/" + context.curr_user.username)
 
 
-@when('Mike clicks on "Edit" button on "personal information" section of profile')
-def step_impl(context):
+@when('Mike clicks on "{edit_button}" button on "personal information" section of profile')
+def step_impl(context, edit_button):
     """
+    :type edit_button: str
     :type context: behave.runner.Context
     """
-    assert False
+    context.driver.find_element_by_name(edit_button)
 
 
 @step("Mike's username is MikeAyoub")

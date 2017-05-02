@@ -1,4 +1,4 @@
-@future
+@browser-grid
 Feature: Student profile
   As a student
   I want a profile
