@@ -20,7 +20,7 @@ services:
     command: /start-dev.sh
     depends_on:
       - postgres
-      - solr
+#      - solr
     environment:
       POSTGRES_USER: "nectr"
       USE_DOCKER: "yes"
@@ -33,7 +33,7 @@ services:
     links:
       - postgres
       - mailhog
-      - solr
+#      - solr
 
   pycharm:
     build:
@@ -49,45 +49,45 @@ services:
     links:
       - postgres
       - mailhog
-      - hub
+#      - hub
 
-  solr:
-    image: solr
-    ports:
-     - "8983:8983"
-    volumes:
-      - .:/opt/solr/server/solr/mycores
-#    entrypoint:
-#      - docker-entrypoint.sh
-#      - solr-precreate
-#      - mycore
+#  solr:
+#    image: solr
+#    ports:
+#     - "8983:8983"
+#    volumes:
+#      - .:/opt/solr/server/solr/mycores
+##    entrypoint:
+##      - docker-entrypoint.sh
+##      - solr-precreate
+##      - mycore
 
   mailhog:
     image: mailhog/mailhog
     ports:
       - "8025:8025"
 
-  hub:
-    image: selenium/hub
-    expose:
-      - 4444
-    ports:
-      - "4444:4444"
-
-  node-firefox:
-    image: selenium/node-firefox
-    depends_on:
-      - hub
-    ports:
-      - "5900:5900"
-    environment:
-      HUB_PORT_4444_TCP_ADDR: hub
-      HUB_PORT_4444_TCP_PORT: 4444
-
-  node-chrome:
-    image: selenium/node-chrome
-    depends_on:
-      - hub
-    environment:
-      HUB_PORT_4444_TCP_ADDR: hub
-      HUB_PORT_4444_TCP_PORT: 4444
+#  hub:
+#    image: selenium/hub
+#    expose:
+#      - 4444
+#    ports:
+#      - "4444:4444"
+#
+#  node-firefox:
+#    image: selenium/node-firefox
+#    depends_on:
+#      - hub
+#    ports:
+#      - "5900:5900"
+#    environment:
+#      HUB_PORT_4444_TCP_ADDR: hub
+#      HUB_PORT_4444_TCP_PORT: 4444
+#
+#  node-chrome:
+#    image: selenium/node-chrome
+#    depends_on:
+#      - hub
+#    environment:
+#      HUB_PORT_4444_TCP_ADDR: hub
+#      HUB_PORT_4444_TCP_PORT: 4444
