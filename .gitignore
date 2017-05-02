@@ -84,3 +84,5 @@ staticfiles/
 # Jenkins folder
 .jenkins
 /docker-compose.beta.testing.yml
+
+nectr/templates/pages/tutor_public_profile.html
