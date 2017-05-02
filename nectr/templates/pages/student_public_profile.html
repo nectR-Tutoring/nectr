@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile-Page</title>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="span3 well">
+        <center>
+        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" name="aboutme" width="140" height="140" class="img-circle"></a>
+        <h3>Joe Sixpack</h3>
+        <em>click my face for more</em>
+       <form id="switchProfile" method="post">
+                <button type="submit" class="btn btn-warning">Switch To Tutor Profile</button>
+            </form>
+    </center>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel">More About Joe</h4>
+                    </div>
+                <div class="modal-body">
+                    <center>
+                   <a> <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                    <h3 class="media-heading">Joe Sixpack <small>USA</small></h3>
+                    
+                    </center>
+                    <hr>
+                    <center>
+                    <p class="text-left"><strong>Bio: </strong><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
+                    <br>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
+                    </center>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+ 
+    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span <i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <div class="hidden-xs">Likes</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                <div class="hidden-xs">Favorites</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <div class="hidden-xs">Following</div>
+            </button>
+        </div>
+    </div>
+
+      
+    
+    </div>
+</div>
+</div>
+
+<div class="container-fluid">
+  
+<!-- /container fluid-->  
+<div class="container">
+ 
+
+      <div data-spy="scroll" class="tabbable-panel">
+      
+        <div class="tabbable-line">
+
+          <ul class="nav nav-tabs ">
+            <li class="active">
+              <a href="#tab_default_1" data-toggle="tab">
+              About</a>
+            </li>
+           
+            <li>
+              <a href="#tab_default_3" data-toggle="tab">
+             Courses</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab_default_1">
+              </p>
+              <h4>About</h4>
+              <p>
+               User's types their info here.
+              </p>
+              <h4>Education </h4>
+              
+       
+           
+            </div>
+
+            
+            <div class="tab-pane" id="tab_default_3">
+                  
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Subject</th>
+                      <th> Course Title</th>
+                      <th>Time</th>
+                      <th> Date</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody id="items">
+                    <tr>
+                      <td>Math</td>
+                      <td>Calculus 130 </td>
+                      <td>10:30</td>
+                      <td>Monday</td>
+                    
+                    </tr>
+                    <tr>
+                    <td>Math</td>
+                      <td>Calculus 130 </td>
+                      <td>10:30</td>
+                      <td>Monday</td>
+                     
+                    </tr>
+                    <tr>
+                      <td>Math</td>
+                      <td>Calculus 130 </td>
+                      <td>10:30</td>
+                      <td>Monday</td>
+                 
+                    </tr>
+                    <tr>
+                        <td>Math</td>
+                      <td>Calculus 130 </td>
+                      <td>10:30</td>
+                      <td>Monday</td>
+                   
+                    </tr>
+                    <tr>
+                       <td>Math</td>
+                      <td>Calculus 130 </td>
+                      <td>10:30</td>
+                      <td>Monday</td>
+                     
+                    </tr>
+                    <tr>
+                        <td>Math</td>
+                      <td>Calculus 130 </td>
+                      <td>10:30</td>
+                      <td>Monday</td>
+                     
+                    </tr>
+                    <tr>
+                        <td>Math</td>
+                      <td>Calculus 130 </td>
+                      <td>10:30</td>
+                      <td>Monday</td>
+                  
+                    </tr>
+                     <tr>
+                     <td>Math</td>
+                      <td>Calculus 130 </td>
+                      <td>10:30</td>
+                      <td>Monday</td>
+                      
+                    </tr>
+                    <tr>
+                     <td>Math</td>
+                      <td>Calculus 130 </td>
+                      <td>10:30</td>
+                      <td>Monday</td>
+                     
+                    </tr>
+                    <tr>
+                     <td>Math</td>
+                      <td>Calculus 130 </td>
+                      <td>10:30</td>
+                      <td>Monday</td>
+                   
+                    </tr>
+                  </tbody>
+                </table>
+                <hr>
+                <div class="row">
+                  <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="pagination" id="myPager"></ul>
+                  </div>
+                </div>
+              </div><!--/table-resp-->
+            </div>
+           
+          </div>
+        </div>
+      </div>
+  
+  
+</div>
+</div>
+
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" scr="complete_profile.js"></script>
+
+</body>
+</html>
