@@ -1,6 +1,6 @@
 from behave import *
 from django.test import Client
-from hamcrest import assert_that, is_, is_not
+from hamcrest import assert_that, is_, is_not, contains_string
 
 from nectr.users.tests.factories import UserFactory
 
@@ -128,6 +128,7 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     context.driver.get(context.server_url + "/users/" + context.curr_user.username)
+    assert_that(context.driver.title, contains_string('User'))
 
 
 @when('Mike clicks on "{edit_button}" button on "personal information" section of profile')
