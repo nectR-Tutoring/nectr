@@ -17,7 +17,7 @@
 
                         <section id="one">
 
-                            <form method="GET" action="{% url 'search' %}">
+                            <form method="GET" action="{% url 'search_base' %}">
                                 <div class="inner">
                                     <div class="row">
                                         <div class="col-md-8">
@@ -83,7 +83,7 @@
             <img src="{% static "images/honeydrip.gif" %}" alt=""/>
           </span>
             <header class="major noline">
-                <h3><a href="{% url 'search' %}" class="link">Search the Hive</a></h3>
+                <h3><a href="{% url 'search_base' %}" class="link">Search the Hive</a></h3>
             </header>
         </article>
 
@@ -209,7 +209,7 @@
                 <p>
                 <ul>
                     <h3>Search our database for the perfect tutor to meet your needs</h3>
-                    <a href="{% url 'search' %}" class="button next scrolly">Search Now</a>
+                    <a href="{% url 'search_base' %}" class="button next scrolly">Search Now</a>
                 </ul>
                 </p>
             </article>
