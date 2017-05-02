@@ -1,7 +1,6 @@
 from django.db import models
 
 from nectr.courses.models import Courses
-from nectr.student.models import Student
 from nectr.users.models import User
 
 

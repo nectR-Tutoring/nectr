@@ -17,7 +17,7 @@
 
                         <section id="one">
 
-                            <form method="GET">
+                            <form method="GET" action="{% url 'search' %}">
                                 <div class="inner">
                                     <div class="row">
                                         <div class="col-md-8">
@@ -27,7 +27,7 @@
                                         <div class="col-md-4">
                                             <div>
 
-                                                <input method="GET" action="{% url 'search' %}" type="submit" id="search_button"
+                                                <input type="submit" id="search_button"
                                                        class="btn red" name="search_button">
 
                                             </div>
@@ -35,17 +35,8 @@
                                         </div>
                                     </div>
                                     {% csrf_token %}
+                                </div>
                             </form>
-
-                            <script>
-                                $(document).ready(function () {
-                                    $("#search_button").click(function () {
-                                        $('html, body').animate({
-                                            scrollTop: $("#fetch").offset().top
-                                        }, 2000);
-                                    });
-                                });
-                            </script>
                         </section>
 
                     </article>
