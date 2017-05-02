@@ -27,9 +27,6 @@
                 <li class="list-group-item text-muted">Information</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> {{object.datejoined}}
                 </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Last tutored</strong></span>
-                    {{object.lastTutorSession}}
-                </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> {{object.fullName}}
                 </li>
 
@@ -38,7 +35,6 @@
 
             <ul class="list-group">
                 <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Person tutor</strong></span> {{object.numberOfStudents}}
                 </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> {{object.numberOfLikes}}</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Favorite</strong></span> {{object.numberofLikes}}</li>
@@ -363,54 +359,7 @@
                                         <input type="text" name='mail0' placeholder='MTH 130' class="form-control"/>
                                     </td>
 
-                                    <form id="timeform" method="post">
-                                        <td data-name="hour">
-                                            <div class="input-group registration-date-time ">
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"
-                                                                                      aria-hidden="true"></span></span>
-                                                <select type="text" class="form-control" id="ship_date"
-                                                        name="ship_date">
-                                                    <option value="7">7 am</option>
-                                                    <option value="8">8 am</option>
-                                                    <option value="9">9 am</option>
-                                                    <option value="10" selected>10 am</option>
-                                                    <option value="11">11 am</option>
-                                                    <option value="12">12 pm</option>
-                                                    <option value="13">1 pm</option>
-                                                    <option value="14">2 pm</option>
-                                                    <option value="15">3 pm</option>
-                                                    <option value="16">4 pm</option>
-                                                    <option value="17">5 pm</option>
-                                                    <option value="18">6 pm</option>
-                                                    <option value="19">7 pm</option>
-                                                </select>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"
-                                                                                      aria-hidden="true"></span></span>
-                                                <select type="text" class="form-control" id="shiptime" name="ship_time">
-                                                    <option value="00">00 mins</option>
-                                                    <option value="15">15 mins</option>
-                                                    <option value="30">30 mins</option>
-                                                    <option value="45">45 mins</option>
-                                                </select>
-
-                                        </td>
-                                    </form>
-                                    <td data-name="datePicker">
-                                        <form id="eventForm" method="post">
-
-                                            <div class="input-group input-append date" id="datePicker">
-                                                <input type="text" class="form-control" name="date"
-                                                       placeholder="mm/dd/yyyy"/>
-                                                <span class="input-group-addon add-on"><span
-                                                        class="glyphicon glyphicon-calendar"></span></span>
-                                            </div>
-
-
-                                        </form>
-
-                                    </td>
-
-
+                                    
                                     <td data-name="del">
                                         <button class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>
                                     </td>
