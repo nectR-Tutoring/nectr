@@ -44,6 +44,8 @@
                     <h3 class="media-heading">{{fullname}} <small>USA</small></h3>
 
                     <span><strong>Skills: </strong></span>
+
+                    
                     {% for skill in tutor.skills}
                         <span class="label label-warning">{{tutor.skill}}</span>
                       {%endfor%}
@@ -51,7 +53,7 @@
                     
                    
                     <p class="text-left"><strong>Bio: </strong><br> </p>
-                    <form method="post" action="" >
+                    <form method="post" action="" > {% csrf_token %}
                       <div class="form-group">
                        
                         <textarea class="form-control" style="resize: none;" rows="5" id="comment" name="bio_content"></textarea>
@@ -80,7 +82,7 @@
     <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
      
         <div class="btn-group" role="group">
-        <form method="post" action=""> 
+        <form method="post" action=""> {% csrf_token %}
             <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab" name="like_is_slected"><span <i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
                 <div class="hidden-xs">Likes</div>
             </button>
@@ -89,7 +91,7 @@
         
          
         <div class="btn-group" role="group">
-        <form method="post" action=""> 
+        <form method="post" action=""> {% csrf_token %}
             <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab" name="favorites_is_selected"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
                 <div class="hidden-xs">Favorites</div>
             </button>
@@ -98,7 +100,7 @@
          </form>
       
         <div class="btn-group" role="group">
-        <form method="post" action=""> 
+        <form method="post" action=""> {% csrf_token %}
             <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab" name="following_is_selected"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <div class="hidden-xs">Following</div>
             </button>
@@ -139,7 +141,7 @@
             <div class="tab-pane active" id="tab_default_1">
               </p>
               <h4>About</h4>
-             <form method="post" action="">
+             <form method="post" action=""> {% csrf_token %}
               <div class="form-group">
                
                 <textarea class="form-control" style="resize: none;" rows="5" id="comment" name="about_info"></textarea>
@@ -220,7 +222,7 @@
         <h5 class="modal-title">Private Message</h5>
         
       <div class="modal-body">
-        <form method="post" action="">
+        <form method="post" action=""> {% csrf_token %}
               <div class="form-group">
                <textarea class="form-control" style="resize: none;" rows="5" id="comment" name="message_info"></textarea>
               </div>
