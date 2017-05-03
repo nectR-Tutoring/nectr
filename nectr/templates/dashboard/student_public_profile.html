@@ -20,11 +20,11 @@
     <div class="span3 well">
         <center>
         <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" name="aboutme" width="140" height="140" class="img-circle"></a>
-        <h3>Joe Sixpack</h3>
+        <h3>{{fullname}}</h3>
         <em>click my face for more</em>
-       <form id="switchProfile" method="post">
-                <button type="submit" class="btn btn-warning">Switch To Tutor Profile</button>
-            </form>
+       <div>
+       <a href="#" class="btn btn-warning" role="button">Switch To Student Profile</a>
+    </div>
     </center>
     </div>
     <!-- Modal -->
@@ -33,12 +33,12 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title" id="myModalLabel">More About Joe</h4>
+                    <h4 class="modal-title" id="myModalLabel">More About {{fullname}}</h4>
                     </div>
                 <div class="modal-body">
                     <center>
                    <a> <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-                    <h3 class="media-heading">Joe Sixpack <small>USA</small></h3>
+                    <h3 class="media-heading">{{fullname}} <small>USA</small></h3>
                     
                     </center>
                     <hr>
@@ -46,11 +46,15 @@
                     <p class="text-left"><strong>Bio: </strong><br> </p>
 
                     <!-- Form for the text field -->
-                        <form>
+                        <form method="post" action=""> {% csrf_token %}
                       <div class="form-group">
                        
-                        <textarea class="form-control" style="resize: none;" rows="5" id="comment"></textarea>
+                        <textarea class="form-control" style="resize: none;" rows="5" id="comment" name="bio_content"></textarea>
                       </div>
+
+                    <center>
+                    <button type="submit" class="btn btn-primary" >Update</button>
+                    </center>
                     </form>
 
 
@@ -70,25 +74,36 @@
 
     </div>
 
- 
+   
     <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+     
         <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span <i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+        <form method="post" action=""> {% csrf_token %}
+            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab" name="like_is_slected"><span <i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
                 <div class="hidden-xs">Likes</div>
             </button>
+             </form>
         </div>
+        
+         
         <div class="btn-group" role="group">
-            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+        <form method="post" action=""> {% csrf_token %}
+            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab" name="favorites_is_selected"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
                 <div class="hidden-xs">Favorites</div>
             </button>
+             </form>
         </div>
+         </form>
+      
         <div class="btn-group" role="group">
-            <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <form method="post" action=""> {% csrf_token %}
+            <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab" name="following_is_selected"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <div class="hidden-xs">Following</div>
             </button>
+             </form>
         </div>
+       
     </div>
-
 
 
   <div class="well">
@@ -104,25 +119,23 @@
                 <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th>????</th>
-                      <th> ?????</th>
-                      <th>???</th>
-                      <th> ????</th>
-                      
+                      <th>Tutor Name</th>
+                      <th> Profile Link </th>
+                   
                     </tr>
                   </thead>
                   <tbody id="items">
                   <!-- need courses git issue -->
 
-                  {% for student in student.likes}
+                  {% for like in likes}
                     <tr>
-                      <td>Math</td>
-                      <td>Calculus 130 </td>
-                      <td>10:30</td>
-                      <td>Monday</td>
-                    {%endfor%}
+                      <td> {{like.fullname}}</td>
+                      <!-- TODO: I need user (tutor) url -->
+                      <td> {{}} </td>
+                  
                     </tr>
                     
+                    {%endfor%}
                     
                   </tbody>
                 </table>
@@ -155,25 +168,24 @@
                 <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th>????</th>
-                      <th> ?????</th>
-                      <th>???</th>
-                      <th> ????</th>
+                    <th>Tutor Name</th>
+                      <th> Profile Link </th>
+                  
                       
                     </tr>
                   </thead>
                   <tbody id="items">
                   <!-- need courses git issue -->
 
-                  {% for student in student.likes}
+                  {% for favortie in favorites}
                     <tr>
-                      <td>Math</td>
-                      <td>Calculus 130 </td>
-                      <td>10:30</td>
-                      <td>Monday</td>
-                    {%endfor%}
-                    </tr>
+                      <td>{{favorite.fullname}}</td>
+                       <!-- TODO: I need user (tutor) url -->
+                      <td>{{}}  </td>
+                   
                     
+                    </tr>
+                    {%endfor%}
                     
                   </tbody>
                 </table>
@@ -203,25 +215,24 @@
                 <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th>????</th>
-                      <th> ?????</th>
-                      <th>???</th>
-                      <th> ????</th>
+                   <th>Tutor Name</th>
+                      <th> Profile Link </th>
+                   
                       
                     </tr>
                   </thead>
                   <tbody id="items">
                   <!-- need courses git issue -->
 
-                  {% for student in student.likes}
+                  {% for following in followings}
                     <tr>
-                      <td>Math</td>
-                      <td>Calculus 130 </td>
-                      <td>10:30</td>
-                      <td>Monday</td>
-                    {%endfor%}
+                      <td>{{following.fullname}}</td>
+                       <!-- TODO: I need user (tutor) url -->
+                      <td> {{}}</td>
+                     
+                   
                     </tr>
-                    
+                    {%endfor%}
                     
                   </tbody>
                 </table>
@@ -270,22 +281,26 @@
               <h4>About</h4>
 
                   <!-- Form for the text field -->
-              <form>
+              <form method="post" action=""> {% csrf_token %}
                       <div class="form-group">
                        
-                        <textarea class="form-control" style="resize: none;" rows="5" id="comment"></textarea>
+                        <textarea class="form-control" style="resize: none;" rows="5" id="comment"  name="about_info"></textarea>
                       </div>
-                    </form>
+                    
 
 
               <h4>Education </h4>
 
                   <!-- Form for the text field -->
-               <form>
+              
                       <div class="form-group">
                        
-                        <textarea class="form-control" style="resize: none;" rows="5" id="comment"></textarea>
+                        <textarea class="form-control" style="resize: none;" rows="5" id="comment" name="education_info"></textarea>
                       </div>
+
+                    <center>
+                    <button type="submit" class="btn btn-primary" >Update</button>
+                    </center>
                     </form>
        
            
