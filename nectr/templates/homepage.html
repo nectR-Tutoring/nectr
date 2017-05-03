@@ -57,15 +57,11 @@
         <div class="container-fluid" style="columns: 1; margin-left: 30%; padding-bottom: 2%; ">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="{% url 'search_base' %}?search_text=language">
-                        Language </a>
-                    <i class="fa fa-language" style="margin-left: 45%; color: black;"></i>
-
-                </li>
-                <li><a href="#"> Math </a> <i class="fa fa-calculator" style="margin-left: 45%; color: black;"></i></li>
-                <li><a href="#"> English </a><i class="fa fa-book" style="margin-left: 45%; color: black;"></i></li>
-                <li><a href="#"> Test Prep </a><i class="fa fa-pencil" style="margin-left: 45%; color: black;"></i></li>
-                <li><a href="#"> More </a> <i class="fa fa-bars" style="margin-left: 45%; color: black;"></i></li>
+                    <a href="{% url 'search_base' %}?search_text=language"> Language </a>  <i class="fa fa-language" style="margin-left: 45%; color: black;"></i></li>
+                <li><a href="{% url 'search_base' %}?search_text=math"> Math </a> <i class="fa fa-calculator" style="margin-left: 45%; color: black;"></i></li>
+                <li><a href="{% url 'search_base' %}?search_text=english"> English </a><i class="fa fa-book" style="margin-left: 45%; color: black;"></i></li>
+                <li><a href="{% url 'search_base' %}?search_text=test_prep"> Test Prep </a><i class="fa fa-pencil" style="margin-left: 45%; color: black;"></i></li>
+                
             </ul>
         </div>
     </nav>
