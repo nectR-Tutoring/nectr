@@ -200,13 +200,14 @@ def step_impl(context):
     context.driver.find_element_by_id('id_username').click()
 
 
-@step('Spongebob enters "BikiniBottoms"')
-def step_impl(context):
+@step('Spongebob enters username "{some_text}"')
+def step_impl(context, some_text):
     """
+    :type some_text: str
     :type context: behave.runner.Context
     """
     element = context.driver.find_element_by_id("id_username")
-    element.send_keys("BikiniBottoms")
+    element.send_keys(some_text)
 
 
 
@@ -215,7 +216,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    context.driver.find_element_by_id("id_email").clicks()
 
 
 @step("Spongebob clicks on password text field")

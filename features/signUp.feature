@@ -63,7 +63,7 @@ Background:
       And title of the page is "Signup"
       And page contains an h1 whos text is "Sign up"
       When Spongebob clicks on username text field
-      And Spongebob enters "BikiniBottoms"
+      And Spongebob enters username "BikiniBottoms"
       And Spongebob clicks on E-mail text field
       And Spongebob enters "ayouf@farmingdale.edu"
       And Spongebob clicks on password text field
