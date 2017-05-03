@@ -1,6 +1,8 @@
 from behave import *
 from hamcrest import *
-
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from nectr.users.models import User
 from nectr.users.tests.factories import UserFactory
@@ -160,7 +162,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    element = context.driver.find_element_by_name("menu")
+    context.driver.find_element_by_name("menu").click()
 
 
 @step('Spongebob clicks "Sign Up" button')
@@ -168,7 +170,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    element = context.driver.find_element_by_id("sign-up-link")
+    context.driver.find_element_by_id('sign-up-link').click()
 
 
 @step('title of the page is "Signup"')
@@ -176,7 +178,10 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    WebDriverWait(context.driver, 10).until(
+        EC.title_contains("Signup"))
+    current_page_title = context.driver.title
+    assert_that(current_page_title, contains_string("Signup"))
 
 
 @step('page contains an h1 whos text is "Sign up"')
@@ -184,7 +189,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    context.driver.find_element_by_tag_name('h1')
 
 
 @when("Spongebob clicks on username text field")

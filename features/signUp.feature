@@ -59,7 +59,7 @@ Background:
       And Spongebob does not have nectR account
       When Spongebob clicks menu
       And Spongebob clicks "Sign Up" button
-      Then Spongebob is redirected to "Signup" page
+      Then Spongebob is redirected to Signup page
       And title of the page is "Signup"
       And page contains an h1 whos text is "Sign up"
       When Spongebob clicks on username text field

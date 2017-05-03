@@ -164,6 +164,7 @@ def step_impl(context, name, title):
     :type context: behave.runner.Context
     """
     print(title)
+    print(context.driver.title)
     WebDriverWait(context.driver, 10).until(
         EC.title_contains(title))
     current_page_title = context.driver.title
