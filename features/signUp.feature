@@ -65,9 +65,9 @@ Background:
       When Spongebob clicks on username text field
       And Spongebob enters username "BikiniBottoms"
       And Spongebob clicks on E-mail text field
-      And Spongebob enters "ayouf@farmingdale.edu"
-      And Spongebob clicks on password text field
-      And Spongbob enters "CrabbyPatty2"
+      And Spongebob enters email "ayouf@farmingdale.edu"
+      And Spongebob clicks on password1 text field
+      And Spongbob enters password1 "CrabbyPatty2"
       And Spongebob cicks on repeat Password field
       And Spongbob leaves this text field blank
       And Spongebob clicks "Sign Up" button

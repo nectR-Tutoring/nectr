@@ -219,22 +219,21 @@ def step_impl(context):
     context.driver.find_element_by_id('id_email').click()
 
 
-@step("Spongebob clicks on password text field")
+@step("Spongebob clicks on password1 text field")
 def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    context.driver.find_element_by_id('id_password1').click()
 
 
-@step('Spongbob enters "CrabbyPatty2"')
-def step_impl(context):
+@step('Spongbob enters password1 "some_text"')
+def step_impl(context, some_text):
     """
     :type context: behave.runner.Context
     """
-    assert False
-
-
+    element = context.driver.find_element_by_id("id_password1")
+    element.send_keys(some_text)
 
 
 @step("Spongbob leaves this text field blank")
@@ -289,12 +288,14 @@ def step_impl(context):
     assert False
 
 
-@step('Spongebob enters "ayouf@farmingdale.edu"')
-def step_impl(context):
+@step('Spongebob enters email "{some_text}"')
+def step_impl(context, some_text):
     """
+    :type some_text: str
     :type context: behave.runner.Context
     """
-    assert False
+    element = context.driver.find_element_by_id("id_email")
+    element.send_keys(some_text)
 
 
 
@@ -304,7 +305,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    context.driver.find_element_by_id("id_password2").click()
 
 
 
@@ -323,3 +324,43 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     assert False
+
+
+@step('Spongbob enters password1 "CrabbyPatty2"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step("Spongebob cicks on repeat Password field")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.driver.find_element_by_id("id_password2").click()
+
+
+@step('Spongbob enters "CrabbyPatty2"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Spongebob enters "BikiniBottoms"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step("Spongebob clicks on password text field")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
