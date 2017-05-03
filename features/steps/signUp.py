@@ -241,7 +241,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    pass
 
 
 
@@ -326,12 +326,13 @@ def step_impl(context):
     assert False
 
 
-@step('Spongbob enters password1 "CrabbyPatty2"')
-def step_impl(context):
+@step('Spongbob enters password1 "{some_text}"')
+def step_impl(context, some_text):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    element = context.driver.find_element_by_id("id_password1")
+    element.send_keys(some_text)
 
 
 @step("Spongebob cicks on repeat Password field")
