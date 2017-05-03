@@ -144,7 +144,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.driver.get(context.server_url + "/")
 
 
 @step("Spongebob does not have nectR account")
@@ -152,7 +152,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when("Spongebob clicks menu")
@@ -160,7 +160,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Spongebob clicks "Sign Up" button')
@@ -168,7 +168,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('title of the page is "Signup"')
@@ -176,7 +176,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('page contains an h1 whos text is "Sign up"')
@@ -184,7 +184,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when("Spongebob clicks on username text field")
@@ -192,7 +192,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Spongebob enters "BikiniBottoms"')
@@ -200,7 +200,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("Spongebob clicks on E-mail text field")
@@ -208,7 +208,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("Spongebob clicks on password text field")
@@ -216,7 +216,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Spongbob enters "CrabbyPatty2"')
@@ -224,7 +224,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 
@@ -234,7 +234,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 
@@ -246,7 +246,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('page contains an h1 whos text is "Verify Your E-mail Address"')
@@ -254,7 +254,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Spongebob checks his email "ayouf@farmingdale.edu"')
@@ -262,7 +262,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Spongebob opens "confirm account" email')
@@ -270,7 +270,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("Spongebob clicks account confirmation link")
@@ -278,7 +278,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Spongebob enters "ayouf@farmingdale.edu"')
@@ -286,7 +286,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 
@@ -296,7 +296,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 
@@ -306,7 +306,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("Spongebob cicks on Password field")
@@ -314,4 +314,4 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False

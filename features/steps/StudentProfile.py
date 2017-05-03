@@ -127,6 +127,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
+    print(context.curr_user.username)
     context.driver.get(context.server_url + "/users/" + context.curr_user.username)
     assert_that(context.driver.title, contains_string('User'))
 
