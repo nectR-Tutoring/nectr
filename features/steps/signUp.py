@@ -216,7 +216,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    context.driver.find_element_by_id("id_email").clicks()
+    context.driver.find_element_by_id('id_email').click()
 
 
 @step("Spongebob clicks on password text field")
