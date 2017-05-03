@@ -1,6 +1,8 @@
 from behave import *
 from hamcrest import *
-
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from nectr.users.models import User
 from nectr.users.tests.factories import UserFactory
@@ -144,7 +146,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.driver.get(context.server_url + "/")
 
 
 @step("Spongebob does not have nectR account")
@@ -160,7 +162,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.driver.find_element_by_name("menu").click()
 
 
 @step('Spongebob clicks "Sign Up" button')
@@ -168,7 +170,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.driver.find_element_by_id('sign-up-link').click()
 
 
 @step('title of the page is "Signup"')
@@ -176,7 +178,10 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    WebDriverWait(context.driver, 10).until(
+        EC.title_contains("Signup"))
+    current_page_title = context.driver.title
+    assert_that(current_page_title, contains_string("Signup"))
 
 
 @step('page contains an h1 whos text is "Sign up"')
@@ -184,7 +189,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.driver.find_element_by_tag_name('h1')
 
 
 @when("Spongebob clicks on username text field")
@@ -192,15 +197,18 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.driver.find_element_by_id('id_username').click()
 
 
-@step('Spongebob enters "BikiniBottoms"')
-def step_impl(context):
+@step('Spongebob enters username "{some_text}"')
+def step_impl(context, some_text):
     """
+    :type some_text: str
     :type context: behave.runner.Context
     """
-    pass
+    element = context.driver.find_element_by_id("id_username")
+    element.send_keys(some_text)
+
 
 
 @step("Spongebob clicks on E-mail text field")
@@ -208,25 +216,24 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.driver.find_element_by_id('id_email').click()
 
 
-@step("Spongebob clicks on password text field")
+@step("Spongebob clicks on password1 text field")
 def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.driver.find_element_by_id('id_password1').click()
 
 
-@step('Spongbob enters "CrabbyPatty2"')
-def step_impl(context):
+@step('Spongbob enters password1 "some_text"')
+def step_impl(context, some_text):
     """
     :type context: behave.runner.Context
     """
-    pass
-
-
+    element = context.driver.find_element_by_id("id_password1")
+    element.send_keys(some_text)
 
 
 @step("Spongbob leaves this text field blank")
@@ -246,7 +253,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('page contains an h1 whos text is "Verify Your E-mail Address"')
@@ -254,7 +261,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @when('Spongebob checks his email "ayouf@farmingdale.edu"')
@@ -262,7 +269,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step('Spongebob opens "confirm account" email')
@@ -270,7 +277,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("Spongebob clicks account confirmation link")
@@ -278,15 +285,17 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
-@step('Spongebob enters "ayouf@farmingdale.edu"')
-def step_impl(context):
+@step('Spongebob enters email "{some_text}"')
+def step_impl(context, some_text):
     """
+    :type some_text: str
     :type context: behave.runner.Context
     """
-    pass
+    element = context.driver.find_element_by_id("id_email")
+    element.send_keys(some_text)
 
 
 
@@ -296,7 +305,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.driver.find_element_by_id("id_password2").click()
 
 
 
@@ -306,10 +315,51 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    assert False
 
 
 @step("Spongebob cicks on Password field")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    assert False
+
+
+@step('Spongbob enters password1 "{some_text}"')
+def step_impl(context, some_text):
+    """
+    :type context: behave.runner.Context
+    """
+    element = context.driver.find_element_by_id("id_password1")
+    element.send_keys(some_text)
+
+
+@step("Spongebob cicks on repeat Password field")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    context.driver.find_element_by_id("id_password2").click()
+
+
+@step('Spongbob enters "CrabbyPatty2"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step('Spongebob enters "BikiniBottoms"')
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    pass
+
+
+@step("Spongebob clicks on password text field")
 def step_impl(context):
     """
     :type context: behave.runner.Context
