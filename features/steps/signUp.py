@@ -197,7 +197,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    context.driver.find_element_by_id('id_username').click()
 
 
 @step('Spongebob enters "BikiniBottoms"')
@@ -205,7 +205,9 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    element = context.driver.get(context.find_element_by_ip("id_username"))
+    element.send_keys("element")
+    element.clear()
 
 
 @step("Spongebob clicks on E-mail text field")
