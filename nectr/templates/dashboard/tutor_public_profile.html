@@ -85,6 +85,7 @@
         <form method="post" action=""> {% csrf_token %}
             <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab" name="like_is_slected"><span <i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
                 <div class="hidden-xs">Likes</div>
+                 <div> {{tutor.likes_number}}</div>
             </button>
              </form>
         </div>
@@ -92,20 +93,13 @@
          
         <div class="btn-group" role="group">
         <form method="post" action=""> {% csrf_token %}
-            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab" name="favorites_is_selected"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                <div class="hidden-xs">Favorites</div>
+            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab" name="favorites_is_selected"><i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                <div class="hidden-xs">Dislike</div>
+                <div> {{tutor.dislike_number}}</div>
             </button>
              </form>
         </div>
          </form>
-      
-        <div class="btn-group" role="group">
-        <form method="post" action=""> {% csrf_token %}
-            <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab" name="following_is_selected"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <div class="hidden-xs">Following</div>
-            </button>
-             </form>
-        </div>
        
     </div>
        
