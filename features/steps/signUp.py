@@ -152,7 +152,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    pass
 
 
 @when("Spongebob clicks menu")
@@ -160,7 +160,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    element = context.driver.find_element_by_name("menu")
 
 
 @step('Spongebob clicks "Sign Up" button')
@@ -168,7 +168,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert False
+    element = context.driver.find_element_by_id("sign-up-link")
 
 
 @step('title of the page is "Signup"')
