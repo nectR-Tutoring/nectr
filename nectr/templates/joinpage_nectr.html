@@ -23,13 +23,13 @@
 <!--- <Re-route to tutor website> -->
 <div class="container" >
 <right>
-<a href="/accounts/signup"><div class="btn btn-primary">Become a tutor</div></a>
+<a href="{% url 'account_signup' %}"><div class="btn btn-primary">Create an Account</div></a>
 </right>
 <!--- <Re-route to student website> -->
-<right>
+<!-- <right>
 <a href="/accounts/signup"><div class="btn btn-primary">Student information</div></a>
 </right>
-</div>
+</div> -->
 
 
 
@@ -50,7 +50,7 @@ at Farmingdale State College.</p>
   <!-- <header class="major"> -->
   <h3>Qualifications to become a tutor:</h3>
   <!-- </header> -->
-  <p>An A or B grade in the course(s) to be tutored and instructor recommendation.</p>
+ An A or B grade in the course(s) to be tutored and instructor recommendation.</p>
 
  <a href="tutor_information.html"><div class="btn btn-primary">Learn more</div></a>
   </div>
@@ -65,7 +65,7 @@ at Farmingdale State College.</p>
 
 </div>
 </div>
-
+<p></P>
 
 <div class="container" >
 <div class="row">
@@ -86,7 +86,7 @@ at Farmingdale State College.</p>
 </div>
 </div>
 
-
+<P>
 
 </div>
 {% endblock content %}
