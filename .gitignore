@@ -78,4 +78,11 @@ staticfiles/
 .idea/workspace.xml
 
 #Vagrant files
-.vagrant/
+.vagrant
+
+
+# Jenkins folder
+.jenkins
+/docker-compose.beta.testing.yml
+
+nectr/templates/pages/tutor_public_profile.html

@@ -44,13 +44,6 @@
       <option name="IS_ENABLED" value="false" />
       <ENTRIES />
     </EXTENSION>
-    <PathMappingSettings>
-      <option name="pathMappings">
-        <list>
-          <mapping local-root="$PROJECT_DIR$" remote-root="/app" />
-        </list>
-      </option>
-    </PathMappingSettings>
     <option name="launchJavascriptDebuger" value="false" />
     <option name="host" value="" />
     <option name="additionalOptions" value="" />

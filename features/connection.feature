@@ -1,12 +1,18 @@
 # Created by bfox at 3/11/17
+@browser-grid
 Feature: Connection to nectR
-  As a nectR visitor
+  As a nectR developer
   I want to be able to access the web app
   So I can use nectR
 
+  Scenario: Connect to "/" using browser
+    When I go to "/"
+    Then I should see a page with title "Home"
 
-  Scenario: Visitor goes to "/"
-    Given I go to "/"
-    Then I should see the "Home Page"
-    And There should be a "Sign In" link
-    And There should be a "Sign Up" link
+  Scenario: Connect to "/" using browser to view menu
+    When I go to "/"
+    Then I should see a page with title "Home"
+    When I press the "menu"
+    Then There should be a "SIGN UP" link
+    Then There should be a "LOG IN" link
+

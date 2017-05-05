@@ -1,0 +1,225 @@
+{% extends "base_nectr.html" %}
+{% load staticfiles i18n compress %}
+
+<!-- {% block title %}nectR Tutoring - Home Page{% endblock title %} -->
+
+
+{% block banner_content  %}
+    <section id="banner" class="major">
+        <div class="inner">
+            <div class="logo">
+                <img src="{% static "images/nectr-white.png" %}" alt="" width="800" height="260"/>
+            </div>
+            <header class="major noline">
+                <div>
+                    <!-- Three -->
+                    <article style="padding-left:15%;padding-top: 5%;padding-bottom: 10%;padding-right: 0%;">
+
+                        <section id="one">
+
+                            <form method="GET" action="{% url 'search_base' %}">
+                                <div class="inner">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input id="searchbar" type="text" name="search_text"
+                                                   placeholder="Search for our courses...">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div>
+
+                                                <input type="submit" id="search_button"
+                                                       class="btn red" name="search_button">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    {% csrf_token %}
+                                </div>
+                            </form>
+                        </section>
+
+                    </article>
+
+                </div>
+            </header>
+        </div>
+    </section>
+
+{% endblock banner_content %}
+
+
+{% block content %}
+
+
+    <!-- nav bar -->
+    <nav class="navbar navbar-default" style="  margin-bottom: 3%; margin-top: 3%; ">
+        <div class="container-fluid" style="columns: 1; margin-left: 30%; padding-bottom: 2%; ">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'search_base' %}?search_text=language"> Language <i class="fa fa-language" style="margin-left: 45%; color: black;"></i></a>
+                </li>
+                <li><a href="#"> Math </a> <i class="fa fa-calculator" style="margin-left: 45%; color: black;"></i></li>
+                <li><a href="#"> English </a><i class="fa fa-book" style="margin-left: 45%; color: black;"></i></li>
+                <li><a href="#"> Test Prep </a><i class="fa fa-pencil" style="margin-left: 45%; color: black;"></i></li>
+                <li><a href="#"> More </a> <i class="fa fa-bars" style="margin-left: 45%; color: black;"></i></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- One -->
+    <section id="one" class="tiles">
+        <article>
+          <span class="image">
+            <img src="{% static "images/joinhive.gif" %}" alt=""/>
+          </span>
+            <header class="major noline">
+
+                <h3><a href="{% url 'join' %}" class="link">Join the Hive</a></h3>
+            </header>
+        </article>
+
+        <article>
+          <span class="image">
+            <img src="{% static "images/honeydrip.gif" %}" alt=""/>
+          </span>
+            <header class="major noline">
+                <h3><a href="{% url 'search_base' %}" class="link">Search the Hive</a></h3>
+            </header>
+        </article>
+
+
+        <article>
+          <span class="image">
+              <img src="{% static "images/giphy.gif" %}" alt=""/>
+          </span>
+            <header class="major noline">
+                <h3><a href="{% url 'how_it_works' %}" class="link">How it Works</a></h3>
+            </header>
+        </article>
+
+        <article>
+          <span class="image">
+            <img src="{% static "images/aboutgif.gif" %}" alt=""/>
+          </span>
+            <header class="major noline">
+                <h3><a href="{% url 'about' %}" class="link">About</a></h3>
+            </header>
+        </article>
+    </section>
+
+
+
+
+
+    <!-- two -->
+    <section id="two">
+        <div class="row 100% padding-5">
+            <article class="6u 12u$(medium)">
+                <div class="padding-5">
+                    <header>
+                        <h2>Join The Hive</h2>
+                    </header>
+                    <p>
+                    <ul>
+                        <h3>We're always looking for talented students to join the team</h3>
+                        <a href="{% url 'join' %}" class="button next scrolly"> Apply Now </a>
+                    </ul>
+                    </p>
+                </div>
+            </article>
+
+            <br>
+            <article class="6u$ 12u$(medium) important(medium)">
+                    <span class="image fit">
+                      <img src="https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/05/27164518/p1264m1066840f.jpg"
+                           alt=""/>
+                    </span>
+            </article>
+        </div>
+    </section>
+
+    <!-- two -->
+    <section id="two">
+        <div class="row 100% padding-5">
+            <article class="6u 12u$(medium)">
+                <div class="padding-5">
+                            <span class="image fit">
+                              <img src="https://s-media-cache-ak0.pinimg.com/originals/9e/9a/99/9e9a998cd00ced44e91b0763bf932216.jpg"
+                                   alt=""/>
+                            </span>
+                </div>
+            </article>
+
+            <article class="6u$ 12u$(medium) important(medium)">
+                <header>
+                    <h2>How it works</h2>
+                </header>
+                <p>
+                <ul>
+                    <h3>Click below to learn how nectR works</h3>
+                    <a href="{% url 'how_it_works' %}" class="button next scrolly">Find out more</a>
+                </ul>
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- two -->
+    <section id="two">
+        <div class="row 100% padding-5">
+            <article class="6u 12u$(medium)">
+                <div class="padding-5">
+                    <header>
+                        <h2>About</h2>
+                    </header>
+                    <p>
+                    <ul>
+                        <h3>Find out more about nectR</h3>
+                        <a href="{% url 'about' %}" class="button next scrolly">About</a>
+                    </ul>
+                    </p>
+                </div>
+            </article>
+
+            <article class="6u$ 12u$(medium) important(medium)">
+                                <span class="image fit">
+                                  <img src="https://www.sciencenews.org/sites/default/files/2016/04/main/articles/041316_ec_quantum-computing_free.jpg"
+                                       alt=""/>
+                                </span>
+            </article>
+        </div>
+    </section>
+
+    <!-- two -->
+    <section id="two">
+        <div class="row 100% padding-5">
+            <article class="6u 12u$(medium)">
+                <div class="padding-5">
+                                        <span class="image fit">
+                                          <img src="http://images.wisegeek.com/finger-typing-in-a-search-engine.jpg"
+                                               alt=""/>
+                                        </span>
+                </div>
+            </article>
+
+            <article class="6u$ 12u$(medium) important(medium)">
+                <header>
+                    <h2>Search the Hive</h2>
+                </header>
+                <p>
+                <ul>
+                    <h3>Search our database for the perfect tutor to meet your needs</h3>
+                    <a href="{% url 'search_base' %}" class="button next scrolly">Search Now</a>
+                </ul>
+                </p>
+            </article>
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+        {% include "partials/contact.html" %}
+    </section>
+
+{% endblock content %}

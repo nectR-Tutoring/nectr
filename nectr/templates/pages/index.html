@@ -1,12 +1,8 @@
 {% load staticfiles i18n compress%}<!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
-		<title>nectR</title>
+		<title>nectR - Home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- Latest compiled and minified CSS -->
@@ -19,10 +15,10 @@
 
 		<!--[if lte IE 8]><script src="{% static "js/ie/html5shiv.js" %}"></script><![endif]-->
 		<link rel="stylesheet" href="{% static "css/main.css" %}" />
-		<link rel="stylesheet" href="{% static "css/main2.css" %}" />
+		<link rel="stylesheet" href="{% static "css/search_the_hive.css" %}" />
 		<link rel="stylesheet" href="{% static "css/homepage.css" %}" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="{% static "css/ie9.css" %}" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="{% static "css/ie8.css" %}" /><![endif]-->
 	</head>
 	<body>
 
@@ -31,60 +27,60 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>nectR</strong> <span>by The Bee Team</span></a>
+						<a href="{% url 'home' %}"  class="logo"><strong>nectR</strong> <span>by The Bee Team</span></a>
 						<nav>
-							<a href="#menu">Menu</a>
+							<a href="#menu" name="menu">Menu</a>
 						</nav>
 					</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="become_a_tutor.html">Become a Tutor</a></li>
-							<li><a href="generic.html">SignUp</a></li>
-							<li><a href="elements.html">Login</a></li>
-						</ul>
-						<ul class="actions vertical">
-							<li><a href="#" class="button special fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
-						</ul>
-					</nav>
+					<!-- Menu -->
+						<nav id="menu">
+							<ul class="links">
+								<li><a href="{% url 'home' %}">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="how_it_works.html">How it works</a></li>
+								<li><a href="search_the_hive.html">Search the Hive</a></li>
+							</ul>
+							<ul class="actions vertical">
+							<li><a id="sign-up-link" class="button special fit" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a></li>
+							<li><a id="log-in-link" class="button fit" href="{% url 'account_login' %}" name="nav_Login">{% trans "Log In" %}</a></li>
+							</ul>
+						</nav>
+
 
 				<!-- Banner -->
-					<section id="banner" class="major">
-						<div class="inner">
-							<header class="major">
-								<h1>Welcome to </h1>
-							</header>
+					<section id="banner" class="major" >
 
-							<div class="content">
-								<p>A platform for students and tutors to share knowledge<br />
-							      and further enhance their future towards success.</p>
+						<div class="inner">
+								<div class="padding-33" style = "padding-top: 100px; padding-left: 135px;">
+										<img src="{% static "images/nectr-white.png" %}" alt="" width="800" height="260"/>
+								</div>
+							<header class="major noline" >
+								<div class="padding-search">
+
+				                <div class="form-group has-feedback">
+				            		<label for="search" class="sr-only">Search</label>
+				            		<input id="searchbar" type="text" name="search" placeholder="Search for our courses.." >
+				              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+				            	</div>
+
+
+
 								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Get Started</a></li>
+										<li><a href="#one" class="button next scrolly"> Learn more </a></li>
 								</ul>
+
 							</div>
+							</header>
 						</div>
 					</section>
 
 				<!-- Main -->
 					<div id="main">
 
-						<section id="searchbar_section">
-							<div>
-							<input id="searchbar" type="text" name="search" placeholder="Search for our courses..">
-
-						</div>
-						</section>
-
-
-
-
-					<nav class="navbar navbar-default">
-
+					<!-- nav bar -->
+					<nav class="navbar navbar-default" style="  margin-bottom: 3%; margin-top: 3%; ">
 					  <div class="container-fluid" style="columns: 1; margin-left: 30%; padding-bottom: 2%; ">
-
 					    <ul class="nav navbar-nav" >
 					      <li><a href="#"> Language </a>  <i class="fa fa-language" style="margin-left: 45%; color: black;"></i> </li>
 					       <li><a href="#"> Math </a> <i class="fa fa-calculator" style="margin-left: 45%; color: black;"></i> </li>
@@ -92,7 +88,6 @@
 					       <li><a href="#"> Test Prep </a><i class="fa fa-pencil" style="margin-left: 45%; color: black;"></i> </li>
 					       <li><a href="#"> More </a> <i class="fa fa-bars" style="margin-left: 45%; color: black;"></i> </li>
 					    </ul>
-
 					  </div>
 					</nav>
 
@@ -103,71 +98,145 @@
 										<img src="{% static "images/joinhive.gif" %}" alt="" />
 									</span>
 									<header class="major noline">
-										<h3><a href="landing.html" class="link">Join the Hive</a></h3>
-										<p>Join The nectR family to further enhance your future.</p>
+
+										<h3><a href="join_the_hive" class="link">Join the Hive</a></h3>
 									</header>
 								</article>
+
 								<article>
 									<span class="image">
 										<img src="{% static "images/honeydrip.gif" %}" alt="" />
 									</span>
 									<header class="major noline">
-										<h3><a href="search_the_hive.html" class="link">Search the Hive</a></h3>
+										<h3><a href="search_the_hive" class="link">Search the Hive</a></h3>
 									</header>
 								</article>
 
-								<!-- <article>
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Magna</a></h3>
-										<p>Lorem etiam nullam</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Ipsum</a></h3>
-										<p>Nisl sed aliquam</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Consequat</a></h3>
-										<p>Ipsum dolor sit amet</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Etiam</a></h3>
-										<p>Feugiat amet tempus</p>
-									</header>
-								</article>
-							</section> -->
 
-						<!-- Two -->
-							<section id="two">
-								<div class="inner">
-									<header class="major">
-										<h2>How it Works</h2>
+								<article>
+									<span class="image">
+											<img src="{% static "images/giphy.gif" %}" alt="" />
+									</span>
+									<header class="major noline">
+										<h3><a href="how_it_works.html" class="link">How it Works</a></h3>
 									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-									<ul class="actions">
-										<li><a href="landing.html" class="button next">Get Started</a></li>
-									</ul>
-								</div>
+								</article>
+
+								<article>
+									<span class="image">
+										<img src="{% static "images/aboutgif.gif" %}" alt="" />
+									</span>
+									<header class="major noline">
+										<h3><a href="about.html" class="link">About</a></h3>
+									</header>
+								</article>
 							</section>
 
-					</div>
+
+
+
+
+							<!-- two -->
+										<section id="two">
+												<div class="row 100% padding-5">
+													<article class="6u 12u$(medium)">
+														<div class="padding-5">
+														<header>
+															<h2>Join The Hive</h2>
+														</header>
+														<p>
+															<ul>
+																<h3>We're always looking for talented students to join the team</h3>
+																	<a href="{% url 'join' %}" class="button next scrolly"> Apply Now </a>
+															</ul>
+														</p>
+													</div>
+													</article>
+
+													<article class="6u$ 12u$(medium) important(medium)">
+														<span class="image fit">
+															<img src="{% static "images/bee-moving.gif" %}" alt="" />
+														</span>
+														</article>
+												</div>
+										</section>
+
+										<!-- two -->
+													<section id="two">
+															<div class="row 100% padding-5">
+																<article class="6u 12u$(medium)">
+																	<div class="padding-5">
+																		<span class="image fit">
+																			<img src="{% static "images/bee-moving.gif" %}" alt="" />
+																		</span>
+															</div>
+																</article>
+
+																<article class="6u$ 12u$(medium) important(medium)">
+																	<header>
+																		<h2>How it works</h2>
+																	</header>
+																	<p>
+																		<ul>
+																			<h3>Click below to learn how nectR works</h3>
+																				<a href="{% url 'how_it_works' %}" class="button next scrolly">Find out more</a>
+																		</ul>
+																	</p>
+																	</article>
+															</div>
+													</section>
+
+													<!-- two -->
+																<section id="two">
+																		<div class="row 100% padding-5">
+																			<article class="6u 12u$(medium)">
+																				<div class="padding-5">
+																				<header>
+																					<h2>About</h2>
+																				</header>
+																				<p>
+																					<ul>
+																						<h3>Find out more about nectR</h3>
+																							<a href="{% url 'about' %}" class="button next scrolly" name="home_tile_about_link">About</a>
+																					</ul>
+																				</p>
+																			</div>
+																			</article>
+
+																			<article class="6u$ 12u$(medium) important(medium)">
+																				<span class="image fit">
+																					<img src="{% static "images/bee-moving.gif" %}" alt="" />
+																				</span>
+																				</article>
+																		</div>
+																</section>
+
+																<!-- two -->
+																			<section id="two">
+																					<div class="row 100% padding-5">
+																						<article class="6u 12u$(medium)">
+																							<div class="padding-5">
+																								<span class="image fit">
+																									<img src="{% static "images/bee-moving.gif" %}" alt="" />
+																								</span>
+																					</div>
+																						</article>
+
+																						<article class="6u$ 12u$(medium) important(medium)">
+																							<header>
+																								<h2>Search the Hive</h2>
+																							</header>
+																							<p>
+																								<ul>
+																									<h3>Search our database for the perfect tutor to meet your needs</h3>
+																										<a href="{% url 'search_base' %}" class="button next scrolly">Search Now</a>
+																								</ul>
+																							</p>
+																							</article>
+																					</div>
+																			</section>
+
+
 
 				<!-- Contact -->
 					<section id="contact">
@@ -197,46 +266,47 @@
 									<div class="contact-method">
 										<span class="icon alt fa-envelope"></span>
 										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
+										<a href="#">nectrtutoring@gmail.com</a>
 									</div>
 								</section>
 								<section>
 									<div class="contact-method">
 										<span class="icon alt fa-phone"></span>
 										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
+										<span>631-873-5489</span>
 									</div>
 								</section>
 								<section>
 									<div class="contact-method">
 										<span class="icon alt fa-home"></span>
 										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
+										<span>2350 Broadhollow Road<br />
+										Farmingdale, NY 11735<br />
 										United States of America</span>
 									</div>
 								</section>
 							</section>
 						</div>
 					</section>
+				</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; nectR </li><li>Design: The Bee Team</li>
-							</ul>
-						</div>
-					</footer>
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="inner">
+								<ul class="icons">
+									<li><a href="https://twitter.com/nectRtutoring" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.facebook.com/NectRTutoring/" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/nectrtutoring/?hl=en" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+								<ul class="copyright">
+									<li>&copy; nectR </li><li>Design: The Bee Team</li>
+								</ul>
+							</div>
+						</footer>
 
-			</div>
+</div>
 
 		<!-- Scripts -->
 

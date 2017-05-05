@@ -1930,7 +1930,7 @@
 		}
 
 	label {
-		color: #ffffff;
+		color: #000;
 		display: block;
 		font-size: 0.8em;
 		font-weight: 600;
@@ -2226,7 +2226,6 @@
 
 		.image.fit {
 			display: block;
-			margin: 0 0 2em 0;
 			width: 100%;
 		}
 
@@ -3427,6 +3426,7 @@
 		min-height: 22em;
 		position: relative;
 		top: -3.25em;
+		background-image: url(/static/images/nectrgif.gif);
 	}
 
 		#banner:after {
@@ -3520,6 +3520,7 @@
 			height: 75vh;
 			min-height: 30em;
 			max-height: 50em;
+
 		}
 
 			#banner.major.alt {
@@ -3998,3 +3999,15 @@
 			opacity: 1;
 			visibility: visible;
 		}
+
+
+
+.dashboard .dashboard-sidebar,
+.dashboard .dashboard-sidebar strong,
+.dashboard .list-group > .list-group-item{
+  color:#000;
+}
+
+.dashboard .table tr:hover{
+  background-color: transparent;
+}

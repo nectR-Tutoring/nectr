@@ -1,16 +1,26 @@
-<!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+{% load staticfiles i18n compress%}<!DOCTYPE HTML>
+
 <html>
 	<head>
-		<title>find a tutor - nectR by bee team</title>
+		<title>Search The Hive - nectR by bee team</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<link rel="stylesheet" href="{% static "css/main.css" %}" />
+    <link rel="stylesheet" href="{% static "css/searchthehive.css" %}" />
+		<link rel="stylesheet" href="{% static "css/project.css" %}" />
+
+
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -22,25 +32,26 @@
 				<!-- Header -->
 				<!-- Note: The "styleN" class below should match that of the banner element. -->
 					<header id="header" class="alt style2">
-						<a href="index.html" class="logo"><strong>nectR</strong> <span>by bee team</span></a>
+						<a href="{% url 'home' %}"  class="logo"><strong>nectR</strong> <span>by The Bee Team</span></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="landing.html">Landing</a></li>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-						<ul class="actions vertical">
-							<li><a href="#" class="button special fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
-						</ul>
-					</nav>
+					<!-- Menu -->
+						<nav id="menu">
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="how_it_works.html">How it works</a></li>
+								<li><a href="search_the_hive.html">Search the Hive</a></li>
+							</ul>
+							<ul class="actions vertical">
+								<li><a href="#" class="button special fit">Sign Up</a></li>
+								<li><a href="#" class="button fit">Log In</a></li>
+							</ul>
+						</nav>
+
 
 				<!-- Banner -->
 				<!-- Note: The "styleN" class below should match that of the header element. -->
@@ -49,101 +60,127 @@
 							<span class="image">
 								<img src="images/pic07.jpg" alt="" />
 							</span>
-							<header class="major">
-								<h1>Search the Hive</h1>
+
+							<header class="major noline">
+								 <center> <h2>What do you need help with?</h2> </center>
 							</header>
-							<div class="content">
-								<p>Our database is filled with the most professional tutor's accross the world, guaranteed to find the right tutor for you.</p>
-								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Get Started</a></li>
-								</ul>
-							</div>
+
+
 						</div>
 					</section>
 
 				<!-- Main -->
 					<div id="main">
 
-
 						<!-- Three -->
-							<section id="one">
-								<div class="inner">
-									<header class="major">
-										<h2>TODO</h2>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
+						<article class="padding-search" style ="padding-left:15%;padding-top: 5%;padding-bottom: 10%;padding-right: 0%;">
+						<section id="one">
 
-								</div>
-							</section>
+								<form method="GET">
+										<div class="inner">
+												<div class="row">
+														<div class = "col-md-8">
+																<input id="searchbar" type="text" name="search_text" placeholder="Search for our courses...">
+														</div>
+														<div class="col-md-4">
+															<div>
 
-					</div>
+																<input onclick="location.href='#fetch'" type="submit" id="search_button" class="btn red" name="search_button">
 
-				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
-							<section>
-								<form method="post" action="#">
-									<div class="field half first">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="6"></textarea>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="special" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
+														 </div>
+														</div>
+												</div>
+										</div>
+										{% csrf_token %}
 								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+								<script>
+										$(document).ready(function (){
+												$("#search_button").click(function (){
+														$('html, body').animate({
+																scrollTop: $("#fetch").offset().top
+														}, 2000);
+												});
+										});
+								</script>
+
+						</section>
+				</div>
+</article>
+
+
+						<section id="fetch" class="padding-in-search">
+
+							<!-- nav bar -->
+
+							<ul>
+							<li class="dropdown">
+								<a href="javascript:void(0)" class="dropbtn">Filter</a>
+							<div class="dropdown-content">
+								<a href="#">Link 1</a>
+								<a href="#">Link 2</a>
+								<a href="#">Link 3</a>
+							</div>
+						  </li>
+
+						</ul>
+
+							<table id="myTable">
+							  <tr class="header">
+							    <th style="width:10%;">Subject</th>
+							    <th style="width:30%;">Course Title</th>
+									<th style="width:20%;">Tutor</th>
+									<th style="width:30%;">Price</th>
+									<th style="width:20%;">Contact</th>
+							  </tr>
+							  <tr>
+							    <td>math</td>
+							    <td>calc 1</td>
+									 <td>Prof Lamar</td>
+									  <td>2 Jars/hour</td>
+										 <td>Link to tutor message</td>
+							  </tr>
+								<tr>
+								 <td>Java</td>
+								 <td>Array-List</td>
+									<td>Prof Juan</td>
+									 <td>1 Jars/hour</td>
+										<td>Link to tutor message</td>
+							 </tr> <tr>
+							    <td>Language</td>
+							    <td>Spanish</td>
+									 <td>Prof El chapo</td>
+									  <td>1/2 Jars/hour</td>
+										 <td>Link to tutor message</td>
+							  </tr> <tr>
+ 							    <td>History</td>
+ 							    <td>Toronto</td>
+ 									 <td>Prof Drake Graham</td>
+ 									  <td>2 Jars/hour</td>
+ 										 <td>Link to tutor message</td>
+ 							  </tr>
+							</table>
+
+						</section>
+
+
+
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="inner">
+								<ul class="icons">
+									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+								<ul class="copyright">
+									<li>&copy; nectR </li><li>Design: The Bee Team</li>
+								</ul>
+							</div>
+						</footer>
 
 			</div>
 

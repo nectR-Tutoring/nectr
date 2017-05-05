@@ -1,0 +1,231 @@
+{% load staticfiles i18n compress%}<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Join The Hive - nectR by bee team</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{% static "css/main.css" %}" />
+		<link rel="stylesheet" href="{% static "css/homepage.css" %}" />
+		<link rel="stylesheet" href="{% static "css/join_the_hive.css" %}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="{% url 'home' %}"  class="logo"><strong>nectR</strong> <span>by The Bee Team</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+					<!-- Menu -->
+						<nav id="menu">
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="how_it_works.html">How it works</a></li>
+								<li><a href="search_the_hive.html">Search the Hive</a></li>
+							</ul>
+							<ul class="actions vertical">
+								<li><a href="#" class="button special fit">Sign Up</a></li>
+								<li><a href="#" class="button fit">Log In</a></li>
+							</ul>
+						</nav>
+
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/pic07.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Join the Hive</h1>
+							</header>
+							<div class="content">
+								<p>Buz away towards a path of success.</p>
+
+								<!-- <ul class="actions">
+									<li><a href="#one" class="button next scrolly">Get Started</a></li>
+								</ul> -->
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+
+						<!-- Three -->
+						<!-- Button to open the modal -->
+<button onclick="document.getElementById('id01').style.display='block'">Student - Sign Up</button>
+
+<!-- The Modal (contains the Sign Up form) -->
+<div id="id01" class="modal">
+<form class="modal-content animate black-text" action="/action_page.php">
+	<div class="container">
+		<label><b>Email</b></label>
+		<input type="text" placeholder="Enter Email" name="email" required>
+
+		<label><b>Password</b></label>
+		<input type="password" placeholder="Enter Password" name="psw" required>
+
+		<label><b>Repeat Password</b></label>
+		<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+		<input type="checkbox" checked="checked"> Remember me
+		<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+		<div class="clearfix">
+			<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+			<button type="submit" class="signupbtn">Sign Up</button>
+		</div>
+	</div>
+</form>
+</div>
+
+
+<!-- Button to open the modal -->
+<button onclick="document.getElementById('id01').style.display='block'">Tutor - Sign Up</button>
+
+<!-- The Modal (contains the Sign Up form) -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
+  <form class="modal-content animate black-text" action="/action_page.php">
+    <div class="container">
+
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input type="checkbox" checked="checked"> Remember me
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+		if (event.target == modal) {
+				modal.style.display = "none";
+		}
+}
+</script>
+
+					</div>
+
+
+
+
+
+
+				<!-- Contact -->
+					<!-- <section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="field half first">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="special" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">information@untitled.tld</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(000) 000-0000 x12387</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road #5432<br />
+										Nashville, TN 00000<br />
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section> -->
+
+
+
+
+					<!-- Footer -->
+						<footer id="footer">
+							<div class="inner">
+								<ul class="icons">
+									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+								<ul class="copyright">
+									<li>&copy; nectR </li><li>Design: The Bee Team</li>
+								</ul>
+							</div>
+						</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

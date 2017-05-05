@@ -10,7 +10,13 @@ before_install:
  - chmod +x docker-compose
  - sudo mv docker-compose /usr/local/bin
 
+before_script:
+  - docker-compose build
+  - docker-compose up -d
+
 script:
-  - docker-compose -f dev-test.yml build
-  - docker-compose -f dev-test.yml up
-  - docker exec -it python -u /app/manage.py behave
+  - docker-compose run --service-ports pycharm python manage.py test --no-input
+  - docker-compose run --service-ports pycharm behave --tags=-wip --tags=-future
+
+after_script:
+  - docker-compose down

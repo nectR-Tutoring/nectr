@@ -80,6 +80,9 @@ CELERY_ALWAYS_EAGER = True
 # BDD Behave - Django Integratation
 INSTALLED_APPS += ('behave_django',)
 
+# Django Extension to add BDD to manage.py test
+INSTALLED_APPS += ('django_behave',)
+
 # Allow Local Hosts - ALL.
 # SECURITY FLAW / HOLE
 ALLOWED_HOSTS += ['*', ]

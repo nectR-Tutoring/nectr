@@ -48,6 +48,9 @@
             </ul>
 
             <ul class="nav navbar-nav pull-xs-right">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'search_base' %}">Search</a>
+              </li>
               {% if request.user.is_authenticated %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
@@ -78,7 +81,7 @@
       {% endif %}
 
       {% block content %}
-        <p>Quick test to see if Django updated template changes...</p>
+        <p>Quick test to see if Django updated template changes 1...</p>
       {% endblock content %}
 
     </div> <!-- /container -->
@@ -104,4 +107,3 @@
     {% endblock javascript %}
   </body>
 </html>
-
