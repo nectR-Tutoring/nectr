@@ -13,10 +13,10 @@ class Search(View):
         if search is not '':
             try:
                 tutors = Tutor.objects.get(courses__course_name__contains=search)
-                return render(request, 'search/base_search.html', {'tutors': tutors, 'search_text': search})
+                return render(request, 'search/search_with_results.html', {'tutors': tutors, 'search_text': search})
             except ObjectDoesNotExist:
                 tutors = Tutor.objects.all()
-                return render(request, 'search/base_search.html', {'tutors': tutors, 'search_text': search})
+                return render(request, 'search/search_with_results.html', {'tutors': tutors, 'search_text': search})
         else:
             tutors = Tutor.objects.all()
-            return render(request, 'search/base_search.html', {'tutors': tutors, 'search_text': search})
+            return render(request, 'search/base_search.html', {'tutors': tutors})

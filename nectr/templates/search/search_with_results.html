@@ -1,0 +1,20 @@
+{% extends 'search/base_search.html' %}
+{% load staticfiles i18n compress %}
+{% block search_results %}
+    <div id="search_results">
+        {% if seach_text %}
+            <h1>You searched for {{ search_text }}</h1>
+            <br>
+        {% endif %}
+            {% for tutor in tutors %}
+                <article class="thumb">
+                    <a href="{% static 'images/testing/fulls/01.jpg' %}" class="image"><img
+                            src="{% static 'images/testing/thumbs/01.jpg' %}"
+                            alt=""/></a>
+                    <h2>{{ tutor.username }}</h2>
+                    <p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+                </article>
+
+            {% endfor %}
+    </div>
+{% endblock %}
