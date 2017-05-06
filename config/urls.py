@@ -38,6 +38,7 @@ urlpatterns = [
                   # url(r'^test_joinpage_nectr', TemplateView.as_view(template_name='joinpage_nectr.html'), name='test5'),
 
                   # Messaging Include
+                  url(r'^messages', include('postman.urls'))
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
