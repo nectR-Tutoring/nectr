@@ -8,7 +8,8 @@ from nectr.tutor.models import Tutor
 
 def get_tutor_profile_by_username(request, username):
     tutor = get_object_or_404(Tutor, user__username=username)
-    return render(request, template_name='tutors/tutor_detail.html', context={'tutor': tutor})
+    courses = tutor.courses
+    return render(request, template_name='tutors/tutor_detail.html', context={'tutor': tutor, 'courses': courses})
 
 
 class TutorDetailView(DetailView):

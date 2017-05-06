@@ -9,6 +9,7 @@ class Tutor(models.Model):
     user = models.ForeignKey(User, default=1, null=True)
     votes = models.IntegerField(default=0)
     courses = models.ManyToManyField(Courses)
+    skills = models.ManyToManyField(Skills)
     bio = models.TextField(default='No Bio Provided')
 
     def __str__(self):
