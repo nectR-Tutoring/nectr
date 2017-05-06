@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 from nectr.courses.models import Courses
+from nectr.skills.models import Skills
 from nectr.users.models import User
 
 

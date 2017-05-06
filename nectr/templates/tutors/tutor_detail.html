@@ -52,7 +52,7 @@
                             <span><strong>Skills: </strong></span>
 
 
-                            {% for skill in tutor.skills %}
+                            {% for skill in tutor.skills.all %}
                                 <span class="label label-warning">{{ skill }}</span>
                             {% endfor %}
                         </center>
