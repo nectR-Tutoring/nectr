@@ -18,6 +18,7 @@ urlpatterns = [
                   # User management
                   url(r'^users/', include('nectr.users.urls', namespace='users')),
                   url(r'^accounts/', include('allauth.urls')),
+                  url(r'^tutor/', include('nectr.tutor.urls', namespace='tutors')),
 
                   # Dashboard Management
                   url(r'^dashboard/', include('nectr.dashboard.urls', namespace='dashbaord')),

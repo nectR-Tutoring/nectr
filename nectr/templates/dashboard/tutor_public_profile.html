@@ -45,17 +45,17 @@
 
                     <span><strong>Skills: </strong></span>
 
-                    
+
                     {% for skill in tutor.skills}
                         <span class="label label-warning">{{tutor.skill}}</span>
                       {%endfor%}
                     </center>
-                    
-                   
+
+
                     <p class="text-left"><strong>Bio: </strong><br> </p>
                     <form method="post" action="" > {% csrf_token %}
                       <div class="form-group">
-                       
+
                         <textarea class="form-control" style="resize: none;" rows="5" id="comment" name="bio_content"></textarea>
                       </div>
                       <center>
@@ -63,7 +63,7 @@
                     </center>
                     </form>
                     <br>
-                    
+
                 </div>
                 <div class="modal-footer">
                     <center>
@@ -78,9 +78,9 @@
 
     </div>
 
- 
+
     <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-     
+
         <div class="btn-group" role="group">
         <form method="post" action=""> {% csrf_token %}
             <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab" name="like_is_slected"><span <i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -89,8 +89,8 @@
             </button>
              </form>
         </div>
-        
-         
+
+
         <div class="btn-group" role="group">
         <form method="post" action=""> {% csrf_token %}
             <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab" name="favorites_is_selected"><i class="fa fa-thumbs-down" aria-hidden="true"></i>
@@ -100,24 +100,23 @@
              </form>
         </div>
          </form>
-       
-    </div>
-       
 
-      
-    
     </div>
-</div>
-</div>
+
+
+
+
+    </div>
+
 
 <div class="container-fluid">
-  
-<!-- /container fluid-->  
+
+<!-- /container fluid-->
 <div class="container">
- 
+
 
       <div data-spy="scroll" class="tabbable-panel">
-      
+
         <div class="tabbable-line">
 
           <ul class="nav nav-tabs ">
@@ -125,7 +124,7 @@
               <a href="#tab_default_1" data-toggle="tab">
               About</a>
             </li>
-           
+
             <li>
               <a href="#tab_default_3" data-toggle="tab">
              Courses</a>
@@ -137,15 +136,15 @@
               <h4>About</h4>
              <form method="post" action=""> {% csrf_token %}
               <div class="form-group">
-               
+
                 <textarea class="form-control" style="resize: none;" rows="5" id="comment" name="about_info"></textarea>
               </div>
-          
+
 
               <h4>Education </h4>
-                         
+
                 <div class="form-group">
-                  
+
                   <textarea class="form-control" style="resize: none;" rows="5"  id="comment" name="education_info"></textarea>
                 </div>
 
@@ -154,14 +153,14 @@
                     </center>
 
               </form>
-       
-           
+
+
             </div>
 
 
-            
+
             <div class="tab-pane" id="tab_default_3">
-                  
+
           <div class="tab-content">
             <div class="tab-pane active" id="home">
               <div class="table-responsive">
@@ -172,7 +171,7 @@
                       <th> Course Title</th>
                       <th>Time</th>
                       <th> Date</th>
-                      
+
                     </tr>
                   </thead>
                   <tbody id="items">
@@ -184,10 +183,10 @@
                       <td>{{course.full_course_name}} </td>
                       <td>{{course.time}}</td>
                       <td>{{course.date}}</td>
-                   
+
                     </tr>
                      {%endfor%}
-                
+
                   </tbody>
                 </table>
                 <hr>
@@ -198,12 +197,12 @@
                 </div>
               </div><!--/table-resp-->
             </div>
-           
+
           </div>
         </div>
       </div>
-  
-  
+
+
 </div>
 </div>
 
@@ -214,7 +213,7 @@
 
 
         <h5 class="modal-title">Private Message</h5>
-        
+
       <div class="modal-body">
         <form method="post" action=""> {% csrf_token %}
               <div class="form-group">
@@ -224,11 +223,11 @@
                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </form>
       </div>
-     
-       
-      
 
-          
+
+
+
+
         </div>
     </div>
 </div>
@@ -243,6 +242,6 @@
 
 
 <script type="text/javascript" scr="complete_profile.js"></script>
-
+</div></div>
 </body>
 </html>

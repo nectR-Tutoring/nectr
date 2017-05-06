@@ -1,5 +1,4 @@
-from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import render, get_list_or_404
+from django.shortcuts import render
 from django.views import View
 
 from nectr.tutor.models import Tutor
@@ -12,7 +11,7 @@ class Search(View):
     def get(request):
         search = request.GET.get('search_text', '')
         if search is not '':
-            tutors = Tutor.objects.get(courses__course_name__contains=search)
+            tutors = Tutor.objects.filter(courses__course_name__contains=search)
             return render(request, 'search/search_with_results.html', {'tutors': tutors, 'search_text': search})
         else:
             tutors = Tutor.objects.all()
