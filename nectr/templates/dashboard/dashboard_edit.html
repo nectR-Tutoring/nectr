@@ -40,3 +40,15 @@
         </div>
     </div>
 {% endblock %}
+
+
+{% compress css %}
+            <!-- This file stores project-specific CSS -->
+            <link href="{% static 'css/editcourse.css' %}" rel="stylesheet">
+
+{% endcompress %}
+
+
+{% compress js %}
+    <script src="{% static "js/course_edit.js" %}"></script>
+{% endcompress %}
