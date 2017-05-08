@@ -1,16 +1,21 @@
 {% extends 'dashboard/dashboard_edit.html' %}
 {% block form_content %}
-<div class="col-md-8">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">Edit Skills</h4>
-                            </div>
-                            <div class="content">
-                                <form method="post">
-                                    {% csrf_token %}
+    <div class="col-md-8">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Edit Skills</h4>
+            </div>
+            <div class="content">
+                <form method="post">
+                    {% csrf_token %}
 
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    {% if courses %}
+
+
+                    {% endif %}
+
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}
