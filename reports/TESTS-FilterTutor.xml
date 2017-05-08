@@ -1,6 +1,6 @@
-<testsuite errors="4" failures="0" name="FilterTutor.Filter Tutors" skipped="0" tests="4" time="696.31287"><testcase classname="FilterTutor.Filter Tutors" name="Mike wants to filter tutors by subject" status="failed" time="300.1855"><error message="Message: Timeout loading page after 300000ms&#10;Build info: version: '3.4.0', revis..." type="TimeoutException">
+<testsuite errors="4" failures="0" name="FilterTutor.Filter Tutors" skipped="0" tests="4" time="1.9603"><testcase classname="FilterTutor.Filter Tutors" name="Mike wants to filter tutors by subject" status="failed" time="0.531479"><error message="Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//django%3A80..." type="WebDriverException">
 <![CDATA[
-Failing step: Given Mike is on nectr web site ... failed in 300.186s
+Failing step: Given Mike is on nectr web site ... failed in 0.531s
 Location: features/FilterTutor.feature:8
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -15,26 +15,25 @@ Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: Timeout loading page after 300000ms
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/tmp/rust_mozprofile.zPYrfAQwhSel, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=3807.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
-Session ID: 0e6b379c-752a-41bd-b0da-7bdb82911ab9
+Capabilities [{moz:profile=/tmp/rust_mozprofile.5Nh7YPZz13mE, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5065, browserName=firefox, platformName=linux}]
+Session ID: 17a34501-a278-48d5-a198-b247abfaaada
 Screenshot: available via screen
 Stacktrace:
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
     at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
     at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
-    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
     at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
-    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
-    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:364)
-    at sun.reflect.GeneratedMethodAccessor13.invoke (None:-1)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
     at java.lang.reflect.Method.invoke (Method.java:498)
     at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
@@ -52,7 +51,7 @@ Stacktrace:
 <![CDATA[
 @scenario.begin
   Scenario: Mike wants to filter tutors by subject
-    Given Mike is on nectr web site ... failed in 300.186s
+    Given Mike is on nectr web site ... failed in 0.531s
     Given Mike is on Search the hive page ... skipped in 0.000s
     When Mike enters "BCS421" ... skipped in 0.000s
     Then all tutors who tutor that subject will be displayed ... skipped in 0.000s
@@ -60,9 +59,9 @@ Stacktrace:
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="FilterTutor.Filter Tutors" name="Mike wants to filter tutors by subject" status="failed" time="64.071389"><error message="Message: Reached error page: about:neterror?e=connectionFailure&amp;u=http%3A//djang..." type="WebDriverException">
+</system-out></testcase><testcase classname="FilterTutor.Filter Tutors" name="Mike wants to filter tutors by subject" status="failed" time="0.845831"><error message="Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//django%3A80..." type="WebDriverException">
 <![CDATA[
-Failing step: Given Mike is on nectr web site ... failed in 64.071s
+Failing step: Given Mike is on nectr web site ... failed in 0.846s
 Location: features/FilterTutor.feature:8
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -77,26 +76,25 @@ Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=connectionFailure&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20django%3A8000.
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/tmp/rust_mozprofile.zPYrfAQwhSel, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=3807.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
-Session ID: 0e6b379c-752a-41bd-b0da-7bdb82911ab9
+Capabilities [{moz:profile=/tmp/rust_mozprofile.5Nh7YPZz13mE, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5065, browserName=firefox, platformName=linux}]
+Session ID: 17a34501-a278-48d5-a198-b247abfaaada
 Screenshot: available via screen
 Stacktrace:
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
     at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
     at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
-    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
     at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
-    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
-    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:364)
-    at sun.reflect.GeneratedMethodAccessor13.invoke (None:-1)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
     at java.lang.reflect.Method.invoke (Method.java:498)
     at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
@@ -114,7 +112,7 @@ Stacktrace:
 <![CDATA[
 @scenario.begin
   Scenario: Mike wants to filter tutors by subject
-    Given Mike is on nectr web site ... failed in 64.071s
+    Given Mike is on nectr web site ... failed in 0.846s
     Given Mike is on Search the hive page ... skipped in 0.000s
     And Mike has not yet selected a tutor ... skipped in 0.000s
     When Mike clicks <subject> radio button on subject filter ... skipped in 0.000s
@@ -123,9 +121,9 @@ Stacktrace:
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="FilterTutor.Filter Tutors" name="Mike wants to filter tutors by availability" status="failed" time="300.219774"><error message="Message: Timeout loading page after 300000ms&#10;Build info: version: '3.4.0', revis..." type="TimeoutException">
+</system-out></testcase><testcase classname="FilterTutor.Filter Tutors" name="Mike wants to filter tutors by availability" status="failed" time="0.300916"><error message="Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//django%3A80..." type="WebDriverException">
 <![CDATA[
-Failing step: Given Mike is on nectr web site ... failed in 300.220s
+Failing step: Given Mike is on nectr web site ... failed in 0.301s
 Location: features/FilterTutor.feature:8
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -140,26 +138,25 @@ Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: Timeout loading page after 300000ms
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/tmp/rust_mozprofile.zPYrfAQwhSel, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=3807.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
-Session ID: 0e6b379c-752a-41bd-b0da-7bdb82911ab9
+Capabilities [{moz:profile=/tmp/rust_mozprofile.5Nh7YPZz13mE, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5065, browserName=firefox, platformName=linux}]
+Session ID: 17a34501-a278-48d5-a198-b247abfaaada
 Screenshot: available via screen
 Stacktrace:
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
     at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
     at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
-    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
     at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
-    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
-    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:364)
-    at sun.reflect.GeneratedMethodAccessor13.invoke (None:-1)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
     at java.lang.reflect.Method.invoke (Method.java:498)
     at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
@@ -177,7 +174,7 @@ Stacktrace:
 <![CDATA[
 @scenario.begin
   Scenario: Mike wants to filter tutors by availability
-    Given Mike is on nectr web site ... failed in 300.220s
+    Given Mike is on nectr web site ... failed in 0.301s
     Given Mike is on Search the hive page ... skipped in 0.000s
     And Mike has not yet selected a tutor ... skipped in 0.000s
     When Mike clicks <dayOfTheWeek> radio button on availability filter ... skipped in 0.000s
@@ -186,9 +183,9 @@ Stacktrace:
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="FilterTutor.Filter Tutors" name="Mike wants to filter tutors by price" status="failed" time="31.836206"><error message="Message: Reached error page: about:neterror?e=connectionFailure&amp;u=http%3A//djang..." type="WebDriverException">
+</system-out></testcase><testcase classname="FilterTutor.Filter Tutors" name="Mike wants to filter tutors by price" status="failed" time="0.282075"><error message="Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//django%3A80..." type="WebDriverException">
 <![CDATA[
-Failing step: Given Mike is on nectr web site ... failed in 31.836s
+Failing step: Given Mike is on nectr web site ... failed in 0.282s
 Location: features/FilterTutor.feature:8
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -203,26 +200,25 @@ Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=connectionFailure&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20django%3A8000.
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/tmp/rust_mozprofile.zPYrfAQwhSel, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=3807.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
-Session ID: 0e6b379c-752a-41bd-b0da-7bdb82911ab9
+Capabilities [{moz:profile=/tmp/rust_mozprofile.5Nh7YPZz13mE, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5065, browserName=firefox, platformName=linux}]
+Session ID: 17a34501-a278-48d5-a198-b247abfaaada
 Screenshot: available via screen
 Stacktrace:
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
     at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
     at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
-    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
     at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
-    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
-    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:364)
-    at sun.reflect.GeneratedMethodAccessor13.invoke (None:-1)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
     at java.lang.reflect.Method.invoke (Method.java:498)
     at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
@@ -240,7 +236,7 @@ Stacktrace:
 <![CDATA[
 @scenario.begin
   Scenario: Mike wants to filter tutors by price
-    Given Mike is on nectr web site ... failed in 31.836s
+    Given Mike is on nectr web site ... failed in 0.282s
     Given Mike is on Search the hive page ... skipped in 0.000s
     And Mike has not yet selected a tutor ... skipped in 0.000s
     When Mike wants to filter by hourly rate ... skipped in 0.000s
