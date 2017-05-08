@@ -14,4 +14,9 @@ urlpatterns = [
         view=login_required(views.DashboardEditProfile.as_view()),
         name='edit_profile'
     ),
+    url(
+        regex=r'^edit_courses',
+        view=login_required(views.DashboardEditCourses.as_view()),
+        name='edit_courses'
+    ),
 ]
