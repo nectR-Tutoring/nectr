@@ -14,7 +14,8 @@
 
         {% if request.user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'dashboard:dashboard_view' %}">{% trans "My Dashboard" %}</a>
+                <a class="button special fit"
+                   href="{% url 'dashboard:dashboard_view' %}">{% trans "My Dashboard" %}</a>
             </li>
             <li class="nav-item">
                 <a class="button fit" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
