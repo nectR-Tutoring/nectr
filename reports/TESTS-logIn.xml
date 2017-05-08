@@ -1,0 +1,225 @@
+<testsuite errors="2" failures="1" name="logIn.Login" skipped="0" tests="5" time="16.101088"><testcase classname="logIn.Login" name="Mike clicks login before creating account" status="passed" time="2.815357"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Mike clicks login before creating account
+    Given Mike is not registered to nectr ... passed in 0.004s
+    Given mike is on nectr site ... passed in 0.592s
+    When mike clicks on menu button ... passed in 0.079s
+    And mike clicks on login button on menu ... passed in 0.478s
+    Then mike is redirected to Login page ... passed in 1.028s
+    When mike clicks on "sign_up_redirect" ... passed in 0.082s
+    Then mike is redirected to Signup page ... passed in 0.552s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+Login
+nectR Tutoring - Home Page
+Signup
+Login
+
+]]>
+</system-out></testcase><testcase classname="logIn.Login" name="Charlie enters correct credentials" status="passed" time="1.724224"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Charlie enters correct credentials
+    Given Charlie is registered to nectr ... passed in 0.017s
+    Given charlie is on nectr site ... passed in 0.267s
+    When charlie clicks on menu button ... passed in 0.066s
+    And charlie clicks on login ... passed in 0.333s
+    Then charlie is redirected to Login page ... passed in 0.785s
+    When Charlie enters his correct username ... passed in 0.101s
+    And Charlie enters his correct password ... passed in 0.059s
+    And Charlie clicks on sign in ... passed in 0.096s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+Login
+nectR Tutoring - Home Page
+
+]]>
+</system-out></testcase><testcase classname="logIn.Login" name="Enoc enters incorrect credentials" status="failed" time="5.767707"><error message="Message: Unable to locate element: *[name='nav_Login']&#10;For documentation on this..." type="NoSuchElementException">
+<![CDATA[
+Failing step: And enoc clicks on nav_Login button ... failed in 5.435s
+Location: features/logIn.feature:32
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 48, in step_impl
+    context.driver.find_element_by_name(element_name).click()
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 367, in find_element_by_name
+    return self.find_element(by=By.NAME, value=name)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 754, in find_element
+    'value': value})['value']
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: *[name='nav_Login']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.7IB7Z03lyzLA, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=2841.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
+Session ID: 34dfbb2b-f183-4570-af0d-34789177f9e4
+*** Element info: {Using=name, value=nav_Login}
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:410)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElementByName (RemoteWebDriver.java:485)
+    at org.openqa.selenium.By$ByName.findElement (By.java:303)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:402)
+    at sun.reflect.GeneratedMethodAccessor19.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.findElement (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.findElement (EventFiringWebDriver.java:188)
+    at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:48)
+    at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:33)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Enoc enters incorrect credentials
+    Given Enoc is registered to nectr ... passed in 0.009s
+    Given enoc is on nectr site ... passed in 0.262s
+    When enoc clicks on menu button ... passed in 0.062s
+    And enoc clicks on nav_Login button ... failed in 5.435s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="logIn.Login" name="Brandon enters correct credentials" status="failed" time="5.793364"><error message="Message: Unable to locate element: *[name='nav_Login']&#10;For documentation on this..." type="NoSuchElementException">
+<![CDATA[
+Failing step: And Brandon clicks "Log In" button ... failed in 5.380s
+Location: features/logIn.feature:43
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 359, in step_impl
+    context.driver.find_element_by_name('nav_Login').click()
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 367, in find_element_by_name
+    return self.find_element(by=By.NAME, value=name)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 754, in find_element
+    'value': value})['value']
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: *[name='nav_Login']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.7IB7Z03lyzLA, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=2841.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
+Session ID: 34dfbb2b-f183-4570-af0d-34789177f9e4
+*** Element info: {Using=name, value=nav_Login}
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:410)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElementByName (RemoteWebDriver.java:485)
+    at org.openqa.selenium.By$ByName.findElement (By.java:303)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:402)
+    at sun.reflect.GeneratedMethodAccessor19.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.findElement (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.findElement (EventFiringWebDriver.java:188)
+    at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:48)
+    at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:33)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Brandon enters correct credentials
+    Given Brandon is registered to nectr and wants to login ... passed in 0.016s
+    And Brandon is on home page of nectr ... passed in 0.319s
+    When Brandon clicks "Menu" ... passed in 0.078s
+    And Brandon clicks "Log In" button ... failed in 5.380s
+    Then Brandon is redirected to Login page ... skipped in 0.000s
+    When Brandon enters "Cashmeousside" in username field on Login page ... skipped in 0.000s
+    And Brandon enters "Howboudat" in password field on Login page ... skipped in 0.000s
+    And Brandon clicks "Sign In" button ... skipped in 0.000s
+    Then Brandon goes to his user profile page, or his "Dashboard" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="logIn.Login" name="Brandon tries to sign in again but enters incorrect credentials" status="failed" time="0.000435"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given Brandon's registered to nectR with username is "Cashmeousside" ... failed in 0.000s
+Location: features/logIn.feature:78
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 407, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Brandon tries to sign in again but enters incorrect credentials
+    Given Brandon's registered to nectR with username is "Cashmeousside" ... failed in 0.000s
+    And Brandon's password is Howboudat ... skipped in 0.000s
+    And Brandon is on home page of nectr ... skipped in 0.000s
+    And Brandon is not signed in ... skipped in 0.000s
+    When Brandon clicks "Menu" ... skipped in 0.000s
+    And Brandon clicks "Log In" button ... skipped in 0.000s
+    Then Brandon is redirected to "Login" page ... skipped in 0.000s
+    And title of the page is "Login" ... skipped in 0.000s
+    And page contains an h1 whos text is "Sign In" ... skipped in 0.000s
+    When Brandon clicks on username text field ... skipped in 0.000s
+    And Brandon enters "Cashmeousside" ... skipped in 0.000s
+    And Brandon clicks on password text field ... skipped in 0.000s
+    And Brandon enters "Howboudatt" ... skipped in 0.000s
+    And Brandon cicks "Sign In" button ... skipped in 0.000s
+    Then Brandon is presented with an alert ... skipped in 0.000s
+    And username text field is cleared ... skipped in 0.000s
+    And password text field is cleared ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

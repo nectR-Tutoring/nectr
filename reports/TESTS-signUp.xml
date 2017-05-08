@@ -1,0 +1,124 @@
+<testsuite errors="1" failures="1" name="signUp.Signup from Website" skipped="0" tests="2" time="14.027297"><testcase classname="signUp.Signup from Website" name="Spongebob tries to sign up for nectr account but does not fill in correct info" status="failed" time="2.85455"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Then Spongebob gets "please fill out this field" alert in Password field ... failed in 0.001s
+Location: features/signUp.feature:74
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/signUp.py", line 318, in step_impl
+    assert False
+AssertionError
+
+Captured stdout:
+Signup
+nectR Tutoring - Home Page
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Spongebob tries to sign up for nectr account but does not fill in correct info
+    Given Charlie is not yet registered ... passed in 0.008s
+    Given Mike is not yet registered ... passed in 0.007s
+    Given Enoc is not yet registered ... passed in 0.010s
+    Given Brandon is not yet registered ... passed in 0.007s
+    Given Juan is not yet registered ... passed in 0.007s
+    Given Spongebob is on home page of nectr ... passed in 0.599s
+    And Spongebob does not have nectR account ... passed in 0.000s
+    When Spongebob clicks menu ... passed in 0.082s
+    And Spongebob clicks "Sign Up" button ... passed in 0.513s
+    Then Spongebob is redirected to Signup page ... passed in 1.050s
+    And title of the page is "Signup" ... passed in 0.023s
+    And page contains an h1 whos text is "Sign up" ... passed in 0.014s
+    When Spongebob clicks on username text field ... passed in 0.066s
+    And Spongebob enters username "BikiniBottoms" ... passed in 0.086s
+    And Spongebob clicks on E-mail text field ... passed in 0.048s
+    And Spongebob enters email "ayouf@farmingdale.edu" ... passed in 0.089s
+    And Spongebob clicks on password1 text field ... passed in 0.045s
+    And Spongbob enters password1 "CrabbyPatty2" ... passed in 0.053s
+    And Spongebob cicks on repeat Password field ... passed in 0.044s
+    And Spongbob leaves this text field blank ... passed in 0.032s
+    And Spongebob clicks "Sign Up" button ... passed in 0.073s
+    Then Spongebob gets "please fill out this field" alert in Password field ... failed in 0.001s
+    And Spongebob clicks on Repeat Password field ... skipped in 0.000s
+    And Spongbob enters "CrabbyPatty2" ... skipped in 0.000s
+    And Spongebob clicks "Sign Up" button ... skipped in 0.000s
+    Then Spongebob is redirected to "Confirm email" page ... skipped in 0.000s
+    And title of the page is "Verify Your E-mail Address" ... skipped in 0.000s
+    And page contains an h1 whos text is "Verify Your E-mail Address" ... skipped in 0.000s
+    When Spongebob checks his email "ayouf@farmingdale.edu" ... skipped in 0.000s
+    And Spongebob opens "confirm account" email ... skipped in 0.000s
+    And Spongebob clicks account confirmation link ... skipped in 0.000s
+    Then Spongebob is redirected to "BikiniBottoms" dashboard page ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+Signup
+nectR Tutoring - Home Page
+
+]]>
+</system-out></testcase><testcase classname="signUp.Signup from Website" name="Spongebob tries to sign up providing correct info" status="failed" time="11.172747"><error message="Message: &#10;" type="TimeoutException">
+<![CDATA[
+Failing step: Then Spongebob is redirected to "Sign up" page ... failed in 10.567s
+Location: features/signUp.feature:91
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 169, in step_impl
+    EC.title_contains(title))
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/support/wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+Captured stdout:
+"Sign up"
+nectR Tutoring - Home Page
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Spongebob tries to sign up providing correct info
+    Given Charlie is not yet registered ... passed in 0.007s
+    Given Mike is not yet registered ... passed in 0.009s
+    Given Enoc is not yet registered ... passed in 0.007s
+    Given Brandon is not yet registered ... passed in 0.005s
+    Given Juan is not yet registered ... passed in 0.004s
+    Given Spongebob is on home page of nectr ... passed in 0.266s
+    And Spongebob does not have nectR account ... passed in 0.000s
+    When Spongebob clicks menu ... passed in 0.056s
+    And Spongebob clicks "Sign Up" button ... passed in 0.251s
+    Then Spongebob is redirected to "Sign up" page ... failed in 10.567s
+    And title of the page is "Signup" ... skipped in 0.000s
+    And page contains an h1 whos text is "Sign up" ... skipped in 0.000s
+    When Spongebob clicks on username text field ... skipped in 0.000s
+    And Spongebob enters "BikiniBottoms" ... skipped in 0.000s
+    And Spongebob clicks on E-mail text field ... skipped in 0.000s
+    And Spongebob enters "ayouf@farmingdale.edu" ... undefined in 0.000s
+    And Spongebob clicks on password text field ... skipped in 0.000s
+    And Spongbob enters "CrabbyPatty2" ... skipped in 0.000s
+    And Spongebob cicks on Password field ... skipped in 0.000s
+    And Spongbob enters "CrabbyPatty2" ... skipped in 0.000s
+    And Spongebob clicks "Sign Up" button ... skipped in 0.000s
+    Then Spongebob is redirected to "Confirm email" page ... skipped in 0.000s
+    And title of the page is "Verify Your E-mail Address" ... skipped in 0.000s
+    And page contains an h1 whos text is "Verify Your E-mail Address" ... skipped in 0.000s
+    When Spongebob checks his email "ayouf@farmingdale.edu" ... skipped in 0.000s
+    And Spongebob opens "confirm account" email ... skipped in 0.000s
+    And Spongebob clicks account confirmation link ... skipped in 0.000s
+    Then Spongebob is redirected to "BikiniBottoms" dashboard page ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+"Sign up"
+nectR Tutoring - Home Page
+
+]]>
+</system-out></testcase></testsuite>

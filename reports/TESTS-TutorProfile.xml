@@ -1,0 +1,128 @@
+<testsuite errors="0" failures="5" name="TutorProfile.Tutor Profile" skipped="0" tests="5" time="0.003113"><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to create a tutor profile" status="failed" time="0.000643"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+Location: features/TutorProfile.feature:8
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/TutorProfile.py", line 107, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Mike wants to create a tutor profile
+    Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+    Given Mike is signed into nectr ... skipped in 0.000s
+    And Mike is on tutor interface ... skipped in 0.000s
+    When Mike clicks on "My Profile" ... skipped in 0.000s
+    Then "Hello <Mike's username>" is shown ... skipped in 0.000s
+    And Mike can add information to his profile ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update About Me section on tutor profile page" status="failed" time="0.000618"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+Location: features/TutorProfile.feature:8
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/TutorProfile.py", line 107, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Mike wants to update About Me section on tutor profile page
+    Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+    Given Mike is on his tutor profile page ... skipped in 0.000s
+    When Mike clicks on "Edit" button on "About Me" section of tutor profile ... skipped in 0.000s
+    Then Mike can edit his about me ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update subjects taught on tutor profile page" status="failed" time="0.000618"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+Location: features/TutorProfile.feature:8
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/TutorProfile.py", line 107, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Mike wants to update subjects taught on tutor profile page
+    Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+    Given Mike is on his tutor profile page ... skipped in 0.000s
+    When Mike clicks on "Edit" button on "subjects taught" section of tutor profile ... skipped in 0.000s
+    Then Mike can edit or add courses and subjects he offers tutoring in ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update availability on tutor profile page" status="failed" time="0.000606"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+Location: features/TutorProfile.feature:8
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/TutorProfile.py", line 107, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Mike wants to update availability on tutor profile page
+    Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+    Given Mike is on his tutor profile page ... skipped in 0.000s
+    When Mike clicks on "Edit" button on "availability" section of tutor profile ... skipped in 0.000s
+    Then Mike can edit or add his days and times he is available ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update his pricing on tutor profile page" status="failed" time="0.000629"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+Location: features/TutorProfile.feature:8
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/TutorProfile.py", line 107, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Mike wants to update his pricing on tutor profile page
+    Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+    Given Mike is on his tutor profile page ... skipped in 0.000s
+    When Mike clicks on "Edit" button on "Pricing" section of tutor profile ... skipped in 0.000s
+    Then Mike can update the price he charges for tutoring ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

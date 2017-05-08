@@ -1,0 +1,209 @@
+<testsuite errors="1" failures="3" name="searchTheHive.Search the hive" skipped="0" tests="4" time="1.371727"><testcase classname="searchTheHive.Search the hive" name="Brandon searches nectr" status="failed" time="0.776173"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: And he can view preview of tutor profile ... failed in 0.000s
+Location: features/searchTheHive.feature:29
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 126, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Brandon searches nectr
+    Given Brandon is a registered user ... passed in 0.010s
+    Given Mike is a registered user ... passed in 0.009s
+    And Mike is signed into nectr ... passed in 0.021s
+    Given Brandon is on search the hive page ... passed in 0.470s
+    When Brandon types "Computer Science" in search box ... passed in 0.151s
+    And clicks search the hive button ... passed in 0.114s
+    And he can view preview of tutor profile ... failed in 0.000s
+    And he will see a view profile button ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="searchTheHive.Search the hive" name="Mike searches nectr" status="failed" time="0.510045"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: And he can view preview of tutor profile ... failed in 0.000s
+Location: features/searchTheHive.feature:38
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 126, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Mike searches nectr
+    Given Brandon is a registered user ... passed in 0.008s
+    Given Mike is a registered user ... passed in 0.008s
+    And Mike is signed into nectr ... passed in 0.017s
+    Given mike is on search the hive page ... passed in 0.227s
+    When mike types in what he is looking for in search box ... passed in 0.179s
+    And clicks search the hive button ... passed in 0.070s
+    And he can view preview of tutor profile ... failed in 0.000s
+    And he will see a view profile button ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="searchTheHive.Search the hive" name="Billy searches nectr for math tutors" status="failed" time="0.041865"><error message="value too long for type character varying(10)&#10;" type="DataError">
+<![CDATA[
+Failing step: Given there are 15 Math tutors ... failed in 0.010s
+Location: features/searchTheHive.feature:50
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 473, in get_or_create
+    return self.get(**lookup), False
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 385, in get
+    self.model._meta.object_name
+nectr.courses.models.DoesNotExist: Courses matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.DataError: value too long for type character varying(10)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 118, in step_impl
+    TutorFactory.create_batch(size=15)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 635, in create_batch
+    return [cls.create(**kwargs) for _ in range(size)]
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 635, in <listcomp>
+    return [cls.create(**kwargs) for _ in range(size)]
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 622, in create
+    attrs = cls.attributes(create=True, extra=kwargs)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 453, in attributes
+    force_sequence=force_sequence,
+  File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 324, in build
+    return stub.__fill__()
+  File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 83, in __fill__
+    res[attr] = getattr(self, attr)
+  File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 108, in __getattr__
+    val = val.evaluate(self, self.__containers)
+  File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 227, in evaluate
+    containers=containers,
+  File "/usr/local/lib/python3.5/site-packages/factory/declarations.py", line 324, in evaluate
+    return self.generate(sequence, obj, create, defaults)
+  File "/usr/local/lib/python3.5/site-packages/factory/declarations.py", line 412, in generate
+    return subfactory.simple_generate(create, **params)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 709, in simple_generate
+    return cls.generate(strategy, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 676, in generate
+    return action(**kwargs)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 623, in create
+    return cls._generate(True, attrs)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 548, in _generate
+    obj = cls._prepare(create, **attrs)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 523, in _prepare
+    return cls._create(model_class, *args, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/factory/django.py", line 179, in _create
+    return cls._get_or_create(model_class, *args, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/factory/django.py", line 170, in _get_or_create
+    obj, _created = manager.get_or_create(*args, **key_fields)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 475, in get_or_create
+    return self._create_object_from_params(lookup, params)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 505, in _create_object_from_params
+    obj = self.create(**params)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 399, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 796, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 824, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 908, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 947, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 1045, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1054, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.DataError: value too long for type character varying(10)
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Billy searches nectr for math tutors
+    Given Brandon is a registered user ... passed in 0.010s
+    Given Mike is a registered user ... passed in 0.006s
+    And Mike is signed into nectr ... passed in 0.017s
+    Given there are 15 Math tutors ... failed in 0.010s
+    Given Billy is signed into nectr ... skipped in 0.000s
+    And Billy is on search the hive page ... skipped in 0.000s
+    When Billy clicks on search bar ... skipped in 0.000s
+    And Billy enters "Math" ... skipped in 0.000s
+    And Billy clicks "Submit" button ... skipped in 0.000s
+    Then search results are loaded on search the hive page ... skipped in 0.000s
+    And 10 tutor search results are displayed ... skipped in 0.000s
+    And each search result contains "view tutor profile" button ... skipped in 0.000s
+    When Billy clicks "more results" button ... skipped in 0.000s
+    Then remaining 5 tutors are diaplyed ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="searchTheHive.Search the hive" name="Billy searches nectr for C++ programming tutors" status="failed" time="0.043643"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given there are 5 Cpp Programming tutors ... failed in 0.001s
+Location: features/searchTheHive.feature:64
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 239, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Billy searches nectr for C++ programming tutors
+    Given Brandon is a registered user ... passed in 0.016s
+    Given Mike is a registered user ... passed in 0.009s
+    And Mike is signed into nectr ... passed in 0.018s
+    Given there are 5 Cpp Programming tutors ... failed in 0.001s
+    Given Billy is signed into nectr ... skipped in 0.000s
+    And Billy is on search the hive page ... skipped in 0.000s
+    When Billy clicks on search bar ... skipped in 0.000s
+    And Billy enters "Cpp Programming" ... skipped in 0.000s
+    And Billy clicks "Submit" button ... skipped in 0.000s
+    Then search results are loaded on search the hive page ... skipped in 0.000s
+    And 5 tutor search results are displayed ... skipped in 0.000s
+    And each search result contains "view tutor profile" button ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

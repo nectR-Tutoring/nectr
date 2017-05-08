@@ -1,0 +1,24 @@
+<testsuite errors="0" failures="0" name="connection.Connection to nectR" skipped="0" tests="2" time="1.538103"><testcase classname="connection.Connection to nectR" name="Connect to &quot;/&quot; using browser" status="passed" time="0.729092"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Connect to "/" using browser
+    When I go to "/" ... passed in 0.717s
+    Then I should see a page with title "Home" ... passed in 0.012s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="connection.Connection to nectR" name="Connect to &quot;/&quot; using browser to view menu" status="passed" time="0.809011"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Connect to "/" using browser to view menu
+    When I go to "/" ... passed in 0.365s
+    Then I should see a page with title "Home" ... passed in 0.011s
+    When I press the "menu" ... passed in 0.076s
+    Then There should be a "SIGN UP" link ... passed in 0.174s
+    Then There should be a "LOG IN" link ... passed in 0.183s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
