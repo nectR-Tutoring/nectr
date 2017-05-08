@@ -1,0 +1,54 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% load static %}
+{% block content %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                {% block form_content %}
+
+                {% endblock %}
+                <div class="col-md-4">
+                    <div class="card card-user">
+                        <div class="image">
+                            <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
+                                 alt="..."/>
+                        </div>
+                        <div class="content">
+                            <div class="author">
+                                <a href="{% url 'users:detail' user.username %}">
+                                    <img class="avatar border-gray" src="{% static 'img/faces/face-3.jpg' %}"
+                                         alt="..."/>
+
+                                    <h4 class="title">{{ user.first_name }}<br/>
+                                        <small>{{ user.username }}</small>
+                                    </h4>
+                                </a>
+                            </div>
+                            <p class="description text-center"> {{ user.bio }}
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+                            <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+                            <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% compress css %}
+            <!-- This file stores project-specific CSS -->
+            <link href="{% static 'css/editcourse.css' %}" rel="stylesheet">
+
+{% endcompress %}
+
+
+{% compress js %}
+    <script src="{% static "js/course_edit.js" %}"></script>
+{% endcompress %}
