@@ -21,7 +21,7 @@ urlpatterns = [
                   url(r'^tutor/', include('nectr.tutor.urls', namespace='tutors')),
 
                   # Dashboard Management
-                  url(r'^dashboard/', include('nectr.dashboard.urls', namespace='dashbaord')),
+                  url(r'^dashboard/', include('nectr.dashboard.urls', namespace='dashboard')),
 
                   # Your stuff: custom urls includes go here
                   url(r'^search/', include('nectr.search.urls')),

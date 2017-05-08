@@ -1,0 +1,13 @@
+<testsuite errors="0" failures="0" name="functional_tests.Test Functionality of Nectr" skipped="0" tests="1" time="0.038996"><testcase classname="functional_tests.Test Functionality of Nectr" name="Server is responding to requests" status="passed" time="0.038996"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Server is responding to requests
+    Given The Server is Running on "Localhost" ... passed in 0.000s
+    And On Port 8000 ... passed in 0.000s
+    When I visit http://localhost:8000 ... passed in 0.038s
+    Then I should get a 200 response ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

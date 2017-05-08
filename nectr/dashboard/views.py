@@ -5,4 +5,12 @@ from django.views.generic import TemplateView
 
 
 class DashboardView(TemplateView):
-    template_name = "dashboard/complete_profile.html"
+    template_name = "dashboard/base_dashboard.html"
+
+
+class DashboardEditProfile(TemplateView):
+    template_name = "dashboard/edit_profile.html"
+
+
+class DashboardEditCourses(TemplateView):
+    template_name = "dashboard/edit_courses.html"

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 
 from nectr.tutor.models import Tutor
+from nectr.users.models import User
 
 
 class Search(View):
@@ -11,8 +12,10 @@ class Search(View):
     def get(request):
         search = request.GET.get('search_text', '')
         if search is not '':
-            tutors = Tutor.objects.filter(courses__course_name__contains=search)
-            return render(request, 'search/search_with_results.html', {'tutors': tutors, 'search_text': search})
+            users_courses = User.objects.filter(courses__course_name__contains=search)
+            users_skills = User.objects.filter(skills__skill__contains=search)
+            from itertools import chain
+            users = list(chain(users_courses, users_skills))
         else:
-            tutors = Tutor.objects.all()
-            return render(request, 'search/base_search.html', {'tutors': tutors})
+            users = User.objects.all()
+        return render(request, 'search/base_search.html', {'tutors': users, 'search_text': search})
