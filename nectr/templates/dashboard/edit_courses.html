@@ -1,4 +1,4 @@
-{% extends 'dashboard/edit_profile.html' %}
+{% extends 'dashboard/dashboard_edit.html' %}
 {% block form_content %}
     <div class="col-md-8">
         <div class="card">
@@ -8,14 +8,12 @@
             <div class="content">
                 <form method="post">
                     {% csrf_token %}
-                    <div>
-                        {% if courses %}
-                            <td>
+
+                    {% if courses %}
 
 
-                            </td>
                         {% endif %}
-                    </div>
+
 
                 </form>
             </div>
