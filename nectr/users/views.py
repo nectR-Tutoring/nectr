@@ -25,7 +25,6 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
-
     fields = ['name', ]
 
     # we already imported User in the view code above, remember?
@@ -40,7 +39,8 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
         # Only get the User record for the user making the request
         return User.objects.get(username=self.request.user.username)
 
-#TODO::
+
+# TODO::
 class UserListView(LoginRequiredMixin, ListView):
     model = User
     # These next two lines tell the view to index lookups by username

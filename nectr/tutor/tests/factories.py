@@ -1,11 +1,13 @@
 import factory
 
+from nectr.courses.factories import CoursesFactory
 from nectr.users.tests.factories import UserFactory
 
 
 class TutorFactory(factory.django.DjangoModelFactory):
-    base_user = factory.SubFactory(UserFactory)
+    user = factory.SubFactory(UserFactory)
+    courses = factory.SubFactory(CoursesFactory)
 
     class Meta:
         model = 'tutor.Tutor'
-        django_get_or_create = ('base_user', )
+        django_get_or_create = ('user', )

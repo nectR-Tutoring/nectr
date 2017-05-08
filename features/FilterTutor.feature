@@ -1,4 +1,4 @@
-@future
+@browser-grid
 Feature: Filter Tutors
   As a student
   I want the ability to filter tutors
@@ -9,8 +9,8 @@ Background:
 
 Scenario: Mike wants to filter tutors by subject
   Given Mike is on Search the hive page
-  And Mike has not yet selected a tutor
-  When Mike clicks on subject filter radio button
+#  And Mike has not yet selected a tutor
+  When Mike enters "BCS421"
   Then all tutors who tutor that subject will be displayed
 
 Scenario: Mike wants to filter tutors by subject
