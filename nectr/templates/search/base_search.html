@@ -44,7 +44,6 @@
     </div>
     {% block search_results %}
         {% if tutors %}
-            <div id="search_results_without">
             {% for tutor in tutors %}
                 <article class="individual_tutor_result">
                     <h2>{{ tutor.user.username }}</h2>
@@ -54,7 +53,7 @@
                             <li class="course_name_listing">{{ courses.course_name }}</li>
                         {% endfor %}
                     </ul>
-                    <form method="get" action="{% url 'tutors:detail' tutor.user.username %}">
+                    <form method="get" action="{% url 'users:detail' tutor.user.username %}">
                         <input type="submit" value="Tutor Profile">
                     </form>
                 </article>

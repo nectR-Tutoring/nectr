@@ -7,6 +7,9 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
+from nectr.courses.models import Courses
+from nectr.skills.models import Skills
+
 
 @python_2_unicode_compatible
 class User(AbstractUser):
@@ -14,6 +17,10 @@ class User(AbstractUser):
     # First Name and Last Name do not cover name patterns
     # around the globe.
     name = models.CharField(_('Name of User'), blank=True, max_length=255)
+    votes = models.IntegerField(default=0)
+    courses = models.ManyToManyField(Courses)
+    skills = models.ManyToManyField(Skills)
+    bio = models.TextField(default='No Bio Provided')
 
     def __str__(self):
         return self.username

@@ -12,3 +12,5 @@ class DashboardEditProfile(TemplateView):
     template_name = "dashboard/edit_profile.html"
 
 
+class DashboardEditCourses(TemplateView):
+    template_name = "dashboard/edit_courses.html"
