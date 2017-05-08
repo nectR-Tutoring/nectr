@@ -1,0 +1,254 @@
+{% extends "base_nectr.html" %}
+{% load staticfiles i18n compress %}
+
+{% block title %}User: {{ tutor.user.username }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12">
+                {% if tutor.user.name %}
+                    <h2>{{ tutor.user.name }}</h2>
+                {% else %}
+                    <h2>{{ tutor.user.username }}</h2>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="span3 well">
+            <a href="#" class="btn btn-primary" id="openBtn" data-toggle="modal" data-target="#sendMessage"> Message</a>
+
+            <center>
+                <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img
+                        src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"
+                        name="aboutme" width="140" height="140" class="img-circle"></a>
+                <h3>{{ fullname }}</h3>
+                <em>click my face for more</em>
+                <div>
+                    {#       <a href="#" class="btn btn-warning" role="button">Switch To Student Profile</a>#}
+                </div>
+            </center>
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title" id="myModalLabel">More About {{ fullname }}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <center>
+                            <a> <img
+                                    src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"
+                                    name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                            <h3 class="media-heading">{{ fullname }}
+                                <small>USA</small>
+                            </h3>
+
+                            <span><strong>Skills: </strong></span>
+
+
+                            {% for skill in tutor.skills.all %}
+                                <span class="label label-warning">{{ skill }}</span>
+                            {% endfor %}
+                        </center>
+
+
+                        <p class="text-left"><strong>Bio: </strong><br></p>
+                        <form method="post" action=""> {% csrf_token %}
+                            <div class="form-group">
+
+                                <textarea class="form-control" style="resize: none;" rows="5" id="comment"
+                                          name="bio_content"></textarea>
+                            </div>
+                            <center>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </center>
+                        </form>
+                        <br>
+
+                    </div>
+                    <div class="modal-footer">
+                        <center>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
+                        </center>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+
+            <div class="btn-group" role="group">
+                <form method="post" action=""> {% csrf_token %}
+                    <button type="button" id="stars" class="btn btn-default" href="#tab1" data-toggle="tab"
+                            name="like_is_slected"><span <i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                        <div class="hidden-xs">Likes</div>
+                        <div> {{ tutor.likes_number }}</div>
+                    </button>
+                </form>
+            </div>
+
+
+            <div class="btn-group" role="group">
+                <form method="post" action=""> {% csrf_token %}
+                    <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"
+                            name="favorites_is_selected"><i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                        <div class="hidden-xs">Dislike</div>
+                        <div> {{ tutor.dislike_number }}</div>
+                    </button>
+                </form>
+            </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+
+        <!-- /container fluid-->
+        <div class="container">
+
+
+            <div data-spy="scroll" class="tabbable-panel">
+
+                <div class="tabbable-line">
+
+                    <ul class="nav nav-tabs ">
+                        <li class="active">
+                            <a href="#tab_default_1" data-toggle="tab">
+                                About</a>
+                        </li>
+
+                        <li>
+                            <a href="#tab_default_3" data-toggle="tab">
+                                Courses</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_default_1">
+                            </p>
+                            <h4>About</h4>
+                            <form method="post" action=""> {% csrf_token %}
+                                <div class="form-group">
+
+                                    <textarea class="form-control" style="resize: none;" rows="5" id="comment"
+                                              name="about_info"></textarea>
+                                </div>
+
+
+                                <h4>Education </h4>
+
+                                <div class="form-group">
+
+                                    <textarea class="form-control" style="resize: none;" rows="5" id="comment"
+                                              name="education_info"></textarea>
+                                </div>
+
+                                <center>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </center>
+
+                            </form>
+
+
+                        </div>
+
+
+                        <div class="tab-pane" id="tab_default_3">
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="home">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>Subject</th>
+                                                <th> Course Title</th>
+                                                <th>Time</th>
+                                                <th> Date</th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody id="items">
+                                            <!-- need courses git issue -->
+
+                                            {% for course in courses.all %}
+                                                <tr>
+                                                    <td>{{ course.course_name }}</td>
+                                                    <td>{{ course.course_name }} </td>
+                                                    <td>{{ course.course_name }}</td>
+                                                    <td>{{ course.course_name }}</td>
+
+                                                </tr>
+                                            {% endfor %}
+
+                                            </tbody>
+                                        </table>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-4 col-md-offset-4 text-center">
+                                                <ul class="pagination" id="myPager"></ul>
+                                            </div>
+                                        </div>
+                                    </div><!--/table-resp-->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div id="sendMessage" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+
+                            <h5 class="modal-title">Private Message</h5>
+
+                            <div class="modal-body">
+                                <form method="post" action=""> {% csrf_token %}
+                                    <div class="form-group">
+                                        <textarea class="form-control" style="resize: none;" rows="5" id="comment"
+                                                  name="message_info"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Send</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                    crossorigin="anonymous"></script>
+
+
+            <script type="text/javascript" src="{% static 'js/complete_profile.js' %}"></script>
+        </div>
+    </div>
+{% endblock content %}
+

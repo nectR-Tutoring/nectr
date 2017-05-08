@@ -241,7 +241,7 @@ def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    pass
+    context.driver.find_element_by_id('id_password2').clear()
 
 
 

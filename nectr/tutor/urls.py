@@ -16,7 +16,12 @@ urlpatterns = [
     ),
     url(
         regex=r'^update/profile$',
-        view=views.TutorProfile.as_view()
-    )
+        view=views.TutorProfile
+    ),
+    url(
+        regex=r'^(?P<username>[\w.@+-]+)/$',
+        view=views.get_tutor_profile_by_username,
+        name='detail'
+    ),
 
 ]

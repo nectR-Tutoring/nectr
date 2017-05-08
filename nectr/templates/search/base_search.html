@@ -42,17 +42,9 @@
             </section>
         </article>
     </div>
-    <div id="search_results">
-        {% for tutor in tutors %}
-            <article class="thumb">
-                <a href="images/fulls/01.jpg" class="image"><img src="{% static 'images/testing/thumbs/01.jpg' %}"
-                                                                 alt=""/></a>
-                <h2>{{ tutor.username }}</h2>
-                <p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-            </article>
-
-        {% endfor %}
-    </div>
+    {% block search_results %}
+        <h1>Please enter a course or tutor name above to search the hive!</h1>
+    {% endblock search_results %}
 {% endblock content %}
 {% block javascript %}
     <script src="{% static 'js/search/jquery.poptrox.min.js' %}"></script>

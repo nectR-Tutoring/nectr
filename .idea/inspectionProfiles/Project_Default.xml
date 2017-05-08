@@ -1,6 +1,22 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="CssUnknownProperty" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myCustomPropertiesEnabled" value="true" />
+      <option name="myIgnoreVendorSpecificProperties" value="false" />
+      <option name="myCustomPropertiesList">
+        <value>
+          <list size="6">
+            <item index="0" class="java.lang.String" itemvalue="pointer-events" />
+            <item index="1" class="java.lang.String" itemvalue="transition" />
+            <item index="2" class="java.lang.String" itemvalue="filter" />
+            <item index="3" class="java.lang.String" itemvalue="transition-delay" />
+            <item index="4" class="java.lang.String" itemvalue="flex-wrap" />
+            <item index="5" class="java.lang.String" itemvalue="animation" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
     <inspection_tool class="PyBehaveInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ourVersions">
