@@ -1,4 +1,4 @@
-<testsuite errors="2" failures="0" name="ContactTutor.Contact tutor" skipped="0" tests="2" time="0.00184"><testcase classname="ContactTutor.Contact tutor" name="Mike wants to contact tutor" status="failed" time="0.001126"><error message="'Context' object has no attribute 'current_user'" type="AttributeError">
+<testsuite errors="2" failures="0" name="ContactTutor.Contact tutor" skipped="0" tests="2" time="0.001284"><testcase classname="ContactTutor.Contact tutor" name="Mike wants to contact tutor" status="failed" time="0.000571"><error message="'Context' object has no attribute 'current_user'" type="AttributeError">
 <![CDATA[
 Failing step: Given Mike is signed into nectr ... failed in 0.001s
 Location: features/ContactTutor.feature:8
@@ -26,7 +26,7 @@ AttributeError: 'Context' object has no attribute 'current_user'
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="ContactTutor.Contact tutor" name="Brandon wants to contact tutor" status="failed" time="0.000715"><error message="'Context' object has no attribute 'current_user'" type="AttributeError">
+</system-out></testcase><testcase classname="ContactTutor.Contact tutor" name="Brandon wants to contact tutor" status="failed" time="0.000713"><error message="'Context' object has no attribute 'current_user'" type="AttributeError">
 <![CDATA[
 Failing step: Given Mike is signed into nectr ... failed in 0.001s
 Location: features/ContactTutor.feature:8

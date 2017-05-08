@@ -1,4 +1,4 @@
-<testsuite errors="0" failures="5" name="TutorProfile.Tutor Profile" skipped="0" tests="5" time="0.003113"><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to create a tutor profile" status="failed" time="0.000643"><failure message="" type="AssertionError">
+<testsuite errors="0" failures="5" name="TutorProfile.Tutor Profile" skipped="0" tests="5" time="0.002873"><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to create a tutor profile" status="failed" time="0.00057"><failure message="" type="AssertionError">
 <![CDATA[
 Failing step: Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
 Location: features/TutorProfile.feature:8
@@ -25,7 +25,7 @@ AssertionError
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update About Me section on tutor profile page" status="failed" time="0.000618"><failure message="" type="AssertionError">
+</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update About Me section on tutor profile page" status="failed" time="0.000572"><failure message="" type="AssertionError">
 <![CDATA[
 Failing step: Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
 Location: features/TutorProfile.feature:8
@@ -50,7 +50,7 @@ AssertionError
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update subjects taught on tutor profile page" status="failed" time="0.000618"><failure message="" type="AssertionError">
+</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update subjects taught on tutor profile page" status="failed" time="0.000572"><failure message="" type="AssertionError">
 <![CDATA[
 Failing step: Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
 Location: features/TutorProfile.feature:8
@@ -75,7 +75,7 @@ AssertionError
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update availability on tutor profile page" status="failed" time="0.000606"><failure message="" type="AssertionError">
+</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update availability on tutor profile page" status="failed" time="0.000591"><failure message="" type="AssertionError">
 <![CDATA[
 Failing step: Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
 Location: features/TutorProfile.feature:8
@@ -100,7 +100,7 @@ AssertionError
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update his pricing on tutor profile page" status="failed" time="0.000629"><failure message="" type="AssertionError">
+</system-out></testcase><testcase classname="TutorProfile.Tutor Profile" name="Mike wants to update his pricing on tutor profile page" status="failed" time="0.000568"><failure message="" type="AssertionError">
 <![CDATA[
 Failing step: Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
 Location: features/TutorProfile.feature:8

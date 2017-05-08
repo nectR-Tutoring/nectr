@@ -1,30 +1,26 @@
-<testsuite errors="1" failures="0" name="aboutLinkFeature.aboutLinkFeature" skipped="0" tests="1" time="6.085669"><testcase classname="aboutLinkFeature.aboutLinkFeature" name="Mike clicks on about page" status="failed" time="6.085669"><error message="Message: Unable to locate element: *[name='home_tile_about_link']&#10;For documentat..." type="NoSuchElementException">
+<testsuite errors="1" failures="0" name="aboutLinkFeature.aboutLinkFeature" skipped="0" tests="1" time="300.180815"><testcase classname="aboutLinkFeature.aboutLinkFeature" name="Mike clicks on about page" status="failed" time="300.180815"><error message="Message: Timeout loading page after 300000ms&#10;Build info: version: '3.4.0', revis..." type="TimeoutException">
 <![CDATA[
-Failing step: When Mike clicks on "home_tile_about_link" ... failed in 5.484s
-Location: features/aboutLinkFeature.feature:13
+Failing step: Given Mike is on nectr home page ... failed in 300.181s
+Location: features/aboutLinkFeature.feature:12
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
     match.run(runner.context)
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
     self.func(context, *args, **kwargs)
-  File "features/steps/logIn.py", line 58, in step_impl
-    context.driver.find_element_by_name(html_element_link).click()
-  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 367, in find_element_by_name
-    return self.find_element(by=By.NAME, value=name)
-  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 754, in find_element
-    'value': value})['value']
+  File "features/steps/aboutLinkFeature.py", line 14, in step_impl
+    context.driver.get(context.server_url + "/")
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
   File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
     self.error_handler.check_response(response)
   File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: *[name='home_tile_about_link']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+selenium.common.exceptions.TimeoutException: Message: Timeout loading page after 300000ms
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
 System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/tmp/rust_mozprofile.7x11mzRGbNrs, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=2419.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
-Session ID: 5ab1e3d0-d075-41c6-ba59-ee64d5d804b6
-*** Element info: {Using=name, value=home_tile_about_link}
+Capabilities [{moz:profile=/tmp/rust_mozprofile.btDeVvEK1qf2, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=4138.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
+Session ID: 8b65f8d7-6f19-46c2-a608-8aaf4f8e12b5
 Screenshot: available via screen
 Stacktrace:
     at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
@@ -37,18 +33,15 @@ Stacktrace:
     at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
     at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
     at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
-    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:410)
-    at org.openqa.selenium.remote.RemoteWebDriver.findElementByName (RemoteWebDriver.java:485)
-    at org.openqa.selenium.By$ByName.findElement (By.java:303)
-    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:402)
-    at sun.reflect.GeneratedMethodAccessor19.invoke (None:-1)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:364)
+    at sun.reflect.GeneratedMethodAccessor13.invoke (None:-1)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
     at java.lang.reflect.Method.invoke (Method.java:498)
     at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
-    at com.sun.proxy.$Proxy6.findElement (None:-1)
-    at org.openqa.selenium.support.events.EventFiringWebDriver.findElement (EventFiringWebDriver.java:188)
-    at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:48)
-    at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:33)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
     at java.util.concurrent.FutureTask.run (FutureTask.java:266)
     at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
     at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
@@ -59,8 +52,8 @@ Stacktrace:
 <![CDATA[
 @scenario.begin
   Scenario: Mike clicks on about page
-    Given Mike is on nectr home page ... passed in 0.602s
-    When Mike clicks on "home_tile_about_link" ... failed in 5.484s
+    Given Mike is on nectr home page ... failed in 300.181s
+    When Mike clicks on "home_tile_about_link" ... skipped in 0.000s
     Then Mike should be redirected to "About" page ... skipped in 0.000s
 
 @scenario.end
