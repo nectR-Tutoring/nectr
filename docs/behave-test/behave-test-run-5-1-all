@@ -1,0 +1,1060 @@
+@future
+Feature: Contact tutor # features/ContactTutor.feature:2
+  As a student
+  I want to contact a tutor
+  So I can set up a meeting
+  Background:   # features/ContactTutor.feature:7
+
+  Scenario: Mike wants to contact tutor                # features/ContactTutor.feature:11
+    Given Mike is signed into nectr                    # features/steps/searchTheHive.py:27
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/searchTheHive.py", line 34, in step_impl
+          u = User.objects.get(username=context.current_user.username)
+        File "/usr/local/lib/python3.5/site-packages/behave/runner.py", line 214, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'current_user'
+
+    Given Brandon is not signed into nectr             # None
+    Given mike is on tutors profile                    # None
+    When mike clicks "contact <tutor name>" button     # None
+    Then mike will be redirected to message tutor form # None
+
+  Scenario: Brandon wants to contact tutor                     # features/ContactTutor.feature:16
+    Given Mike is signed into nectr                            # features/steps/searchTheHive.py:27
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/searchTheHive.py", line 34, in step_impl
+          u = User.objects.get(username=context.current_user.username)
+        File "/usr/local/lib/python3.5/site-packages/behave/runner.py", line 214, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'current_user'
+
+    Given Brandon is not signed into nectr                     # None
+    Given brandon is on tutors profile                         # None
+    When brandon clicks "contact <tutor name>" button          # None
+    Then brandon will be redirected to sign up or sign in page # None
+
+@browser-grid
+Feature: Filter Tutors # features/FilterTutor.feature:2
+  As a student
+  I want the ability to filter tutors
+  So I can find the right match
+  Background:   # features/FilterTutor.feature:7
+
+  Scenario: Mike wants to filter tutors by subject           # features/FilterTutor.feature:10
+    Given Mike is on nectr web site                          # features/steps/FilterTutor.py:75
+    Given Mike is on Search the hive page                    # features/steps/searchTheHive.py:57
+    When Mike enters "BCS421"                                # features/steps/FilterTutor.py:83
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 473, in get_or_create
+          return self.get(**lookup), False
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 385, in get
+          self.model._meta.object_name
+      nectr.tutor.models.DoesNotExist: Tutor matching query does not exist.
+      
+      During handling of the above exception, another exception occurred:
+      
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/FilterTutor.py", line 91, in step_impl
+          tutor = TutorFactory(courses=course_name)
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 69, in __call__
+          return cls.create(**kwargs)
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 623, in create
+          return cls._generate(True, attrs)
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 548, in _generate
+          obj = cls._prepare(create, **attrs)
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 523, in _prepare
+          return cls._create(model_class, *args, **kwargs)
+        File "/usr/local/lib/python3.5/site-packages/factory/django.py", line 179, in _create
+          return cls._get_or_create(model_class, *args, **kwargs)
+        File "/usr/local/lib/python3.5/site-packages/factory/django.py", line 170, in _get_or_create
+          obj, _created = manager.get_or_create(*args, **key_fields)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+          return getattr(self.get_queryset(), name)(*args, **kwargs)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 475, in get_or_create
+          return self._create_object_from_params(lookup, params)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 505, in _create_object_from_params
+          obj = self.create(**params)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 397, in create
+          obj = self.model(**kwargs)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 550, in __init__
+          setattr(self, prop, kwargs[prop])
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/fields/related_descriptors.py", line 499, in __set__
+          manager = self.__get__(instance)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/fields/related_descriptors.py", line 476, in __get__
+          return self.related_manager_cls(instance)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/fields/related_descriptors.py", line 783, in __init__
+          (instance, self.source_field_name))
+      ValueError: "<Tutor: user-0>" needs to have a value for field "tutor" before this many-to-many relationship can be used.
+
+    Then all tutors who tutor that subject will be displayed # None
+
+  Scenario: Mike wants to filter tutors by subject            # features/FilterTutor.feature:16
+    Given Mike is on nectr web site                           # features/steps/FilterTutor.py:75
+    Given Mike is on Search the hive page                     # features/steps/searchTheHive.py:57
+    And Mike has not yet selected a tutor                     # features/steps/FilterTutor.py:10
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/FilterTutor.py", line 15, in step_impl
+          assert False
+      AssertionError
+
+    When Mike clicks <subject> radio button on subject filter # None
+    Then all tutors who tutor <subject> will be displayed     # None
+
+  Scenario: Mike wants to filter tutors by availability                 # features/FilterTutor.feature:22
+    Given Mike is on nectr web site                                     # features/steps/FilterTutor.py:75
+    Given Mike is on Search the hive page                               # features/steps/searchTheHive.py:57
+    And Mike has not yet selected a tutor                               # features/steps/FilterTutor.py:10
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/FilterTutor.py", line 15, in step_impl
+          assert False
+      AssertionError
+
+    When Mike clicks <dayOfTheWeek> radio button on availability filter # None
+    Then all tutors who tutor on that day will be displayed             # None
+
+  Scenario: Mike wants to filter tutors by price      # features/FilterTutor.feature:28
+    Given Mike is on nectr web site                   # features/steps/FilterTutor.py:75
+    Given Mike is on Search the hive page             # features/steps/searchTheHive.py:57
+    And Mike has not yet selected a tutor             # features/steps/FilterTutor.py:10
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/FilterTutor.py", line 15, in step_impl
+          assert False
+      AssertionError
+
+    When Mike wants to filter by hourly rate          # None
+    Then Mike should be able to filter using a slider # None
+
+@browser-grid
+Feature: Student profile # features/StudentProfile.feature:2
+  As a student
+  I want a profile
+  So tutors can see my information
+  Background:   # features/StudentProfile.feature:7
+
+  Scenario: Mike wants to create profile        # features/StudentProfile.feature:10
+    Given Mike has nectr account                # features/steps/StudentProfile.py:18
+    Given Mike is signed into his nectr account # features/steps/StudentProfile.py:101
+    When Mike clicks on "My Profile"            # features/steps/logIn.py:51
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/logIn.py", line 58, in step_impl
+          context.driver.find_element_by_name(html_element_link).click()
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 367, in find_element_by_name
+          return self.find_element(by=By.NAME, value=name)
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 754, in find_element
+          'value': value})['value']
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+          self.error_handler.check_response(response)
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+          raise exception_class(message, screen, stacktrace)
+      selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: *[name='My Profile']
+      For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+      Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+      System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+      Driver info: org.openqa.selenium.firefox.FirefoxDriver
+      Capabilities [{moz:profile=/tmp/rust_mozprofile.sMFLhRZTbtc8, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=2276.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
+      Session ID: fad79615-b0f8-43fa-9906-1799515a137a
+      *** Element info: {Using=name, value=My Profile}
+      Screenshot: available via screen
+      Stacktrace:
+          at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
+          at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+          at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+          at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
+          at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+          at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+          at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:410)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElementByName (RemoteWebDriver.java:485)
+          at org.openqa.selenium.By$ByName.findElement (By.java:303)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:402)
+          at sun.reflect.GeneratedMethodAccessor19.invoke (None:-1)
+          at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+          at java.lang.reflect.Method.invoke (Method.java:498)
+          at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+          at com.sun.proxy.$Proxy6.findElement (None:-1)
+          at org.openqa.selenium.support.events.EventFiringWebDriver.findElement (EventFiringWebDriver.java:188)
+          at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:48)
+          at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:33)
+          at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+          at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+          at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+          at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+          at java.lang.Thread.run (Thread.java:745)
+
+    And Mike is redirected to nectr profile     # None
+    Then "Hello <Mike's username>" is shown     # None
+    And Mike can add information to profile     # None
+
+  Scenario: Mike wants to update personal information on profile page              # features/StudentProfile.feature:17
+    Given Mike has nectr account                                                   # features/steps/StudentProfile.py:18
+    Given Mike is signed into his nectr account                                    # features/steps/StudentProfile.py:101
+    And Mike is on his profile page                                                # features/steps/StudentProfile.py:125
+      Assertion Failed: 
+      Expected: a string containing 'User'
+           but: was 'Login'
+      
+      Captured stdout:
+      user-2
+
+    When Mike clicks on "Edit" button on "personal information" section of profile # None
+    Then Mike can edit or add information to "personal information"                # None
+
+  Scenario: Mike wants to update contact information on profile page              # features/StudentProfile.feature:23
+    Given Mike has nectr account                                                  # features/steps/StudentProfile.py:18
+    Given Mike is on his profile page                                             # features/steps/StudentProfile.py:125
+      Assertion Failed: 
+      Expected: a string containing 'User'
+           but: was 'Login'
+      
+      Captured stdout:
+      user-3
+
+    When Mike clicks on "Edit" button on "contact information" section of profile # None
+    Then Mike can edit or add information to "contact information"                # None
+
+  Scenario: Mike wants to update communication preferences on profile page              # features/StudentProfile.feature:28
+    Given Mike has nectr account                                                        # features/steps/StudentProfile.py:18
+    Given Mike is on his profile page                                                   # features/steps/StudentProfile.py:125
+      Assertion Failed: 
+      Expected: a string containing 'User'
+           but: was 'Login'
+      
+      Captured stdout:
+      user-4
+
+    When Mike clicks on "Edit" button on "communication preferences" section of profile # None
+    Then Mike can edit or add information to "communication preferences"                # None
+
+  Scenario: Mike goes to his profile page                       # features/StudentProfile.feature:37
+    Given Mike has nectr account                                # features/steps/StudentProfile.py:18
+    Given Mike is signed into nectr                             # features/steps/searchTheHive.py:27
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/searchTheHive.py", line 34, in step_impl
+          u = User.objects.get(username=context.current_user.username)
+        File "/usr/local/lib/python3.5/site-packages/behave/runner.py", line 214, in __getattr__
+          raise AttributeError(msg)
+      AttributeError: 'Context' object has no attribute 'current_user'
+
+    And Mike's username is MikeAyoub                            # None
+    And Mike's password is JavaSucks123                         # None
+    And Mike is on his "Dashboard" page                         # None
+    And title of page is "MikeAyoub" dashboard                  # None
+    When Mike clicks on "My Profile" link                       # None
+    Then Mike is redirected to "MikeAyoub" private profile page # None
+    And "Hello <Mike's username>" is shown                      # None
+
+  Scenario: Mike updates personal information on profile page                          # features/StudentProfile.feature:47
+    Given Mike has nectr account                                                       # features/steps/StudentProfile.py:18
+    Given Mike is on his profile page                                                  # features/steps/StudentProfile.py:125
+      Assertion Failed: 
+      Expected: a string containing 'User'
+           but: was 'Login'
+      
+      Captured stdout:
+      user-6
+
+    When Mike clicks on "Edit" button on "personal information" section of his profile # None
+    And Mike clicks on "name" text field                                               # None
+    And Mike enters "Mike Ayoub"                                                       # None
+    And Mike clicks on "Student Class Level" text field                                # None
+    And Mike enters "Senior"                                                           # None
+    And Mike clicks "Save" button                                                      # None
+    Then Mike's personal information is saved to his profile                           # None
+
+  Scenario: Mike updates contact information on profile page                          # features/StudentProfile.feature:57
+    Given Mike has nectr account                                                      # features/steps/StudentProfile.py:18
+    Given Mike is on his profile page                                                 # features/steps/StudentProfile.py:125
+      Assertion Failed: 
+      Expected: a string containing 'User'
+           but: was 'Login'
+      
+      Captured stdout:
+      user-7
+
+    When Mike clicks on "Edit" button on "contact information" section of his profile # None
+    And Mike clicks on "Email" text field                                             # None
+    And Mike enters "ayouf@farmingdale.edu"                                           # None
+    And Mike clicks on "Phone number" text field                                      # None
+    And Mike enters "6318735489"                                                      # None
+    And Mike clicks "Save" button                                                     # None
+    Then Mike's contact information is saved to his profile                           # None
+
+@future
+Feature: Tutor Profile # features/TutorProfile.feature:2
+  As a tutor
+  I want a profile
+  So students can see my informatiom
+  Background:   # features/TutorProfile.feature:7
+
+  Scenario: Mike wants to create a tutor profile                           # features/TutorProfile.feature:10
+    Given Mike is a nect tutor and has already established student profile # features/steps/TutorProfile.py:102
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/TutorProfile.py", line 107, in step_impl
+          assert False
+      AssertionError
+
+    Given Mike is signed into nectr                                        # None
+    And Mike is on tutor interface                                         # None
+    When Mike clicks on "My Profile"                                       # None
+    Then "Hello <Mike's username>" is shown                                # None
+    And Mike can add information to his profile                            # None
+
+  Scenario: Mike wants to update About Me section on tutor profile page      # features/TutorProfile.feature:17
+    Given Mike is a nect tutor and has already established student profile   # features/steps/TutorProfile.py:102
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/TutorProfile.py", line 107, in step_impl
+          assert False
+      AssertionError
+
+    Given Mike is on his tutor profile page                                  # None
+    When Mike clicks on "Edit" button on "About Me" section of tutor profile # None
+    Then Mike can edit his about me                                          # None
+
+  Scenario: Mike wants to update subjects taught on tutor profile page              # features/TutorProfile.feature:22
+    Given Mike is a nect tutor and has already established student profile          # features/steps/TutorProfile.py:102
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/TutorProfile.py", line 107, in step_impl
+          assert False
+      AssertionError
+
+    Given Mike is on his tutor profile page                                         # None
+    When Mike clicks on "Edit" button on "subjects taught" section of tutor profile # None
+    Then Mike can edit or add courses and subjects he offers tutoring in            # None
+
+  Scenario: Mike wants to update availability on tutor profile page              # features/TutorProfile.feature:27
+    Given Mike is a nect tutor and has already established student profile       # features/steps/TutorProfile.py:102
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/TutorProfile.py", line 107, in step_impl
+          assert False
+      AssertionError
+
+    Given Mike is on his tutor profile page                                      # None
+    When Mike clicks on "Edit" button on "availability" section of tutor profile # None
+    Then Mike can edit or add his days and times he is available                 # None
+
+  Scenario: Mike wants to update his pricing on tutor profile page          # features/TutorProfile.feature:32
+    Given Mike is a nect tutor and has already established student profile  # features/steps/TutorProfile.py:102
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/TutorProfile.py", line 107, in step_impl
+          assert False
+      AssertionError
+
+    Given Mike is on his tutor profile page                                 # None
+    When Mike clicks on "Edit" button on "Pricing" section of tutor profile # None
+    Then Mike can update the price he charges for tutoring                  # None
+
+@browser-grid
+Feature: aboutLinkFeature # features/aboutLinkFeature.feature:2
+  As a visitor
+  I want to click on "About" link
+  so I can find out more information about nectr
+  Scenario: Mike clicks on about page              # features/aboutLinkFeature.feature:11
+    Given Mike is on nectr home page               # features/steps/aboutLinkFeature.py:9
+    When Mike clicks on "home_tile_about_link"     # features/steps/logIn.py:51
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/logIn.py", line 58, in step_impl
+          context.driver.find_element_by_name(html_element_link).click()
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 367, in find_element_by_name
+          return self.find_element(by=By.NAME, value=name)
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 754, in find_element
+          'value': value})['value']
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+          self.error_handler.check_response(response)
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+          raise exception_class(message, screen, stacktrace)
+      selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: *[name='home_tile_about_link']
+      For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+      Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+      System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+      Driver info: org.openqa.selenium.firefox.FirefoxDriver
+      Capabilities [{moz:profile=/tmp/rust_mozprofile.7x11mzRGbNrs, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=2419.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
+      Session ID: 5ab1e3d0-d075-41c6-ba59-ee64d5d804b6
+      *** Element info: {Using=name, value=home_tile_about_link}
+      Screenshot: available via screen
+      Stacktrace:
+          at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
+          at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+          at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+          at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
+          at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+          at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+          at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:410)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElementByName (RemoteWebDriver.java:485)
+          at org.openqa.selenium.By$ByName.findElement (By.java:303)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:402)
+          at sun.reflect.GeneratedMethodAccessor19.invoke (None:-1)
+          at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+          at java.lang.reflect.Method.invoke (Method.java:498)
+          at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+          at com.sun.proxy.$Proxy6.findElement (None:-1)
+          at org.openqa.selenium.support.events.EventFiringWebDriver.findElement (EventFiringWebDriver.java:188)
+          at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:48)
+          at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:33)
+          at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+          at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+          at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+          at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+          at java.lang.Thread.run (Thread.java:745)
+
+    Then Mike should be redirected to "About" page # None
+
+@browser-grid
+Feature: Connection to nectR # features/connection.feature:3
+  As a nectR developer
+  I want to be able to access the web app
+  So I can use nectR
+  Scenario: Connect to "/" using browser       # features/connection.feature:8
+    When I go to "/"                           # features/steps/connection.py:10
+    Then I should see a page with title "Home" # features/steps/connection.py:20
+
+  Scenario: Connect to "/" using browser to view menu  # features/connection.feature:12
+    When I go to "/"                                   # features/steps/connection.py:10
+    Then I should see a page with title "Home"         # features/steps/connection.py:20
+    When I press the "menu"                            # features/steps/connection.py:42
+    Then There should be a "SIGN UP" link              # features/steps/connection.py:51
+    Then There should be a "LOG IN" link               # features/steps/connection.py:59
+
+@browser-grid
+Feature: Test Functionality of Nectr # features/functional_tests.feature:3
+  As a developer of nectR
+  I want to make sure the basic functionality I expect is working
+  So that I can be sure the server is running and I can proceed making awesome stuff
+  Scenario: Server is responding to requests   # features/functional_tests.feature:8
+    Given The Server is Running on "Localhost" # features/steps/functional_tests.py:9
+    And On Port 8000                           # features/steps/functional_tests.py:17
+    When I visit http://localhost:8000         # features/steps/functional_tests.py:25
+    Then I should get a 200 response           # features/steps/functional_tests.py:33
+
+@future
+Feature: Join the hive # features/joinTheHive.feature:2
+  As a student
+  I want to become a tutor
+  So I can tutor other students
+  Background:   # features/joinTheHive.feature:8
+
+  Scenario: Mike tries to join the hive       # features/joinTheHive.feature:14
+    Given mike does not have a nectr account  # features/steps/logIn.py:111
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/logIn.py", line 116, in step_impl
+          assert False
+      AssertionError
+
+    Given charlie has a nectr student account # None
+    Given brandon has a nectr student account # None
+    Given Juan has a nectr student account    # None
+    Given mike is not signed in               # None
+    And mike clicks on join the hive          # None
+    Then mike is redirected to login page     # None
+
+  Scenario: Charlie tries to join the hive           # features/joinTheHive.feature:19
+    Given mike does not have a nectr account         # features/steps/logIn.py:111
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/logIn.py", line 116, in step_impl
+          assert False
+      AssertionError
+
+    Given charlie has a nectr student account        # None
+    Given brandon has a nectr student account        # None
+    Given Juan has a nectr student account           # None
+    Given charlie is signed in                       # None
+    And charlie clicks on join the hive page         # None
+    Then charlie is redirected to join the hive page # None
+    And presented with join the hive application     # None
+
+  Scenario: Brandon submits incomplete application                             # features/joinTheHive.feature:25
+    Given mike does not have a nectr account                                   # features/steps/logIn.py:111
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/logIn.py", line 116, in step_impl
+          assert False
+      AssertionError
+
+    Given charlie has a nectr student account                                  # None
+    Given brandon has a nectr student account                                  # None
+    Given Juan has a nectr student account                                     # None
+    Given brandon is on join the hive page                                     # None
+    And brandon does not complete application                                  # None
+    When brandon clicks on submit button                                       # None
+    Then application is reloaded with information that has already been filled # None
+    And is incomplete fields are highlighted                                   # None
+
+  Scenario: Juan submits complete application  # features/joinTheHive.feature:32
+    Given mike does not have a nectr account   # features/steps/logIn.py:111
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/logIn.py", line 116, in step_impl
+          assert False
+      AssertionError
+
+    Given charlie has a nectr student account  # None
+    Given brandon has a nectr student account  # None
+    Given Juan has a nectr student account     # None
+    Given juan is on join the hive page        # None
+    And juan completes application             # None
+    When juan clicks on submit button          # None
+    Then juan is presened with success message # None
+
+@browser-grid
+Feature: Login # features/logIn.feature:2
+  As a student
+  I want to sign into my account
+  So I can find a tutor
+  Scenario: Mike clicks login before creating account  # features/logIn.feature:8
+    Given Mike is not registered to nectr              # features/steps/logIn.py:14
+    Given mike is on nectr site                        # features/steps/logIn.py:32
+    When mike clicks on menu button                    # features/steps/logIn.py:41
+    And mike clicks on login button on menu            # features/steps/logIn.py:312
+    Then mike is redirected to Login page              # features/steps/logIn.py:159
+    When mike clicks on "sign_up_redirect"             # features/steps/logIn.py:51
+    Then mike is redirected to Signup page             # features/steps/logIn.py:159
+
+  Scenario: Charlie enters correct credentials  # features/logIn.feature:17
+    Given Charlie is registered to nectr        # features/steps/logIn.py:23
+    Given charlie is on nectr site              # features/steps/logIn.py:32
+    When charlie clicks on menu button          # features/steps/logIn.py:41
+    And charlie clicks on login                 # features/steps/logIn.py:320
+    Then charlie is redirected to Login page    # features/steps/logIn.py:159
+    When Charlie enters his correct username    # features/steps/logIn.py:288
+    And Charlie enters his correct password     # features/steps/logIn.py:300
+    And Charlie clicks on sign in               # features/steps/logIn.py:328
+
+  Scenario: Enoc enters incorrect credentials  # features/logIn.feature:28
+    Given Enoc is registered to nectr          # features/steps/logIn.py:23
+    Given enoc is on nectr site                # features/steps/logIn.py:32
+    When enoc clicks on menu button            # features/steps/logIn.py:41
+    And enoc clicks on nav_Login button        # features/steps/logIn.py:41
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/logIn.py", line 48, in step_impl
+          context.driver.find_element_by_name(element_name).click()
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 367, in find_element_by_name
+          return self.find_element(by=By.NAME, value=name)
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 754, in find_element
+          'value': value})['value']
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+          self.error_handler.check_response(response)
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+          raise exception_class(message, screen, stacktrace)
+      selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: *[name='nav_Login']
+      For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+      Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+      System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+      Driver info: org.openqa.selenium.firefox.FirefoxDriver
+      Capabilities [{moz:profile=/tmp/rust_mozprofile.7IB7Z03lyzLA, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=2841.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
+      Session ID: 34dfbb2b-f183-4570-af0d-34789177f9e4
+      *** Element info: {Using=name, value=nav_Login}
+      Screenshot: available via screen
+      Stacktrace:
+          at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
+          at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+          at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+          at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
+          at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+          at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+          at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:410)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElementByName (RemoteWebDriver.java:485)
+          at org.openqa.selenium.By$ByName.findElement (By.java:303)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:402)
+          at sun.reflect.GeneratedMethodAccessor19.invoke (None:-1)
+          at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+          at java.lang.reflect.Method.invoke (Method.java:498)
+          at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+          at com.sun.proxy.$Proxy6.findElement (None:-1)
+          at org.openqa.selenium.support.events.EventFiringWebDriver.findElement (EventFiringWebDriver.java:188)
+          at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:48)
+          at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:33)
+          at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+          at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+          at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+          at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+          at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Brandon enters correct credentials                          # features/logIn.feature:39
+    Given Brandon is registered to nectr and wants to login             # features/steps/logIn.py:511
+    And Brandon is on home page of nectr                                # features/steps/logIn.py:337
+    When Brandon clicks "Menu"                                          # features/steps/logIn.py:345
+    And Brandon clicks "Log In" button                                  # features/steps/logIn.py:353
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/logIn.py", line 359, in step_impl
+          context.driver.find_element_by_name('nav_Login').click()
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 367, in find_element_by_name
+          return self.find_element(by=By.NAME, value=name)
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 754, in find_element
+          'value': value})['value']
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+          self.error_handler.check_response(response)
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+          raise exception_class(message, screen, stacktrace)
+      selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: *[name='nav_Login']
+      For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+      Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
+      System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+      Driver info: org.openqa.selenium.firefox.FirefoxDriver
+      Capabilities [{moz:profile=/tmp/rust_mozprofile.7IB7Z03lyzLA, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=2841.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
+      Session ID: 34dfbb2b-f183-4570-af0d-34789177f9e4
+      *** Element info: {Using=name, value=nav_Login}
+      Screenshot: available via screen
+      Stacktrace:
+          at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
+          at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+          at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+          at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
+          at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
+          at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+          at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+          at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:410)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElementByName (RemoteWebDriver.java:485)
+          at org.openqa.selenium.By$ByName.findElement (By.java:303)
+          at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:402)
+          at sun.reflect.GeneratedMethodAccessor19.invoke (None:-1)
+          at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+          at java.lang.reflect.Method.invoke (Method.java:498)
+          at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+          at com.sun.proxy.$Proxy6.findElement (None:-1)
+          at org.openqa.selenium.support.events.EventFiringWebDriver.findElement (EventFiringWebDriver.java:188)
+          at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:48)
+          at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:33)
+          at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+          at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+          at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+          at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+          at java.lang.Thread.run (Thread.java:745)
+
+    Then Brandon is redirected to Login page                            # None
+    When Brandon enters "Cashmeousside" in username field on Login page # None
+    And Brandon enters "Howboudat" in password field on Login page      # None
+    And Brandon clicks "Sign In" button                                 # None
+    Then Brandon goes to his user profile page, or his "Dashboard"      # None
+
+  Scenario: Brandon tries to sign in again but enters incorrect credentials  # features/logIn.feature:77
+    Given Brandon's registered to nectR with username is "Cashmeousside"     # features/steps/logIn.py:402
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/logIn.py", line 407, in step_impl
+          assert False
+      AssertionError
+
+    And Brandon's password is Howboudat                                      # None
+    And Brandon is on home page of nectr                                     # None
+    And Brandon is not signed in                                             # None
+    When Brandon clicks "Menu"                                               # None
+    And Brandon clicks "Log In" button                                       # None
+    Then Brandon is redirected to "Login" page                               # None
+    And title of the page is "Login"                                         # None
+    And page contains an h1 whos text is "Sign In"                           # None
+    When Brandon clicks on username text field                               # None
+    And Brandon enters "Cashmeousside"                                       # None
+    And Brandon clicks on password text field                                # None
+    And Brandon enters "Howboudatt"                                          # None
+    And Brandon cicks "Sign In" button                                       # None
+    Then Brandon is presented with an alert                                  # None
+    And username text field is cleared                                       # None
+    And password text field is cleared                                       # None
+
+@browser-grid
+Feature: Search the hive # features/searchTheHive.feature:2
+  As a user
+  I want to search for tutors
+  So I can find the right tutor
+  Background:   # features/searchTheHive.feature:7
+
+  Scenario: Brandon searches nectr                      # features/searchTheHive.feature:22
+    Given Brandon is a registered user                  # features/steps/searchTheHive.py:40
+    Given Mike is a registered user                     # features/steps/searchTheHive.py:40
+    And Mike is signed into nectr                       # features/steps/searchTheHive.py:27
+    Given Brandon is on search the hive page            # features/steps/searchTheHive.py:57
+    When Brandon types "Computer Science" in search box # features/steps/searchTheHive.py:66
+    And clicks search the hive button                   # features/steps/searchTheHive.py:77
+    And he can view preview of tutor profile            # features/steps/searchTheHive.py:121
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/searchTheHive.py", line 126, in step_impl
+          assert False
+      AssertionError
+
+    And he will see a view profile button               # None
+
+  Scenario: Mike searches nectr                             # features/searchTheHive.feature:32
+    Given Brandon is a registered user                      # features/steps/searchTheHive.py:40
+    Given Mike is a registered user                         # features/steps/searchTheHive.py:40
+    And Mike is signed into nectr                           # features/steps/searchTheHive.py:27
+    Given mike is on search the hive page                   # features/steps/searchTheHive.py:57
+    When mike types in what he is looking for in search box # features/steps/searchTheHive.py:66
+    And clicks search the hive button                       # features/steps/searchTheHive.py:77
+    And he can view preview of tutor profile                # features/steps/searchTheHive.py:121
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/searchTheHive.py", line 126, in step_impl
+          assert False
+      AssertionError
+
+    And he will see a view profile button                   # None
+
+  Scenario: Billy searches nectr for math tutors                # features/searchTheHive.feature:49
+    Given Brandon is a registered user                          # features/steps/searchTheHive.py:40
+    Given Mike is a registered user                             # features/steps/searchTheHive.py:40
+    And Mike is signed into nectr                               # features/steps/searchTheHive.py:27
+    Given there are 15 Math tutors                              # features/steps/searchTheHive.py:113
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 473, in get_or_create
+          return self.get(**lookup), False
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 385, in get
+          self.model._meta.object_name
+      nectr.courses.models.DoesNotExist: Courses matching query does not exist.
+      
+      During handling of the above exception, another exception occurred:
+      
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+          return self.cursor.execute(sql, params)
+      psycopg2.DataError: value too long for type character varying(10)
+      
+      
+      The above exception was the direct cause of the following exception:
+      
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/searchTheHive.py", line 118, in step_impl
+          TutorFactory.create_batch(size=15)
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 635, in create_batch
+          return [cls.create(**kwargs) for _ in range(size)]
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 635, in <listcomp>
+          return [cls.create(**kwargs) for _ in range(size)]
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 622, in create
+          attrs = cls.attributes(create=True, extra=kwargs)
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 453, in attributes
+          force_sequence=force_sequence,
+        File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 324, in build
+          return stub.__fill__()
+        File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 83, in __fill__
+          res[attr] = getattr(self, attr)
+        File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 108, in __getattr__
+          val = val.evaluate(self, self.__containers)
+        File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 227, in evaluate
+          containers=containers,
+        File "/usr/local/lib/python3.5/site-packages/factory/declarations.py", line 324, in evaluate
+          return self.generate(sequence, obj, create, defaults)
+        File "/usr/local/lib/python3.5/site-packages/factory/declarations.py", line 412, in generate
+          return subfactory.simple_generate(create, **params)
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 709, in simple_generate
+          return cls.generate(strategy, **kwargs)
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 676, in generate
+          return action(**kwargs)
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 623, in create
+          return cls._generate(True, attrs)
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 548, in _generate
+          obj = cls._prepare(create, **attrs)
+        File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 523, in _prepare
+          return cls._create(model_class, *args, **kwargs)
+        File "/usr/local/lib/python3.5/site-packages/factory/django.py", line 179, in _create
+          return cls._get_or_create(model_class, *args, **kwargs)
+        File "/usr/local/lib/python3.5/site-packages/factory/django.py", line 170, in _get_or_create
+          obj, _created = manager.get_or_create(*args, **key_fields)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+          return getattr(self.get_queryset(), name)(*args, **kwargs)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 475, in get_or_create
+          return self._create_object_from_params(lookup, params)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 505, in _create_object_from_params
+          obj = self.create(**params)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 399, in create
+          obj.save(force_insert=True, using=self.db)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 796, in save
+          force_update=force_update, update_fields=update_fields)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 824, in save_base
+          updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 908, in _save_table
+          result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 947, in _do_insert
+          using=using, raw=raw)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+          return getattr(self.get_queryset(), name)(*args, **kwargs)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 1045, in _insert
+          return query.get_compiler(using=using).execute_sql(return_id)
+        File "/usr/local/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1054, in execute_sql
+          cursor.execute(sql, params)
+        File "/usr/local/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+          return self.cursor.execute(sql, params)
+        File "/usr/local/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+          six.reraise(dj_exc_type, dj_exc_value, traceback)
+        File "/usr/local/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+          raise value.with_traceback(tb)
+        File "/usr/local/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+          return self.cursor.execute(sql, params)
+      django.db.utils.DataError: value too long for type character varying(10)
+
+    Given Billy is signed into nectr                            # None
+    And Billy is on search the hive page                        # None
+    When Billy clicks on search bar                             # None
+    And Billy enters "Math"                                     # None
+    And Billy clicks "Submit" button                            # None
+    Then search results are loaded on search the hive page      # None
+    And 10 tutor search results are displayed                   # None
+    And each search result contains "view tutor profile" button # None
+    When Billy clicks "more results" button                     # None
+    Then remaining 5 tutors are diaplyed                        # None
+
+  Scenario: Billy searches nectr for C++ programming tutors     # features/searchTheHive.feature:63
+    Given Brandon is a registered user                          # features/steps/searchTheHive.py:40
+    Given Mike is a registered user                             # features/steps/searchTheHive.py:40
+    And Mike is signed into nectr                               # features/steps/searchTheHive.py:27
+    Given there are 5 Cpp Programming tutors                    # features/steps/searchTheHive.py:234
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/searchTheHive.py", line 239, in step_impl
+          assert False
+      AssertionError
+
+    Given Billy is signed into nectr                            # None
+    And Billy is on search the hive page                        # None
+    When Billy clicks on search bar                             # None
+    And Billy enters "Cpp Programming"                          # None
+    And Billy clicks "Submit" button                            # None
+    Then search results are loaded on search the hive page      # None
+    And 5 tutor search results are displayed                    # None
+    And each search result contains "view tutor profile" button # None
+
+@browser-grid
+Feature: Signup from Website # features/signUp.feature:2
+  As a visitor
+  I want to sign up for an account
+  So I can find a tutor
+  Background:   # features/signUp.feature:8
+
+  Scenario: Spongebob tries to sign up for nectr account but does not fill in correct info  # features/signUp.feature:57
+    Given Charlie is not yet registered                                                     # features/steps/signUp.py:13
+    Given Mike is not yet registered                                                        # features/steps/signUp.py:13
+    Given Enoc is not yet registered                                                        # features/steps/signUp.py:13
+    Given Brandon is not yet registered                                                     # features/steps/signUp.py:13
+    Given Juan is not yet registered                                                        # features/steps/signUp.py:13
+    Given Spongebob is on home page of nectr                                                # features/steps/signUp.py:144
+    And Spongebob does not have nectR account                                               # features/steps/signUp.py:152
+    When Spongebob clicks menu                                                              # features/steps/signUp.py:160
+    And Spongebob clicks "Sign Up" button                                                   # features/steps/signUp.py:168
+    Then Spongebob is redirected to Signup page                                             # features/steps/logIn.py:159
+    And title of the page is "Signup"                                                       # features/steps/signUp.py:176
+    And page contains an h1 whos text is "Sign up"                                          # features/steps/signUp.py:187
+    When Spongebob clicks on username text field                                            # features/steps/signUp.py:195
+    And Spongebob enters username "BikiniBottoms"                                           # features/steps/signUp.py:203
+    And Spongebob clicks on E-mail text field                                               # features/steps/signUp.py:214
+    And Spongebob enters email "ayouf@farmingdale.edu"                                      # features/steps/signUp.py:291
+    And Spongebob clicks on password1 text field                                            # features/steps/signUp.py:222
+    And Spongbob enters password1 "CrabbyPatty2"                                            # features/steps/signUp.py:329
+    And Spongebob cicks on repeat Password field                                            # features/steps/signUp.py:338
+    And Spongbob leaves this text field blank                                               # features/steps/signUp.py:239
+    And Spongebob clicks "Sign Up" button                                                   # features/steps/signUp.py:168
+    Then Spongebob gets "please fill out this field" alert in Password field                # features/steps/signUp.py:313
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/signUp.py", line 318, in step_impl
+          assert False
+      AssertionError
+      
+      Captured stdout:
+      Signup
+      nectR Tutoring - Home Page
+
+    And Spongebob clicks on Repeat Password field                                           # None
+    And Spongbob enters "CrabbyPatty2"                                                      # None
+    And Spongebob clicks "Sign Up" button                                                   # None
+    Then Spongebob is redirected to "Confirm email" page                                    # None
+    And title of the page is "Verify Your E-mail Address"                                   # None
+    And page contains an h1 whos text is "Verify Your E-mail Address"                       # None
+    When Spongebob checks his email "ayouf@farmingdale.edu"                                 # None
+    And Spongebob opens "confirm account" email                                             # None
+    And Spongebob clicks account confirmation link                                          # None
+    Then Spongebob is redirected to "BikiniBottoms" dashboard page                          # None
+
+  Scenario: Spongebob tries to sign up providing correct info         # features/signUp.feature:86
+    Given Charlie is not yet registered                               # features/steps/signUp.py:13
+    Given Mike is not yet registered                                  # features/steps/signUp.py:13
+    Given Enoc is not yet registered                                  # features/steps/signUp.py:13
+    Given Brandon is not yet registered                               # features/steps/signUp.py:13
+    Given Juan is not yet registered                                  # features/steps/signUp.py:13
+    Given Spongebob is on home page of nectr                          # features/steps/signUp.py:144
+    And Spongebob does not have nectR account                         # features/steps/signUp.py:152
+    When Spongebob clicks menu                                        # features/steps/signUp.py:160
+    And Spongebob clicks "Sign Up" button                             # features/steps/signUp.py:168
+    Then Spongebob is redirected to "Sign up" page                    # features/steps/logIn.py:159
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/logIn.py", line 169, in step_impl
+          EC.title_contains(title))
+        File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/support/wait.py", line 80, in until
+          raise TimeoutException(message, screen, stacktrace)
+      selenium.common.exceptions.TimeoutException: Message: 
+      
+      
+      Captured stdout:
+      "Sign up"
+      nectR Tutoring - Home Page
+
+    And title of the page is "Signup"                                 # None
+    And page contains an h1 whos text is "Sign up"                    # None
+    When Spongebob clicks on username text field                      # None
+    And Spongebob enters "BikiniBottoms"                              # None
+    And Spongebob clicks on E-mail text field                         # None
+    And Spongebob enters "ayouf@farmingdale.edu"                      # None
+    And Spongebob clicks on password text field                       # None
+    And Spongbob enters "CrabbyPatty2"                                # None
+    And Spongebob cicks on Password field                             # None
+    And Spongbob enters "CrabbyPatty2"                                # None
+    And Spongebob clicks "Sign Up" button                             # None
+    Then Spongebob is redirected to "Confirm email" page              # None
+    And title of the page is "Verify Your E-mail Address"             # None
+    And page contains an h1 whos text is "Verify Your E-mail Address" # None
+    When Spongebob checks his email "ayouf@farmingdale.edu"           # None
+    And Spongebob opens "confirm account" email                       # None
+    And Spongebob clicks account confirmation link                    # None
+    Then Spongebob is redirected to "BikiniBottoms" dashboard page    # None
+
+@future
+Feature: View tutor profile # features/viewTutorProfile.feature:2
+  As a user
+  I want to view tutor profiles
+  So I can see information about tutor and contact
+  Bacground:
+  Given mike is signed into nectr
+  Given brandon is not signed into nectr
+  Scenario: Mike clicks on tutor profile          # features/viewTutorProfile.feature:11
+    Given mike is on search results page          # features/steps/viewTutorProfile.py:6
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/viewTutorProfile.py", line 11, in step_impl
+          assert False
+      AssertionError
+
+    When mike clicks on view tutor profile button # None
+    Then mike is redirected to tutors profile     # None
+    And mike will see a "contact tutor" button    # None
+
+  Scenario: Brandon clicks on tutor profile                  # features/viewTutorProfile.feature:17
+    Given brandon is on search results page                  # features/steps/viewTutorProfile.py:30
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/viewTutorProfile.py", line 35, in step_impl
+          assert False
+      AssertionError
+
+    When brandon clicks on view tutor profile button         # None
+    Then brandon is redirected to tutors profile             # None
+    And brandon will see a "sign in to contact tutor" button # None
+
