@@ -53,7 +53,7 @@
                             <li class="course_name_listing">{{ courses.course_name }}</li>
                         {% endfor %}
                     </ul>
-                    <form method="get" action="{% url 'users:detail' tutor.user.username %}">
+                    <form method="get" action="{% url 'users:detail' request.user.username %}">
                         <input type="submit" value="Tutor Profile">
                     </form>
                 </article>
