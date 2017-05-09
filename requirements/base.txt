@@ -57,3 +57,6 @@ pysolr==3.4.0
 
 #Messaging
 django-postman
+
+#Chat
+channels==1.1.3

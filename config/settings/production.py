@@ -158,6 +158,20 @@ CACHES = {
     }
 }
 
+# CHANNELS BACKEND
+# ------------------------------------------------------------------------------
+REDIS_LOCATION_CHANNELS = '{0}/{1}'.format(env('REDIS_URL', default='redis://127.0.0.1:6379'), 1)
+# Got to use separate redis DB number
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [REDIS_LOCATION_CHANNELS],
+        },
+        "ROUTING": "config.routing.channel_routing",
+    },
+}
+
 
 # Sentry Configuration
 SENTRY_DSN = env('DJANGO_SENTRY_DSN')
