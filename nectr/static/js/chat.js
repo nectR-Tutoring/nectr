@@ -88,7 +88,8 @@
         window.userview = new UserView($('#user-list')[0]);
         window.userview.init();
 
-        $('#message-form').submit(function() {
+        $('#message-form').submit(function(e) {
+            e.preventDefault();
             var text = $('#message-input').val();
             if (text.length > 0) {
                 window.socket.emit('message', {
