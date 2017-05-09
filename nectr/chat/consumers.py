@@ -2,8 +2,6 @@ from channels.generic.websockets import WebsocketConsumer
 
 
 class ChatServer(WebsocketConsumer):
-    # Set to True to automatically port users from HTTP cookies
-    # (you don't need channel_session_user, this implies it)
     http_user = True
 
     def connection_groups(self, **kwargs):
