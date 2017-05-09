@@ -1,0 +1,30 @@
+{% extends "base.html" %}{% load static compress %}
+
+
+{% block content %}
+    <div class='container-fluid'>
+        <div class='row'>
+            <div class='col-sm-3'>
+                <div class='card'>
+                    <div class='header'>
+                        <h4 class='title'>Users</h4>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-9'>
+                <div class='card'>
+                    <div class='header'>
+                        <h4 class='title'>Messages</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block javascript %}
+    {{ block.super }}
+    {% compress js %}
+        <script src="{% static 'js/chat.js' %}"></script>
+    {% endcompress %}
+{% endblock javascript %}
