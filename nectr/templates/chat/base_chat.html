@@ -8,6 +8,11 @@
                 <div class='card'>
                     <div class='header'>
                         <h4 class='title'>Users</h4>
+                        <div class='list-group' id='user-list'>
+                            {% for user in user_list %}
+                            <a href="#" class="list-group-item list-group-item-action" id='u{{ user.id }}'>{{ user }}</a>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -15,10 +20,21 @@
                 <div class='card'>
                     <div class='header'>
                         <h4 class='title'>Messages</h4>
+                        <div id='message-list'></div>
                     </div>
                 </div>
             </div>
         </div>
+        <form id='message-form'>
+            <div class='form-group row'>
+                <div class='col-10'>
+                    <input class='form-control' type='text' placeholder='Say something nice' id='message-input'>
+                </div>
+                <div class='col-2'>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
 {% endblock content %}
 
