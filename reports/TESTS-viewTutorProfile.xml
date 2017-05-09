@@ -1,0 +1,51 @@
+<testsuite errors="0" failures="2" name="viewTutorProfile.View tutor profile" skipped="0" tests="2" time="0.000826"><testcase classname="viewTutorProfile.View tutor profile" name="Mike clicks on tutor profile" status="failed" time="0.000599"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given mike is on search results page ... failed in 0.001s
+Location: features/viewTutorProfile.feature:12
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/viewTutorProfile.py", line 11, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Mike clicks on tutor profile
+    Given mike is on search results page ... failed in 0.001s
+    When mike clicks on view tutor profile button ... skipped in 0.000s
+    Then mike is redirected to tutors profile ... skipped in 0.000s
+    And mike will see a "contact tutor" button ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="viewTutorProfile.View tutor profile" name="Brandon clicks on tutor profile" status="failed" time="0.000227"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given brandon is on search results page ... failed in 0.000s
+Location: features/viewTutorProfile.feature:18
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/viewTutorProfile.py", line 35, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Brandon clicks on tutor profile
+    Given brandon is on search results page ... failed in 0.000s
+    When brandon clicks on view tutor profile button ... skipped in 0.000s
+    Then brandon is redirected to tutors profile ... skipped in 0.000s
+    And brandon will see a "sign in to contact tutor" button ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

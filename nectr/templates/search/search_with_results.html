@@ -8,12 +8,12 @@
 {% if tutors %}
     <div id="search_results_without">
     {% for tutor in tutors %}
-    <article>
+    <article class="individual_tutor_result">
         <h2>{{ tutor.user.username }}</h2>
         <p>{{ tutor.bio }}</p>
         <ul>
             {% for courses in tutor.courses.all %}
-                <li>{{ courses.course_name }}</li>
+                <li class="course_name_listing">{{ courses.course_name }}</li>
             {% endfor %}
         </ul>
         <form method="get" action="{% url 'tutors:detail' tutor.user.username %}">

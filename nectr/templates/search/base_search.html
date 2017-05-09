@@ -19,14 +19,14 @@
 {% endblock banner_content %}
 {% block content %}
     <div>
-        <article class="padding-search" style="padding-left:15%;padding-top: 5%;padding-bottom: 10%;padding-right: 0%;">
+        <article class="padding-search" style="padding: 5% 10% 5% 10%;">
             <section id="one">
                 <form method="GET">
                     <div class="inner">
                         <div class="row">
                             <div class="col-md-8">
                                 <input id="searchbar" type="text" name="search_text"
-                                       placeholder="Search for our courses...">
+                                       placeholder="Search for our courses..." value="{{ request.search_text }}">
                             </div>
                             <div class="col-md-4">
                                 <div>
@@ -43,7 +43,29 @@
         </article>
     </div>
     {% block search_results %}
-        <h1>Please enter a course or tutor name above to search the hive!</h1>
+        {% if tutors %}
+            {% for tutor in tutors %}
+                <article class="individual_tutor_result">
+                    <h2>{{ tutor.user.username }}</h2>
+                    <p>{{ tutor.bio }}</p>
+                    <ul>
+                        {% for courses in tutor.courses.all %}
+                            <li class="course_name_listing">{{ courses.course_name }}</li>
+                        {% endfor %}
+                    </ul>
+                    <form method="get" action="{% url 'users:detail' tutor.user.username %}">
+                        <input type="submit" value="Tutor Profile">
+                    </form>
+                </article>
+            {% endfor %}
+        {% else %}
+            <div id="no_results">
+                <article>
+                    <h1>There are no results for {{ search_text }}</h1>
+                </article>
+            </div>
+        {% endif %}
+
     {% endblock search_results %}
 {% endblock content %}
 {% block javascript %}

@@ -1,0 +1,117 @@
+<testsuite errors="0" failures="4" name="joinTheHive.Join the hive" skipped="0" tests="4" time="0.001832"><testcase classname="joinTheHive.Join the hive" name="Mike tries to join the hive" status="failed" time="0.000417"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given mike does not have a nectr account ... failed in 0.000s
+Location: features/joinTheHive.feature:9
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 116, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Mike tries to join the hive
+    Given mike does not have a nectr account ... failed in 0.000s
+    Given charlie has a nectr student account ... skipped in 0.000s
+    Given brandon has a nectr student account ... skipped in 0.000s
+    Given Juan has a nectr student account ... skipped in 0.000s
+    Given mike is not signed in ... skipped in 0.000s
+    And mike clicks on join the hive ... skipped in 0.000s
+    Then mike is redirected to login page ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="joinTheHive.Join the hive" name="Charlie tries to join the hive" status="failed" time="0.000601"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given mike does not have a nectr account ... failed in 0.001s
+Location: features/joinTheHive.feature:9
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 116, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Charlie tries to join the hive
+    Given mike does not have a nectr account ... failed in 0.001s
+    Given charlie has a nectr student account ... skipped in 0.000s
+    Given brandon has a nectr student account ... skipped in 0.000s
+    Given Juan has a nectr student account ... skipped in 0.000s
+    Given charlie is signed in ... skipped in 0.000s
+    And charlie clicks on join the hive page ... skipped in 0.000s
+    Then charlie is redirected to join the hive page ... skipped in 0.000s
+    And presented with join the hive application ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="joinTheHive.Join the hive" name="Brandon submits incomplete application" status="failed" time="0.000392"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given mike does not have a nectr account ... failed in 0.000s
+Location: features/joinTheHive.feature:9
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 116, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Brandon submits incomplete application
+    Given mike does not have a nectr account ... failed in 0.000s
+    Given charlie has a nectr student account ... skipped in 0.000s
+    Given brandon has a nectr student account ... skipped in 0.000s
+    Given Juan has a nectr student account ... skipped in 0.000s
+    Given brandon is on join the hive page ... skipped in 0.000s
+    And brandon does not complete application ... skipped in 0.000s
+    When brandon clicks on submit button ... skipped in 0.000s
+    Then application is reloaded with information that has already been filled ... skipped in 0.000s
+    And is incomplete fields are highlighted ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="joinTheHive.Join the hive" name="Juan submits complete application" status="failed" time="0.000422"><failure message="" type="AssertionError">
+<![CDATA[
+Failing step: Given mike does not have a nectr account ... failed in 0.000s
+Location: features/joinTheHive.feature:9
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 116, in step_impl
+    assert False
+AssertionError
+]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Juan submits complete application
+    Given mike does not have a nectr account ... failed in 0.000s
+    Given charlie has a nectr student account ... skipped in 0.000s
+    Given brandon has a nectr student account ... skipped in 0.000s
+    Given Juan has a nectr student account ... skipped in 0.000s
+    Given juan is on join the hive page ... skipped in 0.000s
+    And juan completes application ... skipped in 0.000s
+    When juan clicks on submit button ... skipped in 0.000s
+    Then juan is presened with success message ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

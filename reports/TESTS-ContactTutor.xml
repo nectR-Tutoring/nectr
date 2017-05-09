@@ -1,0 +1,57 @@
+<testsuite errors="2" failures="0" name="ContactTutor.Contact tutor" skipped="0" tests="2" time="0.001284"><testcase classname="ContactTutor.Contact tutor" name="Mike wants to contact tutor" status="failed" time="0.000571"><error message="'Context' object has no attribute 'current_user'" type="AttributeError">
+<![CDATA[
+Failing step: Given Mike is signed into nectr ... failed in 0.001s
+Location: features/ContactTutor.feature:8
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 34, in step_impl
+    u = User.objects.get(username=context.current_user.username)
+  File "/usr/local/lib/python3.5/site-packages/behave/runner.py", line 214, in __getattr__
+    raise AttributeError(msg)
+AttributeError: 'Context' object has no attribute 'current_user'
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Mike wants to contact tutor
+    Given Mike is signed into nectr ... failed in 0.001s
+    Given Brandon is not signed into nectr ... skipped in 0.000s
+    Given mike is on tutors profile ... skipped in 0.000s
+    When mike clicks "contact <tutor name>" button ... skipped in 0.000s
+    Then mike will be redirected to message tutor form ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="ContactTutor.Contact tutor" name="Brandon wants to contact tutor" status="failed" time="0.000713"><error message="'Context' object has no attribute 'current_user'" type="AttributeError">
+<![CDATA[
+Failing step: Given Mike is signed into nectr ... failed in 0.001s
+Location: features/ContactTutor.feature:8
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 34, in step_impl
+    u = User.objects.get(username=context.current_user.username)
+  File "/usr/local/lib/python3.5/site-packages/behave/runner.py", line 214, in __getattr__
+    raise AttributeError(msg)
+AttributeError: 'Context' object has no attribute 'current_user'
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Brandon wants to contact tutor
+    Given Mike is signed into nectr ... failed in 0.001s
+    Given Brandon is not signed into nectr ... skipped in 0.000s
+    Given brandon is on tutors profile ... skipped in 0.000s
+    When brandon clicks "contact <tutor name>" button ... skipped in 0.000s
+    Then brandon will be redirected to sign up or sign in page ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
