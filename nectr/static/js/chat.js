@@ -3,17 +3,27 @@
         var ChatView = function(root) {
             return {
                 createMessageElement: function(avatar, username, text, time) {
-                    return '<div class="message"><img class="message-avatar" src="' + avatar + '"><span class="message-username">' + username + '</span>' +
-                        '<p class="message-text">' + text + '</p></div>' +
-                        '<span class="message-time">' + time + '</span>';
+                    var date = new Date(time);
+                    function format_time (string) {
+                        if (string.length === 1) {
+                            return '0' + string;
+                        } else {
+                            return string;
+                        }
+                    }
+                    return '<div class="message"><img class="message-avatar" src="' + avatar + '"><span class="message-username">' + username + '</span>:' +
+                        '<p class="message-text">' + text + '</p>' +
+                        '<span class="message-time">' + format_time(date.getHours().toString()) + ':' + format_time(date.getMinutes().toString()) + '</span></div>';
                 },
                 onMessage: function(payload) {
                     var activeId = window.userview.getActiveId().substring(1);
                     if (parseInt(activeId) !== payload.user_id) {
                         return;
                     }
-                    var message = this.createMessageElement('/static/img/faces/face-3.jpg', payload.user, payload.text, payload.time);
+                    var face = payload.user.id % 8;
+                    var message = this.createMessageElement('/static/img/faces/face-' + face + '.jpg', payload.user.name, payload.text, payload.time);
                     $(root).append(message);
+                    setTimeout(function() {$(root).parent().scrollTop($(root).get(0).scrollHeight);}, 10);
                 },
                 onInit: function(payload) {
                     $(root).empty();

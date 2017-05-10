@@ -49,7 +49,7 @@ class ChatServer(JsonWebsocketConsumer):
         query = Message.objects.filter(conversation=conversation)
         messages = []
         for message in query: # TODO: Refactor! Assigning user_id here is super dirty!
-            messages.append({'user': message.author.username, 'user_id': self.message.channel_session['other_user_id'], 'text': message.text, 'time': message.created_at.isoformat()})
+            messages.append({'user': {'name': message.author.username, 'id': message.author.id}, 'user_id': self.message.channel_session['other_user_id'], 'text': message.text, 'time': message.created_at.isoformat()})
         self.send({'type': 'init', 'payload': messages})
 
     def cmd_message(self, payload):
@@ -59,7 +59,7 @@ class ChatServer(JsonWebsocketConsumer):
             return
 
         message = Message.objects.create(text=payload, author=self.message.user, conversation=conversation)
-        response = {'type': 'message', 'payload': {'user': message.author.username, 'user_id': message.author.id, 'text': message.text, 'time': message.created_at.isoformat()}}
+        response = {'type': 'message', 'payload': {'user': {'name': message.author.username, 'id': message.author.id}, 'user_id': message.author.id, 'text': message.text, 'time': message.created_at.isoformat()}}
         self.group_send(str(self.message.channel_session['other_user_id']),
                         response)
         response['payload'].update({'user_id': self.message.channel_session['other_user_id']}) # TODO: Another dirty trick of mine.
