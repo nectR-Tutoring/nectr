@@ -1,5 +1,6 @@
 {% extends 'dashboard/base_dashboard.html' %}
 {% load static %}
+{% load compress %}
 {% block content %}
     <div class="content">
         <div class="container-fluid">
@@ -43,12 +44,56 @@
 
 
 {% compress css %}
-            <!-- This file stores project-specific CSS -->
-            <link href="{% static 'css/editcourse.css' %}" rel="stylesheet">
+
+    <style type="text/css">
+        form {
+            margin: 20px 0;
+        }
+
+        form input, button {
+            padding: 5px;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #cdcdcd;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
 
 {% endcompress %}
 
 
 {% compress js %}
-    <script src="{% static "js/course_edit.js" %}"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".add-row").click(function () {
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + email + "</td></tr>";
+                $("table tbody").append(markup);
+            });
+
+            // Find and remove selected table rows
+            $(".delete-row").click(function () {
+                $("table tbody").find('input[name="record"]').each(function () {
+                    if ($(this).is(":checked")) {
+                        $(this).parents("tr").remove();
+                    }
+                });
+            });
+        });
+    </script>
+
 {% endcompress %}
