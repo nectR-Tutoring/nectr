@@ -8,12 +8,19 @@
                         '<span class="message-time">' + time + '</span>';
                 },
                 onMessage: function(payload) {
+                    var activeId = window.userview.getActiveId().substring(1);
+                    if (parseInt(activeId) !== payload.user_id) {
+                        return;
+                    }
                     var message = this.createMessageElement('/static/img/faces/face-3.jpg', payload.user, payload.text, payload.time);
                     $(root).append(message);
                 },
                 onInit: function(payload) {
                     $(root).empty();
-                    payload.messages.forEach(this.onMessage);
+                    payload.sort(function(a,b){
+                        return new Date(a.time) - new Date(b.time);
+                    });
+                    payload.forEach(this.onMessage.bind(this));
                 }
             };
         };
@@ -24,8 +31,15 @@
                     $(root).children().each(function() {
                         $(this).click(function(event) {
                             window.socket.emit('init', event.target.id.substring(1));
+                            $(this).siblings().each(function() {
+                                $(this).removeClass('active');
+                            });
+                            $(this).addClass('active');
                         });
                     });
+                },
+                getActiveId: function() {
+                    return $(root).children().filter('.active')[0].id;
                 }
             }
         };
@@ -92,11 +106,7 @@
             e.preventDefault();
             var text = $('#message-input').val();
             if (text.length > 0) {
-                window.socket.emit('message', {
-                    user: 'John',
-                    text: text,
-                    time: '12:34'
-                });
+                window.socket.emit('message', text);
             }
             $('#message-input').val('');
             $('#message-input').focus();
