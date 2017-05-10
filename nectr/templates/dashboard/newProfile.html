@@ -74,7 +74,10 @@ div.card {
         </div>
         <div class="col-md-3">
           <div class="button" style="float:right;">
+           {% if user.is_authenticated %}
             <a href="#" class="btn btn-success">Edit Profile</a>
+
+            {% endif %}
           </div>
         </div>
         </div>
@@ -86,7 +89,7 @@ div.card {
         </div>
 
         <div class="col-md-6"> <!-- Rank & Qualifications -->
-          <h5 style="color:#3AAA64">Student, <small> Farmingdale College</small></h5>
+          <h5 style="color:#3AAA64">Student, <small> {{user.college_name}}, {{user.major}}</small></h5>
           
 
         <!--   We should change country in edit profile in dashboard to state -->
@@ -96,7 +99,12 @@ div.card {
         <div class="col-md-3 text-center"> <!-- Phone & Social -->
           <span class="number" style="font-size:18px">Phone:<strong>{{user.phone_number}}</strong></span>
           <div class="button" style="padding-top:18px">
+          {% if user.is_authenticated %}
             <a href="" class="btn btn-success">Message</a>
+            {% else %}
+             <a href="" class="btn btn-success">Sign Up</a>
+             {% endif %}
+            }
           </div>
           <div class="social-icons" style="padding-top:18px">
             <a href="#">
@@ -154,14 +162,15 @@ div.card {
         <div class="card card-block">
           <h2 class="card-title"  style="color:#009688"><i class="fa fa-rocket fa-fw"></i>Interests</h2>
           <ul class="list-group" style="margin-top:15px;margin-bottom:15px;">
-
-            {% for user in userss %}
+             {% if users %}
+            {% for user in users %}
 
               <li class="list-group-item"> {{user.interest}} </li>
            
             {% endfor %}
-           
-         
+            {% else %}
+           <li class="list-group-item"> No Interest Listed </li>
+           {% endif %}
           </ul>
         </div>
     </div>
@@ -175,14 +184,16 @@ div.card {
         <div class="card card-block">
           <h2 class="card-title"  style="color:#009688"><i class="fa fa-star fa-fw"></i>Skills</h2>
           <ul class="list-group" style="margin-top:15px;margin-bottom:15px;">
+            {% if skills %}
 
             {% for skill in skills %}
 
               <li class="list-group-item"> {{user.skill}} </li>
            
             {% endfor %}
-           
-         
+           {% else %}
+              <li class="list-group-item"> No Skills Listed </li>
+         {% endif %}
           </ul>
         </div>
     </div>
@@ -199,19 +210,25 @@ div.card {
           <table class="table table-bordered">
             <thead class="thead-default" >
               <tr>
+
+              <th>Subject</th>
                 <th>Course Name</th>
-                <th>Day</th>
-                <th>Start</th>
-                <th>End</th>
+    
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Structured Programming</td>
-                <td> Monday</td>
-                <td> 10 AM</td>
-                <td> 3 PM</td>
+                   {% if skills %}
+
+            {% for course in courses %}
+            <tr>
+                <td>{{user.subject}}</td>
+                <td>{{user.course_name}}</td>
+             
               </tr>
+            {% endfor %}
+
+         {% endif %}
+             
             
             </tbody>
           </table>
