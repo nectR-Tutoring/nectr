@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 from nectr.users.models import User
 
@@ -6,6 +7,8 @@ from nectr.users.models import User
 class Conversation(models.Model):
     initiator = models.ForeignKey(User, related_name='+')  # TODO: Refactor this into ManyToMany when chat groups will be implemented.
     recipient = models.ForeignKey(User, related_name='+')
+    initiator_last_read_time = models.DateTimeField(default=timezone.now())
+    recipient_last_read_time = models.DateTimeField(default=timezone.now())
 
 
 class Message(models.Model):

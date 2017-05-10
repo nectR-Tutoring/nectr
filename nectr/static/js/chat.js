@@ -15,9 +15,12 @@
                         '<p class="message-text">' + text + '</p>' +
                         '<span class="message-time">' + format_time(date.getHours().toString()) + ':' + format_time(date.getMinutes().toString()) + '</span></div>';
                 },
-                onMessage: function(payload) {
+                onMessage: function(payload) { // payload.user_id is a dumbass hack
                     var activeId = window.userview.getActiveId().substring(1);
-                    if (parseInt(activeId) !== payload.user_id) {
+                    if (parseInt(activeId) !== payload.user_id) { // message is not for active conversation
+                        var unread_element = $('#u' + parseInt(payload.user.id)).children()[0];
+                        $(unread_element).show();
+                        unread_element.innerText = (parseInt(unread_element.innerText)+1).toString();
                         return;
                     }
                     var face = payload.user.id % 8;
@@ -45,11 +48,16 @@
                                 $(this).removeClass('active');
                             });
                             $(this).addClass('active');
+                            $(this).children()[0].innerText = '0';
+                            $($(this).children()[0]).hide();
                         });
                     });
                 },
                 getActiveId: function() {
-                    return $(root).children().filter('.active')[0].id;
+                    var active_element = $(root).children().filter('.active')[0];
+                    if (active_element) {
+                        return active_element.id;
+                    } else return 'u-1'; // will be parse to -1, nothing is active
                 }
             }
         };

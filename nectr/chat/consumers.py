@@ -1,5 +1,6 @@
 from channels.generic.websockets import JsonWebsocketConsumer
 from django.db.models import Q, ObjectDoesNotExist
+from django.utils import timezone
 
 from nectr.chat.models import Conversation, Message
 from nectr.users.models import User
@@ -35,16 +36,20 @@ class ChatServer(JsonWebsocketConsumer):
             self.cmd_message(content['payload'])
 
     def cmd_init(self, payload):
+        self.update_conversation_read_status()  # of the previous conversation
+
         try:
             conversation = Conversation.objects.get(
-                (Q(recipient_id=int(payload)) & Q(initiator_id=self.message.user.id)) |
-                (Q(recipient_id=self.message.user.id) & Q(initiator_id=int(payload))))
+                (Q(recipient_id=int(payload)) & Q(initiator=self.message.user)) |
+                (Q(recipient=self.message.user) & Q(initiator_id=int(payload))))
         except ObjectDoesNotExist:
             recipient = User.objects.get(id=int(payload))
             conversation = Conversation.objects.create(initiator=self.message.user, recipient=recipient)
 
         self.message.channel_session['conversation_id'] = conversation.id
         self.message.channel_session['other_user_id'] = conversation.recipient.id if self.message.user == conversation.initiator else conversation.initiator.id
+
+        self.update_conversation_read_status()  # of the current conversation
 
         query = Message.objects.filter(conversation=conversation)
         messages = []
@@ -65,8 +70,23 @@ class ChatServer(JsonWebsocketConsumer):
         response['payload'].update({'user_id': self.message.channel_session['other_user_id']}) # TODO: Another dirty trick of mine.
         self.send(response)
 
+        self.update_conversation_read_status()
+
     def disconnect(self, message, **kwargs):
         """
         Perform things on connection close
         """
-        pass
+        self.update_conversation_read_status()
+
+    def update_conversation_read_status(self):
+        try:
+            conversation = Conversation.objects.get(id=self.message.channel_session['conversation_id'])
+        except (ObjectDoesNotExist, KeyError):
+            return
+
+        if conversation.recipient == self.message.user:
+            conversation.recipient_last_read_time = timezone.now()
+        elif conversation.initiator == self.message.user:
+            conversation.initiator_last_read_time = timezone.now()
+
+        conversation.save()
