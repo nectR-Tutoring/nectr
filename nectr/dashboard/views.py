@@ -15,5 +15,9 @@ class DashboardEditProfile(TemplateView):
 class DashboardEditCourses(TemplateView):
     template_name = "dashboard/edit_courses.html"
 
+    def post(self, request):
+        return render(request, 'dashboard/edit_courses.html')
+
+
 class DashboardEditSkills(TemplateView):
     template_name = "dashboard/edit_skills.html"
