@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from nectr.courses.models import Courses
+from nectr.users.models import User
 
 
 class DashboardView(TemplateView):
@@ -18,7 +19,10 @@ class DashboardEditCourses(TemplateView):
     template_name = "dashboard/edit_courses.html"
 
     def post(self, request):
-        return render(request, 'dashboard/edit_courses.html')
+        user = User.objects.get(username=request.user.username)
+        user.courses.subject = request.POST.get('subject')
+        user.courses.course_name = request.POST.get('course')
+        return render(request, 'dashboard/edit_courses.html', {'courses' : user.courses})
 
 
 class DashboardEditSkills(TemplateView):

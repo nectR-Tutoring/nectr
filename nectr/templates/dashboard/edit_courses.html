@@ -7,39 +7,48 @@
                 <h4 class="title">Edit Courses</h4>
             </div>
             <div class="content">
-                <form method="post">
+                <form method="post" action="{% url 'dashboard:edit_courses' %}">
                     {% csrf_token %}
 
                     {#                    {% if courses %}#}
 
-                    <form>
-                        <input type="text" id="subject" placeholder="Subject">
-                        <input type="text" id="course" placeholder="Courses">
-                        <input type="button" class="add-row" value="Add Row">
-                    </form>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Select</th>
-                            <th>Subject</th>
-                            <th>Courses</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            {#                            <td><input type="checkbox" name="record"></td>#}
-                            {#                            <td>Peter Parker</td>#}
-                            {#                            <td>peterparker@mail.com</td>#}
-                        </tr>
-                        </tbody>
-                    </table>
-                    <button type="button" class="delete-row">Delete Row</button>
 
+                    <input name="subject" type="text" id="subject" placeholder="Subject">
+                    <input name="course" type="text" id="course" placeholder="Courses">
 
-                    {#                    {% endif %}#}
-
-
+                    <input type="submit" class="add-row" value="Add Row">
                 </form>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Subject</th>
+                        <th>Courses</th>
+                    </tr>
+                    </thead>
+                    {% if courses %}
+                        {% for course in courses.all %}
+                            <tr>
+                                <td></td>
+                                <td>{{ course.subject }}</td>
+                                <td>{{ course.course_name }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td></td>
+                            <td>Currently No Subjects</td>
+                            <td>Currently No Courses</td>
+                        </tr>
+                    {% endif %}
+
+
+
+                </table>
+                <button type="button" class="delete-row">Delete Row</button>
+                {#                    {% endif %}#}
+
 
                 <style type="text/css">
                     form {
@@ -67,26 +76,26 @@
                 </style>
 
 
-                <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $(".add-row").click(function () {
-                            var subject = $("#subject").val();
-                            var course = $("#course").val();
-                            var markup = "<tr><td><input type='checkbox' subject='record'></td><td>" + subject + "</td><td>" + course + "</td></tr>";
-                            $("table tbody").append(markup);
-                        });
-
-                        // Find and remove selected table rows
-                        $(".delete-row").click(function () {
-                            $("table tbody").find('input[subject="record"]').each(function () {
-                                if ($(this).is(":checked")) {
-                                    $(this).parents("tr").remove();
-                                }
-                            });
-                        });
-                    });
-                </script>
+                {#                <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>#}
+                {#                <script type="text/javascript">#}
+                {#                    $(document).ready(function () {#}
+                {#                        $(".add-row").click(function () {#}
+                {#                            var subject = $("#subject").val();#}
+                {#                            var course = $("#course").val();#}
+                {#                            var markup = "<tr><td><input type='checkbox' subject='record'></td><td>" + subject + "</td><td>" + course + "</td></tr>";#}
+                {#                            $("table tbody").append(markup);#}
+                {#                        });#}
+                {##}
+                {#                        // Find and remove selected table rows#}
+                {#                        $(".delete-row").click(function () {#}
+                {#                            $("table tbody").find('input[subject="record"]').each(function () {#}
+                {#                                if ($(this).is(":checked")) {#}
+                {#                                    $(this).parents("tr").remove();#}
+                {#                                }#}
+                {#                            });#}
+                {#                        });#}
+                {#                    });#}
+                {#                </script>#}
 
 
             </div>
