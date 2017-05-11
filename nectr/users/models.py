@@ -21,6 +21,9 @@ class User(AbstractUser):
     courses = models.ManyToManyField(Courses)
     skills = models.ManyToManyField(Skills)
     bio = models.TextField(default='No Bio Provided')
+    street_address_1 = models.TextField()
+    city = models.TextField()
+    country = models.TextField()
 
     def __str__(self):
         return self.username

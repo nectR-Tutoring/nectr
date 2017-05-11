@@ -34,7 +34,7 @@ urlpatterns = [
                   # How it Works
                   url(r'^how_it_works', TemplateView.as_view(template_name='how_nectr.html'), name='how_it_works'),
 
-                  # url(r'^test_look_nectr', TemplateView.as_view(template_name='look_nectr.html'), name='test4'),
+                  url(r'^test_profile', TemplateView.as_view(template_name='profile/base_profile.html'), name='base_profile'),
                   # url(r'^test_joinpage_nectr', TemplateView.as_view(template_name='joinpage_nectr.html'), name='test5'),
 
                   # Messaging Include

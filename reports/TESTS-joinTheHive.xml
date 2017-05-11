@@ -1,6 +1,6 @@
-<testsuite errors="0" failures="4" name="joinTheHive.Join the hive" skipped="0" tests="4" time="0.001832"><testcase classname="joinTheHive.Join the hive" name="Mike tries to join the hive" status="failed" time="0.000417"><failure message="" type="AssertionError">
+<testsuite errors="0" failures="4" name="joinTheHive.Join the hive" skipped="0" tests="4" time="0.003686"><testcase classname="joinTheHive.Join the hive" name="Mike tries to join the hive" status="failed" time="0.00084"><failure message="" type="AssertionError">
 <![CDATA[
-Failing step: Given mike does not have a nectr account ... failed in 0.000s
+Failing step: Given mike does not have a nectr account ... failed in 0.001s
 Location: features/joinTheHive.feature:9
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -15,7 +15,7 @@ AssertionError
 <![CDATA[
 @scenario.begin
   Scenario: Mike tries to join the hive
-    Given mike does not have a nectr account ... failed in 0.000s
+    Given mike does not have a nectr account ... failed in 0.001s
     Given charlie has a nectr student account ... skipped in 0.000s
     Given brandon has a nectr student account ... skipped in 0.000s
     Given Juan has a nectr student account ... skipped in 0.000s
@@ -26,7 +26,7 @@ AssertionError
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="joinTheHive.Join the hive" name="Charlie tries to join the hive" status="failed" time="0.000601"><failure message="" type="AssertionError">
+</system-out></testcase><testcase classname="joinTheHive.Join the hive" name="Charlie tries to join the hive" status="failed" time="0.001037"><failure message="" type="AssertionError">
 <![CDATA[
 Failing step: Given mike does not have a nectr account ... failed in 0.001s
 Location: features/joinTheHive.feature:9
@@ -55,9 +55,9 @@ AssertionError
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="joinTheHive.Join the hive" name="Brandon submits incomplete application" status="failed" time="0.000392"><failure message="" type="AssertionError">
+</system-out></testcase><testcase classname="joinTheHive.Join the hive" name="Brandon submits incomplete application" status="failed" time="0.000893"><failure message="" type="AssertionError">
 <![CDATA[
-Failing step: Given mike does not have a nectr account ... failed in 0.000s
+Failing step: Given mike does not have a nectr account ... failed in 0.001s
 Location: features/joinTheHive.feature:9
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -72,7 +72,7 @@ AssertionError
 <![CDATA[
 @scenario.begin
   Scenario: Brandon submits incomplete application
-    Given mike does not have a nectr account ... failed in 0.000s
+    Given mike does not have a nectr account ... failed in 0.001s
     Given charlie has a nectr student account ... skipped in 0.000s
     Given brandon has a nectr student account ... skipped in 0.000s
     Given Juan has a nectr student account ... skipped in 0.000s
@@ -85,9 +85,9 @@ AssertionError
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="joinTheHive.Join the hive" name="Juan submits complete application" status="failed" time="0.000422"><failure message="" type="AssertionError">
+</system-out></testcase><testcase classname="joinTheHive.Join the hive" name="Juan submits complete application" status="failed" time="0.000915"><failure message="" type="AssertionError">
 <![CDATA[
-Failing step: Given mike does not have a nectr account ... failed in 0.000s
+Failing step: Given mike does not have a nectr account ... failed in 0.001s
 Location: features/joinTheHive.feature:9
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -102,7 +102,7 @@ AssertionError
 <![CDATA[
 @scenario.begin
   Scenario: Juan submits complete application
-    Given mike does not have a nectr account ... failed in 0.000s
+    Given mike does not have a nectr account ... failed in 0.001s
     Given charlie has a nectr student account ... skipped in 0.000s
     Given brandon has a nectr student account ... skipped in 0.000s
     Given Juan has a nectr student account ... skipped in 0.000s
