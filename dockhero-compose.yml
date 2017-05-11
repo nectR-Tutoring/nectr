@@ -7,9 +7,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile
-    user: django
     command: /daphne.sh
-    env_file: .env
 
   nginx:
     build: ./compose/nginx
@@ -24,15 +22,11 @@ services:
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile
-    user: django
-    env_file: .env
     command: celery -A nectr.taskapp worker -l INFO
 
   celerybeat:
     build:
       context: .
       dockerfile: ./compose/django/Dockerfile
-    user: django
-    env_file: .env
     command: celery -A nectr.taskapp beat -l INFO
 
