@@ -66,7 +66,7 @@ class DashboardEditSkills(TemplateView):
             skill_id = request.POST.get('delete')
             skill = Skills.objects.get(id=skill_id)
             user = User.objects.get(username__exact=request.user.username)
-            user.courses.remove(skill)
+            user.skills.remove(skill)
         if request.POST.get('create'):
             if request.POST.get('skills'):
                 skill = request.POST.get('skills')
