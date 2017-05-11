@@ -1,0 +1,35 @@
+.message-avatar {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.message-username {
+    font-size: 2rem;
+    margin-left: 15px;
+}
+
+.message-text {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 2rem;
+}
+
+.message-time {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.message {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.message:nth-child(even) {
+    background: white;
+}
+
+.message-list-container {
+    padding: 0;
+}
