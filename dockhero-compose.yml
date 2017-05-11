@@ -5,12 +5,12 @@ volumes:
   postgres_backup: {}
 
 services:
-  postgres:
-    build: ./compose/postgres
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - postgres_backup:/backups
-    env_file: .env
+#  postgres:
+#    build: ./compose/postgres
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#      - postgres_backup:/backups
+#    env_file: .env
 
   django:
     build:
@@ -32,8 +32,8 @@ services:
       - "0.0.0.0:80:80"
 
 
-  redis:
-    image: redis:latest
+#  redis:
+#    image: redis:latest
 
   celeryworker:
     build:
