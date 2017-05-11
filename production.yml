@@ -5,12 +5,20 @@ volumes:
   postgres_backup: {}
 
 services:
+#  postgres:
+#    build: ./compose/postgres
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#      - postgres_backup:/backups
+#    env_file: .env
+
   postgres:
     build: ./compose/postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - postgres_backup:/backups
-    env_file: .env
+    environment:
+      - POSTGRES_USER=nectr
 
   django:
     build:
