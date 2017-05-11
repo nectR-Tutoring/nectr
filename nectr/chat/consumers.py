@@ -23,6 +23,7 @@ class ChatServer(JsonWebsocketConsumer):
         # Accept the connection; this is done by default if you don't override
         # the connect function.
         self.message.reply_channel.send({"accept": True})
+        self.send({'type': 'unread_count', 'payload': sum(Conversation.objects.get_unread_dict(self.message.user).values())})
 
     def receive(self, content, **kwargs):
         """

@@ -1,4 +1,4 @@
-{% load static %}
+{% load static compress %}
 
 
 <title>{% block title %}nectR - Worker Bee Dashboard{% endblock %}</title>
@@ -137,6 +137,7 @@
                             <li>
                                 <a href="{% url 'chat_view' %}">
                                     <p>Messages</p>
+                                    <span id='messages-notification' class="notification hidden-sm hidden-xs" style='display: none'>0</span>
                                 </a>
                             </li>
                             <li>
@@ -183,4 +184,7 @@
     <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
     <script src="{% static 'js/demo.js' %}"></script>
 
+    {% compress js %}
+        <script src="{% static 'js/dashboard.js' %}"></script>
+    {% endcompress %}
 {% endblock %}

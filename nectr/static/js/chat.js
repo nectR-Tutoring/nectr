@@ -21,6 +21,11 @@
                         var unread_element = $('#u' + parseInt(payload.user.id)).children()[0];
                         $(unread_element).show();
                         unread_element.innerText = (parseInt(unread_element.innerText)+1).toString();
+
+                        var global_notification = $('#messages-notification');
+                        global_notification[0].innerText = (parseInt(global_notification[0].innerText) + 1).toString();
+                        global_notification.show();
+
                         return;
                     }
                     var face = payload.user.id % 8;
@@ -48,6 +53,15 @@
                                 $(this).removeClass('active');
                             });
                             $(this).addClass('active');
+
+                            var read_count = parseInt($(this).children()[0].innerText);
+                            var global_notification = $('#messages-notification');
+                            global_notification[0].innerText = (parseInt(global_notification[0].innerText) - read_count).toString();
+                            if (parseInt(global_notification[0].innerText) <= 0) {
+                                global_notification[0].innerText = '0';
+                                global_notification.hide();
+                            }
+
                             $(this).children()[0].innerText = '0';
                             $($(this).children()[0]).hide();
                         });
@@ -61,57 +75,6 @@
                 }
             }
         };
-
-        var ChatSocket = function() {
-            var uri = (window.location.protocol === 'https:' ? 'wss' : 'ws') + '://' + window.location.host + '/ws-chat/';
-            return {
-                listenMap: {},
-                emit: function(type, payload) {
-                    if (this.websocket.readyState > 1) {
-                        this.websocket.onerror(null);
-                    } else {
-                        this.websocket.send(JSON.stringify({'type': type, 'payload': payload}));
-                    }
-                },
-                on: function(type, callback) {
-                    this.listenMap[type] = callback;
-                },
-                attempts: 1,
-                createWebSocket: function() {
-                    var that = this;
-                    this.websocket = new WebSocket(uri);
-
-                    this.websocket.onopen = function() {
-                        that.attempts = 1;
-                    };
-
-                    this.websocket.onmessage = function(event) {
-                        var data = JSON.parse(event.data);
-                        var callback = that.listenMap[data.type];
-                        if (callback) {
-                            callback(data.payload);
-                        }
-                    };
-
-                    function generateInterval (k) {
-                        return Math.min(30, (Math.pow(2, k) - 1)) * 1000;
-                    }
-                    this.websocket.onclose = function() {
-                        var time = generateInterval(that.attempts);
-
-                        setTimeout(function () {
-                            // We've tried to reconnect so increment the attempts by 1
-                            that.attempts++;
-
-                            // Connection has closed so try to reconnect every 10 seconds.
-                            that.createWebSocket();
-                        }, time);
-                    }
-                }
-            };
-        };
-        window.socket = new ChatSocket();
-        window.socket.createWebSocket();
 
         window.chatview = new ChatView($('#message-list')[0]);
         window.socket.on('message', window.chatview.onMessage.bind(window.chatview));
