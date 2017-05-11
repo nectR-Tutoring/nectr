@@ -1,0 +1,1459 @@
+Feature: Contact tutor
+  Background: 
+
+  Scenario: Mike wants to contact tutor
+    Given Mike is signed into nectr ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 34, in step_impl
+    u = User.objects.get(username=context.current_user.username)
+  File "/usr/local/lib/python3.5/site-packages/behave/runner.py", line 214, in __getattr__
+    raise AttributeError(msg)
+AttributeError: 'Context' object has no attribute 'current_user'
+
+
+  Scenario: Brandon wants to contact tutor
+    Given Mike is signed into nectr ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 34, in step_impl
+    u = User.objects.get(username=context.current_user.username)
+  File "/usr/local/lib/python3.5/site-packages/behave/runner.py", line 214, in __getattr__
+    raise AttributeError(msg)
+AttributeError: 'Context' object has no attribute 'current_user'
+
+
+Feature: Filter Tutors
+  Background: 
+
+  Scenario: Mike wants to filter tutors by subject
+    Given Mike is on nectr web site ... failed in 0.531s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/FilterTutor.py", line 80, in step_impl
+    context.driver.get(context.server_url)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.5Nh7YPZz13mE, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5065, browserName=firefox, platformName=linux}]
+Session ID: 17a34501-a278-48d5-a198-b247abfaaada
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Mike wants to filter tutors by subject
+    Given Mike is on nectr web site ... failed in 0.846s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/FilterTutor.py", line 80, in step_impl
+    context.driver.get(context.server_url)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.5Nh7YPZz13mE, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5065, browserName=firefox, platformName=linux}]
+Session ID: 17a34501-a278-48d5-a198-b247abfaaada
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Mike wants to filter tutors by availability
+    Given Mike is on nectr web site ... failed in 0.301s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/FilterTutor.py", line 80, in step_impl
+    context.driver.get(context.server_url)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.5Nh7YPZz13mE, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5065, browserName=firefox, platformName=linux}]
+Session ID: 17a34501-a278-48d5-a198-b247abfaaada
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Mike wants to filter tutors by price
+    Given Mike is on nectr web site ... failed in 0.282s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/FilterTutor.py", line 80, in step_impl
+    context.driver.get(context.server_url)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.5Nh7YPZz13mE, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5065, browserName=firefox, platformName=linux}]
+Session ID: 17a34501-a278-48d5-a198-b247abfaaada
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+Feature: Student profile
+  Background: 
+
+  Scenario: Mike wants to create profile
+    Given Mike has nectr account ... passed in 0.132s
+    Given Mike is signed into his nectr account ... passed in 0.000s
+    When Mike clicks on "My Profile" ... failed in 5.215s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 58, in step_impl
+    context.driver.find_element_by_name(html_element_link).click()
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 367, in find_element_by_name
+    return self.find_element(by=By.NAME, value=name)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 754, in find_element
+    'value': value})['value']
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: *[name='My Profile']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
+*** Element info: {Using=name, value=My Profile}
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:371)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElementByName (RemoteWebDriver.java:452)
+    at org.openqa.selenium.By$ByName.findElement (By.java:303)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:363)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (NativeMethodAccessorImpl.java:-2)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.findElement (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.findElement (EventFiringWebDriver.java:188)
+    at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:48)
+    at org.openqa.selenium.remote.server.handler.FindElement.call (FindElement.java:33)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Mike wants to update personal information on profile page
+    Given Mike has nectr account ... passed in 0.027s
+    Given Mike is signed into his nectr account ... passed in 0.000s
+    And Mike is on his profile page ... failed in 0.325s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/StudentProfile.py", line 131, in step_impl
+    context.driver.get(context.server_url + "/users/" + context.curr_user.username)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/users/user-1&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+Captured stdout:
+user-1
+
+
+  Scenario: Mike wants to update contact information on profile page
+    Given Mike has nectr account ... passed in 0.007s
+    Given Mike is on his profile page ... failed in 0.301s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/StudentProfile.py", line 131, in step_impl
+    context.driver.get(context.server_url + "/users/" + context.curr_user.username)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/users/user-2&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+Captured stdout:
+user-2
+
+
+  Scenario: Mike wants to update communication preferences on profile page
+    Given Mike has nectr account ... passed in 0.006s
+    Given Mike is on his profile page ... failed in 0.388s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/StudentProfile.py", line 131, in step_impl
+    context.driver.get(context.server_url + "/users/" + context.curr_user.username)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/users/user-3&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+Captured stdout:
+user-3
+
+
+  Scenario: Mike goes to his profile page
+    Given Mike has nectr account ... passed in 0.013s
+    Given Mike is signed into nectr ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 34, in step_impl
+    u = User.objects.get(username=context.current_user.username)
+  File "/usr/local/lib/python3.5/site-packages/behave/runner.py", line 214, in __getattr__
+    raise AttributeError(msg)
+AttributeError: 'Context' object has no attribute 'current_user'
+
+
+  Scenario: Mike updates personal information on profile page
+    Given Mike has nectr account ... passed in 0.006s
+    Given Mike is on his profile page ... failed in 0.266s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/StudentProfile.py", line 131, in step_impl
+    context.driver.get(context.server_url + "/users/" + context.curr_user.username)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/users/user-5&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+Captured stdout:
+user-5
+
+
+  Scenario: Mike updates contact information on profile page
+    Given Mike has nectr account ... passed in 0.006s
+    Given Mike is on his profile page ... failed in 0.408s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/StudentProfile.py", line 131, in step_impl
+    context.driver.get(context.server_url + "/users/" + context.curr_user.username)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/users/user-6&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+Captured stdout:
+user-6
+
+
+Feature: Tutor Profile
+  Background: 
+
+  Scenario: Mike wants to create a tutor profile
+    Given Mike is a nect tutor and has already established student profile ... failed in 0.002s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/TutorProfile.py", line 107, in step_impl
+    assert False
+AssertionError
+
+
+  Scenario: Mike wants to update About Me section on tutor profile page
+    Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/TutorProfile.py", line 107, in step_impl
+    assert False
+AssertionError
+
+
+  Scenario: Mike wants to update subjects taught on tutor profile page
+    Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/TutorProfile.py", line 107, in step_impl
+    assert False
+AssertionError
+
+
+  Scenario: Mike wants to update availability on tutor profile page
+    Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/TutorProfile.py", line 107, in step_impl
+    assert False
+AssertionError
+
+
+  Scenario: Mike wants to update his pricing on tutor profile page
+    Given Mike is a nect tutor and has already established student profile ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/TutorProfile.py", line 107, in step_impl
+    assert False
+AssertionError
+
+
+Feature: aboutLinkFeature
+
+  Scenario: Mike clicks on about page
+    Given Mike is on nectr home page ... failed in 0.360s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/aboutLinkFeature.py", line 14, in step_impl
+    context.driver.get(context.server_url + "/")
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.qVrrk0DCP5ZD, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5225, browserName=firefox, platformName=linux}]
+Session ID: f00948b7-7729-4c9e-b794-a7a7ab33f4df
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+Feature: Connection to nectR
+
+  Scenario: Connect to "/" using browser
+    When I go to "/" ... failed in 0.645s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/connection.py", line 16, in step_impl
+    context.driver.get(context.server_url+url)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.sWuiniGpat9L, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5304, browserName=firefox, platformName=linux}]
+Session ID: 213f5ba1-8e22-4268-a4f2-f7ad122b7eff
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Connect to "/" using browser to view menu
+    When I go to "/" ... failed in 0.390s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/connection.py", line 16, in step_impl
+    context.driver.get(context.server_url+url)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.sWuiniGpat9L, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5304, browserName=firefox, platformName=linux}]
+Session ID: 213f5ba1-8e22-4268-a4f2-f7ad122b7eff
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+Feature: Test Functionality of Nectr
+
+  Scenario: Server is responding to requests
+    Given The Server is Running on "Localhost" ... passed in 0.037s
+    And On Port 8000 ... passed in 0.009s
+    When I visit http://localhost:8000 ... failed in 0.220s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.5/socket.py", line 733, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 356, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/local/lib/python3.5/http/client.py", line 1107, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/local/lib/python3.5/http/client.py", line 1152, in _send_request
+    self.endheaders(body)
+  File "/usr/local/lib/python3.5/http/client.py", line 1103, in endheaders
+    self._send_output(message_body)
+  File "/usr/local/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 166, in connect
+    conn = self._new_conn()
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.HTTPConnection object at 0x7f9818f40dd8>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 649, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/util/retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='django', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x7f9818f40dd8>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/functional_tests.py", line 30, in step_impl
+    context.response = requests.get(context.server_url)
+  File "/usr/local/lib/python3.5/site-packages/requests/api.py", line 70, in get
+    return request('get', url, params=params, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests/api.py", line 56, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests/adapters.py", line 487, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='django', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x7f9818f40dd8>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+
+
+Feature: Join the hive
+  Background: 
+
+  Scenario: Mike tries to join the hive
+    Given mike does not have a nectr account ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 116, in step_impl
+    assert False
+AssertionError
+
+
+  Scenario: Charlie tries to join the hive
+    Given mike does not have a nectr account ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 116, in step_impl
+    assert False
+AssertionError
+
+
+  Scenario: Brandon submits incomplete application
+    Given mike does not have a nectr account ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 116, in step_impl
+    assert False
+AssertionError
+
+
+  Scenario: Juan submits complete application
+    Given mike does not have a nectr account ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 116, in step_impl
+    assert False
+AssertionError
+
+
+Feature: Login
+
+  Scenario: Mike clicks login before creating account
+    Given Mike is not registered to nectr ... passed in 0.004s
+    Given mike is on nectr site ... failed in 0.797s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 38, in step_impl
+    context.driver.get(context.server_url)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.7BK0ou7q0Ev4, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5459, browserName=firefox, platformName=linux}]
+Session ID: 60d9d42d-c3c3-4863-9931-0755b1601251
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Charlie enters correct credentials
+    Given Charlie is registered to nectr ... passed in 0.022s
+    Given charlie is on nectr site ... failed in 0.298s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 38, in step_impl
+    context.driver.get(context.server_url)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.7BK0ou7q0Ev4, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5459, browserName=firefox, platformName=linux}]
+Session ID: 60d9d42d-c3c3-4863-9931-0755b1601251
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Enoc enters incorrect credentials
+    Given Enoc is registered to nectr ... passed in 0.007s
+    Given enoc is on nectr site ... failed in 0.360s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 38, in step_impl
+    context.driver.get(context.server_url)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.7BK0ou7q0Ev4, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5459, browserName=firefox, platformName=linux}]
+Session ID: 60d9d42d-c3c3-4863-9931-0755b1601251
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Brandon enters correct credentials
+    Given Brandon is registered to nectr and wants to login ... passed in 0.005s
+    And Brandon is on home page of nectr ... failed in 0.292s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 342, in step_impl
+    context.driver.get(context.server_url + "/")
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.7BK0ou7q0Ev4, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5459, browserName=firefox, platformName=linux}]
+Session ID: 60d9d42d-c3c3-4863-9931-0755b1601251
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Brandon tries to sign in again but enters incorrect credentials
+    Given Brandon's registered to nectR with username is "Cashmeousside" ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/logIn.py", line 407, in step_impl
+    assert False
+AssertionError
+
+
+Feature: Search the hive
+  Background: 
+
+  Scenario: Brandon searches nectr
+    Given Brandon is a registered user ... passed in 0.014s
+    Given Mike is a registered user ... passed in 0.011s
+    And Mike is signed into nectr ... passed in 0.099s
+    Given Brandon is on search the hive page ... failed in 0.521s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 63, in step_impl
+    context.driver.get(context.server_url + "/search/")
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/search/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.kJZKYFYotvCZ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5536, browserName=firefox, platformName=linux}]
+Session ID: 4c563e24-bd90-4232-a855-c28cec142e8c
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Mike searches nectr
+    Given Brandon is a registered user ... passed in 0.007s
+    Given Mike is a registered user ... passed in 0.094s
+    And Mike is signed into nectr ... passed in 0.014s
+    Given mike is on search the hive page ... failed in 0.352s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 63, in step_impl
+    context.driver.get(context.server_url + "/search/")
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/search/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.kJZKYFYotvCZ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5536, browserName=firefox, platformName=linux}]
+Session ID: 4c563e24-bd90-4232-a855-c28cec142e8c
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Billy searches nectr for math tutors
+    Given Brandon is a registered user ... passed in 0.006s
+    Given Mike is a registered user ... passed in 0.005s
+    And Mike is signed into nectr ... passed in 0.012s
+    Given there are 15 Math tutors ... failed in 0.055s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 473, in get_or_create
+    return self.get(**lookup), False
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 385, in get
+    self.model._meta.object_name
+nectr.courses.models.DoesNotExist: Courses matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.DataError: value too long for type character varying(10)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 118, in step_impl
+    TutorFactory.create_batch(size=15)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 635, in create_batch
+    return [cls.create(**kwargs) for _ in range(size)]
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 635, in <listcomp>
+    return [cls.create(**kwargs) for _ in range(size)]
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 622, in create
+    attrs = cls.attributes(create=True, extra=kwargs)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 453, in attributes
+    force_sequence=force_sequence,
+  File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 324, in build
+    return stub.__fill__()
+  File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 83, in __fill__
+    res[attr] = getattr(self, attr)
+  File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 108, in __getattr__
+    val = val.evaluate(self, self.__containers)
+  File "/usr/local/lib/python3.5/site-packages/factory/containers.py", line 227, in evaluate
+    containers=containers,
+  File "/usr/local/lib/python3.5/site-packages/factory/declarations.py", line 324, in evaluate
+    return self.generate(sequence, obj, create, defaults)
+  File "/usr/local/lib/python3.5/site-packages/factory/declarations.py", line 412, in generate
+    return subfactory.simple_generate(create, **params)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 709, in simple_generate
+    return cls.generate(strategy, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 676, in generate
+    return action(**kwargs)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 623, in create
+    return cls._generate(True, attrs)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 548, in _generate
+    obj = cls._prepare(create, **attrs)
+  File "/usr/local/lib/python3.5/site-packages/factory/base.py", line 523, in _prepare
+    return cls._create(model_class, *args, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/factory/django.py", line 179, in _create
+    return cls._get_or_create(model_class, *args, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/factory/django.py", line 170, in _get_or_create
+    obj, _created = manager.get_or_create(*args, **key_fields)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 475, in get_or_create
+    return self._create_object_from_params(lookup, params)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 505, in _create_object_from_params
+    obj = self.create(**params)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 399, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 796, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 824, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 908, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/base.py", line 947, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 1045, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1054, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.DataError: value too long for type character varying(10)
+
+
+
+  Scenario: Billy searches nectr for C++ programming tutors
+    Given Brandon is a registered user ... passed in 0.007s
+    Given Mike is a registered user ... passed in 0.005s
+    And Mike is signed into nectr ... passed in 0.027s
+    Given there are 5 Cpp Programming tutors ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/searchTheHive.py", line 239, in step_impl
+    assert False
+AssertionError
+
+
+Feature: Signup from Website
+  Background: 
+
+  Scenario: Spongebob tries to sign up for nectr account but does not fill in correct info
+    Given Charlie is not yet registered ... passed in 0.008s
+    Given Mike is not yet registered ... passed in 0.006s
+    Given Enoc is not yet registered ... passed in 0.005s
+    Given Brandon is not yet registered ... passed in 0.005s
+    Given Juan is not yet registered ... passed in 0.005s
+    Given Spongebob is on home page of nectr ... failed in 0.392s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/signUp.py", line 149, in step_impl
+    context.driver.get(context.server_url + "/")
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.FPBDUOWizqrn, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5613, browserName=firefox, platformName=linux}]
+Session ID: 19f6bcd4-3f4f-433c-804b-e7923ea8b009
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+  Scenario: Spongebob tries to sign up providing correct info
+    Given Charlie is not yet registered ... passed in 0.005s
+    Given Mike is not yet registered ... passed in 0.004s
+    Given Enoc is not yet registered ... passed in 0.006s
+    Given Brandon is not yet registered ... passed in 0.004s
+    Given Juan is not yet registered ... passed in 0.004s
+    Given Spongebob is on home page of nectr ... failed in 0.265s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/signUp.py", line 149, in step_impl
+    context.driver.get(context.server_url + "/")
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.FPBDUOWizqrn, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5613, browserName=firefox, platformName=linux}]
+Session ID: 19f6bcd4-3f4f-433c-804b-e7923ea8b009
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
+
+
+Feature: View tutor profile
+
+  Scenario: Mike clicks on tutor profile
+    Given mike is on search results page ... failed in 0.029s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/viewTutorProfile.py", line 11, in step_impl
+    assert False
+AssertionError
+
+
+  Scenario: Brandon clicks on tutor profile
+    Given brandon is on search results page ... failed in 0.001s
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/viewTutorProfile.py", line 35, in step_impl
+    assert False
+AssertionError
+
+

@@ -1,10 +1,8 @@
 from django.db import models
 
 
-# Create your models here.
 class Courses(models.Model):
     subject = models.TextField()
-
     course_name = models.CharField(max_length=10)
 
     def __str__(self):

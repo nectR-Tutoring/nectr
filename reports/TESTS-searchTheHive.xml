@@ -1,64 +1,136 @@
-<testsuite errors="1" failures="3" name="searchTheHive.Search the hive" skipped="0" tests="4" time="1.371727"><testcase classname="searchTheHive.Search the hive" name="Brandon searches nectr" status="failed" time="0.776173"><failure message="" type="AssertionError">
+<testsuite errors="3" failures="1" name="searchTheHive.Search the hive" skipped="0" tests="4" time="1.231319"><testcase classname="searchTheHive.Search the hive" name="Brandon searches nectr" status="failed" time="0.645585"><error message="Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//django%3A80..." type="WebDriverException">
 <![CDATA[
-Failing step: And he can view preview of tutor profile ... failed in 0.000s
-Location: features/searchTheHive.feature:29
+Failing step: Given Brandon is on search the hive page ... failed in 0.521s
+Location: features/searchTheHive.feature:24
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
     match.run(runner.context)
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
     self.func(context, *args, **kwargs)
-  File "features/steps/searchTheHive.py", line 126, in step_impl
-    assert False
-AssertionError
+  File "features/steps/searchTheHive.py", line 63, in step_impl
+    context.driver.get(context.server_url + "/search/")
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/search/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.kJZKYFYotvCZ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5536, browserName=firefox, platformName=linux}]
+Session ID: 4c563e24-bd90-4232-a855-c28cec142e8c
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
 ]]>
-</failure><system-out>
+</error><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: Brandon searches nectr
-    Given Brandon is a registered user ... passed in 0.010s
-    Given Mike is a registered user ... passed in 0.009s
-    And Mike is signed into nectr ... passed in 0.021s
-    Given Brandon is on search the hive page ... passed in 0.470s
-    When Brandon types "Computer Science" in search box ... passed in 0.151s
-    And clicks search the hive button ... passed in 0.114s
-    And he can view preview of tutor profile ... failed in 0.000s
+    Given Brandon is a registered user ... passed in 0.014s
+    Given Mike is a registered user ... passed in 0.011s
+    And Mike is signed into nectr ... passed in 0.099s
+    Given Brandon is on search the hive page ... failed in 0.521s
+    When Brandon types "Computer Science" in search box ... skipped in 0.000s
+    And clicks search the hive button ... skipped in 0.000s
+    And he can view preview of tutor profile ... skipped in 0.000s
     And he will see a view profile button ... skipped in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="searchTheHive.Search the hive" name="Mike searches nectr" status="failed" time="0.510045"><failure message="" type="AssertionError">
+</system-out></testcase><testcase classname="searchTheHive.Search the hive" name="Mike searches nectr" status="failed" time="0.467775"><error message="Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//django%3A80..." type="WebDriverException">
 <![CDATA[
-Failing step: And he can view preview of tutor profile ... failed in 0.000s
-Location: features/searchTheHive.feature:38
+Failing step: Given mike is on search the hive page ... failed in 0.352s
+Location: features/searchTheHive.feature:33
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
     match.run(runner.context)
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
     self.func(context, *args, **kwargs)
-  File "features/steps/searchTheHive.py", line 126, in step_impl
-    assert False
-AssertionError
+  File "features/steps/searchTheHive.py", line 63, in step_impl
+    context.driver.get(context.server_url + "/search/")
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 250, in get
+    self.execute(Command.GET, {'url': url})
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/search/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/tmp/rust_mozprofile.kJZKYFYotvCZ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5536, browserName=firefox, platformName=linux}]
+Session ID: 4c563e24-bd90-4232-a855-c28cec142e8c
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
+    at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
+    at com.sun.proxy.$Proxy6.get (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver.get (EventFiringWebDriver.java:163)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:40)
+    at org.openqa.selenium.remote.server.handler.ChangeUrl.call (ChangeUrl.java:25)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:745)
 ]]>
-</failure><system-out>
+</error><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: Mike searches nectr
-    Given Brandon is a registered user ... passed in 0.008s
-    Given Mike is a registered user ... passed in 0.008s
-    And Mike is signed into nectr ... passed in 0.017s
-    Given mike is on search the hive page ... passed in 0.227s
-    When mike types in what he is looking for in search box ... passed in 0.179s
-    And clicks search the hive button ... passed in 0.070s
-    And he can view preview of tutor profile ... failed in 0.000s
+    Given Brandon is a registered user ... passed in 0.007s
+    Given Mike is a registered user ... passed in 0.094s
+    And Mike is signed into nectr ... passed in 0.014s
+    Given mike is on search the hive page ... failed in 0.352s
+    When mike types in what he is looking for in search box ... skipped in 0.000s
+    And clicks search the hive button ... skipped in 0.000s
+    And he can view preview of tutor profile ... skipped in 0.000s
     And he will see a view profile button ... skipped in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="searchTheHive.Search the hive" name="Billy searches nectr for math tutors" status="failed" time="0.041865"><error message="value too long for type character varying(10)&#10;" type="DataError">
+</system-out></testcase><testcase classname="searchTheHive.Search the hive" name="Billy searches nectr for math tutors" status="failed" time="0.078126"><error message="value too long for type character varying(10)&#10;" type="DataError">
 <![CDATA[
-Failing step: Given there are 15 Math tutors ... failed in 0.010s
+Failing step: Given there are 15 Math tutors ... failed in 0.055s
 Location: features/searchTheHive.feature:50
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/django/db/models/query.py", line 473, in get_or_create
@@ -155,10 +227,10 @@ django.db.utils.DataError: value too long for type character varying(10)
 <![CDATA[
 @scenario.begin
   Scenario: Billy searches nectr for math tutors
-    Given Brandon is a registered user ... passed in 0.010s
-    Given Mike is a registered user ... passed in 0.006s
-    And Mike is signed into nectr ... passed in 0.017s
-    Given there are 15 Math tutors ... failed in 0.010s
+    Given Brandon is a registered user ... passed in 0.006s
+    Given Mike is a registered user ... passed in 0.005s
+    And Mike is signed into nectr ... passed in 0.012s
+    Given there are 15 Math tutors ... failed in 0.055s
     Given Billy is signed into nectr ... skipped in 0.000s
     And Billy is on search the hive page ... skipped in 0.000s
     When Billy clicks on search bar ... skipped in 0.000s
@@ -173,7 +245,7 @@ django.db.utils.DataError: value too long for type character varying(10)
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="searchTheHive.Search the hive" name="Billy searches nectr for C++ programming tutors" status="failed" time="0.043643"><failure message="" type="AssertionError">
+</system-out></testcase><testcase classname="searchTheHive.Search the hive" name="Billy searches nectr for C++ programming tutors" status="failed" time="0.039832"><failure message="" type="AssertionError">
 <![CDATA[
 Failing step: Given there are 5 Cpp Programming tutors ... failed in 0.001s
 Location: features/searchTheHive.feature:64
@@ -190,9 +262,9 @@ AssertionError
 <![CDATA[
 @scenario.begin
   Scenario: Billy searches nectr for C++ programming tutors
-    Given Brandon is a registered user ... passed in 0.016s
-    Given Mike is a registered user ... passed in 0.009s
-    And Mike is signed into nectr ... passed in 0.018s
+    Given Brandon is a registered user ... passed in 0.007s
+    Given Mike is a registered user ... passed in 0.005s
+    And Mike is signed into nectr ... passed in 0.027s
     Given there are 5 Cpp Programming tutors ... failed in 0.001s
     Given Billy is signed into nectr ... skipped in 0.000s
     And Billy is on search the hive page ... skipped in 0.000s

@@ -1,6 +1,6 @@
-<testsuite errors="7" failures="0" name="StudentProfile.Student profile" skipped="0" tests="7" time="1221.773016"><testcase classname="StudentProfile.Student profile" name="Mike wants to create profile" status="failed" time="5.195768"><error message="Message: Unable to locate element: *[name='My Profile']&#10;For documentation on thi..." type="NoSuchElementException">
+<testsuite errors="7" failures="0" name="StudentProfile.Student profile" skipped="0" tests="7" time="7.10088"><testcase classname="StudentProfile.Student profile" name="Mike wants to create profile" status="failed" time="5.34696"><error message="Message: Unable to locate element: *[name='My Profile']&#10;For documentation on thi..." type="NoSuchElementException">
 <![CDATA[
-Failing step: When Mike clicks on "My Profile" ... failed in 5.187s
+Failing step: When Mike clicks on "My Profile" ... failed in 5.215s
 Location: features/StudentProfile.feature:12
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -19,11 +19,11 @@ Traceback (most recent call last):
     raise exception_class(message, screen, stacktrace)
 selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: *[name='My Profile']
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/tmp/rust_mozprofile.oCbDJ9yxxNRz, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=3971.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
-Session ID: fd90cdaa-2d26-4a4d-9541-2bb7c4c70ca2
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
 *** Element info: {Using=name, value=My Profile}
 Screenshot: available via screen
 Stacktrace:
@@ -31,17 +31,18 @@ Stacktrace:
     at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
     at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
     at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
-    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
     at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
-    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
-    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:410)
-    at org.openqa.selenium.remote.RemoteWebDriver.findElementByName (RemoteWebDriver.java:485)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:371)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElementByName (RemoteWebDriver.java:452)
     at org.openqa.selenium.By$ByName.findElement (By.java:303)
-    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:402)
-    at sun.reflect.GeneratedMethodAccessor19.invoke (None:-1)
+    at org.openqa.selenium.remote.RemoteWebDriver.findElement (RemoteWebDriver.java:363)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (NativeMethodAccessorImpl.java:-2)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
     at java.lang.reflect.Method.invoke (Method.java:498)
     at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
@@ -59,9 +60,9 @@ Stacktrace:
 <![CDATA[
 @scenario.begin
   Scenario: Mike wants to create profile
-    Given Mike has nectr account ... passed in 0.008s
+    Given Mike has nectr account ... passed in 0.132s
     Given Mike is signed into his nectr account ... passed in 0.000s
-    When Mike clicks on "My Profile" ... failed in 5.187s
+    When Mike clicks on "My Profile" ... failed in 5.215s
     And Mike is redirected to nectr profile ... skipped in 0.000s
     Then "Hello <Mike's username>" is shown ... skipped in 0.000s
     And Mike can add information to profile ... skipped in 0.000s
@@ -69,9 +70,9 @@ Stacktrace:
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike wants to update personal information on profile page" status="failed" time="300.202906"><error message="Message: Timeout loading page after 300000ms&#10;Build info: version: '3.4.0', revis..." type="TimeoutException">
+</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike wants to update personal information on profile page" status="failed" time="0.352076"><error message="Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//django%3A80..." type="WebDriverException">
 <![CDATA[
-Failing step: And Mike is on his profile page ... failed in 300.188s
+Failing step: And Mike is on his profile page ... failed in 0.325s
 Location: features/StudentProfile.feature:19
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -86,26 +87,25 @@ Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: Timeout loading page after 300000ms
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/users/user-1&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/tmp/rust_mozprofile.oCbDJ9yxxNRz, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=3971.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
-Session ID: fd90cdaa-2d26-4a4d-9541-2bb7c4c70ca2
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
 Screenshot: available via screen
 Stacktrace:
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
     at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
     at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
-    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
     at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
-    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
-    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:364)
-    at sun.reflect.GeneratedMethodAccessor13.invoke (None:-1)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
     at java.lang.reflect.Method.invoke (Method.java:498)
     at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
@@ -126,9 +126,9 @@ user-1
 <![CDATA[
 @scenario.begin
   Scenario: Mike wants to update personal information on profile page
-    Given Mike has nectr account ... passed in 0.015s
+    Given Mike has nectr account ... passed in 0.027s
     Given Mike is signed into his nectr account ... passed in 0.000s
-    And Mike is on his profile page ... failed in 300.188s
+    And Mike is on his profile page ... failed in 0.325s
     When Mike clicks on "Edit" button on "personal information" section of profile ... skipped in 0.000s
     Then Mike can edit or add information to "personal information" ... skipped in 0.000s
 
@@ -139,9 +139,9 @@ Captured stdout:
 user-1
 
 ]]>
-</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike wants to update contact information on profile page" status="failed" time="300.192883"><error message="Message: Timeout loading page after 300000ms&#10;Build info: version: '3.4.0', revis..." type="TimeoutException">
+</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike wants to update contact information on profile page" status="failed" time="0.308092"><error message="Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//django%3A80..." type="WebDriverException">
 <![CDATA[
-Failing step: Given Mike is on his profile page ... failed in 300.185s
+Failing step: Given Mike is on his profile page ... failed in 0.301s
 Location: features/StudentProfile.feature:24
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -156,26 +156,25 @@ Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: Timeout loading page after 300000ms
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/users/user-2&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/tmp/rust_mozprofile.oCbDJ9yxxNRz, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=3971.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
-Session ID: fd90cdaa-2d26-4a4d-9541-2bb7c4c70ca2
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
 Screenshot: available via screen
 Stacktrace:
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
     at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
     at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
-    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
     at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
-    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
-    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:364)
-    at sun.reflect.GeneratedMethodAccessor13.invoke (None:-1)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
     at java.lang.reflect.Method.invoke (Method.java:498)
     at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
@@ -196,8 +195,8 @@ user-2
 <![CDATA[
 @scenario.begin
   Scenario: Mike wants to update contact information on profile page
-    Given Mike has nectr account ... passed in 0.008s
-    Given Mike is on his profile page ... failed in 300.185s
+    Given Mike has nectr account ... passed in 0.007s
+    Given Mike is on his profile page ... failed in 0.301s
     When Mike clicks on "Edit" button on "contact information" section of profile ... skipped in 0.000s
     Then Mike can edit or add information to "contact information" ... skipped in 0.000s
 
@@ -208,9 +207,9 @@ Captured stdout:
 user-2
 
 ]]>
-</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike wants to update communication preferences on profile page" status="failed" time="15.726548"><error message="Message: Reached error page: about:neterror?e=connectionFailure&amp;u=http%3A//djang..." type="WebDriverException">
+</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike wants to update communication preferences on profile page" status="failed" time="0.39422"><error message="Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//django%3A80..." type="WebDriverException">
 <![CDATA[
-Failing step: Given Mike is on his profile page ... failed in 15.720s
+Failing step: Given Mike is on his profile page ... failed in 0.388s
 Location: features/StudentProfile.feature:29
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -225,26 +224,25 @@ Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=connectionFailure&u=http%3A//django%3A8000/users/user-3&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20django%3A8000.
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/users/user-3&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/tmp/rust_mozprofile.oCbDJ9yxxNRz, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=3971.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
-Session ID: fd90cdaa-2d26-4a4d-9541-2bb7c4c70ca2
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
 Screenshot: available via screen
 Stacktrace:
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
     at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
     at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
-    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
     at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
-    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
-    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:364)
-    at sun.reflect.GeneratedMethodAccessor13.invoke (None:-1)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
     at java.lang.reflect.Method.invoke (Method.java:498)
     at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
@@ -266,7 +264,7 @@ user-3
 @scenario.begin
   Scenario: Mike wants to update communication preferences on profile page
     Given Mike has nectr account ... passed in 0.006s
-    Given Mike is on his profile page ... failed in 15.720s
+    Given Mike is on his profile page ... failed in 0.388s
     When Mike clicks on "Edit" button on "communication preferences" section of profile ... skipped in 0.000s
     Then Mike can edit or add information to "communication preferences" ... skipped in 0.000s
 
@@ -277,9 +275,9 @@ Captured stdout:
 user-3
 
 ]]>
-</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike goes to his profile page" status="failed" time="0.015488"><error message="'Context' object has no attribute 'current_user'" type="AttributeError">
+</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike goes to his profile page" status="failed" time="0.013803"><error message="'Context' object has no attribute 'current_user'" type="AttributeError">
 <![CDATA[
-Failing step: Given Mike is signed into nectr ... failed in 0.000s
+Failing step: Given Mike is signed into nectr ... failed in 0.001s
 Location: features/StudentProfile.feature:38
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -296,8 +294,8 @@ AttributeError: 'Context' object has no attribute 'current_user'
 <![CDATA[
 @scenario.begin
   Scenario: Mike goes to his profile page
-    Given Mike has nectr account ... passed in 0.015s
-    Given Mike is signed into nectr ... failed in 0.000s
+    Given Mike has nectr account ... passed in 0.013s
+    Given Mike is signed into nectr ... failed in 0.001s
     And Mike's username is MikeAyoub ... skipped in 0.000s
     And Mike's password is JavaSucks123 ... skipped in 0.000s
     And Mike is on his "Dashboard" page ... skipped in 0.000s
@@ -309,9 +307,9 @@ AttributeError: 'Context' object has no attribute 'current_user'
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike updates personal information on profile page" status="failed" time="300.223742"><error message="Message: Timeout loading page after 300000ms&#10;Build info: version: '3.4.0', revis..." type="TimeoutException">
+</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike updates personal information on profile page" status="failed" time="0.2716"><error message="Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//django%3A80..." type="WebDriverException">
 <![CDATA[
-Failing step: Given Mike is on his profile page ... failed in 300.209s
+Failing step: Given Mike is on his profile page ... failed in 0.266s
 Location: features/StudentProfile.feature:48
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -326,26 +324,25 @@ Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: Timeout loading page after 300000ms
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/users/user-5&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/tmp/rust_mozprofile.oCbDJ9yxxNRz, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=3971.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
-Session ID: fd90cdaa-2d26-4a4d-9541-2bb7c4c70ca2
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
 Screenshot: available via screen
 Stacktrace:
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
     at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
     at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
-    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
     at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
-    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
-    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:364)
-    at sun.reflect.GeneratedMethodAccessor13.invoke (None:-1)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
     at java.lang.reflect.Method.invoke (Method.java:498)
     at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
@@ -366,8 +363,8 @@ user-5
 <![CDATA[
 @scenario.begin
   Scenario: Mike updates personal information on profile page
-    Given Mike has nectr account ... passed in 0.014s
-    Given Mike is on his profile page ... failed in 300.209s
+    Given Mike has nectr account ... passed in 0.006s
+    Given Mike is on his profile page ... failed in 0.266s
     When Mike clicks on "Edit" button on "personal information" section of his profile ... skipped in 0.000s
     And Mike clicks on "name" text field ... skipped in 0.000s
     And Mike enters "Mike Ayoub" ... skipped in 0.000s
@@ -383,9 +380,9 @@ Captured stdout:
 user-5
 
 ]]>
-</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike updates contact information on profile page" status="failed" time="300.215682"><error message="Message: Timeout loading page after 300000ms&#10;Build info: version: '3.4.0', revis..." type="TimeoutException">
+</system-out></testcase><testcase classname="StudentProfile.Student profile" name="Mike updates contact information on profile page" status="failed" time="0.414129"><error message="Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//django%3A80..." type="WebDriverException">
 <![CDATA[
-Failing step: Given Mike is on his profile page ... failed in 300.208s
+Failing step: Given Mike is on his profile page ... failed in 0.408s
 Location: features/StudentProfile.feature:58
 Traceback (most recent call last):
   File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
@@ -400,26 +397,25 @@ Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/usr/local/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: Timeout loading page after 300000ms
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'dba8352f10a5', ip: '172.18.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.0-49-generic', java.version: '1.8.0_121'
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=http%3A//django%3A8000/users/user-6&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20find%20the%20server%20at%20django.
+Build info: version: '3.3.1', revision: '5234b32', time: '2017-03-10 09:04:52 -0800'
+System info: host: 'df2e6b0362a3', ip: '172.18.0.7', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.57-boot2docker', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/tmp/rust_mozprofile.oCbDJ9yxxNRz, rotatable=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=53.0, platformVersion=4.8.0-49-generic, moz:processID=3971.0, browserName=firefox, javascriptEnabled=true, platformName=linux}]
-Session ID: fd90cdaa-2d26-4a4d-9541-2bb7c4c70ca2
+Capabilities [{moz:profile=/tmp/rust_mozprofile.pcfNPXRG4qrQ, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.2, platformVersion=4.4.57-boot2docker, moz:processID=5144, browserName=firefox, platformName=linux}]
+Session ID: d1dcbbb9-fc12-45ba-b647-194f496e779e
 Screenshot: available via screen
 Stacktrace:
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
-    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.GeneratedConstructorAccessor15.newInstance (None:-1)
     at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
     at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:150)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:115)
-    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:45)
-    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:164)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException (W3CHttpResponseCodec.java:133)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:99)
+    at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode (W3CHttpResponseCodec.java:43)
+    at org.openqa.selenium.remote.HttpCommandExecutor.execute (HttpCommandExecutor.java:163)
     at org.openqa.selenium.remote.service.DriverCommandExecutor.execute (DriverCommandExecutor.java:82)
-    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:637)
-    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:364)
-    at sun.reflect.GeneratedMethodAccessor13.invoke (None:-1)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:604)
+    at org.openqa.selenium.remote.RemoteWebDriver.get (RemoteWebDriver.java:325)
+    at sun.reflect.GeneratedMethodAccessor25.invoke (None:-1)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
     at java.lang.reflect.Method.invoke (Method.java:498)
     at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke (EventFiringWebDriver.java:104)
@@ -440,8 +436,8 @@ user-6
 <![CDATA[
 @scenario.begin
   Scenario: Mike updates contact information on profile page
-    Given Mike has nectr account ... passed in 0.008s
-    Given Mike is on his profile page ... failed in 300.208s
+    Given Mike has nectr account ... passed in 0.006s
+    Given Mike is on his profile page ... failed in 0.408s
     When Mike clicks on "Edit" button on "contact information" section of his profile ... skipped in 0.000s
     And Mike clicks on "Email" text field ... skipped in 0.000s
     And Mike enters "ayouf@farmingdale.edu" ... skipped in 0.000s

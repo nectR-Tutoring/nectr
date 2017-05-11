@@ -1,11 +1,79 @@
-<testsuite errors="0" failures="0" name="functional_tests.Test Functionality of Nectr" skipped="0" tests="1" time="0.038996"><testcase classname="functional_tests.Test Functionality of Nectr" name="Server is responding to requests" status="passed" time="0.038996"><system-out>
+<testsuite errors="1" failures="0" name="functional_tests.Test Functionality of Nectr" skipped="0" tests="1" time="0.265689"><testcase classname="functional_tests.Test Functionality of Nectr" name="Server is responding to requests" status="failed" time="0.265689"><error message="HTTPConnectionPool(host='django', port=8000): Max retries exceeded with url: / (..." type="ConnectionError">
+<![CDATA[
+Failing step: When I visit http://localhost:8000 ... failed in 0.220s
+Location: features/functional_tests.feature:12
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.5/socket.py", line 733, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 356, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/local/lib/python3.5/http/client.py", line 1107, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/local/lib/python3.5/http/client.py", line 1152, in _send_request
+    self.endheaders(body)
+  File "/usr/local/lib/python3.5/http/client.py", line 1103, in endheaders
+    self._send_output(message_body)
+  File "/usr/local/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 166, in connect
+    conn = self._new_conn()
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.HTTPConnection object at 0x7f9818f40dd8>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 649, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/lib/python3.5/site-packages/requests/packages/urllib3/util/retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='django', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x7f9818f40dd8>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1456, in run
+    match.run(runner.context)
+  File "/usr/local/lib/python3.5/site-packages/behave/model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "features/steps/functional_tests.py", line 30, in step_impl
+    context.response = requests.get(context.server_url)
+  File "/usr/local/lib/python3.5/site-packages/requests/api.py", line 70, in get
+    return request('get', url, params=params, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests/api.py", line 56, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.5/site-packages/requests/adapters.py", line 487, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='django', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x7f9818f40dd8>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+]]>
+</error><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: Server is responding to requests
-    Given The Server is Running on "Localhost" ... passed in 0.000s
-    And On Port 8000 ... passed in 0.000s
-    When I visit http://localhost:8000 ... passed in 0.038s
-    Then I should get a 200 response ... passed in 0.000s
+    Given The Server is Running on "Localhost" ... passed in 0.037s
+    And On Port 8000 ... passed in 0.009s
+    When I visit http://localhost:8000 ... failed in 0.220s
+    Then I should get a 200 response ... skipped in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
