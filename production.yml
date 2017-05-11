@@ -1,8 +1,8 @@
 version: '2'
 
-volumes:
-  postgres_data: {}
-  postgres_backup: {}
+#volumes:
+#  postgres_data: {}
+#  postgres_backup: {}
 
 services:
 #  postgres:
