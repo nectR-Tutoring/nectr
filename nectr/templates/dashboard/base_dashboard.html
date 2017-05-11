@@ -1,5 +1,5 @@
 {% load static compress %}
-
+<head>
 
 <title>{% block title %}nectR - Worker Bee Dashboard{% endblock %}</title>
 
@@ -26,6 +26,8 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{% static 'css/pe-icon-7-stroke.css' %}" rel="stylesheet"/>
 {% endblock %}
+</head>
+<body>
 {% block wrapper %}
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="{% static 'img/sidebar-5.jpg' %}">
@@ -188,3 +190,4 @@
         <script src="{% static 'js/dashboard.js' %}"></script>
     {% endcompress %}
 {% endblock %}
+</body>
