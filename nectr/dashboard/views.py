@@ -8,6 +8,7 @@ from django.views.generic import TemplateView
 
 from nectr.courses.models import Courses
 from nectr.dashboard.forms import CoursesForm
+from nectr.skills.models import Skills
 from nectr.users.models import User
 
 
@@ -42,8 +43,9 @@ class DashboardEditCourses(TemplateView):
     def post(self, request):
         if request.POST.get('delete'):
             course_id = request.POST.get('delete')
-            course = Courses.objects.get(_id)
+            course = Courses.objects.get(id=course_id)
             user = User.objects.get(username__exact=request.user.username)
+            user.courses.remove(course)
         if request.POST.get('create'):
             if request.POST.get('course'):
                 course = request.POST.get('course')
@@ -60,8 +62,14 @@ class DashboardEditSkills(TemplateView):
         return render(request, self.template_name, {'skills': request.user.skills})
 
     def post(self, request):
-        if request.POST.get('skills'):
-            skill = request.POST.get('skills')
-            request.user.skills.create(skill=skill)
+        if request.POST.get('delete'):
+            skill_id = request.POST.get('delete')
+            skill = Skills.objects.get(id=skill_id)
+            user = User.objects.get(username__exact=request.user.username)
+            user.courses.remove(skill)
+        if request.POST.get('create'):
+            if request.POST.get('skills'):
+                skill = request.POST.get('skills')
+                request.user.skills.create(skill=skill)
 
         return HttpResponseRedirect(reverse('dashboard:edit_skills'))

@@ -60,3 +60,5 @@ django-postman
 
 #Chat
 channels==1.1.3
+
+debug_toolbar==1.8
