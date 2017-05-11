@@ -9,12 +9,9 @@
                 <form method="post">
                     {% csrf_token %}
 
-                    {#                    {% if courses %}#}
 
-                    <form>
-                        <input type="text" id="skills" placeholder="skills">
-                        <input type="button" class="add-row" value="Add Row">
-                    </form>
+                    <input type="text" name="skills" id="skills" placeholder="skills">
+                    <input type="submit" class="add-row" value="Add Skill">
                     <table>
                         <thead>
                         <tr>
@@ -23,14 +20,19 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            {#                            <td><input type="checkbox" name="record"></td>#}
-                            {#                            <td>Peter Parker</td>#}
-                            {#                            <td>peterparker@mail.com</td>#}
-                        </tr>
+                        {% if skills %}
+                            {% for skill in skills.all %}
+                                <tr>
+
+                                                                <td><input type="checkbox" name="record"></td>
+                                    <td>{{ skill }}</td>
+                                    {#                            <td>peterparker@mail.com</td>#}
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
                         </tbody>
                     </table>
-                    <button type="button" class="delete-row">Delete Row</button>
+                    <button type="submit" class="delete-row" name="delete">Delete Row</button>
 
 
                     {#                    {% endif %}#}
