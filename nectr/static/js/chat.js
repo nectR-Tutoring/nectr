@@ -31,7 +31,7 @@
                     var face = payload.user.id % 8;
                     var message = this.createMessageElement('/static/img/faces/face-' + face + '.jpg', payload.user.name, payload.text, payload.time);
                     $(root).append(message);
-                    setTimeout(function() {$(root).parent().scrollTop($(root).get(0).scrollHeight);}, 10);
+                    setTimeout(function() {$(root).parent().scrollTop($(root).get(0).scrollHeight);}, 50);
                 },
                 onInit: function(payload) {
                     $(root).empty();
