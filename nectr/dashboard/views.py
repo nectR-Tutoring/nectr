@@ -23,6 +23,7 @@ class DashboardEditProfile(TemplateView):
         request.user.last_name = post.get('last_name')
         request.user.bio = post.get('edit_bio')
         request.user.street_address_1 = post.get('street_address')
+        request.user.city = post.get('city')
         return render(request, self.template_name)
 
 
