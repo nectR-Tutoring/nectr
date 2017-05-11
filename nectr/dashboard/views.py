@@ -1,8 +1,9 @@
 from django.conf.urls import url
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+from django.urls import reverse
 from django.views.generic import TemplateView
 
 from nectr.courses.models import Courses
@@ -19,16 +20,16 @@ class DashboardEditProfile(TemplateView):
 
     def post(self, request):
         post = request.POST
-        user = User.objects.get(username__exact=request.user.username)
-        user.first_name = post.get('first_name')
-        user.last_name = post.get('last_name')
-        user.bio = post.get('edit_bio')
-        user.street_address_1 = post.get('street_address')
-        user.city = post.get('city')
-        user.country = post.get('country_text')
-        user.zip_code = post.get('zipcode_text')
-        user.save()
-        return render(request, self.template_name)
+        User.objects.filter(username__exact=request.user.username).update(
+            first_name=post.get('first_name'),
+            last_name=post.get('last_name'),
+            bio=post.get('edit_bio'),
+            street_address_1=post.get('street_address'),
+            city=post.get('city'),
+            country=post.get('country_text'),
+            zip_code=post.get('zipcode_text')
+        )
+        return HttpResponseRedirect(reverse('dashboard:edit_profile'))
 
 
 class DashboardEditCourses(TemplateView):
@@ -40,9 +41,10 @@ class DashboardEditCourses(TemplateView):
 
     def post(self, request):
         if request.POST.get('course'):
-            request.user.courses.create(course_name=request.POST.get('course'), subject=request.POST.get('subject'))
+            course = request.POST.get('course')
+            request.user.courses.create(course_name=course, subject=request.POST.get('subject'))
 
-        return render(request, 'dashboard/edit_courses.html', {'courses': request.user.courses})
+        return HttpResponseRedirect(reverse('dashboard:edit_courses'))
 
 
 class DashboardEditSkills(TemplateView):
@@ -54,6 +56,7 @@ class DashboardEditSkills(TemplateView):
 
     def post(self, request):
         if request.POST.get('skills'):
-            request.user.skills.create(skill=request.POST.get('skills'))
+            skill = request.POST.get('skills')
+            request.user.skills.create(skill=skill)
 
-        return render(request, self.template_name, {'courses': request.user.skills})
+        return HttpResponseRedirect(reverse('dashboard:edit_skills'))

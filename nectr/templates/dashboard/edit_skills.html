@@ -65,27 +65,27 @@
                     }
                 </style>
 
-
-                <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $(".add-row").click(function () {
-                            var skills = $("#skills").val();
-
-                            var markup = "<tr><td><input type='checkbox' subject='record'></td><td>" + skills;
-                            $("table tbody").append(markup);
-                        });
-
-                        // Find and remove selected table rows
-                        $(".delete-row").click(function () {
-                            $("table tbody").find('input[subject="record"]').each(function () {
-                                if ($(this).is(":checked")) {
-                                    $(this).parents("tr").remove();
-                                }
-                            });
-                        });
-                    });
-                </script>
+{##}
+{#                <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>#}
+{#                <script type="text/javascript">#}
+{#                    $(document).ready(function () {#}
+{#                        $(".add-row").click(function () {#}
+{#                            var skills = $("#skills").val();#}
+{##}
+{#                            var markup = "<tr><td><input type='checkbox' subject='record'></td><td>" + skills;#}
+{#                            $("table tbody").append(markup);#}
+{#                        });#}
+{##}
+{#                        // Find and remove selected table rows#}
+{#                        $(".delete-row").click(function () {#}
+{#                            $("table tbody").find('input[subject="record"]').each(function () {#}
+{#                                if ($(this).is(":checked")) {#}
+{#                                    $(this).parents("tr").remove();#}
+{#                                }#}
+{#                            });#}
+{#                        });#}
+{#                    });#}
+{#                </script>#}
 
 
             </div>
