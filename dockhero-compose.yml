@@ -11,7 +11,8 @@ services:
       - postgres_data_dev:/var/lib/postgresql/data
       - postgres_backup_dev:/backups
     environment:
-      - POSTGRES_USER=nectr
+      - POSTGRES_USER=xdhitzsiipadbj
+      - POSTGRES_PASSWORD=4de8fe26bbe0defaed106fc00ca4bfcbd0f4acca861caf551f7608b69b21b6c4
 
   django:
     build:
