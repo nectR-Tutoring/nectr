@@ -40,9 +40,14 @@ class DashboardEditCourses(TemplateView):
         return render(request, 'dashboard/edit_courses.html', {'courses': request.user.courses})
 
     def post(self, request):
-        if request.POST.get('course'):
-            course = request.POST.get('course')
-            request.user.courses.create(course_name=course, subject=request.POST.get('subject'))
+        if request.POST.get('delete'):
+            course_id = request.POST.get('delete')
+            course = Courses.objects.get(_id)
+            user = User.objects.get(username__exact=request.user.username)
+        if request.POST.get('create'):
+            if request.POST.get('course'):
+                course = request.POST.get('course')
+                request.user.courses.create(course_name=course, subject=request.POST.get('subject'))
 
         return HttpResponseRedirect(reverse('dashboard:edit_courses'))
 
