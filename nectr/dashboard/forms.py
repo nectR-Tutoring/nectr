@@ -6,3 +6,6 @@ class CoursesForm(forms.Form):
     #                 <input name="course" type="text" id="course" placeholder="Courses">
     subject = forms.CharField()
     course = forms.CharField()
+
+class EditProfileForm(forms.Form):
+    pass

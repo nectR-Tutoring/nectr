@@ -19,13 +19,15 @@ class DashboardEditProfile(TemplateView):
 
     def post(self, request):
         post = request.POST
-        request.user.first_name = post.get('first_name')
-        request.user.last_name = post.get('last_name')
-        request.user.bio = post.get('edit_bio')
-        request.user.street_address_1 = post.get('street_address')
-        request.user.city = post.get('city')
-        request.user.country = post.get('country_text')
-        request.user.zip_code = post.get('zipcode_text')
+        user = User.objects.get(username__exact=request.user.username)
+        user.first_name = post.get('first_name')
+        user.last_name = post.get('last_name')
+        user.bio = post.get('edit_bio')
+        user.street_address_1 = post.get('street_address')
+        user.city = post.get('city')
+        user.country = post.get('country_text')
+        user.zip_code = post.get('zipcode_text')
+        user.save()
         return render(request, self.template_name)
 
 
