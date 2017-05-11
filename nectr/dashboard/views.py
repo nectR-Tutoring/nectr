@@ -1,9 +1,7 @@
 from django.shortcuts import render
-
 # Create your views here.
 from django.views.generic import TemplateView
 
-from nectr.courses.models import Courses
 from nectr.users.models import User
 
 
@@ -27,3 +25,13 @@ class DashboardEditCourses(TemplateView):
 
 class DashboardEditSkills(TemplateView):
     template_name = "dashboard/edit_skills.html"
+
+
+class DashboardEditSchecule(TemplateView):
+    template_name = "dashboard/edit_schedule.html"
+
+
+class DashboardEditSchedule(object):
+    @classmethod
+    def as_view(cls):
+        pass
