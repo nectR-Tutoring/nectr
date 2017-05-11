@@ -18,9 +18,11 @@ class DashboardEditProfile(TemplateView):
     template_name = "dashboard/edit_profile.html"
 
     def post(self, request):
-        request.user.first_name = request.POST.get('first_name')
-        request.user.last_name = request.POST.get('last_name')
-        request.user.bio = request.POST.get('edit_bio')
+        post = request.POST
+        request.user.first_name = post.get('first_name')
+        request.user.last_name = post.get('last_name')
+        request.user.bio = post.get('edit_bio')
+        request.user.street_address_1 = post.get('street_address')
         return render(request, self.template_name)
 
 
