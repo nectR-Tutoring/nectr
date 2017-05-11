@@ -24,6 +24,7 @@ class User(AbstractUser):
     street_address_1 = models.TextField()
     city = models.TextField()
     country = models.TextField()
+    zip_code = models.IntegerField()
 
     def __str__(self):
         return self.username

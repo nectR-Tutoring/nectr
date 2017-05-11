@@ -28,7 +28,7 @@ class Conversation(models.Model):
 
     initiator = models.ForeignKey(User, related_name='+')  # TODO: Refactor this into ManyToMany when chat groups will be implemented.
     recipient = models.ForeignKey(User, related_name='+')
-    initiator_last_read_time = models.DateTimeField(default=timezone.now())
+    initiator_last_read_time = models.DateTimeField(default=timezone.now()) #TODO: This is adding extra migrations becuase the now is changing
     recipient_last_read_time = models.DateTimeField(default=timezone.now())
 
 
