@@ -12,6 +12,9 @@ class ConversationManager(models.Manager):
             conversation = Conversation.objects.filter(
                 models.Q(recipient=for_user) & models.Q(initiator=user) |
                 models.Q(initiator=for_user) & models.Q(recipient=user)).first()
+            if not conversation:
+                user_dict.update({user: 0})
+                continue
             last_read_time = conversation.initiator_last_read_time if conversation.initiator == for_user else conversation.recipient_last_read_time
             unread_count = Message.objects.filter(
                 models.Q(conversation=conversation) &
