@@ -27,11 +27,5 @@ class DashboardEditSkills(TemplateView):
     template_name = "dashboard/edit_skills.html"
 
 
-class DashboardEditSchecule(TemplateView):
+class DashboardEditSchedule(TemplateView):
     template_name = "dashboard/edit_schedule.html"
-
-
-class DashboardEditSchedule(object):
-    @classmethod
-    def as_view(cls):
-        pass
