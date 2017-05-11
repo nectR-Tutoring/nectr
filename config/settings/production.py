@@ -68,7 +68,7 @@ X_FRAME_OPTIONS = 'DENY'
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['nectr.foxtrotli.co', ])
 # END SITE CONFIGURATION
 
-INSTALLED_APPS += ['gunicorn', ]
+# INSTALLED_APPS += ['gunicorn', ]
 
 
 # STORAGE CONFIGURATION
@@ -156,6 +156,20 @@ CACHES = {
                                         # http://niwinz.github.io/django-redis/latest/#_memcached_exceptions_behavior
         }
     }
+}
+
+# CHANNELS BACKEND
+# ------------------------------------------------------------------------------
+REDIS_LOCATION_CHANNELS = '{0}/{1}'.format(env('REDIS_URL', default='redis://127.0.0.1:6379'), 1)
+# Got to use separate redis DB number
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [REDIS_LOCATION_CHANNELS],
+        },
+        "ROUTING": "config.routing.channel_routing",
+    },
 }
 
 

@@ -53,7 +53,8 @@ THIRD_PARTY_APPS = [
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     # 'haystack',  # search
-    'postman'  # messaging
+    'postman',  # messaging
+    'channels'  # chat
 ]
 
 # Apps specific for this project go here.
@@ -66,6 +67,7 @@ LOCAL_APPS = [
     'nectr.dashboard.apps.DashboardConfig',
     'nectr.courses.apps.CoursesConfig',
     'nectr.skills.apps.SkillsConfig',
+    'nectr.chat.apps.ChatConfig'
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -292,5 +294,13 @@ HAYSTACK_CONNECTIONS = {
         'URL': 'http://127.0.0.1:8983/solr'
         # ...or for multicore...
         # 'URL': 'http://127.0.0.1:8983/solr/mysite',
+    },
+}
+
+# Basic channels configuration
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgiref.inmemory.ChannelLayer",
+        "ROUTING": "config.routing.channel_routing",
     },
 }

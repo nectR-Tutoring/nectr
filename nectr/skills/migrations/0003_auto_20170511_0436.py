@@ -8,14 +8,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('courses', '0001_initial'),
+        ('skills', '0002_auto_20170511_0422'),
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='courses',
-            name='subject',
-            field=models.TextField(default='Null Subject'),
-            preserve_default=False,
+        migrations.AlterField(
+            model_name='skills',
+            name='skill',
+            field=models.CharField(max_length=10),
         ),
     ]
