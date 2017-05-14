@@ -1,34 +1,47 @@
-{% extends 'search/base_search.html' %}
-{% load staticfiles i18n compress %}
-{% block search_results %}
-{% if search_text %}
-    <h1>You searched for {{ search_text }}</h1>
-    <br>
-{% endif %}
-{% if tutors %}
-    <div id="search_results_without">
-    {% for tutor in tutors %}
-    <article class="individual_tutor_result">
-        <h2>{{ tutor.user.username }}</h2>
-        <p>{{ tutor.bio }}</p>
-        <ul>
-            {% for courses in tutor.courses.all %}
-                <li class="course_name_listing">{{ courses.course_name }}</li>
-            {% endfor %}
-        </ul>
-        <form method="get" action="{% url 'tutors:detail' tutor.user.username %}">
-            <input type="submit" value="Tutor Profile">
-        </form>
-    </article>
-    {% endfor %}
-    {% else %}
-    <div id="no_results">
-        <article>
-            <h1>There are no results for {{ search_text }}</h1>
-        </article>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/css/css_search_results/search_results.css">
+
+  </head>
+  <body>
+
+
+    <div class="container" id="wrapper">
+
+        <hgroup class="margin-bottom">
+    		<h1>Search Results</h1>
+
+    	</hgroup>
+
+        <section class="col-xs-12 col-sm-12 col-md-12">
+    		<article class="search-result row">
+    			<div class="col-xs-12 col-sm-3 col-md-3">
+    				<a href="#" title="Lorem ipsum" class="thumbnail"><img src="http://lorempixel.com/250/140/people" alt="Lorem ipsum" /></a>
+    			</div>
+    			<div class="col-xs-12 col-sm-2 col-md-2">
+    				<ul class="meta-search">
+    					<li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
+    					<li><i class="glyphicon glyphicon-time"></i> <span>4:28 pm</span></li>
+    					<li><i class="glyphicon glyphicon-tags"></i> <span>People</span></li>
+    				</ul>
+    			</div>
+    			<div class="col-xs-12 col-sm-7 col-md-7 excerpet">
+    				<h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
+    				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>
+    			</div>
+    			<span class="clearfix borda"></span>
+    		</article>
+
+
+
+    	</section>
     </div>
-{% endif %}
 
-
-</div>
-{% endblock %}
+  </body>
+</html>
