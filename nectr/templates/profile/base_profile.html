@@ -4,6 +4,7 @@
 
 {% block content %}
 
+
     <div class="container profile">
         <div class="row">
 
@@ -43,7 +44,12 @@
 
                 <section>
                     <h2>Bio</h2>
-                    <p>{{ user.about_me }}</p>
+                     <!--    TODO: Check if the statement is correct -->
+                        {% if bio %}
+                    <p style="background-color: white; color: black;">{{ user.about_me }}</p>
+                    {% else %}
+                      <p style="background-color: white; color: black; border-radius: 5px; ">No Bio </p>
+                      {% endif %}
                 </section>
 
 
@@ -91,15 +97,19 @@
                         </tr>
                         </thead>
                         <tbody>
+                      <!--   TODO: Is this if statement correct? The Skill if statement repeats twice. -->
                         {% if skills %}
 
                             {% for course in courses %}
                                 <tr>
-                                    <td>{{ user.subject }}</td>
-                                    <td>{{ user.course_name }}</td>
+                                    <td style="background-color: white; color: black;">{{ user.subject }}</td>
+                                    <td style="background-color: white; color: black;">{{ user.course_name }}</td>
 
                                 </tr>
                             {% endfor %}
+                              {% else %}
+                               <td style="background-color: white; color: black;"> No Subject Listed</td>
+                               <td style="background-color: white; color: black; "> No Course Listed</td>
                         {% endif %}
 
                         </tbody>
