@@ -67,7 +67,8 @@ LOCAL_APPS = [
     'nectr.dashboard.apps.DashboardConfig',
     'nectr.courses.apps.CoursesConfig',
     'nectr.skills.apps.SkillsConfig',
-    'nectr.chat.apps.ChatConfig'
+    'nectr.chat.apps.ChatConfig',
+    'nectr.schedule.apps.ScheduleConfig'
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
