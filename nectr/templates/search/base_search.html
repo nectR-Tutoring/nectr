@@ -1,7 +1,7 @@
 {% extends "base_nectr.html" %}
 {% load staticfiles i18n compress %}
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/search_results.css' %}">
+
 {% endblock css %}
 {% block banner_content %}
     <!-- Banner -->
@@ -53,7 +53,7 @@
                             <li class="course_name_listing">{{ courses.course_name }}</li>
                         {% endfor %}
                     </ul>
-                    <form method="get" action="{% url 'users:detail' request.user.username %}">
+                    <form method="get" action="{% url 'users:detail' tutor.username %}">
                         <input type="submit" value="Tutor Profile">
                     </form>
                 </article>
