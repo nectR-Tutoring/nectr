@@ -9,6 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from nectr.courses.models import Courses
 from nectr.skills.models import Skills
+from nectr.schedule.models import Schedule
 
 
 
@@ -26,7 +27,7 @@ class User(AbstractUser):
     city = models.TextField()
     country = models.TextField()
     zip_code = models.TextField()
-    # schedule = models.ForeignKey(Schedule)
+    schedule = models.ForeignKey(Schedule, null=True)
 
     def __str__(self):
         return self.username
