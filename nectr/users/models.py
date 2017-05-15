@@ -11,6 +11,8 @@ from nectr.courses.models import Courses
 from nectr.skills.models import Skills
 
 
+
+
 @python_2_unicode_compatible
 class User(AbstractUser):
     # First Name and Last Name do not cover name patterns
@@ -24,22 +26,10 @@ class User(AbstractUser):
     city = models.TextField()
     country = models.TextField()
     zip_code = models.TextField()
-
-    # schedule = models.ManyToManyField(Schedule)
+    # schedule = models.ForeignKey(Schedule)
 
     def __str__(self):
         return self.username
 
     def get_absolute_url(self):
         return reverse('users:detail', kwargs={'username': self.username})
-
-
-class Schedule(models.Model):
-    user = models.ForeignKey(User)
-    monday = models.BooleanField(default=0)
-    tuesday = models.BooleanField(default=0)
-    wednesday = models.BooleanField(default=0)
-    thursday = models.BooleanField(default=0)
-    friday = models.BooleanField(default=0)
-    saturday = models.BooleanField(default=0)
-    sunday = models.BooleanField(default=0)
