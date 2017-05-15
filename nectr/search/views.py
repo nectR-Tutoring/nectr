@@ -18,4 +18,4 @@ class Search(View):
             users = list(chain(users_courses, users_skills))
         else:
             users = User.objects.all()
-        return render(request, 'search/base_search.html', {'tutors': users, 'search_text': search})
+        return render(request, 'search/search_with_results.html', {'tutors': users, 'search_text': search})
