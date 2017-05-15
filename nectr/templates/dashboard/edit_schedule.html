@@ -8,34 +8,45 @@
             <div class="content">
                 <form method="post">
                     {% csrf_token %}
-
-                    {#                    {% if courses %}#}
-
-                    <form>
-                        <input type="text" id="schedule" placeholder="schedule">
-                        <input type="button" class="add-row" value="Add Row">
-                    </form>
                     <table>
                         <thead>
                         <tr>
-                            <th>Select</th>
-                            <th>Schedule</th>
+                            <th>Available?</th>
+                            <th>Day of Week</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            {#                            <td><input type="checkbox" name="record"></td>#}
-                            {#                            <td>Peter Parker</td>#}
-                            {#                            <td>peterparker@mail.com</td>#}
+                            <td></td>
+                            <td>Monday</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Tuesday</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Wednesday</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Thursday</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Friday</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Saturday</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Sunday</td>
                         </tr>
                         </tbody>
                     </table>
-                    <button type="button" class="delete-row">Delete Row</button>
-
-
-                    {#                    {% endif %}#}
-
-
+                    <button type="submit" name="update"></button>
                 </form>
 
                 <style type="text/css">
@@ -63,27 +74,6 @@
                     }
                 </style>
 
-
-                <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $(".add-row").click(function () {
-                            var schedule = $("#schedule").val();
-
-                            var markup = "<tr><td><input type='checkbox' subject='record'></td><td>" + schedule;
-                            $("table tbody").append(markup);
-                        });
-
-                        // Find and remove selected table rows
-                        $(".delete-row").click(function () {
-                            $("table tbody").find('input[subject="record"]').each(function () {
-                                if ($(this).is(":checked")) {
-                                    $(this).parents("tr").remove();
-                                }
-                            });
-                        });
-                    });
-                </script>
 
 
             </div>

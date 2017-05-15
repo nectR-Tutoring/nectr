@@ -80,14 +80,7 @@ class DashboardEditSchedule(TemplateView):
         return render(request, self.template_name, {'schedule': request.user.schedule})
 
     def post(self, request):
-        if request.POST.get('delete'):
-            schedule_id = request.POST.get('delete')
-            schedule = schedule.objects.get(id=schedule_id)
-            user = User.objects.get(username__exact=request.user.username)
-            user.schedule.remove(schedule)
-        if request.POST.get('create'):
-            if request.POST.get('schedule'):
-                schedule = request.POST.get('schedule')
-                request.user.skills.create(schedule=schedule)
+        schedule_id = request.user.schedule
+        request.user.schedule.up
 
         return HttpResponseRedirect(reverse('dashboard:edit_schedule'))
