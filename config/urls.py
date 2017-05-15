@@ -39,6 +39,7 @@ urlpatterns = [
 
                   # Messaging Include
                   url(r'^messages/', include('postman.urls', namespace='postman', app_name='postman')),
+                  url(r'^chat/', include('nectr.chat.urls'))
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

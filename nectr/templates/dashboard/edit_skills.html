@@ -9,12 +9,9 @@
                 <form method="post">
                     {% csrf_token %}
 
-                    {#                    {% if courses %}#}
 
-                    <form>
-                        <input type="text" id="skills" placeholder="skills">
-                        <input type="button" class="add-row" value="Add Row">
-                    </form>
+                    <input type="text" name="skills" id="skills" placeholder="skills">
+                    <input type="submit" class="add-row" value="Add Skill" name="create">
                     <table>
                         <thead>
                         <tr>
@@ -23,19 +20,22 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            {#                            <td><input type="checkbox" name="record"></td>#}
-                            {#                            <td>Peter Parker</td>#}
-                            {#                            <td>peterparker@mail.com</td>#}
-                        </tr>
+                        {% if skills %}
+                            {% for skill in skills.all %}
+                                <tr>
+
+                                    <td>
+                                        <button type="submit" class="delete-row" name="delete" value="{{ skill.id }}">
+                                            Delete Row
+                                        </button>
+                                    </td>
+                                    <td>{{ skill }}</td>
+
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
                         </tbody>
                     </table>
-                    <button type="button" class="delete-row">Delete Row</button>
-
-
-                    {#                    {% endif %}#}
-
-
                 </form>
 
                 <style type="text/css">
@@ -63,27 +63,27 @@
                     }
                 </style>
 
-
-                <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $(".add-row").click(function () {
-                            var skills = $("#skills").val();
-
-                            var markup = "<tr><td><input type='checkbox' subject='record'></td><td>" + skills;
-                            $("table tbody").append(markup);
-                        });
-
-                        // Find and remove selected table rows
-                        $(".delete-row").click(function () {
-                            $("table tbody").find('input[subject="record"]').each(function () {
-                                if ($(this).is(":checked")) {
-                                    $(this).parents("tr").remove();
-                                }
-                            });
-                        });
-                    });
-                </script>
+                {##}
+                {#                <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>#}
+                {#                <script type="text/javascript">#}
+                {#                    $(document).ready(function () {#}
+                {#                        $(".add-row").click(function () {#}
+                {#                            var skills = $("#skills").val();#}
+                {##}
+                {#                            var markup = "<tr><td><input type='checkbox' subject='record'></td><td>" + skills;#}
+                {#                            $("table tbody").append(markup);#}
+                {#                        });#}
+                {##}
+                {#                        // Find and remove selected table rows#}
+                {#                        $(".delete-row").click(function () {#}
+                {#                            $("table tbody").find('input[subject="record"]').each(function () {#}
+                {#                                if ($(this).is(":checked")) {#}
+                {#                                    $(this).parents("tr").remove();#}
+                {#                                }#}
+                {#                            });#}
+                {#                        });#}
+                {#                    });#}
+                {#                </script>#}
 
 
             </div>

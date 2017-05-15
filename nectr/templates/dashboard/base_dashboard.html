@@ -1,5 +1,5 @@
-{% load static %}
-
+{% load static compress %}
+<head>
 
 <title>{% block title %}nectR - Worker Bee Dashboard{% endblock %}</title>
 
@@ -8,7 +8,7 @@
 
 {% block css %}
     <!-- Bootstrap core CSS     -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Animation library for notifications   -->
     <link href="{% static 'css/animate.min.css' %}" rel="stylesheet"/>
@@ -26,6 +26,8 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{% static 'css/pe-icon-7-stroke.css' %}" rel="stylesheet"/>
 {% endblock %}
+</head>
+<body>
 {% block wrapper %}
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="{% static 'img/sidebar-5.jpg' %}">
@@ -140,22 +142,14 @@
                                     <p>Account</p>
                                 </a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <p>
-                                        Messages
-                                        <b class="caret"></b>
-                                    </p>
+                            <li>
+                                <a href="{% url 'chat_view' %}">
+                                    <p>Messages</p>
+                                    <span id='messages-notification' class="notification hidden-sm hidden-xs" style='display: none'>0</span>
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{% url 'postman:inbox' %}">Inbox</a></li>
-                                    <li><a href="{% url 'postman:write' %}">New Message</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="{% url 'postman:archives' %}">Archives</a></li>
-                                </ul>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{% url 'account_logout' %}">
                                     <p>Log out</p>
                                 </a>
                             </li>
@@ -198,4 +192,8 @@
     <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
     <script src="{% static 'js/demo.js' %}"></script>
 
+    {% compress js %}
+        <script src="{% static 'js/dashboard.js' %}"></script>
+    {% endcompress %}
 {% endblock %}
+</body>

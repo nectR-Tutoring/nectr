@@ -16,40 +16,39 @@
                     <input name="subject" type="text" id="subject" placeholder="Subject">
                     <input name="course" type="text" id="course" placeholder="Courses">
 
-                    <input type="submit" class="add-row" value="Add Row">
-                </form>
+                    <input type="submit" class="add-row" value="Add Row" name="create">
 
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Select</th>
-                        <th>Subject</th>
-                        <th>Courses</th>
-                    </tr>
-                    </thead>
-                    {% if courses %}
-                        {% for course in courses.all %}
+
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Select</th>
+                            <th>Subject</th>
+                            <th>Courses</th>
+                        </tr>
+                        </thead>
+                        {% if courses %}
+                            {% for course in courses.all %}
+                                <tr>
+                                    <td><button type="submit" class="delete-row" name="delete" value="{{ course.id }}">Delete Row</button></td>
+                                    <td>{{ course.subject }}</td>
+                                    <td>{{ course.course_name }}</td>
+
+                                </tr>
+                            {% endfor %}
+                        {% else %}
                             <tr>
                                 <td></td>
-                                <td>{{ course.subject }}</td>
-                                <td>{{ course.course_name }}</td>
+                                <td>Currently No Subjects</td>
+                                <td>Currently No Courses</td>
                             </tr>
-                        {% endfor %}
-                    {% else %}
-                        <tr>
-                            <td></td>
-                            <td>Currently No Subjects</td>
-                            <td>Currently No Courses</td>
-                        </tr>
-                    {% endif %}
+                        {% endif %}
 
 
+                    </table>
+                    {#                    {% endif %}#}
 
-                </table>
-                <button type="button" class="delete-row">Delete Row</button>
-                {#                    {% endif %}#}
-
-
+                </form>
                 <style type="text/css">
                     form {
                         margin: 20px 0;

@@ -1,16 +1,24 @@
 version: '2'
 
-volumes:
-  postgres_data: {}
-  postgres_backup: {}
+#volumes:
+#  postgres_data: {}
+#  postgres_backup: {}
 
 services:
+#  postgres:
+#    build: ./compose/postgres
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#      - postgres_backup:/backups
+#    env_file: .env
+
   postgres:
     build: ./compose/postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - postgres_backup:/backups
-    env_file: .env
+    environment:
+      - POSTGRES_USER=nectr
 
   django:
     build:
@@ -20,7 +28,7 @@ services:
     depends_on:
       - postgres
       - redis
-    command: /gunicorn.sh
+    command: /daphne.sh
     env_file: .env
 
   nginx:
