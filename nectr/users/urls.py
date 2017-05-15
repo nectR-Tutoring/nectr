@@ -22,6 +22,11 @@ urlpatterns = [
         name='detail'
     ),
     url(
+        regex=r'profile/^(?P<username>[\w.@+-]+)/$',
+        view=views.UserPublicProfileView.as_view(),
+        name='profile'
+    ),
+    url(
         regex=r'^~update/$',
         view=views.UserUpdateView.as_view(),
         name='update'
