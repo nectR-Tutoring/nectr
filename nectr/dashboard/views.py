@@ -1,13 +1,10 @@
-from django.conf.urls import url
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-
 # Create your views here.
 from django.urls import reverse
 from django.views.generic import TemplateView
 
 from nectr.courses.models import Courses
-from nectr.dashboard.forms import CoursesForm
 from nectr.skills.models import Skills
 from nectr.users.models import User
 
@@ -73,3 +70,24 @@ class DashboardEditSkills(TemplateView):
                 request.user.skills.create(skill=skill)
 
         return HttpResponseRedirect(reverse('dashboard:edit_skills'))
+
+
+class DashboardEditSchedule(TemplateView):
+    model = User
+    template_name = "dashboard/edit_schedule.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {'schedule': request.user.schedule})
+
+    def post(self, request):
+        if request.POST.get('delete'):
+            schedule_id = request.POST.get('delete')
+            schedule = schedule.objects.get(id=schedule_id)
+            user = User.objects.get(username__exact=request.user.username)
+            user.schedule.remove(schedule)
+        if request.POST.get('create'):
+            if request.POST.get('schedule'):
+                schedule = request.POST.get('schedule')
+                request.user.skills.create(schedule=schedule)
+
+        return HttpResponseRedirect(reverse('dashboard:edit_schedule'))
