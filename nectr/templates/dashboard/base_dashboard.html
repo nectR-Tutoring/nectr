@@ -1,31 +1,31 @@
 {% load static compress %}
 <head>
 
-<title>{% block title %}nectR - Worker Bee Dashboard{% endblock %}</title>
+    <title>{% block title %}nectR - Worker Bee Dashboard{% endblock %}</title>
 
-<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
-<meta name="viewport" content="width=device-width"/>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta name="viewport" content="width=device-width"/>
 
-{% block css %}
-    <!-- Bootstrap core CSS     -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    {% block css %}
+        <!-- Bootstrap core CSS     -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 
-    <!-- Animation library for notifications   -->
-    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet"/>
+        <!-- Animation library for notifications   -->
+        <link href="{% static 'css/animate.min.css' %}" rel="stylesheet"/>
 
-    <!--  Light Bootstrap Table core CSS    -->
-    <link href="{% static 'css/light-bootstrap-dashboard.css' %}" rel="stylesheet"/>
-
-
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="{% static 'css/demo.css' %}" rel="stylesheet"/>
+        <!--  Light Bootstrap Table core CSS    -->
+        <link href="{% static 'css/light-bootstrap-dashboard.css' %}" rel="stylesheet"/>
 
 
-    <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="{% static 'css/pe-icon-7-stroke.css' %}" rel="stylesheet"/>
-{% endblock %}
+        <!--  CSS for Demo Purpose, don't include it in your project     -->
+        <link href="{% static 'css/demo.css' %}" rel="stylesheet"/>
+
+
+        <!--     Fonts and icons     -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+        <link href="{% static 'css/pe-icon-7-stroke.css' %}" rel="stylesheet"/>
+    {% endblock %}
 </head>
 <body>
 {% block wrapper %}
@@ -104,30 +104,30 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-left">
-{#                            <li>#}
-{#                                <a href="{% url 'dashboard:dashboard_view' %}" class="dropdown-toggle" data-toggle="dropdown">#}
-{#                                    <i class="fa fa-dashboard"></i>#}
-{#                                    <p class="hidden-lg hidden-md">Dashboard</p>#}
-{#                                </a>#}
-{#                            </li>#}
-{#                            <li class="dropdown">#}
-{#                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">#}
-{#                                    <i class="fa fa-globe"></i>#}
-{#                                    <b class="caret hidden-sm hidden-xs"></b>#}
-{#                                    <span class="notification hidden-sm hidden-xs">5</span>#}
-{#                                    <p class="hidden-lg hidden-md">#}
-{#                                        5 Notifications#}
-{#                                        <b class="caret"></b>#}
-{#                                    </p>#}
-{#                                </a>#}
-{#                                <ul class="dropdown-menu">#}
-{#                                    <li><a href="#">Notification 1</a></li>#}
-{#                                    <li><a href="#">Notification 2</a></li>#}
-{#                                    <li><a href="#">Notification 3</a></li>#}
-{#                                    <li><a href="#">Notification 4</a></li>#}
-{#                                    <li><a href="#">Another notification</a></li>#}
-{#                                </ul>#}
-{#                            </li>#}
+                            {#                            <li>#}
+                            {#                                <a href="{% url 'dashboard:dashboard_view' %}" class="dropdown-toggle" data-toggle="dropdown">#}
+                            {#                                    <i class="fa fa-dashboard"></i>#}
+                            {#                                    <p class="hidden-lg hidden-md">Dashboard</p>#}
+                            {#                                </a>#}
+                            {#                            </li>#}
+                            {#                            <li class="dropdown">#}
+                            {#                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">#}
+                            {#                                    <i class="fa fa-globe"></i>#}
+                            {#                                    <b class="caret hidden-sm hidden-xs"></b>#}
+                            {#                                    <span class="notification hidden-sm hidden-xs">5</span>#}
+                            {#                                    <p class="hidden-lg hidden-md">#}
+                            {#                                        5 Notifications#}
+                            {#                                        <b class="caret"></b>#}
+                            {#                                    </p>#}
+                            {#                                </a>#}
+                            {#                                <ul class="dropdown-menu">#}
+                            {#                                    <li><a href="#">Notification 1</a></li>#}
+                            {#                                    <li><a href="#">Notification 2</a></li>#}
+                            {#                                    <li><a href="#">Notification 3</a></li>#}
+                            {#                                    <li><a href="#">Notification 4</a></li>#}
+                            {#                                    <li><a href="#">Another notification</a></li>#}
+                            {#                                </ul>#}
+                            {#                            </li>#}
                             <li>
                                 <a href="{% url 'search_base' %}">
                                     <i class="fa fa-search"></i>
@@ -145,7 +145,8 @@
                             <li>
                                 <a href="{% url 'chat_view' %}">
                                     <p>Messages</p>
-                                    <span id='messages-notification' class="notification hidden-sm hidden-xs" style='display: none'>0</span>
+                                    <span id='messages-notification' class="notification hidden-sm hidden-xs"
+                                          style='display: none'>0</span>
                                 </a>
                             </li>
                             <li>
