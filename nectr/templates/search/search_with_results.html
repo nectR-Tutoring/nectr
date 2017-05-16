@@ -2,17 +2,11 @@
 {% load staticfiles i18n compress %}
 {% block search_results %}
     <style>
-        #wrapper {
-            margin-top: 20px;
-        }
 
         h1 {
             color: blue;
         }
 
-        .margin-bottom {
-            margin-bottom: 20px;
-        }
 
         hgroup {
             padding-left: 15px;
@@ -139,12 +133,10 @@
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-5 col-md-5 excerpet">
-                        <h3><a href="{% url 'users:detail' tutor.username %}" title="">{{ tutor.name|default:"No Name Provided" }} Username: {{ tutor.username }}</a>
+                        <h3><a href="{% url 'users:detail' tutor.username %}" title="">
+                            {{ tutor.username }}</a>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem,
-                            suscipit,
-                            distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis
-                            delectus doloremque.</p>
+                        <p>{{ tutor.bio }}</p>
                     </div>
                     <span class="clearfix borda"></span>
                 </article>
