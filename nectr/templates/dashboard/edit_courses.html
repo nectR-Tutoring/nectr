@@ -13,7 +13,45 @@
                     {#                    {% if courses %}#}
 
 
-                    <input name="subject" type="text" id="subject" placeholder="Subject">
+                    <select name="subject" type="select" id="subject" placeholder="Subject">
+                        <OPTION VALUE="ANT">Anthropology</OPTION>
+                        <OPTION VALUE="ART">Art History</OPTION>
+                        <OPTION VALUE="AET">Automotive Engineering Tech</OPTION>
+                        <OPTION VALUE="AVN">Aviation</OPTION>
+                        <OPTION VALUE="BIO">Biology</OPTION>
+                        <OPTION VALUE="BUS">Business</OPTION>
+                        <OPTION VALUE="CHM">Chemistry</OPTION>
+                        <OPTION VALUE="BCS">Computer Systems</OPTION>
+                        <OPTION VALUE="CON">Construction Management</OPTION>
+                        <OPTION VALUE="CRJ">Criminal Justice</OPTION>
+                        <OPTION VALUE="ECO">Economics</OPTION>
+                        <OPTION VALUE="EET">Electrical Engineering Tech</OPTION>
+                        <OPTION VALUE="EGL">English</OPTION>
+                        <OPTION VALUE="ENV">Environmental Studies</OPTION>
+                        <OPTION VALUE="FRX">Freshman Experience</OPTION>
+                        <OPTION VALUE="GEO">Geography</OPTION>
+                        <OPTION VALUE="HST">Health Studies</OPTION>
+                        <OPTION VALUE="HIS">History</OPTION>
+                        <OPTION VALUE="IND">Industrial Technology</OPTION>
+                        <OPTION VALUE="ITA">Italian</OPTION>
+                        <OPTION VALUE="MTH">Mathematics</OPTION>
+                        <OPTION VALUE="MET">Mechanical Engineering Tech</OPTION>
+                        <OPTION VALUE="MLT">Medical Laboratory Technology</OPTION>
+                        <OPTION VALUE="MLG">Modern Languages</OPTION>
+                        <OPTION VALUE="NUR">Nursing</OPTION>
+                        <OPTION VALUE="PHI">Philosophy</OPTION>
+                        <OPTION VALUE="PHY">Physics and Physical Science</OPTION>
+                        <OPTION VALUE="POL">Politics</OPTION>
+                        <OPTION VALUE="PCM">Professional Communications</OPTION>
+                        <OPTION VALUE="PSY">Psychology</OPTION>
+                        <OPTION VALUE="RAM">Research Aligned Mentorship</OPTION>
+                        <OPTION VALUE="STS">Science, Tech and Society</OPTION>
+                        <OPTION VALUE="SOC">Sociology</OPTION>
+                        <OPTION VALUE="SPA">Spanish</OPTION>
+                        <OPTION VALUE="SPE">Speech</OPTION>
+                        <OPTION VALUE="SMT">Sport Management</OPTION>
+                        <OPTION VALUE="VIS">Visual Communications</OPTION>
+                    </select>
                     <input name="course" type="text" id="course" placeholder="Courses">
 
                     <input type="submit" class="add-row" value="Add Course" name="create">
@@ -30,7 +68,11 @@
                         {% if courses %}
                             {% for course in courses.all %}
                                 <tr>
-                                    <td><button type="submit" class="delete-row" name="delete" value="{{ course.id }}">Delete Row</button></td>
+                                    <td>
+                                        <button type="submit" class="delete-row" name="delete" value="{{ course.id }}">
+                                            Delete Row
+                                        </button>
+                                    </td>
                                     <td>{{ course.subject }}</td>
                                     <td>{{ course.course_name }}</td>
 
