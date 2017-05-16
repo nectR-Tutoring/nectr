@@ -1,4 +1,30 @@
 {% extends 'dashboard/dashboard_edit.html' %}
+{% block addtional_head %}
+    <style type="text/css">
+        form {
+            margin: 20px 0;
+        }
+
+        {#                    form input, button {#}
+        {#                        padding: 5px;#}
+        {#                    }#}
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #cdcdcd;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+{% endblock %}
 {% block form_content %}
     <div class="col-md-8">
         <div class="card">
@@ -6,7 +32,7 @@
                 <h4 class="title">Edit Schedule</h4>
             </div>
             <div class="content">
-                <form method="post">
+                <form method="post" {% url 'dashboard:edit_schedule' %}>
                     {% csrf_token %}
                     <table>
                         <thead>
@@ -18,76 +44,66 @@
                         <tbody>
                         <tr>
                             <td>
-                                <button type="submit" name="update"></button>
+                                <label>
+                                    <input type="checkbox" value="{{ schedule.monday }}" name="available_monday">
+                                </label>
                             </td>
                             <td>Monday</td>
                         </tr>
                         <tr>
                             <td>
-                                <button type="submit" name="update"></button>
+                                <label>
+                                    <input type="checkbox" value="{{ schedule.tuesday }}" name="available_tuesday">
+                                </label>
                             </td>
                             <td>Tuesday</td>
                         </tr>
                         <tr>
                             <td>
-                                <button type="submit" name="update"></button>
+                                <label>
+                                    <input type="checkbox" value="{{ schedule.wednesday }}" name="available_wednesday">
+                                </label>
                             </td>
                             <td>Wednesday</td>
                         </tr>
                         <tr>
                             <td>
-                                <button type="submit" name="update"></button>
+                                <label>
+                                    <input type="checkbox" value="{{ schedule.thursday }}" name="available_thursday">
+                                </label>
                             </td>
                             <td>Thursday</td>
                         </tr>
                         <tr>
                             <td>
-                                <button type="submit" name="update"></button>
+                                <label>
+                                    <input type="checkbox" value="{{ schedule.friday }}" name="available_friday">
+                                </label>
                             </td>
                             <td>Friday</td>
                         </tr>
                         <tr>
                             <td>
-                                <button type="submit" name="update"></button>
+                                <label>
+                                    <input type="checkbox" value="{{ schedule.saturday }}" name="available_saturday">
+                                </label>
                             </td>
                             <td>Saturday</td>
                         </tr>
                         <tr>
                             <td>
-                                <button type="submit" name="update"></button>
+                                <label>
+                                    <input type="checkbox" value="{{ schedule.sunday }}" name="available_sunday">
+                                </label>
                             </td>
                             <td>Sunday</td>
                         </tr>
                         </tbody>
                     </table>
 
+                    <button type="submit"> Update Schedule</button>
+
                 </form>
-
-                <style type="text/css">
-                    form {
-                        margin: 20px 0;
-                    }
-
-                    form input, button {
-                        padding: 5px;
-                    }
-
-                    table {
-                        width: 100%;
-                        margin-bottom: 20px;
-                        border-collapse: collapse;
-                    }
-
-                    table, th, td {
-                        border: 1px solid #cdcdcd;
-                    }
-
-                    table th, table td {
-                        padding: 10px;
-                        text-align: left;
-                    }
-                </style>
-
 
 
             </div>

@@ -80,7 +80,16 @@ class DashboardEditSchedule(TemplateView):
         return render(request, self.template_name, {'schedule': request.user.schedule})
 
     def post(self, request):
-        schedule_id = request.user.schedule
-        request.user.schedule.up
-
+        # context = {'schedule_id': request.user.schedule_id,
+        #            'monday': request.user.schedule_id,
+        #            'tuesday': request.user.schedule_id,
+        #            'wednesday': request.user.schedule_id,
+        #            'thursday': request.user.schedule_id,
+        #            'friday': request.user.schedule_id,
+        #            'saturday': request.user.schedule_id,
+        #            'sunday': request.user.schedule_id,
+        #            }
+        schedule = self.model.schedule
+        schedule.monday=request.POST.get('available_monday')
+        schedule.monday = request.POST.get('available_tuesday')
         return HttpResponseRedirect(reverse('dashboard:edit_schedule'))
