@@ -20,16 +20,24 @@
                 <div class="well">
                     {% if object.street_address_1 or object.city or object.zip_code %}
                         <ul>
-                            <li><strong>Address:</strong> Address, City, Country, Zip
-                                Code {{ object.street_address_1 }} {{ object.city }} {{ object.country }} {{ user.zip_code }}
+                            <li>
+                                {{ object.street_address_1 }} {{ object.city }} {{ object.country }} {{ user.zip_code }}
                             </li>
                         </ul>
                     {% else %}
+                        {% if object.username == request.user.username %}
                         <ul>
                             <li>
                                 <strong><a href="{% url 'dashboard:edit_profile' %}">Update your Profile:</a></strong>
                             </li>
                         </ul>
+                        {% else %}
+                            <ul>
+                                <li>
+                                    <strong>NO ADDRESS PROVIDED</strong>
+                                </li>
+                            </ul>
+                        {% endif %}
                     {% endif %}
                 </div>
 
@@ -55,8 +63,9 @@
 
                 <section>
                     <h2>Bio</h2>
-                    <!--    TODO: Check if the statement is correct -->
-                    <p style="background-color: white; color: black;">{{ object.bio }}</p>
+                    <ul class="list-group">
+                        <p style="background-color: white; color: black;">{{ object.bio }}</p>
+                    </ul>
                 </section>
 
                 <section>
