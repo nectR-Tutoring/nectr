@@ -11,7 +11,7 @@
             <div class="col-lg-3 sidebar">
 
 
-                <h1>John Doe {{ user.full_name }}</h1>
+                <h1>{{ user.full_name }}</h1>
 
                 <div class="thumbnail">
                     <img src="http://placehold.it/242x200" alt="">
@@ -28,7 +28,8 @@
                 </div>
 
                 {% if user.is_authenticated %}
-                    <button class="btn btn-primary btn-block btn-sm"><a href="{% url 'users:update' %}">Edit Profile</a><i
+                    <button class="btn btn-primary btn-block btn-sm"><a href="{% url 'dashboard:edit_profile' %}">Edit
+                        Profile</a><i
                             class="glyphicon glyphicon-pencil"></i></button>
                     <button class="btn btn-primary btn-block btn-sm"><a href="{% url 'chat_view' %}">Message</a><i
                             class="glyphicon glyphicon-envelope"></i></button>
@@ -44,12 +45,12 @@
 
                 <section>
                     <h2>Bio</h2>
-                     <!--    TODO: Check if the statement is correct -->
-                        {% if bio %}
-                    <p style="background-color: white; color: black;">{{ user.about_me }}</p>
+                    <!--    TODO: Check if the statement is correct -->
+                    {% if bio %}
+                        <p style="background-color: white; color: black;">{{ user.about_me }}</p>
                     {% else %}
-                      <p style="background-color: white; color: black; border-radius: 5px; ">No Bio </p>
-                      {% endif %}
+                        <p style="background-color: white; color: black; border-radius: 5px; ">No Bio </p>
+                    {% endif %}
                 </section>
 
 
@@ -97,7 +98,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                      <!--   TODO: Is this if statement correct? The Skill if statement repeats twice. -->
+                        <!--   TODO: Is this if statement correct? The Skill if statement repeats twice. -->
                         {% if skills %}
 
                             {% for course in courses %}
@@ -107,9 +108,9 @@
 
                                 </tr>
                             {% endfor %}
-                              {% else %}
-                               <td style="background-color: white; color: black;"> No Subject Listed</td>
-                               <td style="background-color: white; color: black; "> No Course Listed</td>
+                        {% else %}
+                            <td style="background-color: white; color: black;"> No Subject Listed</td>
+                            <td style="background-color: white; color: black; "> No Course Listed</td>
                         {% endif %}
 
                         </tbody>
