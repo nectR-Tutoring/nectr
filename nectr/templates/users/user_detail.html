@@ -19,11 +19,9 @@
 
                 <div class="well">
                     <ul>
-                        <li><strong>Student:</strong> Farmingdale College, Computer
-                            Programming {{ user.college_name }}, {{ user.major }}</li>
                         <li><strong>Address:</strong> Address, City, Country, Zip
-                            Code {{ user.address }} {{ user.city }} {{ user.country }} {{ user.postal_code }}</li>
-                        <li><strong>Phone:</strong> 555-555-5555 {{ user.phone_number }}</li>
+                            Code {{ object.street_address_1 }} {{ object.city }} {{ object.country }} {{ user.zip_code }}
+                        </li>
                     </ul>
                 </div>
 
@@ -46,40 +44,30 @@
                 <section>
                     <h2>Bio</h2>
                     <!--    TODO: Check if the statement is correct -->
-                    {% if bio %}
-                        <p style="background-color: white; color: black;">{{ user.about_me }}</p>
-                    {% else %}
-                        <p style="background-color: white; color: black; border-radius: 5px; ">No Bio </p>
-                    {% endif %}
+                    <p style="background-color: white; color: black;">{{ object.bio }}</p>
                 </section>
-
 
                 <section>
-                    <h2>Interests</h2>
-
+                    <h2>Availability</h2>
 
                     <ul class="list-group">
-                        {% if users %}
-                            {% for user in users %}
-
-                                <li class="list-group-item"> {{ user.interest }} </li>
-
+                        {% if object.schedule%}
+                            {% for skill in object.skills.all %}
+                                <li class="list-group-item"> {{ skill }} </li>
                             {% endfor %}
                         {% else %}
-                            <li class="list-group-item"> No Interest Listed</li>
+                            <li class="list-group-item"> Not Available</li>
                         {% endif %}
                     </ul>
-
                 </section>
-
 
                 <section>
                     <h2>Skills</h2>
 
                     <ul class="list-group">
-                        {% if skills %}
-                            {% for skill in skills %}
-                                <li class="list-group-item"> {{ user.skill }} </li>
+                        {% if object.skills.count > 0 %}
+                            {% for skill in object.skills.all %}
+                                <li class="list-group-item"> {{ skill }} </li>
                             {% endfor %}
                         {% else %}
                             <li class="list-group-item"> No Skills Listed</li>
@@ -99,12 +87,12 @@
                         </thead>
                         <tbody>
                         <!--   TODO: Is this if statement correct? The Skill if statement repeats twice. -->
-                        {% if skills %}
+                        {% if object.courses.count > 0 %}
 
-                            {% for course in courses %}
+                            {% for course in object.courses.all %}
                                 <tr>
-                                    <td style="background-color: white; color: black;">{{ user.subject }}</td>
-                                    <td style="background-color: white; color: black;">{{ user.course_name }}</td>
+                                    <td style="background-color: white; color: black;">{{ course.subject }}</td>
+                                    <td style="background-color: white; color: black;">{{ course }}</td>
 
                                 </tr>
                             {% endfor %}
