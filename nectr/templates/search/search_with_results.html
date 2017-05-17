@@ -142,6 +142,12 @@
                 </article>
             </section>
         {% endfor %}
+    {% elif error_message %}
+        <div id="no_results">
+            <article>
+                <h1>{{ error_message }}</h1>
+            </article>
+        </div>
     {% else %}
         <div id="no_results">
             <article>

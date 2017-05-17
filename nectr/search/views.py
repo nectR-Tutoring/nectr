@@ -11,7 +11,7 @@ class Search(View):
     @staticmethod
     def get(request):
         search = request.GET.get('search_text', '')
-        subject = request.GET.get('subject')
+        subject = request.GET.get('subject', '')
         if search is not '':
             users_courses = User.objects.filter(courses__course_name__contains=search)
             users_subject = User.objects.filter(courses__subject__contains=subject)
@@ -19,6 +19,10 @@ class Search(View):
             users_name = User.objects.filter(name__contains=search)
             from itertools import chain
             users = list(chain(users_courses, users_skills, users_name, users_subject))
-        else:
-            users = User.objects.all()
+            return render(request, 'search/search_with_results.html', {'tutors': users, 'search_text': search})
+        if subject is 'Select' and search is '':
+            return render(request, 'search/search_with_results.html', {
+                'search_text': search,
+                'error_message': 'You need to enter a course search'})
+        users = User.objects.all()
         return render(request, 'search/search_with_results.html', {'tutors': users, 'search_text': search})

@@ -10,7 +10,7 @@ from nectr.users.models import User
 
 
 class DashboardView(TemplateView):
-    template_name = "dashboard/base_dashboard.html"
+    template_name = "dashboard/edit_profile.html"
 
 
 class DashboardEditProfile(TemplateView):

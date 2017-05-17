@@ -1,30 +1,5 @@
 {% extends 'dashboard/dashboard_edit.html' %}
-{% block addtional_head %}
-    <style type="text/css">
-        form {
-            margin: 20px 0;
-        }
 
-        {#                    form input, button {#}
-        {#                        padding: 5px;#}
-        {#                    }#}
-
-        table {
-            width: 100%;
-            margin-bottom: 20px;
-            border-collapse: collapse;
-        }
-
-        table, th, td {
-            border: 1px solid #cdcdcd;
-        }
-
-        table th, table td {
-            padding: 10px;
-            text-align: left;
-        }
-    </style>
-{% endblock %}
 {% block form_content %}
     <div class="col-md-8">
         <div class="card">
@@ -32,79 +7,80 @@
                 <h4 class="title">Edit Schedule</h4>
             </div>
             <div class="content">
-                <form method="post" {% url 'dashboard:edit_schedule' %}>
+                <form method="post" action="{% url 'dashboard:edit_schedule' %}">
                     {% csrf_token %}
+
+                    {#                    {% if courses %}#}
+
+
+                    <select name="" type="select" id="subject">
+                        <OPTION value="Monday">Monday</OPTION>
+                        <OPTION value="Tuesday">Tuesday</OPTION>
+                        <OPTION value="Wednesday">Wednesday</OPTION>
+                        <OPTION value="Thursday">Thursday</OPTION>
+                        <OPTION value="Friday">Friday</OPTION>
+                        <OPTION value="Saturday">Saturday</OPTION>
+                        <OPTION value="Sunday">Sunday</OPTION>
+
+                    </select>
+
+                    <input type="submit" class="add-row" value="Add Day Available" name="create">
+
+
                     <table>
                         <thead>
                         <tr>
-                            <th>Available?</th>
-                            <th>Day of Week</th>
+                            <th>Select</th>
+                            <th>Subject</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="checkbox" value="{{ schedule.monday }}" name="available_monday">
-                                </label>
-                            </td>
-                            <td>Monday</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="checkbox" value="{{ schedule.tuesday }}" name="available_tuesday">
-                                </label>
-                            </td>
-                            <td>Tuesday</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="checkbox" value="{{ schedule.wednesday }}" name="available_wednesday">
-                                </label>
-                            </td>
-                            <td>Wednesday</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="checkbox" value="{{ schedule.thursday }}" name="available_thursday">
-                                </label>
-                            </td>
-                            <td>Thursday</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="checkbox" value="{{ schedule.friday }}" name="available_friday">
-                                </label>
-                            </td>
-                            <td>Friday</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="checkbox" value="{{ schedule.saturday }}" name="available_saturday">
-                                </label>
-                            </td>
-                            <td>Saturday</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="checkbox" value="{{ schedule.sunday }}" name="available_sunday">
-                                </label>
-                            </td>
-                            <td>Sunday</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                        {% if courses %}
+                            {% for course in courses.all %}
+                                <tr>
+                                    <td>
+                                        <button type="submit" class="delete-row" name="delete" value="{{ course.id }}">
+                                            Delete Row
+                                        </button>
+                                    </td>
+                                    <td>{{ course.subject }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        {% endif %}
 
-                    <button type="submit"> Update Schedule</button>
+
+                    </table>
+                    {#                    {% endif %}#}
 
                 </form>
+                <style type="text/css">
+                    form {
+                        margin: 20px 0;
+                    }
 
+                    form input, button {
+                        padding: 5px;
+                    }
+
+                    table {
+                        width: 100%;
+                        margin-bottom: 20px;
+                        border-collapse: collapse;
+                    }
+
+                    table, th, td {
+                        border: 1px solid #cdcdcd;
+                    }
+
+                    table th, table td {
+                        padding: 10px;
+                        text-align: left;
+                    }
+                </style>
 
             </div>
         </div>
