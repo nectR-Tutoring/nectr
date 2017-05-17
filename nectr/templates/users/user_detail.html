@@ -73,8 +73,8 @@
 
                     <ul class="list-group">
                         {% if object.schedule %}
-                            {% for skill in object.skills.all %}
-                                <li class="list-group-item"> {{ skill }} </li>
+                            {% for dow in object.schedule.all %}
+                                <li class="list-group-item"> {{ dow }} </li>
                             {% endfor %}
                         {% else %}
                             <li class="list-group-item"> Not Available</li>

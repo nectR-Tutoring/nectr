@@ -13,7 +13,7 @@
                     {#                    {% if courses %}#}
 
 
-                    <select name="" type="select" id="subject">
+                    <select name="day" type="select" id="subject">
                         <OPTION value="Monday">Monday</OPTION>
                         <OPTION value="Tuesday">Tuesday</OPTION>
                         <OPTION value="Wednesday">Wednesday</OPTION>
@@ -34,15 +34,15 @@
                             <th>Subject</th>
                         </tr>
                         </thead>
-                        {% if courses %}
-                            {% for course in courses.all %}
+                        {% if schedule %}
+                            {% for dow in schedule.all %}
                                 <tr>
                                     <td>
-                                        <button type="submit" class="delete-row" name="delete" value="{{ course.id }}">
+                                        <button type="submit" class="delete-row" name="delete" value="{{ dow.id }}">
                                             Delete Row
                                         </button>
                                     </td>
-                                    <td>{{ course.subject }}</td>
+                                    <td>{{ dow }}</td>
                                 </tr>
                             {% endfor %}
                         {% else %}

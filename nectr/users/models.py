@@ -8,10 +8,8 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from nectr.courses.models import Courses
-from nectr.skills.models import Skills
 from nectr.schedule.models import Schedule
-
-
+from nectr.skills.models import Skills
 
 
 @python_2_unicode_compatible
@@ -27,7 +25,7 @@ class User(AbstractUser):
     city = models.TextField()
     country = models.TextField()
     zip_code = models.TextField()
-    schedule = models.ForeignKey(Schedule, null=True)
+    schedule = models.ManyToManyField(Schedule, null=True)
 
     def __str__(self):
         return self.username

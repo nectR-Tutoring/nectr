@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.views.generic import TemplateView
 
 from nectr.courses.models import Courses
+from nectr.schedule.models import Schedule
 from nectr.skills.models import Skills
 from nectr.users.models import User
 
@@ -80,16 +81,13 @@ class DashboardEditSchedule(TemplateView):
         return render(request, self.template_name, {'schedule': request.user.schedule})
 
     def post(self, request):
-        # context = {'schedule_id': request.user.schedule_id,
-        #            'monday': request.user.schedule_id,
-        #            'tuesday': request.user.schedule_id,
-        #            'wednesday': request.user.schedule_id,
-        #            'thursday': request.user.schedule_id,
-        #            'friday': request.user.schedule_id,
-        #            'saturday': request.user.schedule_id,
-        #            'sunday': request.user.schedule_id,
-        #            }
-        schedule = self.model.schedule
-        schedule.monday=request.POST.get('available_monday')
-        schedule.monday = request.POST.get('available_tuesday')
+        if request.POST.get('delete'):
+            dow_id = request.POST.get('delete')
+            dow = Schedule.objects.get(id=dow_id)
+            user = User.objects.get(username__exact=request.user.username)
+            user.schedule.remove(dow)
+        if request.POST.get('create'):
+            if request.POST.get('day'):
+                day = request.POST.get('day')
+                request.user.schedule.create(day_of_week=day)
         return HttpResponseRedirect(reverse('dashboard:edit_schedule'))
